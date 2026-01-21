@@ -8,12 +8,7 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: () => import('../views/Dashboard.vue')
-  },
-  {
-    path: '/calculator',
-    name: 'CalculatorView',
-    component: () => import('../views/CalculatorView.vue'),
+    component: () => import('../views/Dashboard.vue'),
     children: [
       {
         path: 'global-price',
