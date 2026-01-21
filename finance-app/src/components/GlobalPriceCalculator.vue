@@ -643,6 +643,7 @@ export default {
   padding: 20px 0;
   border-bottom: 1px dashed #2c3e50;
   background: #2c3e50;
+  border-radius: 10px;
 }
 
 .page-title {
