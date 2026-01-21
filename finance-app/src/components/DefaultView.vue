@@ -1,0 +1,75 @@
+<template>
+  <div class="default-view">
+    <h1>Welcome to Finance Apps</h1>
+    <p>Select a calculator from the sidebar to get started.</p>
+    
+    <div class="features">
+      <div class="feature-card">
+        <h3>💰 Global Price Calculator</h3>
+        <p>Compare prices across different countries and currencies</p>
+      </div>
+      <div class="feature-card">
+        <h3>📊 Paycheck Calculator</h3>
+        <p>Calculate your net pay after taxes and deductions</p>
+      </div>
+      <div class="feature-card">
+        <h3>📈 Income Tax Calculator</h3>
+        <p>Estimate your income tax based on tax brackets</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'DefaultView'
+}
+</script>
+
+<style scoped>
+.default-view {
+  padding: 20px;
+}
+
+.default-view h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.default-view p {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+</style>

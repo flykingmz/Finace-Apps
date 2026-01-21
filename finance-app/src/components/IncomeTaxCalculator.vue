@@ -142,7 +142,24 @@ export default {
       return this.income - this.totalTax
     }
   },
+  mounted() {
+  console.log('Component mounted with route:', this.$route.path)
+  // 初始化代码...
+  
+  // 监听路由变化
+  window.addEventListener('route-navigated', this.handleRouteNavigation)  
+  },
+  beforeUnmount() {
+  window.removeEventListener('route-navigated', this.handleRouteNavigation)
+  },
   methods: {
+    handleRouteNavigation(event) {
+    console.log('Route navigation detected:', event.detail)
+    if (this.$route.path === '/dashboard/income-tax') { // 或对应的路径
+      console.log('Component should refresh')
+      this.$forceUpdate()
+    }
+  },
     calculate() {
       // Calculation is handled by computed properties
       console.log('Tax calculated:', {

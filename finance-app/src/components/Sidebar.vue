@@ -70,7 +70,8 @@ const navigationData = [
       {
         id: 'global-price',
         title: 'Global Price Calculator',
-        route: '/dashboard/global-price'
+        route: '/dashboard/global-price',
+        component: 'GlobalPriceCalculator'
       }
     ]
   },
@@ -84,12 +85,14 @@ const navigationData = [
       {
         id: 'paycheck',
         title: 'Paycheck Calculator',
-        route: '/dashboard/paycheck'
+        route: '/dashboard/paycheck',
+        component: 'PaycheckCalculator'
       },
       {
         id: 'income-tax',
         title: 'Income Tax Calculator',
-        route: '/dashboard/income-tax'
+        route: '/dashboard/income-tax',
+        component: 'IncomeTaxCalculator'
       }
     ]
   }
@@ -105,13 +108,13 @@ export default {
     }
   },
   mounted() {
-    console.log('Sidebar mounted, navigation:', this.navigation)
-    // Set initial state based on current route
+    console.log('Sidebar mounted')
     this.updateActiveNav()
   },
   watch: {
     '$route.path': {
-      handler() {
+      handler(newPath) {
+        console.log('Route changed to:', newPath)
         this.updateActiveNav()
       },
       immediate: true
@@ -120,7 +123,6 @@ export default {
   methods: {
     toggleSidebar() {
       this.isCollapsed = !this.isCollapsed
-      console.log('Sidebar toggled, collapsed:', this.isCollapsed)
     },
     toggleNav(navItem) {
       console.log('Toggle nav:', navItem.id)
@@ -135,24 +137,36 @@ export default {
       })
     },
     navigateTo(child) {
-      console.log('Navigate to:', child.route)
+      console.log('Navigating to:', child.route, 'Current route:', this.$route.path)
+      
+      // 强制导航，即使路由相同也要刷新
+      if (this.$route.path === child.route) {
+        console.log('Same route, forcing reload...')
+        // 方法1: 使用 replace 强制更新
+        this.$router.replace(child.route).then(() => {
+          console.log('Route replaced')
+          // 强制重新加载组件
+          this.$forceUpdate()
+          // 触发 window 事件通知 Dashboard 组件
+          window.dispatchEvent(new CustomEvent('route-changed', { 
+            detail: { route: child.route }
+          }))
+        }).catch(err => {
+          console.log('Navigation error:', err)
+        })
+      } else {
+        // 不同路由，正常导航
+        this.$router.push(child.route).catch(err => {
+          console.log('Navigation error:', err)
+        })
+      }
+      
       this.activeSubNav = child.id
-      this.$router.push(child.route).catch(err => {
-        console.log('Navigation error:', err)
-      })
-    },
-    shareOnTwitter() {
-      const url = window.location.href
-      const text = 'Check out these awesome Finance Apps!'
-      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank')
-    },
-    shareOnFacebook() {
-      const url = window.location.href
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank')
+      this.updateNavigationState(child.route)
     },
     updateActiveNav() {
       const currentRoute = this.$route.path
-      console.log('Current route:', currentRoute)
+      console.log('Updating active nav for route:', currentRoute)
       
       let found = false
       this.navigation.forEach(nav => {
@@ -175,6 +189,30 @@ export default {
         this.navigation[1].expanded = false
         this.navigation[1].active = false
       }
+    },
+    updateNavigationState(route) {
+      this.navigation.forEach(nav => {
+        if (nav.children) {
+          nav.children.forEach(child => {
+            if (child.route === route) {
+              this.activeSubNav = child.id
+              nav.expanded = true
+              nav.active = true
+            } else {
+              nav.active = false
+            }
+          })
+        }
+      })
+    },
+    shareOnTwitter() {
+      const url = window.location.href
+      const text = 'Check out these awesome Finance Apps!'
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank')
+    },
+    shareOnFacebook() {
+      const url = window.location.href
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank')
     }
   }
 }

@@ -422,14 +422,31 @@ export default {
     }
   },
   mounted() {
-    // Set default country
+    console.log('GlobalPriceCalculator mounted with route:', this.$route.path)
+    // 设置默认国家
     this.selectedCountry = taxData.Europe[6] // Germany
     this.countrySearch = this.selectedCountry.country
     
-    // Calculate initial values
+    // 计算初始值
     this.calculate()
+    
+    // 监听路由变化
+    window.addEventListener('route-navigated', this.handleRouteNavigation)
+  },
+  beforeUnmount() {
+    window.removeEventListener('route-navigated', this.handleRouteNavigation)
   },
   methods: {
+    // 处理路由导航
+    handleRouteNavigation(event) {
+      console.log('Route navigation detected:', event.detail)
+      if (this.$route.path === '/dashboard/global-price') {
+        console.log('GlobalPriceCalculator should refresh')
+        // 可以在这里添加刷新逻辑
+        this.$forceUpdate()
+      }
+    },
+    
     // Format currency
     formatCurrency(amount, currencyCode) {
       const currency = this.currencies.find(c => c.code === currencyCode)

@@ -4,8 +4,13 @@
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
-        <router-view v-slot="{ Component }">
-          <component :is="Component" v-if="Component" />
+        <!-- 添加 key 强制组件在路由变化时重新渲染 -->
+        <router-view v-slot="{ Component, route }">
+          <component 
+            :is="Component" 
+            :key="route.fullPath"
+            v-if="Component"
+          />
           <div v-else class="loading-content">
             Loading content...
           </div>
@@ -28,7 +33,7 @@ export default {
   computed: {
     currentPageTitle() {
       const routeName = this.$route.name
-      console.log('Route name:', routeName)
+      console.log('Dashboard route name:', routeName)
       switch (routeName) {
         case 'GlobalPriceCalculator':
           return 'Global Price Calculator'
@@ -44,8 +49,32 @@ export default {
     }
   },
   mounted() {
-    console.log('Dashboard mounted')
-    console.log('Current route:', this.$route)
+    console.log('Dashboard mounted with route:', this.$route.path)
+    
+    // 监听路由变化事件
+    window.addEventListener('route-changed', this.handleRouteChange)
+  },
+  beforeUnmount() {
+    window.removeEventListener('route-changed', this.handleRouteChange)
+  },
+  methods: {
+    handleRouteChange(event) {
+      console.log('Route change event received:', event.detail)
+      // 强制更新 Dashboard 组件
+      this.$forceUpdate()
+    }
+  },
+  watch: {
+    // 深度监听路由变化
+    '$route': {
+      handler(to, from) {
+        console.log('Route changed from:', from.path, 'to:', to.path)
+        // 强制更新组件
+        this.$forceUpdate()
+      },
+      deep: true,
+      immediate: true
+    }
   }
 }
 </script>
@@ -63,5 +92,6 @@ export default {
   align-items: center;
   height: 200px;
   color: #666;
+  font-size: 1.2rem;
 }
 </style>
