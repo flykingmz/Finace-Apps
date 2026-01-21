@@ -641,7 +641,8 @@ export default {
   text-align: center;
   margin-bottom: 40px;
   padding: 20px 0;
-  border-bottom: 1px solid #1013d5;
+  border-bottom: 1px dashed #2c3e50;
+  background: #2c3e50;
 }
 
 .page-title {
@@ -1225,7 +1226,7 @@ export default {
   margin-top: 60px;
   padding-top: 40px;
   border-top: 1px solid #eaeaea;
-  background: #0a59a8;
+  background: #2c3e50;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
