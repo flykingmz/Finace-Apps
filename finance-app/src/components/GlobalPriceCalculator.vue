@@ -641,7 +641,7 @@ export default {
   text-align: center;
   margin-bottom: 40px;
   padding: 20px 0;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #1013d5;
 }
 
 .page-title {
@@ -1225,7 +1225,7 @@ export default {
   margin-top: 60px;
   padding-top: 40px;
   border-top: 1px solid #eaeaea;
-  background: #f8f9fa;
+  background: #0a59a8;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
@@ -1245,7 +1245,7 @@ export default {
 }
 
 .footer-section p {
-  color: #7f8c8d;
+  color: #eaeaea;
   line-height: 1.6;
   margin-bottom: 10px;
   font-size: 0.95rem;
