@@ -647,7 +647,7 @@ export default {
 
 .page-title {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: white;
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -1240,7 +1240,7 @@ export default {
 
 .footer-section h4 {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: white;
   margin-bottom: 15px;
   font-weight: 600;
 }
