@@ -3,9 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 // 导入组件
 import Dashboard from '@/views/Dashboard.vue'
 import CalculatorView from '@/views/CalculatorView.vue'
-import PaycheckCalculator from '@/components/PaycheckCalculator.vue'
-import GlobalPriceCalculator from '@/components/GlobalPriceCalculator.vue'
-import IncomeTaxCalculator from '@/components/IncomeTaxCalculator.vue'
+//import PaycheckCalculator from '@/components/PaycheckCalculator.vue'
+//import GlobalPriceCalculator from '@/components/GlobalPriceCalculator.vue'
+//import IncomeTaxCalculator from '@/components/IncomeTaxCalculator.vue'
 
 const routes = [
   {
