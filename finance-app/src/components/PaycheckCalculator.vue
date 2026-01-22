@@ -1317,7 +1317,7 @@ export default {
 
 .page-subtitle {
   font-size: 1.1rem;
-  color: white;
+  color: #7f8c8d;
   max-width: 600px;
   margin: 0 auto;
 }
