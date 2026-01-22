@@ -56,18 +56,24 @@ html, body {
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 60px; /* 稍微调大一些 */
+  height: 60px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 28px;
   color: white;
-  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
 }
+.sidebar:hover .logo {
+  transform: rotate(5deg);
+  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -76,11 +82,12 @@ html, body {
 
 .sidebar-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
   opacity: 1;
   transition: opacity 0.3s;
-  flex-shrink: 0;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
 .sidebar.collapsed .sidebar-title {
@@ -91,7 +98,7 @@ html, body {
 
 .sidebar-nav {
   flex: 1;
-  padding: 20px 0;
+  padding: 25px 0 20px 0; /* 增加上边距 */
   overflow-y: auto;
   overflow-x: hidden;
 }
