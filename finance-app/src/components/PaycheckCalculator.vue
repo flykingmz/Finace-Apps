@@ -1133,6 +1133,7 @@ export default {
     
     // Main calculation function
     calculatePaycheck() {
+      console.log('calculatePaycheck method called')
       // Calculate annual gross income
       const annualGrossIncome = this.calculateGrossPay()
       
