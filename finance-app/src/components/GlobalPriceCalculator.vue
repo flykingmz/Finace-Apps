@@ -248,6 +248,7 @@
           <h4>About This Tool</h4>
           <p>This calculator helps you estimate the final price of products including country-specific taxes and platform fees.</p>
         </div>
+        <!--
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
@@ -257,6 +258,7 @@
             <li><a href="#">VAT Calculator</a></li>
           </ul>
         </div>
+        -->
         <div class="footer-section">
           <h4>Data Statement</h4>
           <p>Tax rates are based on the latest available data and may vary by region within each country.</p>

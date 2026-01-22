@@ -521,6 +521,7 @@
           <p><strong>Tax Year:</strong> {{ taxData.tax_year }}</p>
           <p>Rates are updated annually based on official publications.</p>
         </div>
+       <!--
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
@@ -530,6 +531,7 @@
             <li><a href="#">State Tax Calculators</a></li>
           </ul>
         </div>
+        -->
         <div class="footer-section">
           <h4>Contact & Feedback</h4>
           <p>Need help or have suggestions for improvement?</p>
