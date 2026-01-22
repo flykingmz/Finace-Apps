@@ -7,8 +7,10 @@
     
     <!-- Sidebar Header -->
     <div class="sidebar-header">
-      <div class="logo">F</div>
-      <div class="sidebar-title">Finance Apps</div>
+      <div class="logo-container">
+        <div class="logo">F</div>
+      </div>
+      <div class="sidebar-title">Finance Free Apps</div>
     </div>
     
     <!-- Navigation -->

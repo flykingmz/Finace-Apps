@@ -68,6 +68,11 @@ html, body {
   color: white;
   flex-shrink: 0;
 }
+.logo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .sidebar-title {
   font-size: 18px;
