@@ -929,7 +929,7 @@ export default {
     this.selectedState = this.states.find(state => state.code === 'CA')
     
     // Calculate initial results
-    this.calculatePaycheck()
+    // this.calculatePaycheck()
   },
   methods: {
     // Helper methods
@@ -1221,7 +1221,7 @@ export default {
       }
       
       // Show results
-      this.showResults = true
+      this.showResults = false
       
       // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' })
