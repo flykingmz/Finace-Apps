@@ -1301,19 +1301,21 @@ export default {
   text-align: center;
   margin-bottom: 40px;
   padding: 20px 0;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px dashed #2c3e50;
+  background: #2c3e50;
+  border-radius: 10px;
 }
 
 .page-title {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: white;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .page-subtitle {
   font-size: 1.1rem;
-  color: #7f8c8d;
+  color: white;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -1914,8 +1916,8 @@ export default {
 .footer {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid #eaeaea;
-  background: #f8f9fa;
+  border-top: 1px dashed #2c3e50;
+  background: #2c3e50;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
@@ -1929,7 +1931,7 @@ export default {
 
 .footer-section h4 {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: white;
   margin-bottom: 15px;
   font-weight: 600;
 }
