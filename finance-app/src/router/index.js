@@ -12,50 +12,25 @@ const routes = [
       {
         path: '',
         name: 'DashboardHome',
-        component: () => import('../components/DefaultView.vue'),
-        meta: {
-          jsonLd: {
-            type: 'WebSite',
-            name: 'Finance Apps Dashboard',
-            description: 'Financial calculators dashboard'
-          }
-        }
+        component: () => import('../components/DefaultView.vue')
       },
       {
         path: 'global-price',
         name: 'GlobalPriceCalculator',
         component: () => import('../components/GlobalPriceCalculator.vue'),
-        meta: {
-          jsonLd: {
-            type: 'WebApplication',
-            name: 'Global Price Calculator',
-            description: 'Calculate product prices with taxes and fees across different countries'
-          }
-        }
+        meta: { keepAlive: false } // 确保不缓存
       },
       {
         path: 'paycheck',
         name: 'PaycheckCalculator',
         component: () => import('../components/PaycheckCalculator.vue'),
-        meta: {
-          jsonLd: {
-            type: 'WebApplication',
-            name: 'Paycheck Calculator',
-            description: 'Calculate net pay, taxes, and deductions for salaried and hourly employees'
-          }
-        }
+        meta: { keepAlive: false }
       },
       {
         path: 'income-tax',
         name: 'IncomeTaxCalculator',
         component: () => import('../components/IncomeTaxCalculator.vue'),
-        meta: {
-          jsonLd: {
-            type: 'WebApplication',
-            name: 'Income Tax Calculator',
-            description: 'Calculate income tax based on federal and state tax brackets'
-          }
-        }
+        meta: { keepAlive: false }
       }
     ]
   }
@@ -66,57 +41,32 @@ const router = createRouter({
   routes
 })
 
-// 路由守卫 - 在每个路由变化时注入 JSON-LD
-router.afterEach((to) => {
-  // 等待组件加载完成
-  setTimeout(() => {
-    injectJsonLdForRoute(to)
-  }, 100)
+// 添加全局路由守卫
+router.beforeEach((to, from, next) => {
+  console.log('Route changing from:', from.path, 'to:', to.path)
+  
+  // 如果是相同路由，强制重新加载
+  if (to.path === from.path) {
+    console.log('Same route detected, forcing reload')
+    // 这里我们可以添加一些逻辑来强制刷新
+  }
+  
+  next()
 })
 
-function injectJsonLdForRoute(to) {
-  // 移除旧的 JSON-LD
-  const oldScripts = document.querySelectorAll('script[data-route-jsonld]')
-  oldScripts.forEach(script => script.remove())
-  
-  // 从路由 meta 获取 JSON-LD 配置
-  const jsonLdConfig = to.meta?.jsonLd
-  if (!jsonLdConfig) return
-  
-  // 创建 JSON-LD 数据
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": jsonLdConfig.type,
-    "name": jsonLdConfig.name,
-    "url": window.location.href,
-    "description": jsonLdConfig.description
-  }
-  
-  // 根据页面类型添加额外信息
-  if (jsonLdConfig.type === 'WebApplication') {
-    jsonLd.applicationCategory = 'FinanceApplication'
-    jsonLd.offers = {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  
-  // 创建并注入脚本
-  const script = document.createElement('script')
-  script.type = 'application/ld+json'
-  script.setAttribute('data-route-jsonld', 'true')
-  script.textContent = JSON.stringify(jsonLd, null, 2)
-  
-  // 确保添加到 head 的最开始位置
-  const firstScript = document.head.querySelector('script')
-  if (firstScript) {
-    document.head.insertBefore(script, firstScript)
-  } else {
-    document.head.appendChild(script)
-  }
-  
-  console.log('JSON-LD injected for route:', to.name)
-}
+// 添加路由解析守卫
+router.beforeResolve((to, from, next) => {
+  console.log('Route resolving:', to.path)
+  next()
+})
+
+// 添加路由后置守卫
+router.afterEach((to, from) => {
+  console.log('Route changed to:', to.path)
+  // 可以在这里触发一些全局事件
+  window.dispatchEvent(new CustomEvent('route-navigated', { 
+    detail: { to: to.path, from: from.path }
+  }))
+})
 
 export default router
