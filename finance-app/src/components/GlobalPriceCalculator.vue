@@ -8,7 +8,7 @@
 
     <!-- Page Title -->
     <div class="page-title-container">
-      <h1 class="page-title">Global Price Calculator</h1>
+      <h1 class="page-title">Global VAT Calculator</h1>
       <p class="page-subtitle">Calculate the final price including taxes and platform fees for any country</p>
     </div>
 

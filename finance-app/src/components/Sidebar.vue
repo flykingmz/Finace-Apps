@@ -69,7 +69,7 @@ const navigationData = [
     children: [
       {
         id: 'global-price',
-        title: 'Global Price Calculator',
+        title: 'Global VAT Calculator',
         route: '/dashboard/global-price',
         component: 'GlobalPriceCalculator'
       }
