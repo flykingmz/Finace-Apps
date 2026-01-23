@@ -4,7 +4,6 @@
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
-        <!-- 添加 key 强制组件在路由变化时重新渲染 -->
         <router-view v-slot="{ Component, route }">
           <component 
             :is="Component" 
@@ -33,7 +32,6 @@ export default {
   computed: {
     currentPageTitle() {
       const routeName = this.$route.name
-      console.log('Dashboard route name:', routeName)
       switch (routeName) {
         case 'GlobalPriceCalculator':
           return 'Global Price Calculator'
@@ -49,49 +47,83 @@ export default {
     }
   },
   mounted() {
-    console.log('Dashboard mounted with route:', this.$route.path)
-    
-    // 监听路由变化事件
-    window.addEventListener('route-changed', this.handleRouteChange)
-  },
-  beforeUnmount() {
-    window.removeEventListener('route-changed', this.handleRouteChange)
-  },
-  methods: {
-    handleRouteChange(event) {
-      console.log('Route change event received:', event.detail)
-      // 强制更新 Dashboard 组件
-      this.$forceUpdate()
-    }
+    this.injectJsonLd()
   },
   watch: {
-    // 深度监听路由变化
-    '$route': {
-      handler(to, from) {
-        console.log('Route changed from:', from.path, 'to:', to.path)
-        // 强制更新组件
-        this.$forceUpdate()
-      },
-      deep: true,
-      immediate: true
+    '$route.path': {
+      handler() {
+        this.injectJsonLd()
+      }
+    }
+  },
+  methods: {
+    injectJsonLd() {
+      // 移除旧的JSON-LD
+      const oldScripts = document.querySelectorAll('script[type="application/ld+json"]')
+      oldScripts.forEach(script => {
+        if (script.parentElement === document.head) {
+          script.remove()
+        }
+      })
+      
+      const currentRoute = this.$route.path
+      const baseUrl = window.location.origin
+      
+      let jsonLd = null
+      
+      // 根据页面生成相应的JSON-LD
+      if (currentRoute.includes('/dashboard/global-price')) {
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Global Price Calculator",
+          "url": baseUrl + currentRoute,
+          "description": "Calculate product prices with taxes and fees across different countries",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      } else if (currentRoute.includes('/dashboard/paycheck')) {
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Paycheck Calculator",
+          "url": baseUrl + currentRoute,
+          "description": "Calculate net pay, taxes, and deductions for employees",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      } else if (currentRoute.includes('/dashboard/income-tax')) {
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Income Tax Calculator",
+          "url": baseUrl + currentRoute,
+          "description": "Calculate income tax based on federal and state brackets",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      }
+      
+      // 将JSON-LD注入到head
+      if (jsonLd) {
+        const script = document.createElement('script')
+        script.type = 'application/ld+json'
+        script.textContent = JSON.stringify(jsonLd, null, 2)
+        document.head.appendChild(script)
+      }
     }
   }
 }
 </script>
-
-<style scoped>
-.layout-container {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-}
-
-.loading-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  color: #666;
-  font-size: 1.2rem;
-}
-</style>
