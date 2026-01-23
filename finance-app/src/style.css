@@ -47,12 +47,13 @@ html, body {
 }
 
 .sidebar-header {
-  padding: 20px;
+  padding: 20px 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   border-bottom: 1px solid #333;
-  min-height: 80px;
+  text-align: center;
 }
 
 .logo {
@@ -81,18 +82,18 @@ html, body {
 }
 
 .sidebar-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   white-space: nowrap;
   opacity: 1;
   transition: opacity 0.3s;
-  color: #fff;
-  letter-spacing: 0.5px;
+  width: 100%;
+  text-align: center;
 }
 
 .sidebar.collapsed .sidebar-title {
   opacity: 0;
-  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
