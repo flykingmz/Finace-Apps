@@ -34,7 +34,7 @@ export default {
       const routeName = this.$route.name
       switch (routeName) {
         case 'GlobalPriceCalculator':
-          return 'Global Price Calculator'
+          return 'Global VAT Calculator'
         case 'PaycheckCalculator':
           return 'Paycheck Calculator'
         case 'IncomeTaxCalculator':
@@ -42,7 +42,7 @@ export default {
         case 'DashboardHome':
           return 'Dashboard'
         default:
-          return 'Finance Apps'
+          return 'Taxo Finance Apps'
       }
     }
   },
@@ -76,7 +76,7 @@ export default {
         jsonLd = {
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "name": "Global Price Calculator",
+          "name": "Global VAT Calculator",
           "url": baseUrl + currentRoute,
           "description": "Calculate product prices with taxes and fees across different countries",
           "applicationCategory": "FinanceApplication",

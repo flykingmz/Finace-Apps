@@ -535,6 +535,7 @@
         <div class="footer-section">
           <h4>Contact & Feedback</h4>
           <p>Need help or have suggestions for improvement?</p>
+           <p>Email:flykingmz@gmail.com</p>
           <button class="feedback-btn" @click="sendFeedback">
             <span class="btn-icon">📧</span>
             Send Feedback
@@ -542,7 +543,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Finance Apps - Paycheck Calculator. This tool is for estimation purposes only and should not be used for official tax filings.</p>
+        <p>© 2026 Finance Apps - Paycheck Calculator. This tool is for estimation purposes only and should not be used for official tax filings.</p>
       </div>
     </div>
   </div>

@@ -267,6 +267,7 @@
         <div class="footer-section">
           <h4>Contact & Feedback</h4>
           <p>Have questions or suggestions?</p>
+          <p>Email:flykingmz@gmail.com</p>
           <button class="feedback-btn" @click="sendFeedback">
             <span class="btn-icon">📧</span>
             Send Feedback
@@ -274,7 +275,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Finance Apps - Global Price Calculator. All rights reserved.</p>
+        <p>© 2026 Taxo Finance Apps - Global VAT Calculator. All rights reserved.</p>
       </div>
     </div>
   </div>
