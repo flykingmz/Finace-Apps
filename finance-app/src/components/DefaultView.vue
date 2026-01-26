@@ -1,16 +1,16 @@
 <template>
   <div class="default-view">
-    <h1>Welcome to Finance Apps</h1>
+    <h1>Welcome to Taxo Finance Free Apps</h1>
     <p>Select a calculator from the sidebar to get started.</p>
     
     <div class="features">
       <div class="feature-card">
-        <h3>💰 Global Price Calculator</h3>
-        <p>Compare prices across different countries and currencies</p>
+        <h3>💰 Global VAT Calculator</h3>
+        <p>Brings you a free VAT calculator that helps you calculate VAT accurately regardless of the VAT rates</p>
       </div>
       <div class="feature-card">
         <h3>📊 Paycheck Calculator</h3>
-        <p>Calculate your net pay after taxes and deductions</p>
+        <p>Calculate net pay, taxes, and deductions for both salaried and hourly employees</p>
       </div>
       <div class="feature-card">
         <h3>📈 Income Tax Calculator</h3>
@@ -22,7 +22,43 @@
 
 <script>
 export default {
-  name: 'DefaultView'
+  name: 'DefaultView',
+  mounted() {
+    this.injectJsonLdToHead()
+  },
+  methods: {
+    navigateTo(calculator) {
+      this.$router.push(`/dashboard/${calculator}`)
+    },
+    
+    injectJsonLdToHead() {
+      const baseUrl = window.location.origin
+      
+      const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Taxo Finance Free Apps",
+        "url": `${baseUrl}/dashboard`,
+        "description": "Kinds of Finance Free Apps including paycheck, income tax, and global VAT calculators",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taxo Finance Free Apps"
+        }
+      }
+      
+      // 移除旧的脚本
+      const oldScript = document.querySelector('script[data-dashboard-jsonld]')
+      if (oldScript) oldScript.remove()
+      
+      // 创建并注入新脚本
+      const script = document.createElement('script')
+      script.type = 'application/ld+json'
+      script.setAttribute('data-dashboard-jsonld', 'true')
+      script.textContent = JSON.stringify(jsonLd, null, 2)
+      
+      document.head.appendChild(script)
+    }
+  }
 }
 </script>
 

@@ -8,7 +8,7 @@
     <!-- Sidebar Header -->
     <div class="sidebar-header">
         <div class="logo">F</div>
-      <div class="sidebar-title">Finance Free Apps</div>
+      <div class="sidebar-title">Taxo (Finance Free Apps) </div>
     </div>
     
     <!-- Navigation -->
