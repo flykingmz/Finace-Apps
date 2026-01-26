@@ -72,25 +72,55 @@ html, body {
 }
 
 .logo-container {
+  width: 50px;
+  height: 50px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white; /* 白色背景确保logo可见 */
 }
 
+/* Logo 图片 */
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持图片比例 */
+  padding: 8px; /* 内边距让logo看起来更舒服 */
+}
+
+/* 标题样式 */
 .sidebar-title {
   font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
   opacity: 1;
   transition: opacity 0.3s;
-  width: 100%;
-  text-align: center;
+  width: 100%; /* 占据整行 */
+  text-align: center; /* 文字居中 */
+  color: #fff;
 }
 
 .sidebar.collapsed .sidebar-title {
   opacity: 0;
   height: 0;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* 折叠状态下的样式 */
+.sidebar.collapsed .sidebar-header {
+  padding: 20px 10px;
+  gap: 0; /* 折叠时移除间距 */
+}
+.sidebar.collapsed .logo-container {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar.collapsed .logo-image {
+  padding: 6px;
 }
 
 .sidebar-nav {
