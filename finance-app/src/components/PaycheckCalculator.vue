@@ -1283,6 +1283,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none !important;
 }
 
 .ad-label {
