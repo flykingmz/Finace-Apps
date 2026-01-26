@@ -7,14 +7,7 @@
     
     <!-- Sidebar Header -->
     <div class="sidebar-header">
-        <div class="logo-container">
-        <!-- 直接使用本地图片 -->
-        <img 
-          src="/logo.png" 
-          alt="Taxo Logo" 
-          class="logo-image"
-        />
-      </div>
+         <div class="logo">F</div>
       <div class="sidebar-title">Taxo (Finance Free Apps) </div>
     </div>
     
