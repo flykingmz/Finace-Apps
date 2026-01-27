@@ -9,9 +9,10 @@
     "vercel-build": "npm run build"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "vue": "^3.2.13",
     "vue-cli-service": "^5.0.10",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vue/cli-service": "^5.0.8",

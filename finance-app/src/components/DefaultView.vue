@@ -1,4 +1,5 @@
 <template>
+  <Analytics />
   <div class="default-view">
 
     <h1>Welcome to Taxo Finance Free Apps</h1>
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+import { Analytics } from '@vercel/analytics/vue'
 export default {
   name: 'DefaultView',
   mounted() {
