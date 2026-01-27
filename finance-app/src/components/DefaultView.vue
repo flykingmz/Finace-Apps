@@ -26,8 +26,8 @@ export default {
   name: 'DefaultView',
   mounted() {
     console.log('injectJsonLdToHead script start.');
-    document.title = 'Taxo Finance Apps - Free Financial Calculators'
     this.injectJsonLdToHead()
+    document.title = 'Taxo Finance Apps - Free Financial Calculators'
   },
   methods: {
     navigateTo(calculator) {
