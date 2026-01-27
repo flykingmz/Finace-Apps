@@ -1,9 +1,5 @@
 <template>
   <div class="default-view">
-  <div style="display: none;">
-      <title>Taxo Finance Apps - Free Financial Calculators</title>
-      <meta name="description" content="Brings you free financial calculators including paycheck calculator, income tax calculator, and global price calculator">
-    </div>
 
     <h1>Welcome to Taxo Finance Free Apps</h1>
     <p>Select a calculator from the sidebar to get started.</p>
@@ -30,8 +26,13 @@ export default {
   name: 'DefaultView',
   mounted() {
     console.log('injectJsonLdToHead script start.');
+    document.title = 'Taxo Finance Apps - Free Financial Calculators'
     this.injectJsonLdToHead()
-   // document.title = 'Taxo Finance Apps - Free Financial Calculators'
+    // 延迟再次注入，确保不被覆盖
+    setTimeout(() => {
+      this.injectJsonLdToHead()
+    }, 1000)
+   
   },
   methods: {
     navigateTo(calculator) {
@@ -47,7 +48,7 @@ export default {
         "@type": "WebSite",
         "name": "Taxo Finance Free Apps",
         "url": `${baseUrl}/dashboard`,
-        "description": "Kinds of Finance Free Apps including paycheck, income tax, and global VAT calculators",
+        "description": "Finance Free Apps including paycheck, income tax, and global VAT calculators",
         "publisher": {
           "@type": "Organization",
           "name": "Taxo Finance Free Apps"
