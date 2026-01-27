@@ -27,7 +27,7 @@ export default {
   mounted() {
     console.log('injectJsonLdToHead script start.');
     this.injectJsonLdToHead()
-    document.title = 'Taxo Finance Apps - Free Financial Calculators'
+   // document.title = 'Taxo Finance Apps - Free Financial Calculators'
   },
   methods: {
     navigateTo(calculator) {
