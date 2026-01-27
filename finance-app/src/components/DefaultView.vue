@@ -43,15 +43,17 @@ export default {
        
       const baseUrl = window.location.origin
       
-      const jsonLd = {
+      const jsonLd ={
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "WebApplication",
         "name": "Taxo Finance Free Apps",
-        "url": `${baseUrl}/dashboard`,
         "description": "Finance Free Apps including paycheck, income tax, and global VAT calculators",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Taxo Finance Free Apps"
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         }
       }
       
