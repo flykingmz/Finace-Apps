@@ -29,6 +29,7 @@
 export default {
   name: 'DefaultView',
   mounted() {
+    console.log('injectJsonLdToHead script start.');
     this.injectJsonLdToHead()
   },
   methods: {
@@ -37,6 +38,7 @@ export default {
     },
     
     injectJsonLdToHead() {
+       
       const baseUrl = window.location.origin
       
       const jsonLd = {
@@ -62,6 +64,7 @@ export default {
       script.textContent = JSON.stringify(jsonLd, null, 2)
       
       document.head.appendChild(script)
+      console.log('injectJsonLdToHead script loaded.');
     }
   }
 }
