@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import { Analytics } from '@vercel/analytics/vue'
 export default {
   name: 'DefaultView',
   mounted() {
