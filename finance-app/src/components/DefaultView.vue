@@ -1,5 +1,5 @@
 <template>
-  <Analytics />
+ 
   <div class="default-view">
 
     <h1>Welcome to Taxo Finance Free Apps</h1>
