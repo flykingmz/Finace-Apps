@@ -9,7 +9,12 @@
 import { Analytics } from '@vercel/analytics/vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  
+  // 2. 注册组件
+  components: {
+    Analytics
+  }
 }
 </script>
 
