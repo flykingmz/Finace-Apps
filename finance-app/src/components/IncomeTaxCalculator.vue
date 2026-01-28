@@ -861,6 +861,11 @@ export default {
 .top-layer {
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  /* 添加以下4行代码居中展示 */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .google-ads-placeholder {
