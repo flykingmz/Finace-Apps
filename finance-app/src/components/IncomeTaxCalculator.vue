@@ -917,6 +917,8 @@ export default {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  justify-content: center;  /* 水平居中 */
+  width: 100%;              /* 确保占据整个宽度 */
 }
 
 .year-tab {
