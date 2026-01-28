@@ -865,6 +865,7 @@ export default {
 
 .google-ads-placeholder {
   margin-bottom: 20px;
+  display: none !important;
 }
 
 .ad-banner {
