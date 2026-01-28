@@ -441,15 +441,13 @@
             <h4><i class="fas fa-envelope"></i> Contact & Feedback</h4>
             <p>For feedback, suggestions, or reporting issues, please contact us at:</p>
             <ul class="contact-list">
-              <li><i class="fas fa-envelope"></i> tax.calculator@example.com</li>
-              <li><i class="fas fa-phone"></i> +91-XXXXX-XXXXX</li>
-              <li><i class="fas fa-comments"></i> Feedback Form</li>
+              <li><i class="fas fa-envelope"></i>flykingmz@gmail.com</li>
             </ul>
           </div>
         </div>
         
         <div class="footer-bottom">
-          <p>© 2024 India Income Tax Calculator. This tool is for informational purposes only.</p>
+          <p>© 2026 India Income Tax Calculator. This tool is for informational purposes only.</p>
           <p>Tax rates are based on the Finance Act 2024 and 2025 for FY 2024-2025 and 2025-2026 respectively.</p>
         </div>
       </div>
