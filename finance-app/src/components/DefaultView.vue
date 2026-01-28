@@ -26,8 +26,11 @@
 export default {
   name: 'DefaultView',
   mounted() {
-    console.log('injectJsonLdToHead script start.');
+    //console.log('injectJsonLdToHead script start.');
     document.title = 'Taxo Finance Apps - Free Financial Calculators'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+
     this.injectJsonLdToHead()
     // 延迟再次注入，确保不被覆盖
     setTimeout(() => {
@@ -38,6 +41,46 @@ export default {
   methods: {
     navigateTo(calculator) {
       this.$router.push(`/dashboard/${calculator}`)
+    },
+
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Free financial calculators for paycheck, income tax, and global price calculations. Calculate net pay, estimate taxes, compare prices worldwide.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
     },
     
     injectJsonLdToHead() {
@@ -69,7 +112,7 @@ export default {
       script.textContent = JSON.stringify(jsonLd, null, 2)
       
       document.head.appendChild(script)
-      console.log('injectJsonLdToHead script loaded.');
+      //console.log('injectJsonLdToHead script loaded.');
     }
   }
 }
