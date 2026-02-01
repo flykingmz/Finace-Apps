@@ -9,7 +9,7 @@
     <!-- Page Title -->
     <div class="page-title-container">
       <h1 class="page-title">Paycheck Calculator</h1>
-      <p class="page-subtitle">Calculate net pay, taxes, and deductions for both salaried and hourly employees</p>
+      <p class="page-subtitle">Calculate net pay, taxes, and deductions for both salaried and hourly employees in United States</p>
     </div>
 
     <!-- Main Content -->
@@ -508,6 +508,142 @@
       </div>
     </div>
 
+    <!-- 税前税后对比FAQ信息展示区域 -->
+  <div class="paycheck-info-section">
+    <div class="info-header">
+      <h3 class="info-title">Understanding Your Paycheck: Before-Tax vs. After-Tax Income</h3>
+      <p class="info-subtitle">Key differences and what you need to know about your earnings</p>
+    </div>
+    
+    <div class="comparison-section">
+      <div class="comparison-column">
+        <div class="comparison-card">
+          <div class="card-header before-tax">
+            <h4 class="card-title">Before-Tax Income (Gross Pay)</h4>
+          </div>
+          <div class="card-content">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-icon">📊</span>
+                <span class="feature-text">Raw income figure before deductions</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">🏠</span>
+                <span class="feature-text">Used for mortgage applications and loan approvals</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">💰</span>
+                <span class="feature-text">Determines federal and state tax brackets</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">📈</span>
+                <span class="feature-text">Standard figure for salary comparisons</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comparison-column">
+        <div class="comparison-card">
+          <div class="card-header after-tax">
+            <h4 class="card-title">After-Tax Income (Net Pay)</h4>
+          </div>
+          <div class="card-content">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-icon">💳</span>
+                <span class="feature-text">Actual amount disbursed to your bank account</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">🏦</span>
+                <span class="feature-text">Practical figure for personal budgeting</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">📅</span>
+                <span class="feature-text">Used to calculate monthly rent and living expenses</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-icon">🎯</span>
+                <span class="feature-text">Also called disposable or take-home income</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="key-points">
+      <div class="point-card">
+        <h5 class="point-title">Pay Frequency Explained</h5>
+        <div class="point-content">
+          <p>Pay frequency affects when you receive your paycheck, not your total annual income.</p>
+          <div class="frequency-grid">
+            <div class="frequency-item">
+              <span class="frequency-type">Bi-weekly</span>
+              <span class="frequency-desc">26 paychecks/year (every 2 weeks)</span>
+            </div>
+            <div class="frequency-item">
+              <span class="frequency-type">Semi-monthly</span>
+              <span class="frequency-desc">24 paychecks/year (twice a month)</span>
+            </div>
+            <div class="frequency-item">
+              <span class="frequency-type">Monthly</span>
+              <span class="frequency-desc">12 paychecks/year (most common for salaries)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="point-card">
+        <h5 class="point-title">Tax Deductions Overview</h5>
+        <div class="point-content">
+          <div class="deduction-category">
+            <strong>Pretax Deductions:</strong> 401(k), health insurance, HSA, child support
+          </div>
+          <div class="deduction-category">
+            <strong>Other Deductions:</strong> IRA contributions, student loan interest
+          </div>
+          <div class="deduction-category">
+            <strong>Itemized Deductions:</strong> Mortgage interest, charitable donations, medical expenses
+          </div>
+          <div class="deduction-category">
+            <strong>Standard Deduction (2026):</strong> $16,100 (Single) / $32,200 (Married)
+          </div>
+        </div>
+      </div>
+      
+      <div class="point-card">
+        <h5 class="point-title">Tax Components</h5>
+        <div class="point-content">
+          <div class="tax-item">
+            <span class="tax-name">Federal Income Tax</span>
+            <span class="tax-rate">Progressive rates up to 37%</span>
+          </div>
+          <div class="tax-item">
+            <span class="tax-name">State Income Tax</span>
+            <span class="tax-rate">Varies by state (0-13.3%)</span>
+          </div>
+          <div class="tax-item">
+            <span class="tax-name">FICA (Social Security)</span>
+            <span class="tax-rate">6.20% up to $184,500</span>
+          </div>
+          <div class="tax-item">
+            <span class="tax-name">Medicare</span>
+            <span class="tax-rate">1.45% (extra 0.45% above thresholds)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="calculator-note">
+      <div class="note-icon">💡</div>
+      <div class="note-content">
+        <p><strong>Important:</strong> Enter your <em>before-tax</em> annual income in "Your Annual Income (Salary)" and the calculator will show your <em>after-tax</em> "Final Paycheck" amount including all deductions.</p>
+      </div>
+    </div>
+  </div>
+    
     <!-- Footer -->
     <div class="footer">
       <div class="footer-content">
@@ -2056,6 +2192,283 @@ export default {
   .results-container {
     box-shadow: none;
     border: none;
+  }
+}
+  /* 信息展示区域样式 */
+.paycheck-info-section {
+  background-color: #f8fafc;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.info-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #4f46e5;
+}
+
+.info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.info-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* 对比区域样式 */
+.comparison-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.comparison-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  padding: 1.25rem;
+  color: white;
+}
+
+.card-header.before-tax {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.card-header.after-tax {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #475569;
+}
+
+/* 关键点样式 */
+.key-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.point-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.point-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.point-content {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.frequency-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.frequency-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.frequency-type {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.frequency-desc {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.deduction-category {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.deduction-category:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tax-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.tax-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tax-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.tax-rate {
+  color: #3b82f6;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* 计算器说明样式 */
+.calculator-note {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  border-left: 4px solid #f59e0b;
+}
+
+.note-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.note-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.note-content strong {
+  color: #78350f;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .paycheck-info-section {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .info-title {
+    font-size: 1.4rem;
+  }
+  
+  .comparison-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .key-points {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-note {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .note-icon {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paycheck-info-section {
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  
+  .card-header {
+    padding: 1rem;
+  }
+  
+  .card-content {
+    padding: 1.25rem;
+  }
+  
+  .point-card {
+    padding: 1.25rem;
   }
 }
 </style>
