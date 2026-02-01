@@ -29,7 +29,7 @@
         <!-- Mortgage and Real Estate -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Mortgage and Real Estate</h2>
+            <h2 class="category-title">Mortgage and Real Estate（TBC）</h2>
             <div class="category-count">16 tools</div>
           </div>
           <div class="tools-list">
@@ -55,7 +55,7 @@
         <!-- Retirement -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Retirement</h2>
+            <h2 class="category-title">Retirement（TBC）</h2>
             <div class="category-count">9 tools</div>
           </div>
           <div class="tools-list">
@@ -74,7 +74,7 @@
       <!-- Investment -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Investment</h2>
+            <h2 class="category-title">Investment（TBC）</h2>
             <div class="category-count">3 tools</div>
           </div>
           <div class="tools-list">
@@ -89,7 +89,7 @@
         <!-- Auto -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Auto</h2>
+            <h2 class="category-title">Auto（TBC）</h2>
             <div class="category-count">3 tools</div>
           </div>
           <div class="tools-list">
@@ -102,7 +102,7 @@
         <!-- Other -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Other</h2>
+            <h2 class="category-title">Other（TBC）</h2>
             <div class="category-count">17 tools</div>
           </div>
           <div class="tools-list">
