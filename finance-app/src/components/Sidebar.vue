@@ -62,7 +62,7 @@
 const navigationData = [
   {
     id: 'finance',
-    title: 'Finance',
+    title: 'Tax and Salary',
     icon: '💰',
     expanded: true,
     active: true,
@@ -72,27 +72,102 @@ const navigationData = [
         title: 'Global VAT Calculator',
         route: '/dashboard/global-price',
         component: 'GlobalPriceCalculator'
-      }
-    ]
-  },
-  {
-    id: 'payroll',
-    title: 'Payroll',
-    icon: '📊',
-    expanded: false,
-    active: false,
-    children: [
-      {
-        id: 'paycheck',
-        title: 'Paycheck Calculator',
-        route: '/dashboard/paycheck',
-        component: 'PaycheckCalculator'
       },
       {
         id: 'income-tax',
         title: 'Income Tax Calculator',
         route: '/dashboard/income-tax',
         component: 'IncomeTaxCalculator'
+      },
+      {
+        id: 'paycheck',
+        title: 'Paycheck Calculator',
+        route: '/dashboard/paycheck',
+        component: 'PaycheckCalculator'
+      }
+    ]
+  },
+  {
+    id: 'payroll',
+    title: 'Mortgage and Real Estate',
+    icon: '📊',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'mortgage-ca',
+        title: 'Mortgage Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'amortization-ca',
+        title: 'Amortization Calculator',
+        route: '',
+        component: ''
+      }
+    ]
+  },
+  {
+    id: 'retirement',
+    title: 'Retirement',
+    icon: '👵',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'retirement-ca',
+        title: 'Retirement Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: '401K-ca',
+        title: '401K Calculator',
+        route: '',
+        component: ''
+      }
+    ]
+  },
+  {
+    id: 'auto',
+    title: 'Auto',
+    icon: '🧾',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'autoloan-ca',
+        title: 'Auto Loan Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'cashback-ca',
+        title: 'Cash Back or Low Interest Calculator',
+        route: '',
+        component: ''
+      }
+    ]
+  },
+  {
+    id: 'other',
+    title: 'Other',
+    icon: '📈',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'loan-ca',
+        title: 'Loan Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'currency-ca',
+        title: 'Currency Calculator',
+        route: '',
+        component: ''
       }
     ]
   }
