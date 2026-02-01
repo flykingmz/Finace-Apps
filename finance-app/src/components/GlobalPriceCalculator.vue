@@ -257,7 +257,7 @@
     
     <div class="vat-comparison-section">
       <div class="comparison-column">
-        <h4 class="comparison-title">VAT</h4>
+        <h4 class="comparison-title">VAT (Value-Added Tax)</h4>
         <ul class="comparison-list">
           <li class="comparison-item">Applied at each stage of production and distribution</li>
           <li class="comparison-item">Paid by businesses at each stage of the supply chain</li>
@@ -278,6 +278,17 @@
         </ul>
       </div>
     </div>
+
+    <div class="comparison-column">
+        <h4 class="comparison-title">GST (Goods and Services Tax)</h4>
+        <ul class="comparison-list">
+          <li class="comparison-item">Applied at national level with uniform rates across the country</li>
+          <li class="comparison-item">Input tax credit system allows businesses to claim back GST paid on purchases</li>
+          <li class="comparison-item">Dual GST system in some countries (CGST + SGST for intra-state transactions)</li>
+          <li class="comparison-item">Simplified tax structure with fewer tax slabs (often 0%, 5%, 12%, 18%, 28%)</li>
+          <li class="comparison-item">Extensive digital infrastructure for GST filing and compliance</li>
+        </ul>
+      </div>
     
     <div class="vat-footnote">
       <p><strong>Note:</strong> A GST, or goods and services tax, can be the alternative name of VAT in some countries such as Australia and Canada. In addition, the terms are commonly used interchangeably (sometimes even with "sales tax"), even though GST and VAT in their respective countries can differ tremendously. No country has both a GST and a VAT.</p>
