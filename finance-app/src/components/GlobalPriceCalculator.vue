@@ -8,8 +8,8 @@
 
     <!-- Page Title -->
     <div class="page-title-container">
-      <h1 class="page-title">Global VAT Calculator</h1>
-      <p class="page-subtitle">Calculate the final price including taxes and platform fees for any country</p>
+      <h1 class="page-title">Global VAT/GST/Sales Tax Calculator</h1>
+      <p class="page-subtitle">Calculate the final price including VAT/GST/Sales Tax and platform fees for any country</p>
     </div>
 
     <!-- Main Calculator Section -->
@@ -243,6 +243,47 @@
       </div>
     </div>
 
+    <!-- VAT FAQ信息展示区域 -->
+  <div class="vat-info-section">
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">What is VAT?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p>VAT (value-added tax) is a type of indirect consumption tax imposed on the value added to goods or services, specifically during different stages of the supply chain, which may include production, wholesale, distribution, supply, or any other stages that add value to a product.</p>
+      
+      <p>VAT is commonly used by governments around the world as one of their main sources of revenue, and accounts for approximately 20 percent of worldwide tax revenue. It is the most common consumption tax in the world and is enforced in more than 160 countries. All countries that are part of the European Union (EU) are legally required to enforce a minimum VAT rate, and since its introduction in the 20th century, European VAT rates have consistently increased. The U.S. is the only developed country in the world that doesn't use VAT.</p>
+    </div>
+    
+    <div class="vat-comparison-section">
+      <div class="comparison-column">
+        <h4 class="comparison-title">VAT</h4>
+        <ul class="comparison-list">
+          <li class="comparison-item">Applied at each stage of production and distribution</li>
+          <li class="comparison-item">Paid by businesses at each stage of the supply chain</li>
+          <li class="comparison-item">Ultimate burden falls on the final consumer</li>
+          <li class="comparison-item">Common in over 160 countries worldwide</li>
+          <li class="comparison-item">Used throughout the European Union</li>
+        </ul>
+      </div>
+      
+      <div class="comparison-column">
+        <h4 class="comparison-title">Sales Tax</h4>
+        <ul class="comparison-list">
+          <li class="comparison-item">Applied only at the final point of sale to consumers</li>
+          <li class="comparison-item">Paid directly by the consumer at purchase</li>
+          <li class="comparison-item">Businesses collect but do not pay the tax</li>
+          <li class="comparison-item">Common in the United States and some other countries</li>
+          <li class="comparison-item">Rate varies by state and locality in the U.S.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="vat-footnote">
+      <p><strong>Note:</strong> A GST, or goods and services tax, can be the alternative name of VAT in some countries such as Australia and Canada. In addition, the terms are commonly used interchangeably (sometimes even with "sales tax"), even though GST and VAT in their respective countries can differ tremendously. No country has both a GST and a VAT.</p>
+    </div>
+  </div>
+    
     <!-- Footer -->
     <div class="footer">
       <div class="footer-content">
@@ -1358,6 +1399,145 @@ export default {
   .footer-content {
     grid-template-columns: 1fr;
     padding: 0 20px 30px;
+  }
+}
+
+  /* VAT信息展示区域样式 */
+.vat-info-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vat-info-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #4a6ee0;
+}
+
+.vat-info-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.vat-info-content {
+  margin-bottom: 2rem;
+}
+
+.vat-info-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.vat-info-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* VAT对比区域样式 */
+.vat-comparison-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.comparison-column {
+  padding: 0.5rem;
+}
+
+.comparison-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.comparison-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.comparison-item {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #495057;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.comparison-item:before {
+  content: "•";
+  color: #4a6ee0;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.comparison-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 脚注样式 */
+.vat-footnote {
+  background-color: #e8f4fd;
+  border-left: 4px solid #4a6ee0;
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+}
+
+.vat-footnote p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #495057;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .vat-info-section {
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .vat-comparison-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+  
+  .vat-info-title {
+    font-size: 1.3rem;
+  }
+  
+  .comparison-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vat-info-section {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .vat-comparison-section {
+    padding: 1rem;
   }
 }
 </style>
