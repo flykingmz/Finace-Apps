@@ -277,9 +277,8 @@
           <li class="comparison-item">Rate varies by state and locality in the U.S.</li>
         </ul>
       </div>
-    </div>
 
-    <div class="comparison-column">
+      <div class="comparison-column">
         <h4 class="comparison-title">GST (Goods and Services Tax)</h4>
         <ul class="comparison-list">
           <li class="comparison-item">Applied at national level with uniform rates across the country</li>
@@ -289,6 +288,7 @@
           <li class="comparison-item">Extensive digital infrastructure for GST filing and compliance</li>
         </ul>
       </div>
+    </div>
     
     <div class="vat-footnote">
       <p><strong>Note:</strong> A GST, or goods and services tax, can be the alternative name of VAT in some countries such as Australia and Canada. In addition, the terms are commonly used interchangeably (sometimes even with "sales tax"), even though GST and VAT in their respective countries can differ tremendously. No country has both a GST and a VAT.</p>
