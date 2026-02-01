@@ -296,7 +296,7 @@
     </div>
     
     <div class="vat-footnote">
-      <p><strong>Note:</strong> A GST, or goods and services tax, can be the alternative name of VAT in some countries such as Australia and Canada. In addition, the terms are commonly used interchangeably (sometimes even with "sales tax"), even though GST and VAT in their respective countries can differ tremendously. No country has both a GST and a VAT.</p>
+      <p><strong>Note:</strong> VAT (Value Added Tax) and GST (Goods and Services Tax) are multi-stage consumption taxes applied at every stage of production and distribution, allowing businesses to claim input tax credits to avoid cascading, with VAT used in Europe and many countries, and GST being a regional naming variant in countries like India, Australia, and New Zealand. In contrast, Sales Tax is a single-stage tax applied only at the point of final sale to consumers, does not allow input tax credits, and is commonly used in the United States at the state and local level.</p>
     </div>
   </div>
     
