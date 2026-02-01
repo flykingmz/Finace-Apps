@@ -20,9 +20,9 @@
             <div class="category-count">5 tools</div>
           </div>
           <div class="tools-list">
-            <a href="/dashboard/global-price" class="tool-link">Global VAT Calculator</a>
-            <a href="/dashboard/income-tax" class="tool-link">Income Tax Calculator</a>
-            <a href="/dashboard/paycheck" class="tool-link">Paycheck Calculator</a>
+            <a href="/a/global-price" class="tool-link">Global VAT Calculator</a>
+            <a href="/a/income-tax" class="tool-link">Income Tax Calculator</a>
+            <a href="/a/paycheck" class="tool-link">Paycheck Calculator</a>
           </div>
         </div>
 
