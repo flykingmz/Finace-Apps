@@ -69,6 +69,7 @@
                     <span class="country-flag">📍</span>
                     <span class="country-name">{{ country.country }}</span>
                     <span class="tax-rate">{{ formatTaxRate(country.rate) }}</span>
+                    <span class="tax-type">{{ country.type }}</span>
                   </div>
                 </div>
               </div>
@@ -284,50 +285,62 @@
 <script>
 const taxData = {
   "Europe": [
-    {"country": "Austria", "chineseName": "奥地利", "rate": "20"},
-    {"country": "Belgium", "chineseName": "比利时", "rate": "21"},
-    {"country": "Bulgaria", "chineseName": "保加利亚", "rate": "20"},
-    {"country": "Croatia", "chineseName": "克罗地亚", "rate": "25"},
-    {"country": "Czech Republic", "chineseName": "捷克", "rate": "21"},
-    {"country": "Denmark", "chineseName": "丹麦", "rate": "25"},
-    {"country": "France", "chineseName": "法国", "rate": "20"},
-    {"country": "Germany", "chineseName": "德国", "rate": "19"},
-    {"country": "Hungary", "chineseName": "匈牙利", "rate": "27"},
-    {"country": "Ireland", "chineseName": "爱尔兰", "rate": "23"},
-    {"country": "Italy", "chineseName": "意大利", "rate": "22"},
-    {"country": "Netherlands", "chineseName": "荷兰", "rate": "21"},
-    {"country": "Norway", "chineseName": "挪威", "rate": "25"},
-    {"country": "Spain", "chineseName": "西班牙", "rate": "21"},
-    {"country": "Sweden", "chineseName": "瑞典", "rate": "25"},
-    {"country": "United Kingdom", "chineseName": "英国", "rate": "20"}
+    {"country": "Austria", "chineseName": "奥地利", "rate": "20", "type": "VAT"},
+    {"country": "Belgium", "chineseName": "比利时", "rate": "21", "type": "VAT"},
+    {"country": "Bulgaria", "chineseName": "保加利亚", "rate": "20", "type": "VAT"},
+    {"country": "Croatia", "chineseName": "克罗地亚", "rate": "25", "type": "VAT"},
+    {"country": "Czech Republic", "chineseName": "捷克", "rate": "21", "type": "VAT"},
+    {"country": "Denmark", "chineseName": "丹麦", "rate": "25", "type": "VAT"},
+    {"country": "France", "chineseName": "法国", "rate": "20", "type": "VAT"},
+    {"country": "Germany", "chineseName": "德国", "rate": "19", "type": "VAT"},
+    {"country": "Hungary", "chineseName": "匈牙利", "rate": "27", "type": "VAT"},
+    {"country": "Ireland", "chineseName": "爱尔兰", "rate": "23", "type": "VAT"},
+    {"country": "Italy", "chineseName": "意大利", "rate": "22", "type": "VAT"},
+    {"country": "Netherlands", "chineseName": "荷兰", "rate": "21", "type": "VAT"},
+    {"country": "Norway", "chineseName": "挪威", "rate": "25", "type": "VAT"},
+    {"country": "Spain", "chineseName": "西班牙", "rate": "21", "type": "VAT"},
+    {"country": "Sweden", "chineseName": "瑞典", "rate": "25", "type": "VAT"},
+    {"country": "United Kingdom", "chineseName": "英国", "rate": "20", "type": "VAT"}
   ],
   "Asia": [
-    {"country": "China", "chineseName": "中国", "rate": "13"},
-    {"country": "India", "chineseName": "印度", "rate": "18"},
-    {"country": "Indonesia", "chineseName": "印度尼西亚", "rate": "10"},
-    {"country": "Japan", "chineseName": "日本", "rate": "10"},
-    {"country": "Singapore", "chineseName": "新加坡", "rate": "7"},
-    {"country": "Thailand", "chineseName": "泰国", "rate": "7"}
+    {"country": "China", "chineseName": "中国", "rate": "13", "type": "VAT"},
+    {"country": "India", "chineseName": "印度", "rate": "18", "type": "GST"},
+    {"country": "Indonesia", "chineseName": "印度尼西亚", "rate": "10", "type": "VAT"},
+    {"country": "Japan", "chineseName": "日本", "rate": "10", "type": "VAT"},
+    {"country": "Singapore", "chineseName": "新加坡", "rate": "7", "type": "GST"},
+    {"country": "Thailand", "chineseName": "泰国", "rate": "7", "type": "VAT"},
+    {"country": "South Korea", "chineseName": "韩国", "rate": "10", "type": "VAT"},
+    {"country": "New Zealand", "chineseName": "新西兰", "rate": "15", "type": "GST"},
+    {"country": "Australia", "chineseName": "澳大利亚", "rate": "10", "type": "GST"}
   ],
   "AfricaAndMiddleEast": [
-    {"country": "South Africa", "chineseName": "南非", "rate": "15"},
-    {"country": "Kenya", "chineseName": "肯尼亚", "rate": "16"},
-    {"country": "Nigeria", "chineseName": "尼日利亚", "rate": "7.5"},
-    {"country": "Saudi Arabia", "chineseName": "沙特", "rate": "15"},
-    {"country": "United Arab Emirates", "chineseName": "阿联酋", "rate": "5"}
+    {"country": "South Africa", "chineseName": "南非", "rate": "15", "type": "VAT"},
+    {"country": "Kenya", "chineseName": "肯尼亚", "rate": "16", "type": "VAT"},
+    {"country": "Nigeria", "chineseName": "尼日利亚", "rate": "7.5", "type": "VAT"},
+    {"country": "Saudi Arabia", "chineseName": "沙特", "rate": "15", "type": "VAT"},
+    {"country": "United Arab Emirates", "chineseName": "阿联酋", "rate": "5", "type": "VAT"}
   ],
   "Americas": [
-    {"country": "Canada", "chineseName": "加拿大", "rate": "13"},
-    {"country": "Mexico", "chineseName": "墨西哥", "rate": "16"},
-    {"country": "United States", "chineseName": "美国", "rate": "8"},
-    {"country": "Panama", "chineseName": "巴拿马", "rate": "7"}
+    {"country": "Canada", "chineseName": "加拿大", "rate": "13", "type": "GST / HST"},
+    {"country": "Mexico", "chineseName": "墨西哥", "rate": "16", "type": "VAT"},
+    {"country": "United States", "chineseName": "美国", "rate": "8", "type": "Sales Tax"},
+    {"country": "Panama", "chineseName": "巴拿马", "rate": "21", "type": "VAT"},
+    {"country": "Argentina", "chineseName": "阿根廷", "rate": "7", "type": "VAT"},
+    {"country": "Bolivia", "chineseName": "玻利维亚", "rate": "13", "type": "GST"},
+    {"country": "Brazil", "chineseName": "巴西", "rate": "17", "type": "ICMS"},
+    {"country": "Chile", "chineseName": "智利", "rate": "19", "type": "VAT"},
+    {"country": "Colombia", "chineseName": "哥伦比亚", "rate": "19", "type": "VAT"},
+    {"country": "Ecuador", "chineseName": "厄瓜多尔", "rate": "12", "type": "VAT"},
+    {"country": "Paraguay", "chineseName": "巴拉圭", "rate": "10", "type": "GST/VAT"},
+    {"country": "Peru", "chineseName": "秘鲁", "rate": "10", "type": "VAT/GST"},
+    {"country": "Uruguay", "chineseName": "乌拉圭", "rate": "22", "type": "GST/VAT"}
   ],
   "ZeroRateOrOther": [
-    {"country": "Hong Kong", "chineseName": "香港", "rate": "0"},
-    {"country": "Kuwait", "chineseName": "科威特", "rate": "0"},
-    {"country": "Qatar", "chineseName": "卡塔尔", "rate": "0"},
-    {"country": "Brunei", "chineseName": "文莱", "rate": "0"},
-    {"country": "Bhutan", "chineseName": "不丹", "rate": "0"}
+    {"country": "Hong Kong", "chineseName": "香港", "rate": "0", "type": "No Sales Tax"},
+    {"country": "Kuwait", "chineseName": "科威特", "rate": "0", "type": "No Sales Tax"},
+    {"country": "Qatar", "chineseName": "卡塔尔", "rate": "0", "type": "No Sales Tax"},
+    {"country": "Brunei", "chineseName": "文莱", "rate": "0", "type": "No Sales Tax"},
+    {"country": "Bhutan", "chineseName": "不丹", "rate": "7", "type": "VAT"}
   ]
 }
 
@@ -823,7 +836,14 @@ export default {
   font-size: 0.85rem;
   font-weight: 600;
 }
-
+.tax-type {
+  background: #f8f9fa;
+  color: #1976d2;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 .selected-country {
   margin-top: 15px;
   padding: 15px;
