@@ -79,6 +79,7 @@
                 <span class="flag">📍</span>
                 <span class="name">{{ selectedCountry.country }}</span>
                 <span class="tax">Tax Rate: {{ formatTaxRate(selectedCountry.rate) }}</span>
+                 <span class="tax">Type: {{ country.type }}</span>
               </div>
             </div>
           </div>
