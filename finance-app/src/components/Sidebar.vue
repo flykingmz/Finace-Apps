@@ -72,19 +72,19 @@ const navigationData = [
       {
         id: 'global-price',
         title: 'Global VAT Calculator',
-        route: '/dashboard/global-price',
+        route: '/global-price',
         component: 'GlobalPriceCalculator'
       },
       {
         id: 'income-tax',
         title: 'Income Tax Calculator',
-        route: '/dashboard/income-tax',
+        route: '/income-tax',
         component: 'IncomeTaxCalculator'
       },
       {
         id: 'paycheck',
         title: 'Paycheck Calculator',
-        route: '/dashboard/paycheck',
+        route: '/paycheck',
         component: 'PaycheckCalculator'
       }
     ]
