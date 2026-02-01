@@ -253,6 +253,11 @@
       <p>VAT (value-added tax) is a type of indirect consumption tax imposed on the value added to goods or services, specifically during different stages of the supply chain, which may include production, wholesale, distribution, supply, or any other stages that add value to a product.</p>
       
       <p>VAT is commonly used by governments around the world as one of their main sources of revenue, and accounts for approximately 20 percent of worldwide tax revenue. It is the most common consumption tax in the world and is enforced in more than 160 countries. All countries that are part of the European Union (EU) are legally required to enforce a minimum VAT rate, and since its introduction in the 20th century, European VAT rates have consistently increased. The U.S. is the only developed country in the world that doesn't use VAT.</p>
+
+      <p> GST (Goods and Services Tax)  is a value-added consumption tax levied on the supply of goods and services at each stage of the production and distribution chain. It is ultimately borne by the end consumer, while businesses can generally claim credits for the GST paid on their inputs.</p>
+
+      <p>Sales Tax is a consumption tax charged only at the point of final sale of goods or services to the end consumer. Unlike VAT or GST, it is not collected at intermediate stages of production or distribution, and there is generally no input tax credit for businesses.</p>
+    
     </div>
     
     <div class="vat-comparison-section">
