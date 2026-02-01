@@ -71,6 +71,21 @@
           </div>
         </div>
 
+      <!-- Investment -->
+        <div class="category-card">
+          <div class="category-header">
+            <h2 class="category-title">Investment</h2>
+            <div class="category-count">3 tools</div>
+          </div>
+          <div class="tools-list">
+            <a href="#" class="tool-link">Interest Calculator</a>
+            <a href="#" class="tool-link">Investment Calculator</a>
+            <a href="#" class="tool-link">Finance Calculator</a>
+            <a href="#" class="tool-link">Compound Interest Calculator</a>
+            <a href="#" class="tool-link">Interest Rate Calculator</a>
+          </div>
+        </div>
+
         <!-- Auto -->
         <div class="category-card">
           <div class="category-header">

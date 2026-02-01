@@ -5,11 +5,13 @@
       {{ isCollapsed ? '→' : '←' }}
     </div>
     
-    <!-- Sidebar Header -->
-    <div class="sidebar-header">
-         <div class="logo">F</div>
-      <div class="sidebar-title">Taxo (Finance Free Apps) </div>
+   <!-- Sidebar Header -->
+  <div class="sidebar-header">
+    <div class="logo">
+      <img src="/logo.png" alt="Taxo Logo" class="logo-image">
     </div>
+    <div class="sidebar-title">Taxo Financial Free Calculators</div>
+  </div>
     
     <!-- Navigation -->
     <div class="sidebar-nav">
