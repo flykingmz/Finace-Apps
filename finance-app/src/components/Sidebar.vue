@@ -132,6 +132,33 @@ const navigationData = [
     ]
   },
   {
+    id: 'investment',
+    title: 'Investment',
+    icon: '💵',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'interest-ca',
+        title: 'Interest Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'investment-ca',
+        title: 'Investment Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'finance-ca',
+        title: 'Finance Calculator',
+        route: '',
+        component: ''
+      }
+    ]
+  },
+  {
     id: 'auto',
     title: 'Auto',
     icon: '🧾',
