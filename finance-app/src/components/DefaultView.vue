@@ -13,6 +13,19 @@
     <main class="home-body">
       <!-- 分类导航 -->
       <div class="category-grid">
+        <!-- Tax and Salary -->
+        <div class="category-card">
+          <div class="category-header">
+            <h2 class="category-title">Tax and Salary</h2>
+            <div class="category-count">5 tools</div>
+          </div>
+          <div class="tools-list">
+            <a href="/dashboard/global-price" class="tool-link">Global VAT Calculator</a>
+            <a href="/dashboard/income-tax" class="tool-link">Income Tax Calculator</a>
+            <a href="/dashboard/paycheck" class="tool-link">Paycheck Calculator</a>
+          </div>
+        </div>
+
         <!-- Mortgage and Real Estate -->
         <div class="category-card">
           <div class="category-header">
@@ -55,21 +68,6 @@
             <a href="#" class="tool-link">Roth IRA Calculator</a>
             <a href="#" class="tool-link">IRA Calculator</a>
             <a href="#" class="tool-link">RMD Calculator</a>
-          </div>
-        </div>
-
-        <!-- Tax and Salary -->
-        <div class="category-card">
-          <div class="category-header">
-            <h2 class="category-title">Tax and Salary</h2>
-            <div class="category-count">5 tools</div>
-          </div>
-          <div class="tools-list">
-            <a href="#" class="tool-link">Income Tax Calculator</a>
-            <a href="#" class="tool-link">Salary Calculator</a>
-            <a href="#" class="tool-link">Marriage Tax Calculator</a>
-            <a href="#" class="tool-link">Estate Tax Calculator</a>
-            <a href="#" class="tool-link">Take-Home-Paycheck Calculator</a>
           </div>
         </div>
 
