@@ -57,8 +57,8 @@ html, body {
 }
 
 .logo {
-   width: 40px;
-  height: 40px;
+   width: 400px;
+  height: 400px;
   margin-right: 0.75rem;
   flex-shrink: 0;
 }
@@ -83,7 +83,7 @@ html, body {
   transition: opacity 0.3s;
   width: 100%;
   text-align: center;
-  color: #1f2937;
+  color: white;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
