@@ -8,7 +8,7 @@
    <!-- Sidebar Header -->
   <div class="sidebar-header">
     <div class="logo">
-      <img src="/logo.png" alt="Taxo Logo" class="logo-image">
+      <img src="/logo.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
     </div>
     <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
   </div>
