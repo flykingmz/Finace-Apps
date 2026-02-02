@@ -132,7 +132,7 @@ export default {
   name: 'DefaultView',
   mounted() {
     //console.log('injectJsonLdToHead script start.');
-    document.title = 'Taxo Finance Apps - Free Financial Calculators'
+    document.title = 'Taxo Financial Free Calculators'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
