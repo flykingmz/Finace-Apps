@@ -11,6 +11,14 @@
   
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   
+  <!-- 1. 自身域名（最重要） -->
+  <link rel="preconnect" href="https://finace-apps-one.vercel.app" crossorigin>
+
+  <!-- 预加载CSS（关键！） -->
+  <link rel="preload" href="css/app.ddf3acff.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/app.ddf3acff.css"></noscript>
+  
+  
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Taxo - Free Financial Calculators">
   <meta property="og:description" content="Calculate paycheck, income tax, and global prices with our easy-to-use financial calculators.">
