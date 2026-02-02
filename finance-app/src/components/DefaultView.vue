@@ -195,8 +195,8 @@ export default {
       const jsonLd ={
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Taxo Finance Free Apps",
-        "description": "Finance Free Apps including paycheck, income tax, and global VAT calculators",
+        "name": "Taxo Financial Free Calculators",
+        "description": "Finance Free Calculators including paycheck, income tax, and global VAT calculators,Tax and Salary calculators,Mortgage and Real Estate calculators、Retirement calculators、Investment calculators、loan calculators etc.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
         "offers": {
