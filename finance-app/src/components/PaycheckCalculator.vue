@@ -658,6 +658,36 @@
           </div>
         </div>
       </div>
+
+      <div class="point-card">
+        <h5 class="point-title">Marriage Tax</h5>
+        <div class="point-content">
+          <div class="deduction-category">
+            <strong>Marriage and Tax Complexity:</strong> Tax laws generally become more complex after marriage. Marriage can create tax-saving opportunities, especially for single-income households or couples with a large income gap, but it may increase taxes for some dual-income couples.
+          </div>
+          <div class="deduction-category">
+            <strong>Benefits of Filing Jointly:</strong> Most married couples choose to file jointly because it often provides access to tax benefits unavailable to single filers, such as earned income credits, education credits, student loan interest deductions, and credits for the elderly or disabled.
+          </div>
+          <div class="deduction-category">
+            <strong>Lower Tax Brackets with Income Disparity:</strong> Filing jointly is usually advantageous when one spouse earns significantly more than the other, as combined income may fall into a lower tax bracket.
+          </div>
+          <div class="deduction-category">
+            <strong>Spousal IRA Eligibility:</strong> Joint filing allows a non-working or stay-at-home spouse to contribute to a spousal IRA, even without earned income.
+          </div>
+          <div class="deduction-category">
+            <strong>Estate Tax Advantages:</strong> Federal tax law allows assets to transfer to a surviving spouse without triggering federal estate taxes, helping protect family wealth.
+          </div>
+          <div class="deduction-category">
+            <strong>Married Filing Separately (Limited Use):</strong> Filing separately is available but rarely beneficial, so most couples still choose to file jointly.
+          </div>
+          <div class="deduction-category">
+            <strong>The Marriage Penalty:</strong> Some married couples—especially high-earning dual-income households—may pay more in taxes than if they were single, due to higher tax brackets or loss of eligibility for certain tax credits.
+          </div>
+          <div class="deduction-category">
+            <strong>Overall Impact of Marriage on Taxes:</strong> Single-income marriages typically benefit from joint filing, while dual-income couples may face marriage penalties. Short-term tax costs can exist, but long-term tax benefits are still possible depending on circumstances.
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="calculator-note">
