@@ -670,6 +670,8 @@ export default {
   font-family: Arial, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 10px; /* 添加移动端内边距 */
+  box-sizing: border-box;
 }
 
 /* Ads Section */
@@ -692,20 +694,20 @@ export default {
 .calculator-header {
   background-color: #2c3e50;
   color: white;
-  padding: 30px 20px;
   text-align: center;
-  border-radius: 8px 8px 0 0;
+  padding: 20px 15px; /* 减少内边距 */
+  border-radius: 8px;
 }
 
 .calculator-header h1 {
-  margin: 0 0 10px 0;
-  font-size: 2.5rem;
+  font-size: 1.8rem; /* 移动端更小的字号 */
+  margin: 0 0 8px 0;
 }
 
 .calculator-header p {
   margin: 0;
   opacity: 0.9;
-  font-size: 1.1rem;
+  font-size: 0.9rem; /* 移动端更小的字号 */
 }
 
 /* Main Content */
@@ -738,16 +740,16 @@ export default {
 }
 
 .savings-comparison {
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 .bar-container {
-  height: 40px;
   background-color: #e74c3c;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
   margin-bottom: 10px;
+  height: 35px; /* 移动端更小的高度 */
 }
 
 .current-savings-bar {
@@ -764,9 +766,14 @@ export default {
 }
 
 .bar-label {
+  font-size: 0.8rem; /* 更小的字体 */
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .needed-savings-bar {
@@ -819,12 +826,15 @@ export default {
   width: 100%;
   border-collapse: collapse;
   margin: 15px 0 25px 0;
+  display: block;
+  overflow-x: auto;
 }
 
 .income-table th, .income-table td {
-  padding: 12px;
   text-align: left;
   border: 1px solid #ddd;
+  padding: 10px 8px;
+  min-width: 120px; /* 确保最小宽度 */
 }
 
 .income-table th {
@@ -863,18 +873,20 @@ export default {
 
 .graph-placeholder {
   background-color: #f5f5f5;
-  padding: 30px;
   text-align: center;
   border-radius: 6px;
-  margin: 20px 0;
   border: 1px dashed #ccc;
+  padding: 20px 15px;
+  margin: 15px 0;
 }
 
 .graph-legends {
   display: flex;
   justify-content: center;
-  gap: 30px;
   margin-top: 20px;
+  flex-direction: column; /* 移动端垂直排列图例 */
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .graph-legend {
@@ -928,20 +940,20 @@ export default {
 .balance-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
-  min-width: 800px;
+  font-size: 0.8rem;
+  min-width: 600px; /* 移动端更小的最小宽度 */
 }
 
 .balance-table th {
   background-color: #2c3e50;
   color: white;
-  padding: 12px 8px;
+  padding: 8px 5px;
   text-align: center;
   border: 1px solid #34495e;
 }
 
 .balance-table td {
-  padding: 10px 8px;
+  padding: 8px 5px;
   border: 1px solid #ddd;
   text-align: right;
 }
@@ -975,15 +987,17 @@ export default {
 }
 
 .form-row {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  flex-direction: column; /* 移动端改为垂直布局 */
+  gap: 15px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .form-group label {
@@ -993,12 +1007,12 @@ export default {
 }
 
 .form-group input {
-  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
+  font-size: 16px; /* 防止iOS自动缩放 */
+  padding: 10px;
 }
 
 .input-with-unit {
@@ -1028,19 +1042,21 @@ export default {
 
 .form-actions {
   display: flex;
-  gap: 15px;
   margin-top: 30px;
+  flex-direction: column; /* 移动端垂直排列按钮 */
+  gap: 10px;
 }
 
 .btn-calculate,
 .btn-clear {
-  padding: 14px 28px;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%; /* 全宽按钮 */
+  padding: 12px 20px;
 }
 
 .btn-calculate {
@@ -1063,16 +1079,17 @@ export default {
 
 /* FAQ Section */
 .faq-section {
-  margin-top: 40px;
-  padding: 30px;
   background-color: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #e9ecef;
+  padding: 20px 15px;
+  margin-top: 30px;
 }
 
 .faq-section h2 {
   color: #2c3e50;
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .faq-section h3 {
@@ -1080,40 +1097,45 @@ export default {
   margin-top: 25px;
   border-left: 4px solid #3498db;
   padding-left: 10px;
+  font-size: 1.2rem;
+  padding-left: 8px;
 }
 
 .faq-section p {
-  line-height: 1.6;
   margin-bottom: 15px;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Footer Section */
 .calculator-footer {
   background-color: #2c3e50;
   color: white;
-  padding: 40px 20px;
-  margin-top: 40px;
   border-radius: 0 0 8px 8px;
+  padding: 30px 15px;
+  margin-top: 30px;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  grid-template-columns: 1fr; /* 移动端单列布局 */
+  gap: 20px;
 }
 
 .footer-section h4 {
   color: #3498db;
   margin-top: 0;
   margin-bottom: 15px;
+  font-size: 1rem;
 }
 
 .footer-section p {
   line-height: 1.6;
   opacity: 0.9;
   margin: 0;
+  font-size: 0.85rem;
 }
 
 /* Responsive Design */
@@ -1161,15 +1183,18 @@ export default {
 }
 
 .details-toggle-link {
-  font-size: 0.9rem;
   color: #3498db;
   text-decoration: none;
   font-weight: normal;
   cursor: pointer;
-  padding: 5px 10px;
   border: 1px solid #3498db;
   border-radius: 4px;
   transition: all 0.3s;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-left: 10px;
+  min-height: 44px; /* 苹果推荐的最小触摸目标 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .details-toggle-link:hover {
@@ -1179,12 +1204,94 @@ export default {
 
 /* 确保表格容器有滚动效果 */
 .balance-table-container {
-  overflow-x: auto;
-  margin-top: 20px;
-  max-height: 500px;
+  overflow-x: scroll;
+  margin-top: 15px;
+  max-height: 400px;
   overflow-y: auto;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
+  -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
+}
+
+/* 平板设备（768px以下） */
+@media (max-width: 768px) {
+  .calculator-main {
+    padding: 15px;
+  }
+  
+  .results-section {
+    padding: 20px 15px;
+  }
+  
+  .savings-plan-section {
+    padding: 15px;
+  }
+  
+  .balance-by-age-section h3 {
+    flex-direction: column; /* 标题和链接垂直排列 */
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* 手机设备（480px以下） */
+@media (max-width: 480px) {
+  .calculator-header {
+    padding: 15px 10px;
+  }
+  
+  .calculator-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .calculator-header p {
+    font-size: 0.8rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .input-with-unit .unit {
+    font-size: 0.8rem;
+    right: 8px;
+  }
+  
+  .assumptions-section,
+  .optional-section {
+    padding: 15px 10px;
+  }
+  
+  .results-summary p {
+    font-size: 1rem;
+  }
+}
+/* 横屏模式优化 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .balance-table-container {
+    max-height: 250px;
+  }
+  
+  .calculator-main {
+    padding: 10px;
+  }
+}
+
+/* 使用rem单位，根元素设置 */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
 }
 </style>
