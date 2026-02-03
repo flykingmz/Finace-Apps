@@ -120,7 +120,15 @@
             </div>
           </div>
 
-          <div class="balance-table-container">
+          <!-- 添加显示/隐藏按钮 -->
+          <div class="details-toggle">
+            <button @click="showDetails = !showDetails" class="toggle-btn">
+              {{ showDetails ? 'Hide details' : 'Show details' }}
+            </button>
+          </div>
+
+          <!-- 表格容器，默认隐藏 -->
+          <div v-if="showDetails" class="balance-table-container">
             <table class="balance-table">
               <thead>
                 <tr>
@@ -478,7 +486,10 @@ export default {
       projectedYears: [],
       
       // Control ads display
-      showAds: false
+      showAds: false,
+      
+      // 新增：控制是否显示详细表格
+      showDetails: false
     }
   },
   computed: {
@@ -526,6 +537,8 @@ export default {
       this.generateProjectedYears();
       
       this.showResults = true;
+      // 重置显示状态，每次计算后默认不显示详细表格
+      this.showDetails = false;
     },
     
     calculateCurrentSavingsProjection() {
@@ -579,7 +592,8 @@ export default {
       let currentAnnualContribution = currentIncome * (this.futureRetirementSavings / 100);
       let targetAnnualContribution = this.requiredYearlySavings;
       
-      for (let year = 0; year <= Math.min(5, this.workingYears); year++) {
+      // 修改：生成从当前年龄到退休年龄的所有年份
+      for (let year = 0; year <= this.workingYears; year++) {
         const age = currentAge + year;
         
         // Calculate for current plan
@@ -626,15 +640,16 @@ export default {
       this.retirementAge = 67;
       this.lifeExpectancy = 85;
       this.currentIncome = 70000;
-      this.incomeIncrease = 3;
-      this.retirementIncomeNeeded = 75;
-      this.investmentReturn = 6;
-      this.inflationRate = 3;
-      this.otherIncome = 0;
-      this.currentRetirementSavings = 30000;
-      this.futureRetirementSavings = 10;
+      this.incomeIncrease: 3,
+      this.retirementIncomeNeeded: 75,
+      this.investmentReturn: 6,
+      this.inflationRate: 3,
+      this.otherIncome: 0,
+      this.currentRetirementSavings: 30000,
+      this.futureRetirementSavings: 10,
       
       this.showResults = false;
+      this.showDetails = false;
     },
     
     formatCurrency(value) {
@@ -881,15 +896,39 @@ export default {
   background-color: #2ecc71;
 }
 
+/* 新增：显示/隐藏按钮样式 */
+.details-toggle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.toggle-btn {
+  padding: 10px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #2980b9;
+}
+
 .balance-table-container {
   overflow-x: auto;
   margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .balance-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  min-width: 800px;
 }
 
 .balance-table th {
