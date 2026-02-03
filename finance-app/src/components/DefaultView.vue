@@ -55,11 +55,11 @@
         <!-- Retirement -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Retirement（TBC）</h2>
+            <h2 class="category-title">Retirement</h2>
             <div class="category-count">9 tools</div>
           </div>
           <div class="tools-list">
-            <a href="#" class="tool-link">Retirement Calculator</a>
+            <a href="#/a/retirement" class="tool-link">Retirement Calculator</a>
             <a href="#" class="tool-link">401K Calculator</a>
             <a href="#" class="tool-link">Pension Calculator</a>
             <a href="#" class="tool-link">Social Security Calculator</a>

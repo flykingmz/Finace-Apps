@@ -31,6 +31,12 @@ const routes = [
         name: 'IncomeTaxCalculator',
         component: () => import('../components/IncomeTaxCalculator.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'retirement',
+        name: 'RetirementCalculator',
+        component: () => import('../components/RetirementCalculator.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

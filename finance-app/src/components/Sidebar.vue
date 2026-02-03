@@ -120,8 +120,8 @@ const navigationData = [
       {
         id: 'retirement-ca',
         title: 'Retirement Calculator',
-        route: '',
-        component: ''
+        route: '/a/retirement',
+        component: 'RetirementCalculator'
       },
       {
         id: '401K-ca',
