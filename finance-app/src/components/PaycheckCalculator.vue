@@ -634,6 +634,30 @@
           </div>
         </div>
       </div>
+
+      <div class="point-card">
+        <h5 class="point-title">How to Increase a Take Home Paycheck？</h5>
+        <div class="point-content">
+          <div class="deduction-category">
+            <strong>Salary Increase or Change Jobs:</strong> Request a raise, promotion, or bonus if your performance exceeds expectations or the company has improved due to your contributions. If internal raises aren’t possible, switching employers often results in the largest pay increases.
+          </div>
+          <div class="deduction-category">
+            <strong>Reevaluate Payroll Deductions:</strong> Review insurance and benefit choices (health, dental, life, disability) to reduce unnecessary costs, such as overpaying for coverage you may not need.
+          </div>
+          <div class="deduction-category">
+            <strong>Use a Flexible Spending Account (FSA):</strong> Contribute pre-tax income to an FSA to lower taxable income and effectively increase take-home pay for qualified future expenses.
+          </div>
+          <div class="deduction-category">
+            <strong>Work Overtime (If Eligible):</strong> Non-exempt employees can earn more by working over 40 hours per week, typically paid at 1.5× the regular hourly rate or higher.
+          </div>
+          <div class="deduction-category">
+            <strong>Cash Out Unused PTO:</strong> If allowed by the employer, convert unused paid time off into cash to boost your paycheck.
+          </div>
+          <div class="deduction-category">
+            <strong>Temporarily Reduce or Pause 401(k) Contributions:</strong> In short-term financial strain, pausing retirement contributions can increase take-home pay, while still considering contributing enough to receive any employer match.
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="calculator-note">
