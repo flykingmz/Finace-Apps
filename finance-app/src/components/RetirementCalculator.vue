@@ -380,7 +380,7 @@ Future proceeds from Social Security are only loosely based on past income level
 
        <h3>Pensions, 401(k)s, Individual Retirement Accounts (IRA), and Other Savings Plans</h3>
     
-       <h4>401(k), 403(b), 457 Plan<h4>
+       <h4>401(k), 403(b), 457 Plan</h4>
         <p>In the U.S., two of the most popular ways to save for retirement include Employer Matching Programs such as the 401(k) and their offshoot, the 403(b) (nonprofit, religious organizations, school districts, governmental organizations). 401(k)s vary from company to company, but many employers offer a matching contribution up to a certain percentage of the gross income of the employee. For example, an employer may match up to 3% of an employee's contribution to their 401(k); if this employee earned $60,000, the employer would contribute a maximum of $1,800 to the employee's 401(k) that year. Only 6% of companies that offer 401(k)s don't make some sort of employer contribution. It is generally recommended to at least contribute the maximum amount that an employer will match.<br>
 
 Employer matching program contributions are made using pre-tax dollars. Funds are essentially allowed to grow tax-free until distributed. Only distributions are taxed as ordinary income in retirement, during which retirees most likely fall within a lower tax bracket. Please visit our 401K Calculator for more information about 401(k)s.</p>
