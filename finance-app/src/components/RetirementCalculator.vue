@@ -353,6 +353,61 @@
         
         <h3>10% Rule</h3>
         <p>This rule suggests that a person save 10% to 15% of their pre-tax income per year during their working years. For instance, a person who makes $50,000 a year would put away anywhere from $5,000 to $7,500 for that year. Roughly speaking, by saving 10% starting at age 25, a $1 million nest egg by the time of retirement is possible.</p>
+      
+        <h3>80% Rule</h3>
+        <p>Another popular rule suggests that an income of 70% to 80% of a worker's pre-retirement income can maintain a retiree's standard of living after retirement. For example, if a person made roughly $100,000 a year on average during his working life, this person can have a similar standard of living with $70,000 - $80,000 a year of income after retirement. This 70% - 80% figure can vary greatly depending on how people envision their retirements. Some retirees want to sail a yacht around the world, while others want to live in a simple cabin in the woods.</p>
+      
+      <h3>4% Rule</h3>
+        <p>People who have a good estimate of how much they will require a year in retirement can divide this number by 4% to determine the nest egg required to enable their lifestyle. For instance, if a retiree estimates they need $100,000 a year, according to the 4% rule, the nest egg required is $100,000 / 4% = $2.5 million.
+
+Some experts claim that savings of 15 to 25 times of a person's current annual income are enough to last them throughout their retirement. Of course, there are other ways to determine how much to save for retirement. The calculations here can be helpful, as can many other retirement calculators out there. It also can be helpful to speak with licensed professionals who help people plan their retirements.</p>
+      
+      <h3>Impact of Inflation on Retirement Savings</h3>
+        <p>Inflation is the general increase in prices and a fall in the purchasing power of money over time. The average inflation rate in the United States for the past 30 years has been around 2.6% per year, which means that the purchasing power of one dollar now is not only less than one dollar 30 years ago but less than 50 cents! Inflation is one of the reasons why people tend to underestimate how much they need to save for retirement.
+
+Although inflation does have an impact on retirement savings, it is unpredictable and mostly out of a person's control. As a result, people generally do not center their retirement planning or investments around inflation and instead focus mainly on achieving as large and steady a total return on investment as possible. For people interested in mitigating inflation, there are investments in the U.S. that are specifically designed to counter inflation called Treasury Inflation-Protected Securities (TIPs) and similar investments in other countries that go by different names. Also, gold and other commodities are traditionally favored as protection against inflation, as are dividend-paying stocks as opposed to short-term bonds.
+
+Our Retirement Calculator can help by considering inflation in several calculations. Please visit the Inflation Calculator for more information about inflation or to do calculations involving inflation.</p>
+    
+    <h2>Common Sources of Retirement Funds</h2>
+        <p>People in the U.S. generally rely on the following sources for financial support after retirement.</p>
+
+      <h3>Social Security</h3>
+        <p>Social Security is a social insurance program run by the government to provide protection against poverty, old age, and disability. People in the U.S. who have contributed to the Federal Insurance Contributions Act (FICA) tax as withholdings from payroll will receive some of their income in the form of Social Security benefits during retirement. In the U.S., Social Security was designed to replace approximately 40% of a person's working income. Yet, approximately one-third of the working population and 50% of retirees expect Social Security to be their major source of income after retirement.
+
+Future proceeds from Social Security are only loosely based on past income levels. For example, a person earning $20,000 per year would receive approximately $800 per month in benefits. A person earning $100,000 per year would receive around $2,000 per month in benefits. As can be seen, while a person who earns more does receive more in benefits as their income increases, the increase in benefits is not proportional. What this translates to is that low income-earners have more to gain from their initial investments into Social Security relative to higher-income earners. For more information or to do calculations involving Social Security, please visit our Social Security Calculator.</p>
+
+       <h3>Pensions, 401(k)s, Individual Retirement Accounts (IRA), and Other Savings Plans</h3>
+    
+       <h4>401(k), 403(b), 457 Plan<h4>
+        <p>In the U.S., two of the most popular ways to save for retirement include Employer Matching Programs such as the 401(k) and their offshoot, the 403(b) (nonprofit, religious organizations, school districts, governmental organizations). 401(k)s vary from company to company, but many employers offer a matching contribution up to a certain percentage of the gross income of the employee. For example, an employer may match up to 3% of an employee's contribution to their 401(k); if this employee earned $60,000, the employer would contribute a maximum of $1,800 to the employee's 401(k) that year. Only 6% of companies that offer 401(k)s don't make some sort of employer contribution. It is generally recommended to at least contribute the maximum amount that an employer will match.
+
+Employer matching program contributions are made using pre-tax dollars. Funds are essentially allowed to grow tax-free until distributed. Only distributions are taxed as ordinary income in retirement, during which retirees most likely fall within a lower tax bracket. Please visit our 401K Calculator for more information about 401(k)s.</p>
+
+       <h4>IRA and Roth IRA</h4>
+        <p>In the U.S., the traditional IRA (Individual Retirement Account) and Roth IRA are also popular forms of retirement savings. Just like 401(k)s and other employer matching programs, there are specific tax shields in place that make them both appealing. The big difference between traditional IRAs and Roth IRAs is when taxation is applied. The former's contributions go in pre-tax (usually taken from gross pay, very similar to 401(k)s) but are taxed upon withdrawal. In contrast, Roth IRA contributions are deposited using after-tax dollars and are not taxed when withdrawn during retirement. For more information about traditional IRAs or Roth IRAs, please visit our IRA Calculator or Roth IRA Calculator.</p>
+
+       <h4>Pension Plans</h4>
+        <p>Pension plans are retirement funds that employers pool together and manage for their employees until they retire. Most public servants in the United States are covered by pension programs rather than Social Security. Some private employers may also provide pension benefits. Upon retirement, each employee can then choose to have fixed payouts from their share of the pension pot or sell them as a lump sum to an insurance company. They can then choose to receive income in the form of an annuity.
+
+In the U.S., pension plans were a popular form of saving for retirement in the past, but they have since fallen out of favor, largely due to increasing longevity; there are fewer workers for each retired person. However, they can still be found in the public sector or traditional corporations.
+
+For more information about or to do calculations involving pensions, please visit the Pension Calculator.</p>
+
+       <h4>Investments and CDs</h4>
+        <p>In the U.S., while pensions, 401(k)s, and IRAs are great ways to save for retirement due to their tax benefits, they all have annual investment limits that can vary based on income or other factors. In general, investments are used as a method to grow wealth, but people who have maxed out their tax-advantaged retirement plans and are searching for other places to put retirement funds can also use investments in order to reach their retirement goals.
+
+Examples of typical investments in the U.S. include mutual funds, index funds, individual stocks, real estate properties, bonds, commodities such as gold, and Certificates of Deposit (CDs). While these are some of the most popular, the list of potential investments as a way to grow wealth for retirement is much, much longer.
+
+Some funds offer a relatively steady rate of growth over time, while individual stocks tend to be volatile. Gold and other commodities tend to fluctuate depending on economic conditions, and so does real estate. Comparatively, CDs and fixed income investments have low returns but make good options for those who seek low-risk, steady income, and are approaching or in retirement. All investments have different levels of risk and reward, and it is up to each individual to decide what is best for them. Tax-advantaged retirement accounts listed above will most likely use these same investments in their portfolios, with the addition of the tax benefits.
+
+For more information or to do calculations involving investments, please visit the Investment Calculator.</p>
+         
+         <h4>Personal Savings</h4>
+        <p>What may seem like the most obvious way to save for retirement is through personal savings such as checking, savings, or money market accounts; after all, it is the first place where surplus disposable income accumulates for most people before something is done with it. However, it may not exactly be the best method to save for retirement over the long term, mainly due to inflation. In the U.S., personal savings such as cash, checking accounts, savings accounts, or other forms of liquid assets normally offer little or no interest. With income tax accounted for, the returns rarely beat inflation.
+
+That's not to say that there aren't certain benefits to having some savings in a readily available form in the case of an emergency. Emergency funds are an important part of healthy personal finance arrangements that can eventually be contributed to a retirement fund if not used.</p>
+         
       </section>
     </main>
 
