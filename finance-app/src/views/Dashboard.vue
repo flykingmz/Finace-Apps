@@ -31,6 +31,8 @@ export default {
   },
   computed: {
     currentPageTitle() {
+      return ''
+      /*
       const routeName = this.$route.name
       switch (routeName) {
         case 'GlobalPriceCalculator':
@@ -44,6 +46,7 @@ export default {
         default:
           return 'Taxo Finance Apps'
       }
+      */
     }
   },
   mounted() {
