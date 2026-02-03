@@ -90,27 +90,6 @@ const navigationData = [
     ]
   },
   {
-    id: 'payroll',
-    title: 'Mortgage and Real Estate',
-    icon: '📊',
-    expanded: false,
-    active: false,
-    children: [
-      {
-        id: 'mortgage-ca',
-        title: 'Mortgage Calculator',
-        route: '',
-        component: ''
-      },
-      {
-        id: 'amortization-ca',
-        title: 'Amortization Calculator',
-        route: '',
-        component: ''
-      }
-    ]
-  },
-  {
     id: 'retirement',
     title: 'Retirement',
     icon: '👵',
@@ -126,6 +105,27 @@ const navigationData = [
       {
         id: '401K-ca',
         title: '401K Calculator',
+        route: '',
+        component: ''
+      }
+    ]
+  },
+  {
+    id: 'payroll',
+    title: 'Mortgage and Real Estate',
+    icon: '📊',
+    expanded: false,
+    active: false,
+    children: [
+      {
+        id: 'mortgage-ca',
+        title: 'Mortgage Calculator',
+        route: '',
+        component: ''
+      },
+      {
+        id: 'amortization-ca',
+        title: 'Amortization Calculator',
         route: '',
         component: ''
       }

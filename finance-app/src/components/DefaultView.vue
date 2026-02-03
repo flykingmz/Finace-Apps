@@ -15,7 +15,7 @@
       <div class="category-grid">
         <!-- Tax and Salary -->
         <div class="category-card">
-          <div class="category-header">
+          <div class="category-header-active">
             <h2 class="category-title">Tax and Salary</h2>
             <div class="category-count">5 tools</div>
           </div>
@@ -23,6 +23,25 @@
             <a href="#/a/global-price" class="tool-link">Global VAT Calculator</a>
             <a href="#/a/income-tax" class="tool-link">Income Tax Calculator</a>
             <a href="#/a/paycheck" class="tool-link">Paycheck Calculator</a>
+          </div>
+        </div>
+
+        <!-- Retirement -->
+        <div class="category-card">
+          <div class="category-header-active">
+            <h2 class="category-title">Retirement</h2>
+            <div class="category-count">9 tools</div>
+          </div>
+          <div class="tools-list">
+            <a href="#/a/retirement" class="tool-link">Retirement Calculator</a>
+            <a href="#" class="tool-link">401K Calculator</a>
+            <a href="#" class="tool-link">Pension Calculator</a>
+            <a href="#" class="tool-link">Social Security Calculator</a>
+            <a href="#" class="tool-link">Annuity Calculator</a>
+            <a href="#" class="tool-link">Annuity Payout Calculator</a>
+            <a href="#" class="tool-link">Roth IRA Calculator</a>
+            <a href="#" class="tool-link">IRA Calculator</a>
+            <a href="#" class="tool-link">RMD Calculator</a>
           </div>
         </div>
 
@@ -52,24 +71,7 @@
           </div>
         </div>
 
-        <!-- Retirement -->
-        <div class="category-card">
-          <div class="category-header">
-            <h2 class="category-title">Retirement</h2>
-            <div class="category-count">9 tools</div>
-          </div>
-          <div class="tools-list">
-            <a href="#/a/retirement" class="tool-link">Retirement Calculator</a>
-            <a href="#" class="tool-link">401K Calculator</a>
-            <a href="#" class="tool-link">Pension Calculator</a>
-            <a href="#" class="tool-link">Social Security Calculator</a>
-            <a href="#" class="tool-link">Annuity Calculator</a>
-            <a href="#" class="tool-link">Annuity Payout Calculator</a>
-            <a href="#" class="tool-link">Roth IRA Calculator</a>
-            <a href="#" class="tool-link">IRA Calculator</a>
-            <a href="#" class="tool-link">RMD Calculator</a>
-          </div>
-        </div>
+       
 
       <!-- Investment -->
         <div class="category-card">
@@ -291,6 +293,15 @@ export default {
 
 .category-header {
   background-color: #2d3748;
+  color: white;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-header-active {
+  background-color: #0f9805;
   color: white;
   padding: 1.2rem 1.5rem;
   display: flex;
