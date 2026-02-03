@@ -103,7 +103,11 @@
         </div>
 
         <div class="balance-by-age-section">
-          <h3>Balance by age</h3>
+          <h3>Balance by age
+          <a href="javascript:void(0)" @click="toggleDetails" class="details-toggle-link">
+            {{ showDetails ? 'Hide details' : 'Show details' }}
+          </a>
+          </h3>
           <div class="graph-placeholder">
             <p>[Graph Placeholder]</p>
             <p><strong>Y-axis:</strong> Year End Balance</p>
@@ -118,13 +122,6 @@
                 <span>If saved ${{ formatCurrency(retirementNeed) }}</span>
               </div>
             </div>
-          </div>
-
-          <!-- 添加显示/隐藏按钮 -->
-          <div class="details-toggle">
-            <button @click="showDetails = !showDetails" class="toggle-btn">
-              {{ showDetails ? 'Hide details' : 'Show details' }}
-            </button>
           </div>
 
           <!-- 表格容器，默认隐藏 -->
@@ -541,6 +538,10 @@ export default {
       this.showDetails = false;
     },
     
+    toggleDetails() {
+    this.showDetails = !this.showDetails;
+   },
+
     calculateCurrentSavingsProjection() {
       let savings = this.currentRetirementSavings;
       let annualContribution = this.currentIncome * (this.futureRetirementSavings / 100);
@@ -1148,5 +1149,42 @@ export default {
   .btn-clear {
     width: 100%;
   }
+}
+/* 在style部分添加 */
+.balance-by-age-section h3 {
+  color: #2c3e50;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-toggle-link {
+  font-size: 0.9rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.details-toggle-link:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* 确保表格容器有滚动效果 */
+.balance-table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
 }
 </style>
