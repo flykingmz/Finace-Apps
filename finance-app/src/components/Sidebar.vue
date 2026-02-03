@@ -2,19 +2,25 @@
   <div :class="['sidebar', isCollapsed ? 'collapsed' : 'expanded']">
     <!-- Toggle Button -->
     <div class="toggle-btn" @click="toggleSidebar">
-      {{ isCollapsed ? '→' : '←' }}
+      {{ isCollapsed ? '➡️' : '⬅️' }}
     </div>
     
-   <!-- Sidebar Header -->
-  <div class="sidebar-header">
-    <div class="logo">
-      <img src="/logo.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
+    <!-- Sidebar Header - 在折叠时只显示logo -->
+    <div class="sidebar-header" v-if="!isCollapsed">
+      <div class="logo">
+        <img src="/logo.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
+      </div>
+      <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
     </div>
-    <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
-  </div>
+    <!-- 折叠时显示小logo -->
+    <div class="sidebar-header-collapsed" v-else>
+      <div class="logo-collapsed">
+        <img src="/logo.png" alt="Taxo Logo" class="logo-image-collapsed">
+      </div>
+    </div>
     
-    <!-- Navigation -->
-    <div class="sidebar-nav">
+    <!-- Navigation - 未折叠时才显示 -->
+    <div class="sidebar-nav" v-if="!isCollapsed">
       <template v-for="nav in navigation" :key="nav.id">
         <div 
           :class="['nav-item', nav.expanded ? 'expanded' : '', nav.active ? 'active' : '']"
@@ -45,8 +51,8 @@
       </template>
     </div>
     
-    <!-- Sidebar Footer -->
-    <div class="sidebar-footer">
+    <!-- Sidebar Footer - 未折叠时才显示 -->
+    <div class="sidebar-footer" v-if="!isCollapsed">
       <div class="footer-title">Spread the word</div>
       <div class="social-icons">
         <div class="social-icon" @click="shareOnTwitter">
@@ -207,13 +213,22 @@ export default {
   data() {
     return {
       isCollapsed: false,
+      isMobile: false,
       navigation: JSON.parse(JSON.stringify(navigationData)),
       activeSubNav: 'global-price'
     }
   },
   mounted() {
     console.log('Sidebar mounted')
+    this.checkMobile()
     this.updateActiveNav()
+    
+    // 监听窗口大小变化
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeUnmount() {
+    // 移除事件监听
+    window.removeEventListener('resize', this.handleResize)
   },
   watch: {
     '$route.path': {
@@ -225,11 +240,55 @@ export default {
     }
   },
   methods: {
+    checkMobile() {
+      // 检测是否为移动端（宽度小于768px）
+      this.isMobile = window.innerWidth < 768
+      // 如果是移动端，默认收起侧边栏
+      if (this.isMobile) {
+        this.isCollapsed = true
+      }
+    },
+    handleResize() {
+      const wasMobile = this.isMobile
+      this.checkMobile()
+      
+      // 如果从桌面端切换到移动端，自动收起
+      if (!wasMobile && this.isMobile) {
+        this.isCollapsed = true
+      }
+      // 如果从移动端切换到桌面端，自动展开
+      else if (wasMobile && !this.isMobile) {
+        this.isCollapsed = false
+      }
+    },
     toggleSidebar() {
+      // 切换侧边栏状态
       this.isCollapsed = !this.isCollapsed
+      
+      // 如果展开侧边栏，确保第一个导航项是展开状态
+      if (!this.isCollapsed) {
+        // 重置所有导航项状态
+        this.navigation.forEach((nav, index) => {
+          nav.expanded = index === 0 // 只展开第一个
+          nav.active = index === 0
+        })
+      }
     },
     toggleNav(navItem) {
       console.log('Toggle nav:', navItem.id)
+      
+      // 如果侧边栏是收起的，先展开侧边栏
+      if (this.isCollapsed) {
+        this.isCollapsed = false
+        // 等待侧边栏展开动画完成后再切换导航
+        setTimeout(() => {
+          this._toggleNavInternal(navItem)
+        }, 300)
+      } else {
+        this._toggleNavInternal(navItem)
+      }
+    },
+    _toggleNavInternal(navItem) {
       this.navigation.forEach(nav => {
         if (nav.id === navItem.id) {
           nav.expanded = !nav.expanded
@@ -242,6 +301,11 @@ export default {
     },
     navigateTo(child) {
       console.log('Navigating to:', child.route, 'Current route:', this.$route.path)
+      
+      // 在移动端，点击子导航后自动收起侧边栏
+      if (this.isMobile) {
+        this.isCollapsed = true
+      }
       
       // 强制导航，即使路由相同也要刷新
       if (this.$route.path === child.route) {
@@ -321,3 +385,84 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* 添加一些响应式样式 */
+.sidebar {
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.expanded {
+  width: 250px;
+}
+
+.sidebar-header-collapsed {
+  padding: 10px;
+  text-align: center;
+}
+
+.logo-image-collapsed {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* 移动端优化 */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar.expanded {
+    width: 250px;
+  }
+  
+  /* 在移动端展开时，添加遮罩层效果 */
+  .sidebar.expanded::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+  }
+}
+
+/* 平板设备 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  
+  .sidebar.expanded {
+    width: 220px;
+  }
+}
+
+/* 桌面端 */
+@media (min-width: 1025px) {
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .sidebar.expanded {
+    width: 250px;
+  }
+}
+</style>

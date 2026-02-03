@@ -843,11 +843,13 @@ export default {
 </script>
 
 <style scoped>
-/* 基础样式 */
+/* 移动端优先的响应式样式 */
 .income-tax-calculator {
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .dark-bg {
@@ -857,77 +859,105 @@ export default {
 
 /* 第一层：标题和广告 */
 .top-layer {
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  /* 添加以下4行代码居中展示 */
+  padding: clamp(1rem, 4vw, 20px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .google-ads-placeholder {
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 4vw, 20px);
   display: none !important;
 }
 
 .ad-banner {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
-  padding: 15px;
+  border-radius: clamp(6px, 2vw, 8px);
+  padding: clamp(0.75rem, 3vw, 15px);
   text-align: center;
+  width: 100%;
 }
 
 .ad-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
 }
 
 .ad-text {
-  font-size: 12px;
+  font-size: clamp(0.7rem, 3vw, 12px);
   color: rgba(255,255,255,0.8);
 }
 
 .ad-slot {
   background: white;
   color: #333;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: clamp(0.5rem, 2vw, 8px) clamp(1rem, 4vw, 16px);
+  border-radius: clamp(3px, 1vw, 4px);
   font-weight: bold;
+  font-size: clamp(0.8rem, 3vw, 14px);
+}
+
+.header {
+  width: 100%;
+  max-width: 800px;
 }
 
 .header h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: clamp(1.5rem, 6vw, 28px);
+  margin-bottom: clamp(0.5rem, 2vw, 10px);
   color: white;
+  line-height: 1.2;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .header .subtitle {
-  font-size: 16px;
+  font-size: clamp(0.9rem, 3.5vw, 16px);
   color: rgba(255,255,255,0.8);
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 4vw, 20px);
   line-height: 1.5;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .fiscal-year-tabs {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  justify-content: center;  /* 水平居中 */
-  width: 100%;              /* 确保占据整个宽度 */
+  flex-direction: column;
+  gap: clamp(0.75rem, 3vw, 20px);
+  margin-top: clamp(1rem, 4vw, 20px);
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (min-width: 640px) {
+  .fiscal-year-tabs {
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 20px);
+  }
 }
 
 .year-tab {
-  padding: 12px 24px;
+  padding: clamp(0.75rem, 3vw, 12px) clamp(1.5rem, 6vw, 24px);
   background: transparent;
   border: 2px solid #4cc9f0;
   color: #4cc9f0;
-  border-radius: 6px;
+  border-radius: clamp(5px, 1.5vw, 6px);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: clamp(0.9rem, 3.5vw, 16px);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 120px;
 }
 
 .year-tab.active {
@@ -939,80 +969,121 @@ export default {
   background: rgba(76, 201, 240, 0.1);
 }
 
+.year-tab:active {
+  transform: scale(0.98);
+}
+
 /* 第二层：计算区域 */
 .middle-layer {
   flex: 1;
-  padding: 30px 20px;
+  padding: clamp(1.5rem, 6vw, 30px) clamp(1rem, 4vw, 20px);
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .calculator-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: clamp(10px, 3vw, 12px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
 }
 
 .section-header {
   background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
   color: white;
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 20px);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: clamp(1rem, 4vw, 20px);
   align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }
 
 .section-header h2 {
-  font-size: 22px;
+  font-size: clamp(1.2rem, 5vw, 22px);
   margin: 0;
+  line-height: 1.3;
 }
 
 .btn-back {
   background: rgba(255,255,255,0.2);
   border: 1px solid rgba(255,255,255,0.4);
   color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: clamp(0.5rem, 2vw, 8px) clamp(1rem, 4vw, 16px);
+  border-radius: clamp(3px, 1vw, 4px);
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: clamp(0.9rem, 3.5vw, 16px);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .btn-back {
+    width: auto;
+  }
 }
 
 .btn-back:hover {
   background: rgba(255,255,255,0.3);
 }
 
+.btn-back:active {
+  transform: scale(0.98);
+}
+
 /* 输入区域样式 */
 .input-section {
-  padding: 30px;
+  padding: clamp(1.5rem, 6vw, 30px) clamp(1rem, 4vw, 30px);
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: clamp(1rem, 4vw, 20px);
+  margin-bottom: clamp(1.5rem, 6vw, 30px);
 }
 
 .input-row {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(0.5rem, 2vw, 8px);
+  width: 100%;
 }
 
 .input-row label {
   font-weight: 600;
   color: #333;
-  font-size: 16px;
+  font-size: clamp(0.95rem, 3.8vw, 16px);
 }
 
 .input-row input[type="number"] {
-  padding: 12px;
+  padding: clamp(0.75rem, 3vw, 12px);
   border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: clamp(5px, 1.5vw, 6px);
+  font-size: clamp(0.95rem, 3.8vw, 16px);
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .input-row input[type="number"]:focus {
@@ -1023,138 +1094,197 @@ export default {
 
 .radio-group {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  flex-direction: column;
+  gap: clamp(1rem, 4vw, 20px);
+  margin-top: clamp(0.5rem, 2vw, 10px);
+}
+
+@media (min-width: 480px) {
+  .radio-group {
+    flex-direction: row;
+  }
 }
 
 .radio-option {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(0.5rem, 2vw, 8px);
   cursor: pointer;
+  padding: clamp(0.5rem, 2vw, 8px);
+  border-radius: clamp(5px, 1.5vw, 6px);
+  transition: background-color 0.2s;
+  flex: 1;
+}
+
+.radio-option:active {
+  background-color: #f0f0f0;
 }
 
 .radio-option input[type="radio"] {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 4vw, 18px);
+  height: clamp(16px, 4vw, 18px);
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.radio-option span {
+  font-size: clamp(0.9rem, 3.5vw, 16px);
 }
 
 /* 豁免部分样式 */
 .exemption-section {
-  margin: 30px 0;
+  margin: clamp(1.5rem, 6vw, 30px) 0;
 }
 
 .exemption-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 5vw, 25px);
+  margin-top: clamp(1rem, 4vw, 20px);
+}
+
+@media (min-width: 768px) {
+  .exemption-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
 }
 
 .exemption-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(1rem, 4vw, 20px);
 }
 
 .exemption-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(0.5rem, 2vw, 8px);
 }
 
 .exemption-item label {
   font-weight: 600;
   color: #444;
-  font-size: 15px;
+  font-size: clamp(0.85rem, 3.2vw, 15px);
+  line-height: 1.3;
 }
 
 .exemption-item input[type="number"] {
-  padding: 12px;
+  padding: clamp(0.75rem, 3vw, 12px);
   border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: clamp(5px, 1.5vw, 6px);
+  font-size: clamp(0.95rem, 3.8vw, 16px);
+  min-height: 48px;
+  box-sizing: border-box;
 }
 
 .exemption-limit {
-  font-size: 13px;
+  font-size: clamp(0.75rem, 2.8vw, 13px);
   color: #666;
   font-style: italic;
+  line-height: 1.4;
 }
 
 /* 按钮样式 */
 .calculate-button {
   display: flex;
-  gap: 15px;
-  margin-top: 30px;
-  justify-content: center;
+  flex-direction: column;
+  gap: clamp(1rem, 4vw, 15px);
+  margin-top: clamp(1.5rem, 6vw, 30px);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .calculate-button {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .btn-calculate {
   background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
   color: white;
   border: none;
-  padding: 15px 40px;
-  border-radius: 8px;
-  font-size: 18px;
+  padding: clamp(0.875rem, 3.5vw, 15px) clamp(2rem, 8vw, 40px);
+  border-radius: clamp(6px, 2vw, 8px);
+  font-size: clamp(1rem, 4vw, 18px);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 10px);
+  min-height: 56px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .btn-calculate:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.btn-calculate:active {
+  transform: translateY(0);
 }
 
 .btn-reset {
   background: #f8f9fa;
   color: #666;
   border: 2px solid #dee2e6;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: clamp(0.875rem, 3.5vw, 15px) clamp(1.5rem, 6vw, 30px);
+  border-radius: clamp(6px, 2vw, 8px);
+  font-size: clamp(0.95rem, 3.8vw, 16px);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 8px);
+  min-height: 56px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .btn-reset:hover {
   background: #e9ecef;
 }
 
+.btn-reset:active {
+  transform: scale(0.98);
+}
+
 /* 结果区域样式 */
 .result-section {
-  padding: 30px;
+  padding: clamp(1.5rem, 6vw, 30px) clamp(1rem, 4vw, 30px);
 }
 
 .tax-summary {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: clamp(1.5rem, 6vw, 30px);
 }
 
 .tax-rate-comparison {
   background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: clamp(6px, 2vw, 8px);
+  padding: clamp(1rem, 4vw, 20px);
   border: 1px solid #e0e0e0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tax-rate-comparison h3 {
-  margin-bottom: 15px;
+  margin-bottom: clamp(0.75rem, 3vw, 15px);
   color: #333;
+  font-size: clamp(1rem, 4vw, 18px);
 }
 
 .comparison-table {
   display: table;
   width: 100%;
   border-collapse: collapse;
+  min-width: 300px;
 }
 
 .comparison-row {
@@ -1168,30 +1298,43 @@ export default {
 
 .comparison-cell {
   display: table-cell;
-  padding: 12px 15px;
+  padding: clamp(0.5rem, 2vw, 12px) clamp(0.75rem, 3vw, 15px);
   border: 1px solid #e0e0e0;
+  font-size: clamp(0.85rem, 3.2vw, 14px);
+  text-align: center;
+  min-width: 80px;
 }
 
 .comparison-row.header .comparison-cell {
   font-weight: bold;
   border-color: #3a0ca3;
+  font-size: clamp(0.9rem, 3.5vw, 15px);
 }
 
 /* 详细结果样式 */
 .detailed-results {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(1rem, 4vw, 20px);
 }
 
 .result-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 10px);
+  padding: clamp(0.875rem, 3.5vw, 15px);
   background: #f8f9fa;
-  border-radius: 6px;
+  border-radius: clamp(5px, 1.5vw, 6px);
   border-left: 4px solid #4361ee;
+  box-sizing: border-box;
+}
+
+@media (min-width: 480px) {
+  .result-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .result-row.total-income {
@@ -1213,29 +1356,33 @@ export default {
 .result-label {
   font-weight: 600;
   color: #333;
-  font-size: 16px;
+  font-size: clamp(0.95rem, 3.8vw, 16px);
+  line-height: 1.3;
 }
 
 .result-value {
   font-weight: bold;
   color: #4361ee;
-  font-size: 18px;
+  font-size: clamp(1rem, 4vw, 18px);
+  text-align: right;
 }
 
 /* 税制部分样式 */
 .regime-section {
   background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: clamp(6px, 2vw, 8px);
+  padding: clamp(1rem, 4vw, 20px);
   border: 2px solid #e0e0e0;
+  margin-bottom: clamp(1rem, 4vw, 20px);
 }
 
 .regime-section h4 {
-  margin-bottom: 15px;
+  margin-bottom: clamp(0.75rem, 3vw, 15px);
   color: #333;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
+  font-size: clamp(1rem, 4vw, 18px);
 }
 
 .old-regime {
@@ -1249,35 +1396,40 @@ export default {
 .tax-breakdown {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
 }
 
 .breakdown-row {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: clamp(0.5rem, 2vw, 8px) 0;
   border-bottom: 1px dashed #e0e0e0;
+  font-size: clamp(0.85rem, 3.2vw, 14px);
 }
 
 .breakdown-row.total {
   border-bottom: 2px solid #333;
-  margin-top: 10px;
-  padding-top: 15px;
+  margin-top: clamp(0.5rem, 2vw, 10px);
+  padding-top: clamp(0.75rem, 3vw, 15px);
+  font-size: clamp(0.95rem, 3.8vw, 16px);
+  font-weight: bold;
 }
 
 /* 建议样式 */
 .recommendation {
-  padding: 20px;
-  border-radius: 8px;
+  padding: clamp(1rem, 4vw, 20px);
+  border-radius: clamp(6px, 2vw, 8px);
   background: #f8f9fa;
   border-left: 5px solid;
+  margin-top: clamp(1rem, 4vw, 20px);
 }
 
 .recommendation h4 {
-  margin-bottom: 10px;
+  margin-bottom: clamp(0.5rem, 2vw, 10px);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
+  font-size: clamp(1rem, 4vw, 18px);
 }
 
 .recommend-old {
@@ -1295,46 +1447,56 @@ export default {
 }
 
 .savings {
-  margin-top: 10px;
+  margin-top: clamp(0.5rem, 2vw, 10px);
   font-weight: bold;
   color: #f72585;
+  font-size: clamp(0.95rem, 3.8vw, 16px);
 }
 
 /* FAQ样式 */
 .faq-section {
-  padding: 40px 20px;
-  max-width: 1200px;
+  padding: clamp(2rem, 8vw, 40px) clamp(1rem, 4vw, 20px);
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .faq-list {
-  margin-top: 20px;
+  margin-top: clamp(1rem, 4vw, 20px);
 }
 
 .faq-item {
-  margin-bottom: 15px;
+  margin-bottom: clamp(1rem, 4vw, 15px);
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: clamp(6px, 2vw, 8px);
   overflow: hidden;
 }
 
 .faq-question {
   background: #f8f9fa;
-  padding: 18px 20px;
+  padding: clamp(1rem, 4vw, 18px) clamp(1rem, 4vw, 20px);
   margin: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(0.5rem, 2vw, 12px);
   transition: all 0.3s ease;
+  font-size: clamp(0.95rem, 3.8vw, 16px);
+  min-height: 60px;
+  user-select: none;
 }
 
 .faq-question:hover {
   background: #e9ecef;
 }
 
+.faq-question:active {
+  background: #dfe4e8;
+}
+
 .faq-question i {
   transition: transform 0.3s ease;
+  font-size: clamp(0.9rem, 3.5vw, 16px);
 }
 
 .faq-question i.rotated {
@@ -1342,122 +1504,161 @@ export default {
 }
 
 .faq-answer {
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 20px);
   background: white;
   border-top: 1px solid #e0e0e0;
   line-height: 1.6;
+  font-size: clamp(0.9rem, 3.5vw, 15px);
 }
 
 /* 页脚样式 */
 .footer {
-  padding: 40px 20px;
-  margin-top: 40px;
+  padding: clamp(2rem, 8vw, 40px) clamp(1rem, 4vw, 20px);
+  margin-top: clamp(2rem, 8vw, 40px);
+  box-sizing: border-box;
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 6vw, 30px);
+  margin-bottom: clamp(1.5rem, 6vw, 30px);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
 }
 
 .footer-section h4 {
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: clamp(0.75rem, 3vw, 15px);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
+  font-size: clamp(1rem, 4vw, 18px);
 }
 
 .footer-section p {
   color: rgba(255,255,255,0.8);
   line-height: 1.6;
+  font-size: clamp(0.9rem, 3.5vw, 15px);
 }
 
 .contact-list {
   list-style: none;
-  margin-top: 15px;
+  margin-top: clamp(0.75rem, 3vw, 15px);
+  padding: 0;
 }
 
 .contact-list li {
   color: rgba(255,255,255,0.8);
-  margin-bottom: 8px;
+  margin-bottom: clamp(0.5rem, 2vw, 8px);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(0.5rem, 2vw, 10px);
+  font-size: clamp(0.9rem, 3.5vw, 15px);
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
+  padding-top: clamp(1rem, 4vw, 20px);
   border-top: 1px solid rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.6);
-  font-size: 14px;
+  font-size: clamp(0.8rem, 3vw, 14px);
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .fiscal-year-tabs {
-    flex-direction: column;
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .btn-calculate:hover,
+  .btn-reset:hover,
+  .btn-back:hover,
+  .year-tab:hover:not(.active),
+  .faq-question:hover {
+    transform: none;
   }
   
-  .exemption-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .calculate-button {
-    flex-direction: column;
-  }
-  
-  .comparison-table {
-    display: block;
-  }
-  
-  .comparison-row {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .comparison-cell {
-    display: block;
-    padding: 8px;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .header h1 {
-    font-size: 24px;
-  }
-  
-  .section-header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-  
-  .btn-back {
-    align-self: stretch;
-    text-align: center;
+  .btn-calculate:active,
+  .btn-reset:active,
+  .btn-back:active,
+  .year-tab:active,
+  .faq-question:active {
+    transform: scale(0.98);
   }
 }
 
-/* 动画效果 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .middle-layer {
+    background: #2d3748;
+  }
+  
+  .calculator-container {
+    background: #1a202c;
+    color: #e2e8f0;
+  }
+  
+  .input-row label,
+  .exemption-item label,
+  .tax-rate-comparison h3,
+  .result-label,
+  .regime-section h4,
+  .recommendation h4 {
+    color: #e2e8f0;
+  }
+  
+  .input-row input[type="number"],
+  .exemption-item input[type="number"] {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+  }
+  
+  .tax-rate-comparison,
+  .result-row,
+  .regime-section,
+  .recommendation,
+  .faq-question {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  .faq-answer {
+    background: #1a202c;
+  }
+  
+  .btn-reset {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+  }
 }
 
-.input-section, .result-section, .faq-section {
-  animation: fadeIn 0.5s ease-out;
+/* 减少动画（可访问性） */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-/* 工具提示 */
-.exemption-item input[type="number"]:hover {
-  border-color: #4361ee;
+/* 防止iPhone安全区域问题 */
+@supports (padding: max(0px)) {
+  .top-layer,
+  .middle-layer,
+  .faq-section,
+  .footer {
+    padding-left: max(clamp(1rem, 4vw, 20px), env(safe-area-inset-left));
+    padding-right: max(clamp(1rem, 4vw, 20px), env(safe-area-inset-right));
+  }
+  
+  .footer {
+    padding-bottom: max(clamp(2rem, 8vw, 40px), env(safe-area-inset-bottom));
+  }
 }
 
 /* 打印样式 */
@@ -1474,6 +1675,81 @@ export default {
   .calculator-container {
     box-shadow: none;
     border: 1px solid #ccc;
+  }
+  
+  .result-row,
+  .regime-section,
+  .recommendation {
+    break-inside: avoid;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 320px) {
+  .year-tab {
+    min-width: 100px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-calculate,
+  .btn-reset {
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+  
+  .faq-question {
+    min-height: 52px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* 超大屏幕优化 */
+@media (min-width: 1440px) {
+  .calculator-container {
+    max-width: 1400px;
+  }
+  
+  .faq-section {
+    max-width: 1400px;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .year-tab,
+  .btn-back,
+  .btn-calculate,
+  .btn-reset {
+    border-width: 3px;
+  }
+  
+  .result-row {
+    border-left-width: 6px;
+  }
+  
+  .recommendation {
+    border-left-width: 8px;
+  }
+}
+
+/* 横屏优化 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .top-layer {
+    padding: 1rem 2vw;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .year-tab {
+    padding: 0.75rem 1.5rem;
+    min-height: 40px;
+  }
+  
+  .btn-calculate,
+  .btn-reset {
+    min-height: 48px;
   }
 }
 </style>
