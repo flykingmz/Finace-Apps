@@ -69,8 +69,8 @@
             </thead>
             <tbody>
               <tr>
-                <td>Income: ${{ formatCurrency(monthlyIncomeFromCurrent / 12) }}/month</td>
-                <td>${{ formatCurrency(monthlyIncomeInTodaysMoneyFromCurrent) }}/month</td>
+                <td>Income: ${{ formatCurrency(annualIncomeFromCurrent / 12) }}/month</td>
+                <td>${{ formatCurrency(annualIncomeInTodaysMoneyFromCurrent / 12) }}/month</td>
               </tr>
             </tbody>
           </table>
@@ -472,14 +472,14 @@ export default {
       currentRetirementSavings: 30000,
       futureRetirementSavings: 10,
       
-      // Results
+      // Results - 修改变量名
       showResults: false,
       retirementNeed: 0,
       currentSavingsProjection: 0,
-      monthlyIncomeFromCurrent: 0,
-      monthlyIncomeInTodaysMoneyFromCurrent: 0,
-      monthlyIncomeFromNeeded: 0,
-      monthlyIncomeInTodaysMoneyFromNeeded: 0,
+      annualIncomeFromCurrent: 0,  // 修改：原来是 monthlyIncomeFromCurrent
+      annualIncomeInTodaysMoneyFromCurrent: 0,  // 修改
+      annualIncomeFromNeeded: 0,  // 修改：原来是 monthlyIncomeFromNeeded
+      annualIncomeInTodaysMoneyFromNeeded: 0,  // 修改
       requiredMonthlySavings: 0,
       requiredYearlySavings: 0,
       requiredSavingsRate: 0,
@@ -524,8 +524,8 @@ export default {
       this.currentSavingsProjection = this.calculateCurrentSavingsProjection();
       
       // Calculate monthly income from savings
-      this.monthlyIncomeFromCurrent = this.currentSavingsProjection * 0.04;
-      this.monthlyIncomeInTodaysMoneyFromCurrent = this.monthlyIncomeFromCurrent / Math.pow(1 + this.inflationRate / 100, yearsToRetirement);
+      this.annualIncomeFromCurrent = this.currentSavingsProjection * 0.04;
+      this.annualIncomeInTodaysMoneyFromCurrent = this.annualIncomeFromCurrent / Math.pow(1 + this.inflationRate / 100, yearsToRetirement);
       
       this.monthlyIncomeFromNeeded = this.retirementNeed * 0.04;
       this.monthlyIncomeInTodaysMoneyFromNeeded = this.monthlyIncomeFromNeeded / Math.pow(1 + this.inflationRate / 100, yearsToRetirement);
@@ -640,13 +640,13 @@ export default {
       this.retirementAge = 67;
       this.lifeExpectancy = 85;
       this.currentIncome = 70000;
-      this.incomeIncrease: 3,
-      this.retirementIncomeNeeded: 75,
-      this.investmentReturn: 6,
-      this.inflationRate: 3,
-      this.otherIncome: 0,
-      this.currentRetirementSavings: 30000,
-      this.futureRetirementSavings: 10,
+      this.incomeIncrease = 3;
+      this.retirementIncomeNeeded = 75;
+      this.investmentReturn = 6;
+      this.inflationRate = 3;
+      this.otherIncome = 0;
+      this.currentRetirementSavings = 30000;
+      this.futureRetirementSavings = 10;
       
       this.showResults = false;
       this.showDetails = false;
