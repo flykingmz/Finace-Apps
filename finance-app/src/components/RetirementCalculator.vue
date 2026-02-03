@@ -11,7 +11,7 @@
     <!-- Title Section -->
     <header class="calculator-header">
       <h1>Retirement Calculator</h1>
-      <p>Plan your retirement savings and see if you're on track</p>
+      <p>This calculator helps you plan for retirement by showing your current savings status, how much you need to save to reach your goals, and what your withdrawals may look like in retirement.</p>
     </header>
 
     <!-- Main Content Area -->
