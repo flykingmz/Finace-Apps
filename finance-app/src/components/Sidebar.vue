@@ -8,7 +8,7 @@
     <!-- Sidebar Header - 在折叠时只显示logo -->
     <div class="sidebar-header" v-if="!isCollapsed">
       <div class="logo">
-        <img src="/logo.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
+        <img src="/logo-i.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
       </div>
       <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
     </div>

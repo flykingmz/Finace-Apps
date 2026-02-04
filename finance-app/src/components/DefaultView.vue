@@ -198,9 +198,11 @@ export default {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Taxo Financial Free Calculators",
-        "description": "Finance Free Calculators including paycheck, income tax, and global VAT calculators,Tax and Salary calculators,Mortgage and Real Estate calculators、Retirement calculators、Investment calculators、loan calculators etc.",
+        "description": "Financial Free Calculators provides simple, free online calculators for personal finance, investing, retirement, and everyday financial planning.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
+        "url": "https://finace-apps-one.vercel.app/",
+        "logo": "https://finace-apps-one.vercel.app/logo.png"
         "offers": {
           "@type": "Offer",
           "price": "0",
