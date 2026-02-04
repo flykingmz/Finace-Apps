@@ -15,10 +15,10 @@
     <!-- 折叠时显示小logo -->
     <div class="sidebar-header-collapsed" v-else>
       <div class="logo-collapsed">
-        <img src="/logo.png" alt="Taxo Logo" class="logo-image-collapsed">
+        <img src="/logo-i.png" alt="Taxo Logo" class="logo-image-collapsed">
       </div>
     </div>
-    
+      
     <!-- Navigation - 未折叠时才显示 -->
     <div class="sidebar-nav" v-if="!isCollapsed">
       <template v-for="nav in navigation" :key="nav.id">
