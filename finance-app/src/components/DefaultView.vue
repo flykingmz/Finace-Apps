@@ -202,7 +202,7 @@ export default {
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
         "url": "https://finace-apps-one.vercel.app/",
-        "logo": "https://finace-apps-one.vercel.app/logo.png"
+        "logo": "https://finace-apps-one.vercel.app/logo.png",
         "offers": {
           "@type": "Offer",
           "price": "0",
