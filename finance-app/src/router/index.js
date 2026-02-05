@@ -37,6 +37,12 @@ const routes = [
         name: 'RetirementCalculator',
         component: () => import('../components/RetirementCalculator.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: '401k',
+        name: '401KCalculator',
+        component: () => import('../components/401KCalculator.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

@@ -111,8 +111,8 @@ const navigationData = [
       {
         id: '401K-ca',
         title: '401K Calculator',
-        route: '',
-        component: ''
+        route: '/a/401k',
+        component: '401KCalculator'
       }
     ]
   },
