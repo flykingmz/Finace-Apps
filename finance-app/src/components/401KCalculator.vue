@@ -13,10 +13,6 @@
       <!-- Calculator Input Section -->
       <section class="calculator-section" :class="{ 'results-active': showResults }">
         <div class="calculator-card">
-          <div class="section-header">
-            <h2>401(k) Calculator</h2>
-            <p class="section-subtitle">Modify the values and click the Calculate button to use</p>
-          </div>
           
           <div class="input-grid">
             <!-- Basic Info Section -->
@@ -378,6 +374,56 @@
               These vary between mutual funds, index funds, or exchange-traded funds, all of which have an assorted mixture of stocks, bonds, 
               international market equities, treasuries, and much more.
             </p>
+
+            <h3>Employer Match</h3>
+            <p>
+              A 401(k) match is an employer's percentage match of a participating employee's contribution to their 401(k) plan, usually up to a certain limit denoted as a percentage of the employee's salary. There can be no match without an employee contribution, and not all 401(k)s offer employer matching.<br>
+
+As an example, an employer that matches 50% of an employee's contribution for up to 6% of their salary would contribute a maximum of 3% of the employee's salary to the employee's 401(k). Another common matching scheme is a dollar-for-dollar employer match, up to a certain percentage of salary.<br>
+
+Taking full advantage of an employer's match by contributing to a 401(k) can make even more financial sense than the opportunity cost of many other things, such as paying off high-interest debt. To illustrate, a 401(k) that matches 100% of contributions up to a certain amount generates an immediate 100% return on investment for the contributor (even more if considering tax-deferred growth over time), which is pretty hard to beat!<br>
+
+Employers mainly offer 401(k) matches in order to attract and retain a talented workforce and to incentivize saving for retirement. Annual contributions to an employee's account cannot exceed the lesser of 100% of the participant's compensation, or $72,000 in 2026. Contributions from both employee and employer go into 401(k) plans untaxed, and the funds grow tax-free over time. The funds are taxed when withdrawn from a presumably advantageous standpoint since retired account holders are most likely in lower tax brackets than they were while working.<br>
+            </p>
+            <h4>401(k) Vesting Periods</h4>
+            <p>Some employers require a vesting period for their 401(k) plans in order to incentivize employees to stay long-term. Vesting refers to how much of a 401(k)'s employer contributions are owned by an employee. An employee that is fully vested has full ownership of the funds in their retirement plan. Unlike employer matches, employee contributions are always 100% vested.<br>
+
+A 4-year vesting period is fairly common. After the first year of employment, an employee is entitled to 25% of employer contributions even if they leave the company. This increases to 50% in the second year and 75% in the third year, with the employee becoming fully vested after 4 years. This is referred to as graded vesting. Some companies do not have schedules that increase vested amounts each year, but instead allow employees to become fully vested after a certain period of time. This is called cliff vesting, which means all of the vestings take place at a certain point in the vesting schedule. In this case, an employee that leaves a company before becoming fully vested will have to forfeit all employer contributions. Different 401(k) plans have different rules regarding vesting. For more accurate information, it is best to speak with human resources or 401(k) plan administrators.</p>
+          
+          <h3>Early Withdrawal</h3>
+            <p>
+            Contributions and their subsequent interest earnings as part of a 401(k) plan cannot be withdrawn without penalty before the age of 59 ½. In some cases (described below), exceptions are made, and early withdrawals are permitted. Under these circumstances, early 401(k) withdrawals are still subject to ordinary income taxes, but not the 10% penalty.<br>
+            <strong>Early 401(k) Withdrawals</strong>Withdrawals before age 59½ are generally subject to a 10% penalty and ordinary income taxes, though certain exceptions allow penalty-free early withdrawals (taxes still apply).<br>
+            <strong>Hardship Withdrawals</strong>Some 401(k) plans permit hardship withdrawals with proper documentation. These withdrawals cannot be repaid and are approved at the employer or plan administrator’s discretion. Qualifying reasons may include major medical expenses, home purchase costs, education expenses, foreclosure or eviction prevention, funeral costs, or home repair due to damage.<br>
+            <strong>Non-Financial Hardship Exceptions</strong>Penalty-free early withdrawals may also be allowed in cases such as death, disability, separation from employment at age 55 or older, qualified medical deductions, court-ordered distributions (QDROs), or structured periodic payments under IRS Rule 72(t).<br>
+            <strong>Key Considerations</strong>Even when penalties are waived, early withdrawals reduce long-term retirement savings and forfeit the benefits of tax-deferred compounding growth, so the true cost should be carefully evaluated.<br> 
+            </p>
+
+            <h3>401(k) Distributions in Retirement</h3>
+            <p>
+            Anyone older than 59 ½ can begin receiving distributions from their 401(k)s, but they can also choose to defer receiving distributions to allow more earnings to accumulate. Distributions can be deferred, at the latest, until the age of 73 (72 if you reach age 72 before Dec. 31, 2022). Between the ages of 59 ½ and 73, participants have several options:<br>
+            <strong>Option 1: Receive Distributions</strong>Distributions can be received in the form of either a lump sum or in installments. A lump-sum distribution allows a person to receive all of their 401(k) funds immediately, but forfeits the benefits of tax-deferred compounding while also incurring income tax on the distribution on the year it is withdrawn, which can be a significant amount.<br>
+
+Installment plans allow a person to receive a set amount from their 401(k) periodically. The payment amounts can be typically changed once a year, but certain plans allow for more frequent changes. When choosing the installment option, one of the hardest decisions to make is exactly how much to withdraw each month or year. There are many factors to consider, such as life expectancy, investment performance, how much a person may need to live comfortably, and Social Security. A common rule of thumb is the 4% rule, which suggests withdrawing 4% annually. Note that each distribution must be at least the required minimum distribution (RMD) in order to avoid a penalty. RMD is calculated based on life expectancy and the account balance at the end of the previous year.<br>
+            <strong>Option 2: Rollover</strong>It is also possible to roll over a 401k to an IRA or another employer's plan. No taxes will be imposed on rollovers. Both Roth and traditional IRAs generally offer more investment options. Moving after-tax money into a Roth IRA can help diversify retirement portfolios. Keep in mind that traditional IRAs also require minimum distributions at age 73.<br>
+            <strong>Option 3: Annuity</strong>Some plans allow 401(k)s to be converted into annuities, which are usually offered through private insurance companies. Similar to rollovers, no taxes will be imposed on conversions. The annuity will pay a monthly benefit for the duration of the owner's projected life expectancy. If a joint-and-survivor annuity is involved, the primary account holder and the designated beneficiary will receive monthly payments for the duration of both their expected lifetimes.<br>
+            <strong>Option 4: Do Nothing</strong>The distribution of funds can be postponed if the retiree wants to take advantage of the benefits of tax-deferred compounding for as long as possible. This is possible up until the age of 73, after which the government will require mandatory annual distributions.<br> 
+            </p>
+
+            <h3>Required Minimum Distributions</h3>
+            <p>
+            Anyone that reaches age 73 (72 if you reach age 72 before Dec. 31, 2022) is required to take distributions from their 401(k). This is called a required minimum distribution (RMD). Traditional, SIMPLE, and SEP IRAs have similar rules imposed by the IRS. The exact date at which RMDs are required is April 1st of the year after a retiree reaches the age of 73. In order to determine the exact amount, retirees can take their 401(k) retirement assets and divide it by a life-expectancy factor, which changes slightly every year.<br>
+
+The federal penalty for not taking the RMD is a 50% tax on any amount not withdrawn in time. The amount of the required distribution is based on the prior year's December 31st account balance and an IRS life expectancy chart. In some cases, a person who has not withdrawn the necessary amount can attempt to avoid the penalty by withdrawing the shortfall immediately, filing Form 5329 with the IRS, and providing valid reasons as to why the deadline was missed. The IRS may forgive the missed withdrawal.<br>
+
+There is one exception to the RMD rule: any employee with an employer-sponsored 401(k) when they turn 73 can get out of the RMD as long as they remain employed. This is only if their plan doesn't mandate RMDs and they don't own 5% or more of the company. However, as soon as they retire from the company, they will be subject to RMDs.<br>
+            <strong>Self-Directed 401(k)</strong>A self-directed (SD) 401(k), sometimes called a solo 401(k), is a way for self-employed individuals to participate in a 401(k) plan. Although their purpose is aimed specifically at the self-employed, SD 401(k)s can also be offered to employees as an alternative to a traditional 401(k) plan through their employers, though it is uncommon.<br>
+            <strong>Roth 401(k)</strong>The Roth 401(k) is somewhat different from the traditional 401(K) as a retirement savings plan. It combines some features of the traditional 401(k) along with some features of the Roth IRA. The main difference is the timing of taxation. Similar to Roth IRAs, Roth 401(k)s are retirement plans that utilize after-tax contributions instead of pre-tax income. What this means is that taxes are paid upfront, and during retirement, qualified withdrawals are tax-free. The same annual contribution limits for 2026 still apply: $24,500 for individuals under 50, $32,500 for those aged 50 or older, and $35,750 for those aged 60 to 63.<br>
+
+However, unlike the Roth IRA, contributions can't be withdrawn from a Roth 401(k) without penalty until five years after the plan starts, while a Roth IRA's contributions (not earnings) can be withdrawn at any time. This rule for the Roth 401(k) applies even after the age of 59 ½, when tax-free distributions are generally allowed. Also, unlike the Roth IRA, it has required minimum distributions (RMD) at age 73, though at that stage, a Roth 401(k) could be rolled into a Roth IRA to avoid RMDs, without any tax penalty. The ability to withdraw contributions at any time, penalty and tax-free, as well as not having an RMD are two significant advantages of a Roth IRA that are missing in Roth 401(k)s.<br>
+
+It is possible to contribute to both forms of 401(k) simultaneously, as long as the sum of contributions is still within the annual contribution limits, similar to the treatment of the sums of traditional and Roth IRA annual contributions.<br>
+            </p>
           </div>
         </div>
       </section>
@@ -398,12 +444,12 @@
         
         <div class="footer-section">
           <h4>Contact & Feedback</h4>
-          <p>For questions or feedback about this calculator, please contact us at calculator@example.com</p>
+          <p>For questions or feedback about this calculator, please contact us at flykingmz@gmail.com</p>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>© 2024 401(k) Calculator. All rights reserved.</p>
+        <p>© 2026 401(k) Calculator. All rights reserved.</p>
       </div>
     </footer>
   </div>
