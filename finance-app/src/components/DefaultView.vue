@@ -17,7 +17,7 @@
         <div class="category-card">
           <div class="category-header-active">
             <h2 class="category-title">Tax and Salary</h2>
-            <div class="category-count">5 tools</div>
+            <div class="category-count">3 tools</div>
           </div>
           <div class="tools-list">
             <a href="#/a/global-price" class="tool-link">Global VAT Calculator</a>
@@ -29,7 +29,7 @@
         <!-- Retirement -->
         <div class="category-card">
           <div class="category-header-active">
-            <h2 class="category-title">Retirement</h2>
+            <h2 class="category-title">Retirement（TBC）</h2>
             <div class="category-count">9 tools</div>
           </div>
           <div class="tools-list">
