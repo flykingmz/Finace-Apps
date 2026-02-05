@@ -4,8 +4,8 @@
     <div class="page-top">
       <!-- 标题部分 -->
       <div class="title-section">
-        <h1 class="main-title">Taxo Financial Free Calculators</h1>
-        <p class="subtitle">Professional, accurate, and easy-to-use online financial calculator collection</p>
+        <h1 class="main-title">Financial Free Calculators</h1>
+        <p class="subtitle">Professional, accurate, and easy-to-use online financial free calculator collection</p>
       </div>
     </div>
 
