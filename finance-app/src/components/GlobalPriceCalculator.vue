@@ -81,6 +81,7 @@
                 <span class="tax">Tax Rate: {{ formatTaxRate(selectedCountry.rate) }}</span>
                  <span class="tax">Type: {{ selectedCountry.type }}</span>
               </div>
+              <div class="dashed-line"></div>
               <div class="selected-info">
                 <span class="flag">⚠️</span>
                 <span class="name">Notes</span>
@@ -1898,5 +1899,16 @@ export default {
   .vat-comparison-section {
     padding: 1rem;
   }
+}
+.dashed-line {
+    height: 1px; /* 线的高度 */
+    background: repeating-linear-gradient(
+        to right,          /* 方向：从左到右 */
+        transparent,       /* 透明开始 */
+        transparent 5px,   /* 透明部分5像素 */
+        #666 5px,         /* 实色从5像素处开始 */
+        #666 10px         /* 实色部分到10像素处结束 */
+    );                    /* 重复这个5px透明+5px实色的模式 */
+    margin: 30px 0;       /* 上下边距形成空行效果 */
 }
 </style>
