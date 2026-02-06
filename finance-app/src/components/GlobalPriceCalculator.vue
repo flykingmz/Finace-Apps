@@ -81,6 +81,12 @@
                 <span class="tax">Tax Rate: {{ formatTaxRate(selectedCountry.rate) }}</span>
                  <span class="tax">Type: {{ selectedCountry.type }}</span>
               </div>
+              <div class="selected-info">
+                <span class="flag">⚠️</span>
+                <span class="name">Notes</span>
+                <span class="tax">DigitalApplicability: {{ selectedCountry.digitalApplicability }}</span>
+                 <span class="tax">Threshold: {{ selectedCountry.threshold }}</span>
+              </div>
             </div>
           </div>
 
@@ -343,64 +349,401 @@
 <script>
 const taxData = {
   "Europe": [
-    {"country": "Austria", "chineseName": "奥地利", "rate": "20", "type": "VAT"},
-    {"country": "Belgium", "chineseName": "比利时", "rate": "21", "type": "VAT"},
-    {"country": "Bulgaria", "chineseName": "保加利亚", "rate": "20", "type": "VAT"},
-    {"country": "Croatia", "chineseName": "克罗地亚", "rate": "25", "type": "VAT"},
-    {"country": "Czech Republic", "chineseName": "捷克", "rate": "21", "type": "VAT"},
-    {"country": "Denmark", "chineseName": "丹麦", "rate": "25", "type": "VAT"},
-    {"country": "France", "chineseName": "法国", "rate": "20", "type": "VAT"},
-    {"country": "Germany", "chineseName": "德国", "rate": "19", "type": "VAT"},
-    {"country": "Hungary", "chineseName": "匈牙利", "rate": "27", "type": "VAT"},
-    {"country": "Ireland", "chineseName": "爱尔兰", "rate": "23", "type": "VAT"},
-    {"country": "Italy", "chineseName": "意大利", "rate": "22", "type": "VAT"},
-    {"country": "Netherlands", "chineseName": "荷兰", "rate": "21", "type": "VAT"},
-    {"country": "Norway", "chineseName": "挪威", "rate": "25", "type": "VAT"},
-    {"country": "Spain", "chineseName": "西班牙", "rate": "21", "type": "VAT"},
-    {"country": "Sweden", "chineseName": "瑞典", "rate": "25", "type": "VAT"},
-    {"country": "United Kingdom", "chineseName": "英国", "rate": "20", "type": "VAT"}
+    {
+      "country": "Austria",
+      "chineseName": "奥地利",
+      "rate": "20",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services (B2C)",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Belgium",
+      "chineseName": "比利时",
+      "rate": "21",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services (B2C)",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Bulgaria",
+      "chineseName": "保加利亚",
+      "rate": "20",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Croatia",
+      "chineseName": "克罗地亚",
+      "rate": "25",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Czech Republic",
+      "chineseName": "捷克",
+      "rate": "21",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Denmark",
+      "chineseName": "丹麦",
+      "rate": "25",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "France",
+      "chineseName": "法国",
+      "rate": "20",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Germany",
+      "chineseName": "德国",
+      "rate": "19",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services (OSS/MOSS)",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Hungary",
+      "chineseName": "匈牙利",
+      "rate": "27",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Ireland",
+      "chineseName": "爱尔兰",
+      "rate": "23",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Italy",
+      "chineseName": "意大利",
+      "rate": "22",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Netherlands",
+      "chineseName": "荷兰",
+      "rate": "21",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Norway",
+      "chineseName": "挪威",
+      "rate": "25",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "NOK 50,000"
+    },
+    {
+      "country": "Spain",
+      "chineseName": "西班牙",
+      "rate": "21",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "Sweden",
+      "chineseName": "瑞典",
+      "rate": "25",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "€0 for non-EU sellers"
+    },
+    {
+      "country": "United Kingdom",
+      "chineseName": "英国",
+      "rate": "20",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "£0 for non-UK sellers"
+    }
   ],
   "Asia": [
-    {"country": "China", "chineseName": "中国", "rate": "13", "type": "VAT"},
-    {"country": "India", "chineseName": "印度", "rate": "18", "type": "GST"},
-    {"country": "Indonesia", "chineseName": "印度尼西亚", "rate": "10", "type": "VAT"},
-    {"country": "Japan", "chineseName": "日本", "rate": "10", "type": "VAT"},
-    {"country": "Singapore", "chineseName": "新加坡", "rate": "7", "type": "GST"},
-    {"country": "Thailand", "chineseName": "泰国", "rate": "7", "type": "VAT"},
-    {"country": "South Korea", "chineseName": "韩国", "rate": "10", "type": "VAT"},
-    {"country": "New Zealand", "chineseName": "新西兰", "rate": "15", "type": "GST"},
-    {"country": "Australia", "chineseName": "澳大利亚", "rate": "10", "type": "GST"}
+    {
+      "country": "China",
+      "chineseName": "中国",
+      "rate": "13",
+      "type": "VAT",
+      "digitalApplicability": "Generally applies to digital services (B2B/B2C)",
+      "threshold": "No clear public threshold"
+    },
+    {
+      "country": "India",
+      "chineseName": "印度",
+      "rate": "18",
+      "type": "GST",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "INR 2,000,000"
+    },
+    {
+      "country": "Indonesia",
+      "chineseName": "印度尼西亚",
+      "rate": "10",
+      "type": "VAT",
+      "digitalApplicability": "Applies to foreign digital services",
+      "threshold": "IDR 600,000,000"
+    },
+    {
+      "country": "Japan",
+      "chineseName": "日本",
+      "rate": "10",
+      "type": "VAT",
+      "digitalApplicability": "Applies to cross-border digital services",
+      "threshold": "No minimum threshold"
+    },
+    {
+      "country": "Singapore",
+      "chineseName": "新加坡",
+      "rate": "7",
+      "type": "GST",
+      "digitalApplicability": "Applies to imported digital services",
+      "threshold": "SGD 100,000"
+    },
+    {
+      "country": "Thailand",
+      "chineseName": "泰国",
+      "rate": "7",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "THB 1,800,000"
+    },
+    {
+      "country": "South Korea",
+      "chineseName": "韩国",
+      "rate": "10",
+      "type": "VAT",
+      "digitalApplicability": "Applies to foreign digital services",
+      "threshold": "KRW 30,000,000"
+    },
+    {
+      "country": "New Zealand",
+      "chineseName": "新西兰",
+      "rate": "15",
+      "type": "GST",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "NZD 60,000"
+    },
+    {
+      "country": "Australia",
+      "chineseName": "澳大利亚",
+      "rate": "10",
+      "type": "GST",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "AUD 75,000"
+    }
   ],
   "AfricaAndMiddleEast": [
-    {"country": "South Africa", "chineseName": "南非", "rate": "15", "type": "VAT"},
-    {"country": "Kenya", "chineseName": "肯尼亚", "rate": "16", "type": "VAT"},
-    {"country": "Nigeria", "chineseName": "尼日利亚", "rate": "7.5", "type": "VAT"},
-    {"country": "Saudi Arabia", "chineseName": "沙特", "rate": "15", "type": "VAT"},
-    {"country": "United Arab Emirates", "chineseName": "阿联酋", "rate": "5", "type": "VAT"}
+    {
+      "country": "South Africa",
+      "chineseName": "南非",
+      "rate": "15",
+      "type": "VAT",
+      "digitalApplicability": "Applies to electronic services",
+      "threshold": "ZAR 1,000,000"
+    },
+    {
+      "country": "Kenya",
+      "chineseName": "肯尼亚",
+      "rate": "16",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "KES 5,000,000"
+    },
+    {
+      "country": "Nigeria",
+      "chineseName": "尼日利亚",
+      "rate": "7.5",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "NGN 25,000,000"
+    },
+    {
+      "country": "Saudi Arabia",
+      "chineseName": "沙特",
+      "rate": "15",
+      "type": "VAT",
+      "digitalApplicability": "Applies to electronic services",
+      "threshold": "SAR 375,000"
+    },
+    {
+      "country": "United Arab Emirates",
+      "chineseName": "阿联酋",
+      "rate": "5",
+      "type": "VAT",
+      "digitalApplicability": "Applies to electronic services",
+      "threshold": "AED 375,000"
+    }
   ],
   "Americas": [
-    {"country": "Canada", "chineseName": "加拿大", "rate": "13", "type": "GST / HST"},
-    {"country": "Mexico", "chineseName": "墨西哥", "rate": "16", "type": "VAT"},
-    {"country": "United States", "chineseName": "美国", "rate": "8", "type": "Sales Tax"},
-    {"country": "Panama", "chineseName": "巴拿马", "rate": "21", "type": "VAT"},
-    {"country": "Argentina", "chineseName": "阿根廷", "rate": "7", "type": "VAT"},
-    {"country": "Bolivia", "chineseName": "玻利维亚", "rate": "13", "type": "GST"},
-    {"country": "Brazil", "chineseName": "巴西", "rate": "17", "type": "ICMS"},
-    {"country": "Chile", "chineseName": "智利", "rate": "19", "type": "VAT"},
-    {"country": "Colombia", "chineseName": "哥伦比亚", "rate": "19", "type": "VAT"},
-    {"country": "Ecuador", "chineseName": "厄瓜多尔", "rate": "12", "type": "VAT"},
-    {"country": "Paraguay", "chineseName": "巴拉圭", "rate": "10", "type": "GST/VAT"},
-    {"country": "Peru", "chineseName": "秘鲁", "rate": "10", "type": "VAT/GST"},
-    {"country": "Uruguay", "chineseName": "乌拉圭", "rate": "22", "type": "GST/VAT"}
+    {
+      "country": "Canada",
+      "chineseName": "加拿大",
+      "rate": "13",
+      "type": "GST / HST",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "CAD 30,000"
+    },
+    {
+      "country": "Mexico",
+      "chineseName": "墨西哥",
+      "rate": "16",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No minimum threshold"
+    },
+    {
+      "country": "United States",
+      "chineseName": "美国",
+      "rate": "8",
+      "type": "Sales Tax",
+      "digitalApplicability": "Depends on state (economic nexus)",
+      "threshold": "Typically $100,000 or 200 transactions"
+    },
+    {
+      "country": "Panama",
+      "chineseName": "巴拿马",
+      "rate": "21",
+      "type": "VAT",
+      "digitalApplicability": "Limited applicability to digital services",
+      "threshold": "USD 36,000"
+    },
+    {
+      "country": "Argentina",
+      "chineseName": "阿根廷",
+      "rate": "7",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No clear threshold"
+    },
+    {
+      "country": "Bolivia",
+      "chineseName": "玻利维亚",
+      "rate": "13",
+      "type": "GST",
+      "digitalApplicability": "Limited applicability",
+      "threshold": "Not clearly defined"
+    },
+    {
+      "country": "Brazil",
+      "chineseName": "巴西",
+      "rate": "17",
+      "type": "ICMS",
+      "digitalApplicability": "Complex, varies by state",
+      "threshold": "Varies by state"
+    },
+    {
+      "country": "Chile",
+      "chineseName": "智利",
+      "rate": "19",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No minimum threshold"
+    },
+    {
+      "country": "Colombia",
+      "chineseName": "哥伦比亚",
+      "rate": "19",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No minimum threshold"
+    },
+    {
+      "country": "Ecuador",
+      "chineseName": "厄瓜多尔",
+      "rate": "12",
+      "type": "VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "USD 300,000"
+    },
+    {
+      "country": "Paraguay",
+      "chineseName": "巴拉圭",
+      "rate": "10",
+      "type": "GST/VAT",
+      "digitalApplicability": "Limited applicability",
+      "threshold": "Not clearly defined"
+    },
+    {
+      "country": "Peru",
+      "chineseName": "秘鲁",
+      "rate": "10",
+      "type": "VAT/GST",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No minimum threshold"
+    },
+    {
+      "country": "Uruguay",
+      "chineseName": "乌拉圭",
+      "rate": "22",
+      "type": "GST/VAT",
+      "digitalApplicability": "Applies to digital services",
+      "threshold": "No minimum threshold"
+    }
   ],
   "ZeroRateOrOther": [
-    {"country": "Hong Kong", "chineseName": "香港", "rate": "0", "type": "No Sales Tax"},
-    {"country": "Kuwait", "chineseName": "科威特", "rate": "0", "type": "No Sales Tax"},
-    {"country": "Qatar", "chineseName": "卡塔尔", "rate": "0", "type": "No Sales Tax"},
-    {"country": "Brunei", "chineseName": "文莱", "rate": "0", "type": "No Sales Tax"},
-    {"country": "Bhutan", "chineseName": "不丹", "rate": "7", "type": "VAT"}
+    {
+      "country": "Hong Kong",
+      "chineseName": "香港",
+      "rate": "0",
+      "type": "No Sales Tax",
+      "digitalApplicability": "No VAT/GST/Sales Tax",
+      "threshold": "Not applicable"
+    },
+    {
+      "country": "Kuwait",
+      "chineseName": "科威特",
+      "rate": "0",
+      "type": "No Sales Tax",
+      "digitalApplicability": "No VAT/GST/Sales Tax",
+      "threshold": "Not applicable"
+    },
+    {
+      "country": "Qatar",
+      "chineseName": "卡塔尔",
+      "rate": "0",
+      "type": "No Sales Tax",
+      "digitalApplicability": "No VAT/GST/Sales Tax",
+      "threshold": "Not applicable"
+    },
+    {
+      "country": "Brunei",
+      "chineseName": "文莱",
+      "rate": "0",
+      "type": "No Sales Tax",
+      "digitalApplicability": "No VAT/GST/Sales Tax",
+      "threshold": "Not applicable"
+    },
+    {
+      "country": "Bhutan",
+      "chineseName": "不丹",
+      "rate": "7",
+      "type": "VAT",
+      "digitalApplicability": "Limited applicability",
+      "threshold": "BTN 1,000,000"
+    }
   ]
 }
+
 
 const exchangeRates = {
   USD: 1.0,
