@@ -444,7 +444,7 @@ That's not to say that there aren't certain benefits to having some savings in a
         
         <div class="footer-section">
           <h4>Contact & Feedback</h4>
-          <p>For questions or feedback about this calculator, please contact us at calculator@example.com</p>
+          <p>For questions or feedback about this calculator, please contact us at flykingmz@gmail.com</p>
         </div>
       </div>
     </footer>

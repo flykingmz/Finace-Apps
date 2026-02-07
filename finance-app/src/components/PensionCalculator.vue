@@ -502,10 +502,10 @@
 
     <!-- FAQ部分 -->
     <div class="faq-section">
-      <h2>FAQ</h2>
+      <h2>Pensions</h2>
       <div class="faq-content">
         <p>
-          Traditionally, employee pensions are funds that employers contribute to as a benefit for their employees. Upon retirement, money can be drawn from a pension pot or sold to an insurance company to be distributed as periodic payments until death (a life annuity). Please visit our <a href="https://www.annuitycalculator.com" target="_blank">Annuity Calculator</a> or <a href="https://www.payoutcalculator.com" target="_blank">Annuity Payout Calculator</a> for more information or to do calculations involving annuities. In the U.S., the main advantage of a pension as a vehicle of saving for retirement lies in the fact that pensions provide preferential tax benefits for money placed into them as well as any subsequent earnings on investment. In many modern instances, the term "pension" is used interchangeably with the term "retirement plan" rather than as a form of it.
+          Traditionally, employee pensions are funds that employers contribute to as a benefit for their employees. Upon retirement, money can be drawn from a pension pot or sold to an insurance company to be distributed as periodic payments until death (a life annuity). Please visit our Annuity Calculator or Annuity Payout Calculator for more information or to do calculations involving annuities. In the U.S., the main advantage of a pension as a vehicle of saving for retirement lies in the fact that pensions provide preferential tax benefits for money placed into them as well as any subsequent earnings on investment. In many modern instances, the term "pension" is used interchangeably with the term "retirement plan" rather than as a form of it.
         </p>
         
         <h3>Defined-Benefit Plan</h3>
@@ -530,7 +530,27 @@
         
         <h3>Defined-Contribution Plan</h3>
         <p>
-          In this type of pension plan, employers may make specific contributions to each of their employees' tax-advantaged pension plans. There are a number of ways for employers to make contributions, but the most common method is providing a matching contribution up to a certain percentage of income for each employee, while a less common method is based on the years of service of each employee. Distribution amounts in retirement are based on historic employee and employer contributions, along with investment gains and losses over time. Unlike their counterpart, the defined-benefit (DB) plan, investments and the subsequent earnings income here are heavily dependent on the performance of investments within the plans. As a result, there is no guaranteed payout of future funds in the scenario when the value of assets drops drastically. Therefore, for the most part, tenure with a company or age has less to do with the accrual of benefits during any certain period in a DC plan (unlike DB plans).
+          A defined-contribution (DC) pension plan is a retirement plan in which employers contribute to employees’ individual, tax-advantaged accounts—most commonly through matching a percentage of employee income, though contributions may also be based on years of service. Retirement benefits depend on the total contributions made by both employers and employees and on investment performance over time, meaning payouts are not guaranteed and can fluctuate with market conditions, unlike defined-benefit plans. DC plans offer participants significant control and flexibility, allowing them to choose how their funds are invested and to carry their accounts with them when changing jobs, often through rollovers. Today, DC plans are the most common retirement plans in the U.S., especially in the private sector, and are typically referred to by specific program names such as 401(k)s, IRAs, and Roth IRAs rather than by the term “DC plan.”
+        </p>
+
+        <h3>The Fall of Defined-Benefit Plans and the Rise of Defined-Contribution Plans</h3>
+        <p>
+          In the U.S., defined-benefit (DB) pension plans have declined significantly and are now far less common than defined-contribution (DC) plans, with most remaining DB plans concentrated in the public sector. Their popularity has fallen due to several risks and drawbacks, including reliance on unpredictable factors such as employee turnover, company financial stability, and long-term economic conditions. While insurance exists through the Pension Benefit Guaranty Corporation, its protection is limited, and employees may receive reduced or no benefits if a plan fails. DB plans also typically require long tenures to maximize benefits, are vulnerable to being frozen, and involve higher administrative costs, making them less attractive in today’s more mobile workforce and uncertain economic environment.
+        </p>
+
+        <h3>Lump Sum vs. Monthly Benefit Payout</h3>
+        <p>
+          Most defined-benefit (DB) pension plans allow retirees to choose between a one-time lump sum payment or ongoing monthly benefit payments, with the lump sum representing the present value of future pension income. Monthly payments provide the advantage of stable, often lifetime-guaranteed income that is not affected by market volatility and reduces the risk of overspending. In contrast, the lump sum option offers greater flexibility, allowing individuals to spend, save, invest, or roll the funds into an IRA to preserve tax deferral and pass remaining assets to heirs. Lump sums may be more suitable for those who value flexibility, want estate-planning options, or have shorter life expectancies, while monthly benefits favor those seeking predictable, lifelong income security.
+        </p>
+
+        <h3>Single-Life or Joint-and-Survivor Plans?</h3>
+        <p>
+          At retirement, pensions typically offer two main distribution options: single-life plans and joint-and-survivor plans. Single-life plans pay the highest monthly benefit but stop payments upon the retiree’s death, potentially leaving a surviving spouse without income, though some versions include a limited guarantee period. Joint-and-survivor plans, by contrast, continue paying benefits until both the retiree and spouse have passed away, providing greater financial security for a partner but at the cost of lower monthly payments. These plans include a predefined survivor benefit ratio that determines how much the surviving spouse receives after the first death. Ultimately, the choice involves balancing higher income versus long-term security for dependents.
+        </p>
+
+        <h4>1. Cost-of-Living Adjustment</h4>
+        <p>
+        Because inflation erodes purchasing power over time, cost-of-living adjustments (COLAs) are used to help retirement benefits keep pace with rising prices. Although COLAs are most commonly associated with U.S. Social Security, they can also apply to private pension plans, where payouts may be gradually increased to reflect inflation. In practice, however, most private pensions do not include COLAs, as only well-funded plans can typically afford them, while underfunded plans usually cannot. As a result, COLA assumptions are often optional in pension calculations and can be customized—or set to zero if no adjustment is expected.
         </p>
       </div>
     </div>
@@ -548,7 +568,7 @@
         </div>
         <div class="footer-column">
           <h4>Contact & Feedback</h4>
-          <p>If you have questions or feedback about this calculator, please contact us at: calculator-support@example.com</p>
+          <p>If you have questions or feedback about this calculator, please contact us at: flykingmz@gmail.com</p>
         </div>
       </div>
       <div class="footer-copyright">
