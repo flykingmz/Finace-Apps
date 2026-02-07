@@ -35,7 +35,7 @@
           <div class="tools-list">
             <a href="#/a/retirement" class="tool-link">Retirement Calculator</a>
             <a href="#/a/401k" class="tool-link">401K Calculator</a>
-            <a href="#" class="tool-link">Pension Calculator</a>
+            <a href="#/a/pension" class="tool-link">Pension Calculator</a>
             <a href="#" class="tool-link">Social Security Calculator</a>
             <a href="#" class="tool-link">Annuity Calculator</a>
             <a href="#" class="tool-link">Annuity Payout Calculator</a>

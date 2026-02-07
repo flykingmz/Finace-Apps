@@ -113,6 +113,12 @@ const navigationData = [
         title: '401K Calculator',
         route: '/a/401k',
         component: '401KCalculator'
+      },
+      {
+        id: 'pension-ca',
+        title: 'Pension Calculator',
+        route: '/a/pension',
+        component: 'PensionCalculator'
       }
     ]
   },
