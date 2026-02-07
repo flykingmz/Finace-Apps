@@ -572,7 +572,7 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <p>&copy; 2023 Pension Calculator. All rights reserved.</p>
+        <p>&copy; 2026. All rights reserved.</p>
       </div>
     </div>
   </div>
@@ -854,6 +854,7 @@ export default {
   padding: 2rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+  text-align: center; /* 添加居中属性 */
 }
 
 .header-section h1 {
@@ -865,6 +866,9 @@ export default {
   margin-top: 0.5rem;
   opacity: 0.9;
   font-size: 1.1rem;
+  max-width: 800px; /* 限制副标题最大宽度 */
+  margin-left: auto; /* 与margin-right配合实现居中 */
+  margin-right: auto; /* 与margin-left配合实现居中 */
 }
 
 /* 计算器选择器 */
