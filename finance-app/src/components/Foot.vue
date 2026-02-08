@@ -42,7 +42,7 @@ export default {
 }
 
 .footer-links a {
-  color: #0c0c0f05;
+  color: black;
   text-decoration: none;
   margin: 0 0.25rem;
 }
