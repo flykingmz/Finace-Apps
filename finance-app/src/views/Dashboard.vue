@@ -23,7 +23,7 @@
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import TopHeader from '../components/TopHeader.vue'
-import Foot from './components/Foot.vue'
+import Foot from '../components/Foot.vue'
 
 export default {
   name: 'Dashboard',
