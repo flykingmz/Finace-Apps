@@ -1,11 +1,11 @@
 <template>
   <footer class="app-footer" :class="{ 'mobile-view': isMobile }">
     <div class="footer-content">
-      <!-- 移动端页面标题（仅移动端显示） -->
+      <!-- 移动端页面标题（仅移动端显示） 
       <div v-if="isMobile" class="mobile-page-title">
         Credit Cards Payoff Calc
       </div>
-      
+      -->
       <div class="footer-links">
         <a href="#/a/about-us">about us</a>
         <span class="link-separator">|</span>
