@@ -30,8 +30,8 @@ export default {
   color: #6c757d;
   position: fixed; /* 固定在底部 */
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 250px;  /* ✅ 从侧边栏右侧开始 */
+  width: calc(100% - 250px);  /* ✅ 减去侧边栏宽度 */
   z-index: 1000;
 }
 
