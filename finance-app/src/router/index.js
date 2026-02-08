@@ -51,6 +51,10 @@ const routes = [
         meta: { keepAlive: false }
       }
     ]
+  },
+  {
+    path: '/about-us',
+    component: () => import('../footlink/AboutUs.vue'),
   }
 ]
 

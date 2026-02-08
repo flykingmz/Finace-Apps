@@ -8,7 +8,7 @@
         <a href="/privacy-policy">privacy policy</a>
       </div>
       <div class="footer-copyright">
-        © 2008 - 2026 Taxo
+        © 2026 Taxo
       </div>
     </div>
   </footer>
