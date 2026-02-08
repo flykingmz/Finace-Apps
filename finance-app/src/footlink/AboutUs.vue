@@ -91,7 +91,7 @@
           <div class="contact-info">
             <div class="contact-item">
               <span class="contact-icon">✉️</span>
-              <span class="contact-text">contact@calculator.net</span>
+              <span class="contact-text">flykingmz@gmail.com</span>
             </div>
             <div class="contact-item">
               <span class="contact-icon">🌐</span>

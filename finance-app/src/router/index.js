@@ -55,6 +55,18 @@ const routes = [
         name: 'AboutUs',
         component: () => import('../footlink/AboutUs.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'terms-of-use',
+        name: 'TermsOfUse',
+        component: () => import('../footlink/TermsOfUse.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'privacy-policy',
+        name: 'PrivacyPolicy',
+        component: () => import('../footlink/PrivacyPolicy.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

@@ -3,12 +3,12 @@
     <div class="footer-content">
       <div class="footer-links">
         <a href="#/a/about-us">about us</a> | 
-        <a href="/sitemap">sitemap</a> | 
-        <a href="/terms-of-use">terms of use</a> | 
-        <a href="/privacy-policy">privacy policy</a>
+        <a href="/">sitemap</a> | 
+        <a href="#/a/terms-of-use">terms of use</a> | 
+        <a href="#/a/privacy-policy">privacy policy</a>
       </div>
       <div class="footer-copyright">
-        © 2026 Taxo
+        © 2025 - 2026 Taxo
       </div>
     </div>
   </footer>
@@ -42,7 +42,7 @@ export default {
 }
 
 .footer-links a {
-  color: #007bff;
+  color: #0c0c0f05;
   text-decoration: none;
   margin: 0 0.25rem;
 }
