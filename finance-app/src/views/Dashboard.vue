@@ -16,18 +16,21 @@
         </router-view>
       </div>
     </div>
+    <Foot />
   </div>
 </template>
 
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import TopHeader from '../components/TopHeader.vue'
+import Foot from './components/Foot.vue'
 
 export default {
   name: 'Dashboard',
   components: {
     Sidebar,
-    TopHeader
+    TopHeader,
+    Foot
   },
   computed: {
     currentPageTitle() {
