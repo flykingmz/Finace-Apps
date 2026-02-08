@@ -49,12 +49,14 @@ const routes = [
         name: 'PensionCalculator',
         component: () => import('../components/PensionCalculator.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'about-us',
+        name: 'AboutUs',
+        component: () => import('../footlink/AboutUs.vue'),
+        meta: { keepAlive: false }
       }
     ]
-  },
-  {
-    path: '/about-us',
-    component: () => import('../footlink/AboutUs.vue'),
   }
 ]
 

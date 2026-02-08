@@ -2,7 +2,7 @@
   <footer class="app-footer">
     <div class="footer-content">
       <div class="footer-links">
-        <a href="/about-us">about us</a> | 
+        <a href="#/a/about-us">about us</a> | 
         <a href="/sitemap">sitemap</a> | 
         <a href="/terms-of-use">terms of use</a> | 
         <a href="/privacy-policy">privacy policy</a>
