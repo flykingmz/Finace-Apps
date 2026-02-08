@@ -3,7 +3,7 @@
     <!-- 页面标题 -->
     <div class="page-header">
       <h1 class="page-title">Terms of Use</h1>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: 2026</div>
     </div>
 
     <!-- 主要内容区域 -->

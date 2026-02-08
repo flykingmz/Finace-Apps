@@ -222,7 +222,7 @@
               <div class="contact-details">
                 <div class="contact-item">
                   <span class="item-icon">📨</span>
-                  <a href="mailto:privacy@calculator.net" class="contact-link">privacy@calculator.net</a>
+                  <a href="mailto:flykingmz@gmail.com" class="contact-link">flykingmz@gmail.com</a>
                 </div>
                 <div class="contact-item">
                   <span class="item-icon">🌐</span>
