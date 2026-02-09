@@ -129,7 +129,7 @@ const navigationData = [
     ]
   },
   {
-    id: 'payroll',
+    id: 'mortgage',
     title: 'Mortgage and Real Estate',
     icon: '📊',
     expanded: false,
