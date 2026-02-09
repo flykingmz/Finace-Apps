@@ -221,7 +221,7 @@
               <div class="column">
                 <h3>New Job / Raise</h3>
                 <div class="input-group">
-                  <label>New Salary ($)</label>
+                  <label>Annual Salary ($)</label>
                   <input type="number" v-model.number="newSalary" placeholder="e.g., 90000">
                 </div>
                 <div class="input-group">
