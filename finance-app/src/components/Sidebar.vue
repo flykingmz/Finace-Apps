@@ -8,14 +8,14 @@
     <!-- Sidebar Header - 在折叠时只显示logo -->
     <div class="sidebar-header" v-if="!isCollapsed">
       <div class="logo">
-        <img src="/logo-i.png" alt="Taxo Logo" class="logo-image" fetchpriority="high">
+        <img src="/logo1.webp" alt="Taxo Logo" class="logo-image" fetchpriority="high">
       </div>
       <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
     </div>
     <!-- 折叠时显示小logo -->
     <div class="sidebar-header-collapsed" v-else>
       <div class="logo-collapsed">
-        <img src="/logo-i.png" alt="Taxo Logo" class="logo-image-collapsed">
+        <img src="/logo1.webp" alt="Taxo Logo" class="logo-image-collapsed">
       </div>
     </div>
       
