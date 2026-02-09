@@ -33,6 +33,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'takehomepaycheck',
+        name: 'TakeHomePaycheckCalculator',
+        component: () => import('../components/TakeHomePaycheckCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'retirement',
         name: 'RetirementCalculator',
         component: () => import('../components/RetirementCalculator.vue'),
