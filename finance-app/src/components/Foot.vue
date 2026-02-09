@@ -7,13 +7,21 @@
       </div>
       -->
       <div class="footer-links">
-        <a href="#/a/about-us">about us</a>
+        <a href="#/a/about-us" class="footer-link">
+          <span class="link-text">about us</span>
+        </a>
         <span class="link-separator">|</span>
-        <a href="/">sitemap</a>
+        <a href="/" class="footer-link">
+          <span class="link-text">sitemap</span>
+        </a>
         <span class="link-separator">|</span>
-        <a href="#/a/terms-of-use">terms of use</a>
+        <a href="#/a/terms-of-use" class="footer-link">
+          <span class="link-text">terms of use</span>
+        </a>
         <span class="link-separator">|</span>
-        <a href="#/a/privacy-policy">privacy policy</a>
+        <a href="#/a/privacy-policy" class="footer-link">
+          <span class="link-text">privacy policy</span>
+        </a>
       </div>
       <div class="footer-copyright">
         © 2025 - 2026 Taxo
@@ -68,148 +76,213 @@ export default {
   padding: 0 1rem;
 }
 
-.footer-links a {
-  color: black;
-  text-decoration: none;
-  margin: 0 0.25rem;
-  transition: color 0.2s ease;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.footer-links a:hover {
+.footer-link {
+  color: black;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-link:hover {
   text-decoration: underline;
   color: #495057;
+}
+
+.link-separator {
+  color: #dee2e6;
+  margin: 0 0.125rem;
 }
 
 .footer-copyright {
   margin-top: 0.5rem;
 }
 
-/* 分隔符样式 */
-.link-separator {
-  color: #dee2e6;
-  margin: 0 0.25rem;
-}
-
-/* ========== 移动端适配（768px及以下） ========== */
+/* ========== 移动端横向排版（768px及以下） ========== */
 @media (max-width: 768px) {
   .app-footer {
     /* 重置为全屏宽度，固定在底部 */
     left: 0;
     width: 100%;
-    padding: 1.25rem 0;
+    padding: 0.75rem 0;
     background-color: #ffffff;
     border-top: 2px solid #e9ecef;
-    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1100; /* 提高层级 */
   }
   
-  /* 添加移动端页面标题 */
+  /* 移动端页面标题（顶部显示） */
   .mobile-page-title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #212529;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
     border-bottom: 1px solid #f1f3f5;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .footer-content {
-    padding: 0 1rem;
-  }
-  
-  /* 链接调整为垂直布局 */
-  .footer-links {
+    padding: 0 0.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
   }
   
-  .footer-links a {
-    display: block;
-    padding: 0.875rem 1rem;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    margin: 0;
-    color: #495057;
-    font-weight: 500;
-    transition: all 0.2s ease;
+  /* 横向链接布局 */
+  .footer-links {
+    display: flex;
+    flex-wrap: nowrap; /* 确保横向排列 */
+    justify-content: space-around; /* 均匀分布 */
+    align-items: center;
+    gap: 0.125rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    overflow-x: auto; /* 允许横向滚动 */
+    padding: 0.25rem 0;
+    -webkit-overflow-scrolling: touch; /* iOS 平滑滚动 */
   }
   
-  .footer-links a:hover {
-    background-color: #e9ecef;
-    text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 移动端隐藏分隔符 */
-  .footer-links .link-separator {
+  /* 隐藏滚动条但保留功能 */
+  .footer-links::-webkit-scrollbar {
     display: none;
+  }
+  
+  .footer-links {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .footer-link {
+    flex: 0 0 auto; /* 不伸缩，保持原大小 */
+    color: #495057;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: fit-content; /* 自适应内容宽度 */
+  }
+  
+  .footer-link:hover,
+  .footer-link:active {
+    background-color: #f1f3f5;
+    text-decoration: none;
+    color: #212529;
+  }
+  
+  /* 移动端调整分隔符大小 */
+  .link-separator {
+    color: #ced4da;
+    font-size: 0.8rem;
+    margin: 0 0.125rem;
+    flex: 0 0 auto; /* 分隔符不伸缩 */
   }
   
   /* 版权信息样式调整 */
   .footer-copyright {
-    margin-top: 0.75rem;
-    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
     background-color: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
+    border-radius: 6px;
     color: #495057;
+    font-size: 0.8rem;
     font-weight: 500;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #e9ecef;
   }
 }
 
 /* ========== 小屏幕手机优化（480px及以下） ========== */
 @media (max-width: 480px) {
   .app-footer {
-    padding: 1rem 0;
+    padding: 0.625rem 0;
   }
   
   .mobile-page-title {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.875rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.625rem;
   }
   
   .footer-content {
-    padding: 0 0.875rem;
+    padding: 0 0.625rem;
   }
   
-  .footer-links a {
-    padding: 0.75rem 0.875rem;
-    font-size: 0.85rem;
+  .footer-link {
+    font-size: 0.75rem;
+    padding: 0.3125rem 0.375rem;
+  }
+  
+  .link-separator {
+    font-size: 0.75rem;
   }
   
   .footer-copyright {
-    padding: 0.625rem 0.875rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    padding: 0.4375rem;
+  }
+  
+  .footer-links {
+    gap: 0.0625rem;
   }
 }
 
 /* ========== 超小屏幕优化（360px及以下） ========== */
 @media (max-width: 360px) {
   .app-footer {
+    padding: 0.5rem 0;
+  }
+  
+  .mobile-page-title {
+    font-size: 0.85rem;
+  }
+  
+  .footer-content {
+    padding: 0 0.5rem;
+  }
+  
+  .footer-link {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.3125rem;
+  }
+  
+  .link-separator {
+    font-size: 0.7rem;
+    margin: 0 0.0625rem;
+  }
+  
+  .footer-copyright {
+    font-size: 0.7rem;
+    padding: 0.375rem;
+  }
+}
+
+/* ========== 平板优化（769px - 1024px） ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-footer {
     padding: 0.875rem 0;
   }
   
   .footer-content {
-    padding: 0 0.75rem;
-  }
-  
-  .footer-links a {
-    padding: 0.625rem 0.75rem;
-    font-size: 0.8rem;
-  }
-  
-  .footer-copyright {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
+    padding: 0 1.5rem;
   }
 }
 
 /* ========== 侧边栏兼容性（保持原功能） ========== */
-/* 如果你的侧边栏是可折叠的，可以通过父组件传递类名来调整 */
+/* 侧边栏折叠时 */
 .app-footer.sidebar-collapsed {
   left: 64px;  /* 折叠后的侧边栏宽度 */
   width: calc(100% - 64px);  /* 减去折叠后的侧边栏宽度 */
@@ -220,6 +293,11 @@ export default {
   .app-footer.sidebar-collapsed {
     left: 0;
     width: 100%;
+  }
+  
+  /* 为移动端固定页脚预留内容区域空间 */
+  body {
+    padding-bottom: 100px;
   }
 }
 </style>
