@@ -443,45 +443,256 @@ export default {
           // ... (paste the full JSON data here from your question)
           // For brevity, including only a few states in this example
           {
-            "state": "California",
-            "code": "CA",
-            "type": "progressive",
-            "rate_min": 1,
-            "rate_max": 13.3,
-            "notes": "Highest state income tax rate in the U.S."
-          },
-          {
-            "state": "Texas",
-            "code": "TX",
-            "type": "none",
-            "rate_min": 0,
-            "rate_max": 0,
-            "notes": "No state personal income tax"
-          },
-          {
-            "state": "Florida",
-            "code": "FL",
-            "type": "none",
-            "rate_min": 0,
-            "rate_max": 0,
-            "notes": "No state personal income tax"
-          },
-          {
-            "state": "New York",
-            "code": "NY",
-            "type": "progressive",
-            "rate_min": 4.0,
-            "rate_max": 10.9,
-            "notes": "NYC local income tax may apply"
-          },
-          {
-            "state": "Washington",
-            "code": "WA",
-            "type": "none",
-            "rate_min": 0,
-            "rate_max": 0,
-            "notes": "No state income tax on wages"
-          }
+      "state": "Alaska",
+      "code": "AK",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "Florida",
+      "code": "FL",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "Nevada",
+      "code": "NV",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "South Dakota",
+      "code": "SD",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "Tennessee",
+      "code": "TN",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "Texas",
+      "code": "TX",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+    {
+      "state": "Washington",
+      "code": "WA",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state income tax on wages (capital gains tax may apply)"
+    },
+    {
+      "state": "Wyoming",
+      "code": "WY",
+      "type": "none",
+      "rate_min": 0,
+      "rate_max": 0,
+      "notes": "No state personal income tax"
+    },
+
+    {
+      "state": "California",
+      "code": "CA",
+      "type": "progressive",
+      "rate_min": 1,
+      "rate_max": 13.3,
+      "notes": "Highest state income tax rate in the U.S."
+    },
+    {
+      "state": "Hawaii",
+      "code": "HI",
+      "type": "progressive",
+      "rate_min": 1.4,
+      "rate_max": 11.0,
+      "notes": "High progressive tax brackets"
+    },
+    {
+      "state": "New York",
+      "code": "NY",
+      "type": "progressive",
+      "rate_min": 4.0,
+      "rate_max": 10.9,
+      "notes": "NYC local income tax may apply"
+    },
+    {
+      "state": "New Jersey",
+      "code": "NJ",
+      "type": "progressive",
+      "rate_min": 1.4,
+      "rate_max": 10.75,
+      "notes": "High-income earners taxed at higher brackets"
+    },
+    {
+      "state": "Oregon",
+      "code": "OR",
+      "type": "progressive",
+      "rate_min": 4.75,
+      "rate_max": 9.9,
+      "notes": "No sales tax, relies on income tax"
+    },
+    {
+      "state": "Minnesota",
+      "code": "MN",
+      "type": "progressive",
+      "rate_min": 5.35,
+      "rate_max": 9.85,
+      "notes": "High progressive tax for top earners"
+    },
+    {
+      "state": "Vermont",
+      "code": "VT",
+      "type": "progressive",
+      "rate_min": 3.35,
+      "rate_max": 8.75,
+      "notes": "Multiple tax brackets"
+    },
+
+    {
+      "state": "Arizona",
+      "code": "AZ",
+      "type": "flat",
+      "rate_min": 2.5,
+      "rate_max": 2.5,
+      "notes": "Flat income tax rate"
+    },
+    {
+      "state": "Colorado",
+      "code": "CO",
+      "type": "flat",
+      "rate_min": 4.4,
+      "rate_max": 4.4,
+      "notes": "Flat income tax rate"
+    },
+    {
+      "state": "Illinois",
+      "code": "IL",
+      "type": "flat",
+      "rate_min": 4.95,
+      "rate_max": 4.95,
+      "notes": "Flat income tax rate"
+    },
+    {
+      "state": "Indiana",
+      "code": "IN",
+      "type": "flat",
+      "rate_min": 3.05,
+      "rate_max": 3.05,
+      "notes": "Flat income tax rate"
+    },
+    {
+      "state": "Pennsylvania",
+      "code": "PA",
+      "type": "flat",
+      "rate_min": 3.07,
+      "rate_max": 3.07,
+      "notes": "Flat income tax rate"
+    },
+    {
+      "state": "Utah",
+      "code": "UT",
+      "type": "flat",
+      "rate_min": 4.55,
+      "rate_max": 4.55,
+      "notes": "Flat income tax with credits"
+    },
+
+    {
+      "state": "Delaware",
+      "code": "DE",
+      "type": "progressive",
+      "rate_min": 2.2,
+      "rate_max": 6.6,
+      "notes": "Progressive brackets"
+    },
+    {
+      "state": "Connecticut",
+      "code": "CT",
+      "type": "progressive",
+      "rate_min": 3.0,
+      "rate_max": 6.99,
+      "notes": "Progressive brackets"
+    },
+    {
+      "state": "Maine",
+      "code": "ME",
+      "type": "progressive",
+      "rate_min": 5.8,
+      "rate_max": 7.15,
+      "notes": "Progressive brackets"
+    },
+    {
+      "state": "Maryland",
+      "code": "MD",
+      "type": "progressive",
+      "rate_min": 2.0,
+      "rate_max": 5.75,
+      "notes": "Local income taxes may apply"
+    },
+    {
+      "state": "Rhode Island",
+      "code": "RI",
+      "type": "progressive",
+      "rate_min": 3.75,
+      "rate_max": 5.99,
+      "notes": "Progressive brackets"
+    },
+    {
+      "state": "Virginia",
+      "code": "VA",
+      "type": "progressive",
+      "rate_min": 2.0,
+      "rate_max": 5.75,
+      "notes": "Low top marginal rate"
+    },
+    {
+      "state": "Wisconsin",
+      "code": "WI",
+      "type": "progressive",
+      "rate_min": 3.5,
+      "rate_max": 7.65,
+      "notes": "Progressive brackets"
+    },
+    {
+      "state": "South Carolina",
+      "code": "SC",
+      "type": "progressive",
+      "rate_min": 0,
+      "rate_max": 6.2,
+      "notes": "Low income exemptions"
+    },
+    {
+      "state": "North Dakota",
+      "code": "ND",
+      "type": "progressive",
+      "rate_min": 1.95,
+      "rate_max": 2.5,
+      "notes": "Low marginal rates"
+    },
+    {
+      "state": "Oklahoma",
+      "code": "OK",
+      "type": "progressive",
+      "rate_min": 0.25,
+      "rate_max": 4.75,
+      "notes": "Progressive brackets"
+    }
         ]
       }
     }
