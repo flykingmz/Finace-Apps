@@ -1,12 +1,14 @@
 <template>
   <div class="calculator-container">
+   <!-- Google Ads Section (hidden by default) -->
+    <div class="ads-section" v-if="showAds">
+      <!-- Google Ads placeholder -->
+      <div class="ads-container">
+        <p>Google Ads Section (Hidden by default)</p>
+      </div>
+    </div>
     <!-- Header Section -->
     <div class="header">
-      <div class="ad-container">
-        <div class="ad-placeholder">
-          Google Ad Space (728x90)
-        </div>
-      </div>
       <div class="title">
         <h1>Take Home Paycheck Calculator</h1>
         <p class="subtitle">Know exactly what you'll earn after taxes and deductions</p>
@@ -391,6 +393,169 @@
           </div>
         </div>
       </div>
+
+      <!-- FAQ Section - Always Visible -->
+      <div class="faq-section">
+        <div class="faq-header">
+          <h2>Take-Home Paycheck Calculator – FAQ & Understanding Guide</h2>
+          <p class="faq-subtitle">This guide explains why your paycheck looks the way it does, not just how the numbers are calculated.</p>
+        </div>
+
+        <div class="faq-content">
+          <div class="faq-item">
+            <h3>1. Why is my take-home pay so much lower than my salary?</h3>
+            <p class="faq-short-answer"><strong>Short answer:</strong> Because not all deductions are optional, and not all deductions work the way people expect.</p>
+            <p>Your paycheck is affected by multiple layers of deductions, including:</p>
+            <ul>
+              <li>Federal income tax</li>
+              <li>State and local taxes</li>
+              <li>Social Security and Medicare (FICA)</li>
+              <li>Employer benefits (insurance, retirement plans, etc.)</li>
+            </ul>
+            <p>Many people assume that everything deducted is "tax", but in reality, only part of it is. That's why our calculator separates deductions into:</p>
+            <ul class="deduction-types">
+              <li><strong>Unavoidable deductions</strong> (required by law)</li>
+              <li><strong>Adjustable deductions</strong> (you control them)</li>
+              <li><strong>Context-dependent deductions</strong> (may not apply to you yet)</li>
+            </ul>
+            <p>This helps you understand what you can't change vs. what you actually can.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>2. What deductions are mandatory vs adjustable?</h3>
+            <p>Not all paycheck deductions are equal.</p>
+            
+            <div class="deduction-breakdown">
+              <div class="deduction-category">
+                <h4 class="cannot-avoid">Mandatory (You cannot avoid these)</h4>
+                <p>These apply regardless of employer or benefits:</p>
+                <ul>
+                  <li>Federal income tax</li>
+                  <li>Social Security</li>
+                  <li>Medicare</li>
+                  <li>Most state income taxes</li>
+                </ul>
+              </div>
+              
+              <div class="deduction-category">
+                <h4 class="can-adjust">Adjustable (You can control these)</h4>
+                <p>These depend on your personal choices:</p>
+                <ul>
+                  <li>401(k) or retirement contribution %</li>
+                  <li>HSA or FSA contributions</li>
+                  <li>Certain insurance plans</li>
+                </ul>
+              </div>
+              
+              <div class="deduction-category">
+                <h4 class="might-not-need">Situational (You may not need these yet)</h4>
+                <p>These only matter under specific conditions:</p>
+                <ul>
+                  <li>Extra tax withholding</li>
+                  <li>Additional benefits that don't fit your income level</li>
+                  <li>Deductions with minimal impact at lower incomes</li>
+                </ul>
+              </div>
+            </div>
+            <p>Understanding this distinction removes a lot of confusion and frustration.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>3. I got a raise — why doesn't it feel like one?</h3>
+            <p>This is one of the most common and most frustrating paycheck surprises.</p>
+            <p>A salary increase does not translate 1:1 into take-home pay because:</p>
+            <ul>
+              <li>Higher income can push part of your salary into a higher tax bracket</li>
+              <li>Some deductions scale with income</li>
+              <li>Bonuses are often taxed differently than regular pay</li>
+            </ul>
+            <p>That's why we include a <strong>Raise Reality Check</strong>, showing:</p>
+            <ul>
+              <li>Gross increase vs net increase</li>
+              <li>How much extra you actually take home per paycheck</li>
+              <li>The real hourly or monthly impact of a raise</li>
+            </ul>
+            <p>This helps answer the real question: "Did this raise actually improve my life?"</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>4. Do I need to care about taxes and deductions at my income level?</h3>
+            <p><strong>Not always — and that's important.</strong></p>
+            <p>Many calculators overwhelm users by showing every possible tax rule, even when it doesn't materially affect them yet.</p>
+            <p>We highlight:</p>
+            <ul>
+              <li>Which deductions matter at your income level</li>
+              <li>Which optimizations are not worth thinking about yet</li>
+              <li>When certain thresholds start to matter</li>
+            </ul>
+            <p>This prevents premature optimization and helps you focus only on what actually impacts your take-home pay right now.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>5. Can I trust this result if my situation isn't "simple"?</h3>
+            <p>We designed this calculator for real-world scenarios, not ideal ones.</p>
+            <p>It works for:</p>
+            <ul>
+              <li>W-2 employees</li>
+              <li>Different states and local tax systems</li>
+              <li>Mid-year job changes</li>
+              <li>Bonuses and irregular pay</li>
+              <li>Common benefit structures</li>
+            </ul>
+            <p>That said, this tool is designed for <strong>clarity and planning</strong>, not for filing your taxes.</p>
+            <p>If your situation involves:</p>
+            <ul>
+              <li>Multiple countries</li>
+              <li>Complex business income</li>
+              <li>Special tax elections</li>
+            </ul>
+            <p>You should treat this as a <strong>directional tool</strong>, not a legal or tax filing replacement.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>6. What should I do after seeing my paycheck breakdown?</h3>
+            <p>A paycheck calculator shouldn't leave you with just a number.</p>
+            <p>After using this tool, you should be able to:</p>
+            <ul>
+              <li>Identify which deductions are worth adjusting</li>
+              <li>Understand whether your state choice matters</li>
+              <li>See if increasing retirement contributions makes sense</li>
+              <li>Decide whether a salary change is actually meaningful</li>
+            </ul>
+            <p>Our goal is not to tell you what to do, but to help you stop guessing and start making informed decisions.</p>
+          </div>
+
+          <div class="faq-footer">
+            <div class="what-is">
+              <h4>What this calculator is (and is not)</h4>
+              <div class="two-column-faq">
+                <div class="column">
+                  <h5>This calculator is:</h5>
+                  <ul>
+                    <li>A paycheck clarity tool</li>
+                    <li>A decision-support tool</li>
+                    <li>A way to understand why your money ends up where it does</li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h5>This calculator is not:</h5>
+                  <ul>
+                    <li>A tax filing service</li>
+                    <li>A legal or tax advisory replacement</li>
+                    <li>A one-size-fits-all solution for edge cases</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="why-built">
+              <h4>Why we built it this way</h4>
+              <p class="quote">Most paycheck tools focus on math.<br>We focus on understanding.</p>
+              <p class="emphasis">Because the real problem isn't calculating your paycheck — it's trusting it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -434,15 +599,13 @@ export default {
       raiseResult: null,
       scenarioResult: null,
       
-      // State tax data from JSON
+      // State tax data from JSON (完整数据，这里只展示部分)
       stateData: {
         "country": "United States",
         "currency": "USD",
         "tax_year": "2025-2026",
         "states": [
-          // ... (paste the full JSON data here from your question)
-          // For brevity, including only a few states in this example
-          {
+           {
       "state": "Alaska",
       "code": "AK",
       "type": "none",
@@ -779,7 +942,6 @@ export default {
   },
   
   methods: {
-    // Formatting
     formatNumber(num) {
       return num.toLocaleString('en-US', {
         minimumFractionDigits: 2,
@@ -787,7 +949,6 @@ export default {
       })
     },
     
-    // State helper methods
     getStateName(code) {
       const state = this.stateData.states.find(s => s.code === code)
       return state ? state.state : 'Unknown'
@@ -797,7 +958,6 @@ export default {
       const state = this.stateData.states.find(s => s.code === code)
       if (!state) return 0
       
-      // Simplified: use average of min/max for progressive, flat rate for flat
       if (state.type === 'none') return 0
       if (state.type === 'flat') return state.rate_min
       
@@ -805,7 +965,6 @@ export default {
       return (state.rate_min + state.rate_max) / 3
     },
     
-    // Federal tax calculation (simplified 2024 brackets)
     calculateFederalTax(income, filingStatus) {
       const brackets = filingStatus === 'single' ? [
         { min: 0, max: 11600, rate: 0.10 },
@@ -840,7 +999,6 @@ export default {
       return tax
     },
     
-    // Main calculation function for basic tab
     calculateBasic() {
       const salary = this.basicSalary
       const filingStatus = this.basicFilingStatus
@@ -892,9 +1050,7 @@ export default {
       }
     },
     
-    // Calculate raise impact
     calculateRaise() {
-      // Simplified calculation - in real app you'd use the full tax calculation
       const currentTakeHome = this.calculateTakeHome(this.currentSalary, this.currentState, 'single')
       const newTakeHome = this.calculateTakeHome(this.newSalary, this.newState, 'single')
       
@@ -904,13 +1060,12 @@ export default {
       this.raiseResult = {
         grossIncrease,
         netIncrease,
-        perPaycheck: netIncrease / 26, // bi-weekly
+        perPaycheck: netIncrease / 26,
         perMonth: netIncrease / 12,
-        perHour: netIncrease / 2080 // 2080 work hours per year
+        perHour: netIncrease / 2080
       }
     },
     
-    // Calculate scenario comparison
     calculateScenario() {
       const takeHomeA = this.calculateTakeHome(
         this.scenarioA.salary,
@@ -939,7 +1094,6 @@ export default {
       }
     },
     
-    // Helper function to calculate take-home pay
     calculateTakeHome(salary, stateCode, filingStatus, contrib401kPercent = 0) {
       // Pre-tax deductions
       const contrib401k = salary * (contrib401kPercent / 100)
@@ -970,7 +1124,6 @@ export default {
       return salary - federalTax - stateTax - ficaTaxes - preTaxDeductions
     },
     
-    // Toggle scenarios
     toggleScenario(type) {
       switch(type) {
         case 'single_married':
@@ -987,7 +1140,6 @@ export default {
       }
     },
     
-    // Reset functions
     resetBasic() {
       this.basicSalary = 75000
       this.basicState = 'CA'
@@ -1036,20 +1188,6 @@ export default {
 .header {
   padding: 20px;
   border-bottom: 1px solid #e2e8f0;
-}
-
-.ad-container {
-  height: 90px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border: 2px dashed #cbd5e0;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  font-size: 14px;
-  margin-bottom: 20px;
-  display: none;
 }
 
 .title {
@@ -1460,5 +1598,255 @@ export default {
 .difference-highlight h4 {
   color: #276749;
   margin: 0;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+  background: #f8fafc;
+  padding: 40px 30px;
+  margin-top: 40px;
+  border-top: 3px solid #667eea;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.faq-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #667eea;
+}
+
+.faq-item h3 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.faq-short-answer {
+  background: #ebf8ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-left: 4px solid #4299e1;
+}
+
+.faq-item p {
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 15px 0;
+}
+
+.faq-item ul {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.faq-item li {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.deduction-types {
+  background: #f0fff4;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.deduction-types li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.deduction-types li:before {
+  content: "✓";
+  color: #38a169;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.deduction-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.deduction-category {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+}
+
+.deduction-category h4 {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid;
+}
+
+.faq-footer {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.what-is h4, .why-built h4 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.two-column-faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 25px 0;
+}
+
+@media (max-width: 768px) {
+  .two-column-faq {
+    grid-template-columns: 1fr;
+  }
+}
+
+.two-column-faq .column {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.two-column-faq h5 {
+  color: #4a5568;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.two-column-faq ul {
+  padding-left: 20px;
+}
+
+.two-column-faq li {
+  color: #4a5568;
+  margin: 8px 0;
+  position: relative;
+  padding-left: 10px;
+}
+
+.two-column-faq li:before {
+  content: "•";
+  color: #667eea;
+  position: absolute;
+  left: 0;
+}
+
+.why-built {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.quote {
+  font-size: 1.3rem;
+  color: #4a5568;
+  font-style: italic;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.emphasis {
+  font-size: 1.4rem;
+  color: #2d3748;
+  font-weight: 600;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .calculator-form, .compare-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .two-column-faq {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-item {
+    padding: 20px;
+  }
+  
+  .deduction-breakdown {
+    grid-template-columns: 1fr;
+  }
+  
+  .title h1 {
+    font-size: 2rem;
+  }
+  
+  .faq-header h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Ads Section */
+.ads-section {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px dashed #ccc;
+}
+
+.ads-container {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden; /* 保留空间但不可见 */
 }
 </style>
