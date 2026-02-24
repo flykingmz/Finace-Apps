@@ -688,7 +688,7 @@
     </div>
 
     <div class="faq-item">
-      <h3>20. Why should I use a paycheck breakdown tool instead of guessing?</h3>
+      <h3>24. Why should I use a paycheck breakdown tool instead of guessing?</h3>
       <p>Without a breakdown, it is difficult to understand:</p>
       <ul>
         <li>Real tax impact</li>
