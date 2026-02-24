@@ -11,7 +11,7 @@
     <div class="header">
       <div class="title">
         <h1>Take Home Paycheck Calculator</h1>
-        <p class="subtitle">Know exactly what you'll earn after taxes and deductions</p>
+        <p class="subtitle">Use this paycheck calculator to estimate your take-home pay after federal and state taxes</p>
       </div>
     </div>
 
@@ -524,6 +524,180 @@
             </ul>
             <p>Our goal is not to tell you what to do, but to help you stop guessing and start making informed decisions.</p>
           </div>
+
+          <div class="faq-item">
+            <h3>7. What is the difference between gross pay and net pay?</h3>
+            <p>Gross Pay → Total income before taxes and deductions.</p>
+            <p>Net Pay (Take-Home Pay) → The amount you actually receive after all taxes and deductions.</p>
+            <p>Example:</p>
+            <ul>
+              <li>Gross salary: $5,000/month</li>
+              <li>Taxes + deductions: $1,300</li>
+              <li>Net pay: $3,700</li>
+            </ul>
+          </div>
+        <div class="faq-item">
+      <h3>8. What taxes are typically deducted from a paycheck?</h3>
+      <p>Most employees will see:</p>
+      <ul>
+        <li>Federal Income Tax — Based on income level and tax bracket.</li>
+        <li>State Income Tax — Varies by state. Some states have none.</li>
+        <li>Social Security Tax — 6.2% of wages (up to annual wage limit).</li>
+        <li>Medicare Tax — 1.45% of wages. Additional 0.9% for high earners.</li>
+        <li>Local Taxes (if applicable) — City or municipal taxes in certain locations.</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>9. What is Social Security tax and why do I pay it?</h3>
+      <p>Social Security tax funds government retirement and disability programs.</p>
+      <p>Employees pay 6.2% and employers match the contribution. The tax applies only up to an annual income cap.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>10. What is Medicare tax?</h3>
+      <p>Medicare tax funds healthcare coverage for people aged 65+ and certain disabled individuals.</p>
+      <p>Most employees pay 1.45% of wages with no income cap.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>11. Why are retirement contributions deducted from my paycheck?</h3>
+      <p>Retirement contributions (such as 401(k)) are deducted to save for future retirement.</p>
+      <p>Traditional 401(k) → reduces taxable income today.</p>
+      <p>Roth 401(k) → taxed now, tax-free withdrawals later.</p>
+      <p>These contributions lower take-home pay but increase long-term savings.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>12. Are retirement contributions taxed?</h3>
+      <p>It depends on the type:</p>
+      <p>Pre-tax contributions → not taxed now, taxed later when withdrawn.</p>
+      <p>Roth contributions → taxed now, tax-free later.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>13. Why do deductions sometimes appear subtracted and then added back?</h3>
+      <p>Some payroll systems show:</p>
+      <ul>
+        <li>Gross income</li>
+        <li>Pre-tax deductions (removed from taxable income)</li>
+        <li>Adjustments or taxable income calculations</li>
+      </ul>
+      <p>This can make deductions appear twice, but they represent different calculation steps.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>14. How do tax brackets affect my paycheck?</h3>
+      <p>Tax brackets are progressive.</p>
+      <p>This means:</p>
+      <ul>
+        <li>Higher income portions are taxed at higher rates.</li>
+        <li>Not all income is taxed at the same rate.</li>
+        <li>A raise does not mean all your income is taxed more.</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>15. Why does my paycheck change even if my salary stays the same?</h3>
+      <p>Common reasons:</p>
+      <ul>
+        <li>Changes in tax withholding</li>
+        <li>Bonus or overtime payments</li>
+        <li>Benefits enrollment changes</li>
+        <li>Tax law updates</li>
+        <li>Pre-tax deduction adjustments</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>16. What is tax withholding?</h3>
+      <p>Tax withholding is money your employer sends to the government on your behalf based on your W-4 form and estimated tax liability.</p>
+      <p>If too much is withheld → refund later.</p>
+      <p>If too little → tax owed later.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>17. How can I increase my take-home pay?</h3>
+      <p>You may:</p>
+      <ul>
+        <li>Adjust tax withholding</li>
+        <li>Change retirement contributions</li>
+        <li>Modify benefit selections</li>
+        <li>Use pre-tax accounts (HSA/FSA)</li>
+        <li>Review payroll deductions</li>
+      </ul>
+      <p>However, reducing withholding may result in higher taxes later.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>18. Why do bonuses get taxed differently?</h3>
+      <p>Bonuses often use a flat supplemental tax rate or different withholding rules, which can make them appear heavily taxed. Actual tax liability is reconciled when filing taxes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>19. Why does location affect my paycheck?</h3>
+      <p>Taxes vary significantly by location:</p>
+      <ul>
+        <li>State income tax rates differ.</li>
+        <li>Some states have no income tax.</li>
+        <li>Local taxes may apply in certain cities.</li>
+      </ul>
+      <p>Location strongly affects net income.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>20. How accurate are paycheck calculators?</h3>
+      <p>Good paycheck calculators estimate:</p>
+      <ul>
+        <li>Federal and state taxes</li>
+        <li>Payroll taxes</li>
+        <li>Deductions</li>
+      </ul>
+      <p>However, exact results depend on personal tax details, benefits, and employer payroll rules.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>21. Why is understanding paycheck breakdown important?</h3>
+      <p>Understanding your paycheck helps you:</p>
+      <ul>
+        <li>Plan finances</li>
+        <li>Avoid tax surprises</li>
+        <li>Optimize deductions</li>
+        <li>Compare job offers accurately</li>
+        <li>Make better compensation decisions</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>22. What information do I need to calculate my take-home pay?</h3>
+      <p>Typical inputs:</p>
+      <ul>
+        <li>Salary or hourly wage</li>
+        <li>Pay frequency</li>
+        <li>Location</li>
+        <li>Filing status</li>
+        <li>Retirement contributions</li>
+        <li>Benefits deductions</li>
+        <li>Bonuses or extra income</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>23. Can a paycheck breakdown help compare job offers?</h3>
+      <p>Yes. Two salaries may produce very different take-home pay depending on taxes, benefits, and location. Net pay comparison gives a more realistic view of compensation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>20. Why should I use a paycheck breakdown tool instead of guessing?</h3>
+      <p>Without a breakdown, it is difficult to understand:</p>
+      <ul>
+        <li>Real tax impact</li>
+        <li>True take-home income</li>
+        <li>Effect of deductions</li>
+        <li>Financial planning accuracy</li>
+      </ul>
+      <p>A breakdown provides transparency and reduces confusion.</p>
+    </div>
 
           <div class="faq-footer">
             <div class="what-is">

@@ -33,10 +33,13 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
-        path: 'takehomepaycheck',
+        path: 'take-home-paycheck-calculator',
         name: 'TakeHomePaycheckCalculator',
         component: () => import('../components/TakeHomePaycheckCalculator.vue'),
-        meta: { keepAlive: false }
+        meta: { 
+          title: "Take Home Paycheck Calculator — Estimate Net Salary",
+          description: "Calculate your take-home pay after tax and deductions." 
+        }
       },
       {
         path: 'retirement',

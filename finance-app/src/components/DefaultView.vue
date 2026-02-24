@@ -23,7 +23,7 @@
             <a href="#/a/global-price" class="tool-link">Global VAT Calculator</a>
             <a href="#/a/income-tax" class="tool-link">Income Tax Calculator</a>
             <a href="#/a/paycheck" class="tool-link">Paycheck Calculator</a>
-            <a href="#/a/takehomepaycheck" class="tool-link">TakeHome Paycheck Calculator</a>
+            <a href="#/a/take-home-paycheck-calculator" class="tool-link">TakeHome Paycheck Calculator</a>
           </div>
         </div>
 

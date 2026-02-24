@@ -96,7 +96,7 @@ const navigationData = [
       {
         id: 'takehomepaycheck',
         title: 'TakeHome Paycheck Calculator',
-        route: '/a/takehomepaycheck',
+        route: '/a/take-home-paycheck-calculator',
         component: 'TakeHomePaycheckCalculator'
       }
     ]
