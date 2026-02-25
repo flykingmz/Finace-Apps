@@ -12,7 +12,7 @@ const routes = [
       {
         path: '',
         name: 'DashboardHome',
-        component: () => import('../components/DefaultView.vue')
+        component: () => import('../components/Home.vue')
       },
       {
         path: 'global-price',
@@ -36,10 +36,7 @@ const routes = [
         path: 'take-home-paycheck-calculator',
         name: 'TakeHomePaycheckCalculator',
         component: () => import('../components/TakeHomePaycheckCalculator.vue'),
-        meta: { 
-          title: "Take Home Paycheck Calculator — Estimate Net Salary",
-          description: "Calculate your take-home pay after tax and deductions." 
-        }
+        meta: { keepAlive: false }
       },
       {
         path: 'retirement',
