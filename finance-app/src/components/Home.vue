@@ -10,7 +10,7 @@
       <!-- Tax and Salary -->
       <div class="category-card">
         <!-- <div class="category-icon"><i class="fas fa-file-invoice-dollar"></i></div> -->
-        <div class="category-title"><a href="#/calculators/tax-salary">Tax and Salary </a> </div>
+        <div class="category-title"><a href="#/a/tax-salary-calculators">Tax and Salary</a> </div>
         <ul class="popular-list">
           <li><a href="#/a/global-vat" >🌍 Global VAT/GST/Sales Tax Calculator</a></li>
           <li><a href="#/a/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
@@ -19,38 +19,35 @@
       <!-- Retirement -->
       <div class="category-card">
        <!-- <div class="category-icon"><i class="fas fa-umbrella-beach"></i></div> -->
-        <div class="category-title">Retirement</div>
+        <div class="category-title"><a href="#/a/retirement-calculators">Retirement</a> </div>
         <ul class="popular-list">
           <li><a href="#/a/retirement" >📈 Retirement Calculator</a></li>
           <li><a href="#/a/401k" >💰 401(k) Calculator</a></li>
         </ul>
-        <a href="#/calculators/retirement" class="btn-link" >All Retirement Tools <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Mortgage and Real Estate -->
       <div class="category-card">
       <!--  <div class="category-icon"><i class="fas fa-home"></i></div> -->
-        <div class="category-title">Mortgage and Real Estate</div>
+        <div class="category-title"><a href="#/a/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
         <ul class="popular-list">
           <li><a href="#/calculators/mortgage" >🏠 Mortgage Calculator</a></li>
           <li><a href="#/calculators/amortization" >📉 Amortization Calculator</a></li>
         </ul>
-        <a href="#/calculators/mortgage-realestate" class="btn-link" >All RE Calculators <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Investment -->
       <div class="category-card">
      <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
-        <div class="category-title">Investment</div>
+        <div class="category-title"><a href="#/a/investment-calculators">Investment</a> </div>
         <ul class="popular-list">
           <li><a href="#/calculators/investment" >📊 Investment Calculator</a></li>
           <li><a href="#/calculators/interest" >🧮 Interest Calculator</a></li>
         </ul>
-        <a href="#/calculators/investment" class="btn-link" >All Investment Tools <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">
-      <a href="#/a/all-calculators" class="btn-primary" >✨ All Calculators (40+ tools)</a>
+      <a href="#/a/all-calculators" class="btn-primary" >✨ All Calculators (50+ tools)</a>
     </div>
 
     <!-- Featured Calculators section (as per 'all calculators' area) -->

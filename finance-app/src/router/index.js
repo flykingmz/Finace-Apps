@@ -20,6 +20,26 @@ const routes = [
         component: () => import('../components/DefaultView.vue')
       },
       {
+        path: 'tax-salary-calculators',
+        name: 'TaxSalaryCalculators',
+        component: () => import('../components/TaxSalaryCalculators.vue')
+      },
+      {
+        path: 'retirement-calculators',
+        name: 'RetirementCalculators',
+        component: () => import('../components/RetirementCalculators.vue')
+      },
+      {
+        path: 'mortgage-RE-calculators',
+        name: 'MortgageRECalculators',
+        component: () => import('../components/MortgageRECalculators.vue')
+      },
+      {
+        path: 'investment-calculators',
+        name: 'InvestmentCalculators',
+        component: () => import('../components/InvestmentCalculators.vue')
+      },
+      {
         path: 'global-vat',
         name: 'GlobalPriceCalculator',
         component: () => import('../components/GlobalPriceCalculator.vue'),
