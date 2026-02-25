@@ -12,46 +12,46 @@
         <!-- <div class="category-icon"><i class="fas fa-file-invoice-dollar"></i></div> -->
         <div class="category-title">Tax and Salary</div>
         <ul class="popular-list">
-          <li><a href="/a/global-vat" @click.prevent="navigate">🌍 Global VAT/GST/Sales Tax Calculator</a></li>
-          <li><a href="/a/take-home-paycheck-calculator" @click.prevent="navigate">💵 Take Home Paycheck Calculator</a></li>
+          <li><a href="#/a/global-vat" @click.prevent="navigate">🌍 Global VAT/GST/Sales Tax Calculator</a></li>
+          <li><a href="#/a/take-home-paycheck-calculator" @click.prevent="navigate">💵 Take Home Paycheck Calculator</a></li>
         </ul>
-        <a href="/calculators/tax-salary" class="btn-link" @click.prevent="navigate">All Tax Calculators <i class="fas fa-arrow-right"></i></a>
+        <a href="#/calculators/tax-salary" class="btn-link" @click.prevent="navigate">All Tax Calculators <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Retirement -->
       <div class="category-card">
        <!-- <div class="category-icon"><i class="fas fa-umbrella-beach"></i></div> -->
         <div class="category-title">Retirement</div>
         <ul class="popular-list">
-          <li><a href="/a/retirement" @click.prevent="navigate">📈 Retirement Calculator</a></li>
-          <li><a href="/a/401k" @click.prevent="navigate">💰 401(k) Calculator</a></li>
+          <li><a href="#/a/retirement" @click.prevent="navigate">📈 Retirement Calculator</a></li>
+          <li><a href="#/a/401k" @click.prevent="navigate">💰 401(k) Calculator</a></li>
         </ul>
-        <a href="/calculators/retirement" class="btn-link" @click.prevent="navigate">All Retirement Tools <i class="fas fa-arrow-right"></i></a>
+        <a href="#/calculators/retirement" class="btn-link" @click.prevent="navigate">All Retirement Tools <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Mortgage and Real Estate -->
       <div class="category-card">
       <!--  <div class="category-icon"><i class="fas fa-home"></i></div> -->
         <div class="category-title">Mortgage and Real Estate</div>
         <ul class="popular-list">
-          <li><a href="/calculators/mortgage" @click.prevent="navigate">🏠 Mortgage Calculator</a></li>
-          <li><a href="/calculators/amortization" @click.prevent="navigate">📉 Amortization Calculator</a></li>
+          <li><a href="#/calculators/mortgage" @click.prevent="navigate">🏠 Mortgage Calculator</a></li>
+          <li><a href="#/calculators/amortization" @click.prevent="navigate">📉 Amortization Calculator</a></li>
         </ul>
-        <a href="/calculators/mortgage-realestate" class="btn-link" @click.prevent="navigate">All RE Calculators <i class="fas fa-arrow-right"></i></a>
+        <a href="#/calculators/mortgage-realestate" class="btn-link" @click.prevent="navigate">All RE Calculators <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Investment -->
       <div class="category-card">
      <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
         <div class="category-title">Investment</div>
         <ul class="popular-list">
-          <li><a href="/calculators/investment" @click.prevent="navigate">📊 Investment Calculator</a></li>
-          <li><a href="/calculators/interest" @click.prevent="navigate">🧮 Interest Calculator</a></li>
+          <li><a href="#/calculators/investment" @click.prevent="navigate">📊 Investment Calculator</a></li>
+          <li><a href="#/calculators/interest" @click.prevent="navigate">🧮 Interest Calculator</a></li>
         </ul>
-        <a href="/calculators/investment" class="btn-link" @click.prevent="navigate">All Investment Tools <i class="fas fa-arrow-right"></i></a>
+        <a href="#/calculators/investment" class="btn-link" @click.prevent="navigate">All Investment Tools <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">
-      <a href="/a/all-calculators" class="btn-primary" @click.prevent="navigate">✨ All Calculators (40+ tools)</a>
+      <a href="#/a/all-calculators" class="btn-primary" @click.prevent="navigate">✨ All Calculators (40+ tools)</a>
     </div>
 
     <!-- Featured Calculators section (as per 'all calculators' area) -->
@@ -59,11 +59,11 @@
     <div class="featured-grid">
       <div class="featured-item">
         <i class="fas fa-globe"></i>
-        <a href="/a/global-vat" @click.prevent="navigate">Global VAT/GST/Sales Tax Calculator</a>
+        <a href="#/a/global-vat" @click.prevent="navigate">Global VAT/GST/Sales Tax Calculator</a>
       </div>
       <div class="featured-item">
         <i class="fas fa-wallet"></i>
-        <a href="/a/take-home-paycheck-calculator" @click.prevent="navigate">Take Home Paycheck Calculator</a>
+        <a href="#/a/take-home-paycheck-calculator" @click.prevent="navigate">Take Home Paycheck Calculator</a>
       </div>
     </div>
 
