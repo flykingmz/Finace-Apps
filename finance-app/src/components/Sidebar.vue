@@ -78,7 +78,7 @@ const navigationData = [
       {
         id: 'global-price',
         title: 'Global VAT Calculator',
-        route: '/a/global-price',
+        route: '/a/global-vat',
         component: 'GlobalPriceCalculator'
       },
       {
