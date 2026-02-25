@@ -11,7 +11,7 @@
           <span class="link-text">about us</span>
         </a>
         <span class="link-separator">|</span>
-        <a href="/a/all-calculators" class="footer-link">
+        <a href="#/a/all-calculators" class="footer-link">
           <span class="link-text">sitemap</span>
         </a>
         <span class="link-separator">|</span>
