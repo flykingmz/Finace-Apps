@@ -4,7 +4,7 @@
     <header class="header">
       <div class="header-content">
         <h1>401(k) Calculator</h1>
-        <p class="subtitle">Plan your retirement savings with this 401(k) calculator</p>
+        <p class="subtitle">Use our 401(k) Calculator to estimate your retirement savings based on your contributions, employer match, and expected investment returns. Project your 401(k) balance over time, plan contribution strategies, and understand how compound growth impacts your long-term retirement goals. This tool helps individuals make smarter retirement planning decisions with clear and accurate projections.</p>
       </div>
     </header>
 
@@ -496,6 +496,45 @@ export default {
     };
   },
   methods: {
+     setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our free 401(k) Calculator to estimate retirement savings, employer match, and investment growth. Plan contributions and forecast your future retirement income easily.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     formatCurrency(value) {
       return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -600,6 +639,10 @@ export default {
     }
   },
   mounted() {
+    document.title = '401(k) Calculator – Estimate Retirement Savings & Employer Match'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+
     // Initialize with sample schedule data from attachments
     this.generateAccumulationSchedule();
     this.generateWithdrawalSchedule();

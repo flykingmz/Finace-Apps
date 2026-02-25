@@ -8,8 +8,8 @@
 
     <!-- Page Title -->
     <div class="page-title-container">
-      <h1 class="page-title">Global VAT/GST/Sales Tax Calculator</h1>
-      <p class="page-subtitle">Calculate the final price including VAT/GST/Sales Tax and platform fees for any country</p>
+      <h1 class="page-title">Global VAT, GST & Sales Tax Calculator</h1>
+      <p class="page-subtitle">Use our Global VAT, GST, and Sales Tax Calculator to quickly calculate tax amounts, tax-inclusive prices, and tax-exclusive values for countries worldwide. Whether you're calculating international transactions, e-commerce pricing, invoices, or cross-border sales, this tool helps you estimate accurate tax rates and understand your tax breakdown instantly.</p>
     </div>
 
     <!-- Main Calculator Section -->
@@ -840,7 +840,10 @@ export default {
     }
   },
   mounted() {
-    console.log('GlobalPriceCalculator mounted with route:', this.$route.path)
+    // console.log('GlobalPriceCalculator mounted with route:', this.$route.path)
+    document.title = 'Free Global VAT, GST & Sales Tax Calculator (All Countries)'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
     // 设置默认国家
     this.selectedCountry = taxData.Europe[6] // Germany
     this.countrySearch = this.selectedCountry.country
@@ -855,6 +858,45 @@ export default {
     window.removeEventListener('route-navigated', this.handleRouteNavigation)
   },
   methods: {
+     setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Calculate VAT, GST, and sales tax for countries worldwide. Instantly estimate tax rates, total price, and tax breakdown with our free global tax calculator.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     // 处理路由导航
     handleRouteNavigation(event) {
       console.log('Route navigation detected:', event.detail)

@@ -11,7 +11,7 @@
     <!-- Title Section -->
     <header class="calculator-header">
       <h1>Retirement Calculator</h1>
-      <p>This calculator helps you plan for retirement by showing your current savings status, how much you need to save to reach your goals, and what your withdrawals may look like in retirement.</p>
+      <p>Use our Retirement Calculator to estimate how much you need to retire and plan your future financial security. Calculate retirement savings, expected retirement income, investment growth, and monthly contributions based on your age, income, and retirement goals. This tool helps individuals and families create a clear retirement plan and make smarter long-term financial decisions.</p>
     </header>
 
     <!-- Main Content Area -->
@@ -454,6 +454,12 @@ That's not to say that there aren't certain benefits to having some savings in a
 <script>
 export default {
   name: 'RetirementCalculator',
+  mounted() {
+    document.title = 'Free Retirement Calculator – Plan Savings & Retirement Income'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+   
+  },
   data() {
     return {
       // Input fields with default values
@@ -502,6 +508,45 @@ export default {
     }
   },
   methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our free Retirement Calculator to estimate retirement savings, retirement income, and how much you need to retire. Plan contributions and future financial goals easily.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     calculate() {
       // Calculate retirement need
       const realReturnRate = (1 + this.investmentReturn / 100) / (1 + this.inflationRate / 100) - 1;

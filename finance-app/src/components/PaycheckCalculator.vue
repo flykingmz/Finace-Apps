@@ -9,7 +9,7 @@
     <!-- Page Title -->
     <div class="page-title-container">
       <h1 class="page-title">Paycheck Calculator</h1>
-      <p class="page-subtitle">Calculate net pay, taxes, and deductions for both salaried and hourly employees in United States</p>
+      <p class="page-subtitle">Use our Paycheck Calculator to quickly estimate your net pay, take home salary, and after-tax income. Calculate payroll taxes, deductions, and paycheck amounts based on your income, pay frequency, and tax rates. This tool helps employees, freelancers, and businesses understand earnings and plan finances with accurate paycheck estimates.</p>
     </div>
 
     <!-- Main Content -->
@@ -1118,6 +1118,10 @@ export default {
     }
   },
   mounted() {
+    document.title = 'Free Paycheck Calculator – Calculate Net Pay & Take Home Salary'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+
     // Set default state to California
     this.selectedState = this.states.find(state => state.code === 'CA')
     
@@ -1125,6 +1129,45 @@ export default {
     // this.calculatePaycheck()
   },
   methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our free Paycheck Calculator to estimate your net pay, take home salary, and after-tax income. Calculate payroll deductions, taxes, and paycheck amounts instantly.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     // Helper methods
     getDefaultPayDate() {
       const date = new Date()

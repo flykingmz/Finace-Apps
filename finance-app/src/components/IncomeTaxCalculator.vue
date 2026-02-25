@@ -13,8 +13,8 @@
       </div>
       
       <div class="header">
-        <h1><i class="fas fa-calculator"></i> India Income Tax Calculator</h1>
-        <p class="subtitle">A comparative tool that helps you calculate income tax according to both the old and new tax regime. Use this online income tax calculator to know your tax liabilities.</p>
+        <h1><i class="fas fa-calculator"></i> Income Tax Calculator</h1>
+        <p class="subtitle">Use our Income Tax Calculator to estimate your tax liability, tax refund, and after-tax income based on your earnings, filing status, and tax rates. Calculate federal and state income taxes, deductions, and credits to understand how much tax you owe or how much refund you may receive. This tool helps individuals, employees, and freelancers plan finances with accurate tax estimates.</p>
         
         <div class="fiscal-year-tabs">
           <button 
@@ -627,11 +627,53 @@ export default {
   },
   
   mounted() {
+    document.title = 'Free Income Tax Calculator – Estimate Taxes & After-Tax Income'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
     this.updateTaxSlabs();
     this.calculateTax();
   },
   
   methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our free Income Tax Calculator to estimate your tax liability, refund, and after-tax income. Calculate federal and state taxes quickly with accurate results.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     // 更新税率表
     updateTaxSlabs() {
       if (this.currentFY === '2024-2025') {

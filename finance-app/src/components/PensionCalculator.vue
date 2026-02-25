@@ -9,7 +9,7 @@
     <!-- 标题层 -->
     <div class="header-section">
       <h1>Pension Calculator</h1>
-      <p class="subtitle">Compare different pension payout options to make informed retirement decisions</p>
+      <p class="subtitle">Use our Pension Calculator to estimate your retirement pension income based on your salary, years of service, and expected retirement age. Calculate monthly pension payouts, forecast total retirement benefits, and understand how your pension supports long-term financial security. This tool helps you plan retirement income with clear and accurate projections.</p>
     </div>
 
     <!-- 中间层：计算器区域 -->
@@ -581,6 +581,11 @@
 <script>
 export default {
   name: 'PensionCalculator',
+  mounted() {
+    document.title = 'Pension Calculator – Estimate Your Retirement Pension Income'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+  },
   data() {
     return {
       activeCalculator: 'lumpSum',
@@ -621,6 +626,45 @@ export default {
     };
   },
   methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our free Pension Calculator to estimate your retirement pension income, monthly payouts, and total benefits. Plan your retirement and forecast future income easily.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     formatCurrency(value) {
       if (value >= 1000000) {
         return (value / 1000000).toFixed(2) + 'M';
