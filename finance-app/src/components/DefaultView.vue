@@ -135,7 +135,7 @@ export default {
   name: 'DefaultView',
   mounted() {
     //console.log('injectJsonLdToHead script start.');
-    document.title = 'Taxo Financial Free Calculators'
+    document.title = 'Financial Calculators — Free Tax, Paycheck, VAT, Mortgage & Retirement Calculators'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
@@ -159,7 +159,7 @@ export default {
         desc.name = 'description'
         document.head.appendChild(desc)
       }
-      desc.content = 'Free financial calculators for paycheck, income tax, and global price calculations. Calculate net pay, estimate taxes, compare prices worldwide.'
+      desc.content = 'Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.'
       
       // 确保robots标签存在（告诉Google索引此页）
       let robots = document.querySelector('meta[name="robots"]')
@@ -198,8 +198,8 @@ export default {
       const jsonLd ={
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Taxo Financial Free Calculators",
-        "description": "Financial Free Calculators provides simple, free online calculators for personal finance, investing, retirement, and everyday financial planning.",
+        "name": "Financial Calculators — Free Tax, Paycheck, VAT, Mortgage & Retirement Calculators",
+        "description": "Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
         "url": "https://finace-apps-one.vercel.app/",

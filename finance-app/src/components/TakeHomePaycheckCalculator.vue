@@ -11,7 +11,8 @@
     <div class="header">
       <div class="title">
         <h1>Take Home Paycheck Calculator</h1>
-        <p class="subtitle">Use this paycheck calculator to estimate your take-home pay after federal and state taxes</p>
+        <p class="subtitle">Use our free take home paycheck calculator to estimate your net salary after federal and state taxes, retirement contributions, and payroll deductions. 
+Understand your paycheck breakdown and see how much income you actually take home each pay period.</p>
       </div>
     </div>
 
@@ -1112,6 +1113,10 @@ export default {
   },
   
   mounted() {
+    document.title = 'Take Home Paycheck Calculator — Estimate Net Salary After Tax'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+
     this.calculateBasic()
   },
   
@@ -1343,6 +1348,43 @@ export default {
       }
       this.raiseResult = null
       this.scenarioResult = null
+    },
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Free take home paycheck calculator to estimate your net salary after tax, deductions, and benefits. Calculate take-home pay instantly online.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
     }
   }
 }
