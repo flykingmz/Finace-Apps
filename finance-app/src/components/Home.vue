@@ -30,8 +30,8 @@
       <!--  <div class="category-icon"><i class="fas fa-home"></i></div> -->
         <div class="category-title"><a href="#/a/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
         <ul class="popular-list">
-          <li><a href="#/calculators/mortgage" >🏠 Mortgage Calculator</a></li>
-          <li><a href="#/calculators/amortization" >📉 Amortization Calculator</a></li>
+          <li><a href="" >🏠 Mortgage Calculator</a></li>
+          <li><a href="" >📉 Amortization Calculator</a></li>
         </ul>
       </div>
       <!-- Investment -->
@@ -39,8 +39,8 @@
      <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
         <div class="category-title"><a href="#/a/investment-calculators">Investment</a> </div>
         <ul class="popular-list">
-          <li><a href="#/calculators/investment" >📊 Investment Calculator</a></li>
-          <li><a href="#/calculators/interest" >🧮 Interest Calculator</a></li>
+          <li><a href="" >📊 Investment Calculator</a></li>
+          <li><a href="" >🧮 Interest Calculator</a></li>
         </ul>
       </div>
     </div>
