@@ -10,12 +10,11 @@
       <!-- Tax and Salary -->
       <div class="category-card">
         <!-- <div class="category-icon"><i class="fas fa-file-invoice-dollar"></i></div> -->
-        <div class="category-title">Tax and Salary</div>
+        <div class="category-title"><a href="#/calculators/tax-salary">Tax and Salary </a> </div>
         <ul class="popular-list">
           <li><a href="#/a/global-vat" >🌍 Global VAT/GST/Sales Tax Calculator</a></li>
           <li><a href="#/a/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
         </ul>
-        <a href="#/calculators/tax-salary" class="btn-link" >All Tax Calculators <i class="fas fa-arrow-right"></i></a>
       </div>
       <!-- Retirement -->
       <div class="category-card">
