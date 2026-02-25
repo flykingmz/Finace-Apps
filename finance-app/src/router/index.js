@@ -15,7 +15,12 @@ const routes = [
         component: () => import('../components/Home.vue')
       },
       {
-        path: 'global-price',
+        path: 'all-calculators',
+        name: 'DashboardAll',
+        component: () => import('../components/DefaultView.vue')
+      },
+      {
+        path: 'global-vat',
         name: 'GlobalPriceCalculator',
         component: () => import('../components/GlobalPriceCalculator.vue'),
         meta: { keepAlive: false } // 确保不缓存
