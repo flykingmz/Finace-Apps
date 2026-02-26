@@ -1,5 +1,9 @@
 <template>
   <div class="top-header">
+  <!-- Logo区域 - 新增 -->
+    <div class="logo-section">
+      <img src="/logo1.webp" alt="Taxo Logo" class="logo-image">
+    </div>
     <!-- 返回dashboard的链接 - 移动端居中优化 -->
     <div class="dashboard-link">
       <a href="/dashboard" class="link-content">
@@ -217,5 +221,11 @@ export default {
     font-size: 0.9rem;
     max-width: calc(100% - 90px);
   }
+}
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 </style>
