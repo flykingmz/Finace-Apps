@@ -12,7 +12,7 @@
       </a>
     </div>
     
-    <div class="page-title">{{ pageTitle }}</div>
+    <div class="page-title">financial-calculator.net</div>
     
     <div class="user-info">
       <!-- 可选的用户信息区域，保持占位 -->
@@ -41,7 +41,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  background-color: #ffffff;
+  background-color: #3f8b49;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-height: 64px;
@@ -97,17 +97,30 @@ export default {
   display: inline-block;
 }
 
+/* 艺术字体效果 - financial-calculator.net */
 .page-title {
   flex-grow: 1;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-  text-align: center; /* 默认居中 */
+  font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  text-align: center;
   margin: 0 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.page-title:hover {
+  transform: scale(1.02);
+  text-shadow: 3px 3px 6px rgba(79, 70, 229, 0.3);
 }
 
 .user-info {
