@@ -1,17 +1,11 @@
 <template>
   <div class="top-header">
-  <!-- Logo区域 - 新增 -->
+    
+    <!-- Logo区域 - 新增 -->
     <div class="logo-section">
       <img src="/logo1.webp" alt="Taxo Logo" class="logo-image">
     </div>
-    <!-- 返回dashboard的链接 - 移动端居中优化 -->
-    <div class="dashboard-link">
-      <a href="/dashboard" class="link-content">
-        <span class="link-icon">←</span>
-        <span class="link-text">Home</span>
-      </a>
-    </div>
-    
+
     <div class="page-title">financial-calculator.net</div>
     
     <div class="user-info">
@@ -41,7 +35,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  background-color: #3f8b49;
+  background-color: #070807;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-height: 64px;
@@ -64,7 +58,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #4f46e5;
+  color: #46e56b;
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.5rem 0.75rem;
@@ -101,9 +95,9 @@ export default {
 .page-title {
   flex-grow: 1;
   font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive;
-  font-size: 1.8rem;
-  font-weight: 400;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed, #2563eb);
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -116,11 +110,6 @@ export default {
   white-space: nowrap;
   min-width: 0;
   transition: all 0.3s ease;
-}
-
-.page-title:hover {
-  transform: scale(1.02);
-  text-shadow: 3px 3px 6px rgba(79, 70, 229, 0.3);
 }
 
 .user-info {

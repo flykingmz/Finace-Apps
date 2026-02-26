@@ -61,7 +61,7 @@ export default {
   padding: 1rem 0;
   text-align: center;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #55595c;
   position: fixed; /* 固定在底部 */
   bottom: 0;
   /* left: 250px;   ✅ 从侧边栏右侧开始 */

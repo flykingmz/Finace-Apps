@@ -1,5 +1,10 @@
 <template>
   <div class="financial-home">
+   <!-- 返回dashboard的链接 - 移动端居中优化 -->
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
+
     <!-- Header -->
     <h1>📊 Free Financial Calculators</h1>
     <div class="subhead">Estimate your take-home pay, calculate VAT and taxes, plan retirement, and analyze investments — all in one place.</div>
