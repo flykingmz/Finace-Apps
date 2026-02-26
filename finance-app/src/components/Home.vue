@@ -72,7 +72,7 @@
           <li><a href="" >📈 Debt Payoff Calculator</a></li>
         </ul>
       </div>
-    </div>
+
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">
