@@ -4,8 +4,8 @@
     <div class="page-top">
       <!-- 标题部分 -->
       <div class="title-section">
-        <h1 class="main-title">Free Financial Calculators for Tax, Paycheck, VAT & Personal Finance</h1>
-        <p class="subtitle">Estimate your take-home pay, calculate VAT and taxes, plan retirement, and analyze investments — all in one place.</p>
+        <h1 class="main-title">Free Financial Calculators</h1>
+        <p class="subtitle">The following is a complete list of our free financial calculators.</p>
       </div>
     </div>
 
