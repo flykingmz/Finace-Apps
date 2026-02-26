@@ -13,14 +13,18 @@
     <!-- Sidebar Header - 在折叠时只显示logo -->
     <div class="sidebar-header" v-if="!isCollapsed && !isMobile">
       <div class="logo">
-        <img src="/logo1.webp" alt="Taxo Logo" class="logo-image">
+        <div class="logo-placeholder">
+          <img src="/logo1.webp" alt="Taxo Logo" class="logo-image" @error="handleLogoError">
+        </div>
         <span class="brand-name">Taxo</span>
       </div>
     </div>
     <!-- 折叠时显示小logo - 只在桌面端显示 -->
     <div class="sidebar-header-collapsed" v-else-if="isCollapsed && !isMobile">
       <div class="logo-collapsed">
-        <img src="/logo1.webp" alt="Taxo Logo" class="logo-image-collapsed">
+        <div class="logo-placeholder-collapsed">
+          <img src="/logo1.webp" alt="Taxo Logo" class="logo-image-collapsed" @error="handleLogoError">
+        </div>
       </div>
     </div>
       
@@ -37,12 +41,12 @@
             <span class="nav-icon">{{ nav.icon }}</span>
             <span class="nav-text">{{ nav.title }}</span>
           </div>
-          <span v-if="nav.children" class="nav-arrow" :class="{ 'rotated': nav.expanded }">▶</span>
+          <span v-if="nav.children && nav.children.length > 0" class="nav-arrow" :class="{ 'rotated': nav.expanded }">▶</span>
         </div>
         
-        <!-- Sub Navigation -->
+        <!-- Sub Navigation - 确保在expanded为true时显示 -->
         <div 
-          v-if="nav.children && nav.expanded"
+          v-if="nav.children && nav.children.length > 0 && nav.expanded"
           :key="'sub-' + nav.id"
           class="subnav"
         >
@@ -77,7 +81,9 @@
     <div class="mobile-menu-content" @click.stop>
       <div class="mobile-menu-header">
         <div class="mobile-logo">
-          <img src="/logo1.webp" alt="Taxo Logo" class="mobile-logo-image">
+          <div class="mobile-logo-placeholder">
+            <img src="/logo1.webp" alt="Taxo Logo" class="mobile-logo-image" @error="handleLogoError">
+          </div>
           <span class="mobile-app-name">Taxo</span>
         </div>
         <button class="mobile-close-btn" @click="closeMobileMenu">✕</button>
@@ -93,12 +99,12 @@
               <span class="mobile-nav-icon">{{ nav.icon }}</span>
               <span class="mobile-nav-text">{{ nav.title }}</span>
             </div>
-            <span v-if="nav.children" class="mobile-nav-arrow" :class="{ 'rotated': nav.expanded }">▼</span>
+            <span v-if="nav.children && nav.children.length > 0" class="mobile-nav-arrow" :class="{ 'rotated': nav.expanded }">▼</span>
           </div>
           
           <!-- Mobile Sub Navigation -->
           <div 
-            v-if="nav.children && nav.expanded"
+            v-if="nav.children && nav.children.length > 0 && nav.expanded"
             :key="'mobile-sub-' + nav.id"
             class="mobile-subnav"
           >
@@ -285,9 +291,21 @@ export default {
       isCollapsed: false,
       isMobile: false,
       mobileMenuOpen: false,
-      navigation: JSON.parse(JSON.stringify(navigationData)),
+      navigation: [],
       activeSubNav: 'global-price'
     }
+  },
+  created() {
+    // 深拷贝导航数据，确保所有状态正确初始化
+    this.navigation = JSON.parse(JSON.stringify(navigationData))
+    
+    // 确保第一个导航项是展开的
+    if (this.navigation.length > 0) {
+      this.navigation[0].expanded = true
+      this.navigation[0].active = true
+    }
+    
+    console.log('Navigation initialized:', this.navigation)
   },
   mounted() {
     console.log('Sidebar mounted')
@@ -315,6 +333,19 @@ export default {
     }
   },
   methods: {
+    handleLogoError(e) {
+      console.log('Logo failed to load, using fallback')
+      // 如果图片加载失败，隐藏图片元素，显示纯文本logo
+      e.target.style.display = 'none'
+      // 添加一个纯文本备用logo
+      const parent = e.target.parentNode
+      if (!parent.querySelector('.fallback-logo')) {
+        const fallback = document.createElement('div')
+        fallback.className = 'fallback-logo'
+        fallback.innerText = '📊'
+        parent.appendChild(fallback)
+      }
+    },
     checkMobile() {
       // 检测是否为移动端（宽度小于768px）
       this.isMobile = window.innerWidth < 768
@@ -342,22 +373,15 @@ export default {
     toggleSidebar() {
       // 桌面端切换侧边栏状态
       this.isCollapsed = !this.isCollapsed
-      
-      // 如果展开侧边栏，确保第一个导航项是展开状态
-      if (!this.isCollapsed) {
-        // 重置所有导航项状态
-        this.navigation.forEach((nav, index) => {
-          nav.expanded = index === 0 // 只展开第一个
-          nav.active = index === 0
-        })
-      }
     },
     openMobileMenu() {
       this.mobileMenuOpen = true
       // 重置导航状态
-      this.navigation.forEach((nav, index) => {
-        nav.expanded = index === 0
-      })
+      if (this.navigation.length > 0) {
+        this.navigation.forEach((nav, index) => {
+          nav.expanded = index === 0
+        })
+      }
       document.body.style.overflow = 'hidden' // 禁止背景滚动
     },
     closeMobileMenu() {
@@ -365,7 +389,7 @@ export default {
       document.body.style.overflow = '' // 恢复背景滚动
     },
     toggleNav(navItem) {
-      console.log('Toggle nav:', navItem.id)
+      console.log('Toggle nav:', navItem.id, 'Current expanded:', navItem.expanded)
       
       // 如果侧边栏是收起的，先展开侧边栏
       if (this.isCollapsed) {
@@ -379,30 +403,45 @@ export default {
       }
     },
     toggleMobileNav(navItem) {
+      console.log('Toggle mobile nav:', navItem.id, 'Current expanded:', navItem.expanded)
+      
       // 移动端导航切换
       this.navigation.forEach(nav => {
         if (nav.id === navItem.id) {
           nav.expanded = !nav.expanded
           nav.active = true
+          console.log('Setting expanded for', nav.id, 'to', nav.expanded)
         } else {
           nav.expanded = false
           nav.active = false
         }
       })
+      
+      // 强制更新视图
+      this.$forceUpdate()
     },
     _toggleNavInternal(navItem) {
+      console.log('Internal toggle for:', navItem.id)
+      
       this.navigation.forEach(nav => {
         if (nav.id === navItem.id) {
           nav.expanded = !nav.expanded
           nav.active = true
+          console.log('Setting expanded for', nav.id, 'to', nav.expanded)
         } else {
           nav.expanded = false
           nav.active = false
         }
       })
+      
+      // 强制更新视图
+      this.$forceUpdate()
     },
     navigateTo(child) {
       console.log('Navigating to:', child.route, 'Current route:', this.$route.path)
+      
+      // 更新active状态
+      this.activeSubNav = child.id
       
       // 强制导航
       if (this.$route.path === child.route) {
@@ -422,7 +461,6 @@ export default {
         })
       }
       
-      this.activeSubNav = child.id
       this.updateNavigationState(child.route)
     },
     navigateToMobile(child) {
@@ -450,10 +488,10 @@ export default {
       
       if (!found && (currentRoute === '/' || currentRoute === '/dashboard' || currentRoute === '/dashboard/')) {
         this.activeSubNav = 'global-price'
-        this.navigation[0].expanded = true
-        this.navigation[0].active = true
-        this.navigation[1].expanded = false
-        this.navigation[1].active = false
+        if (this.navigation.length > 0) {
+          this.navigation[0].expanded = true
+          this.navigation[0].active = true
+        }
       }
     },
     updateNavigationState(route) {
@@ -551,6 +589,37 @@ export default {
   transform: scale(1.1);
 }
 
+/* Logo 样式优化 */
+.logo-placeholder,
+.logo-placeholder-collapsed,
+.mobile-logo-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-image-collapsed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback-logo {
+  font-size: 24px;
+  color: white;
+}
+
 /* Sidebar Header - 展开状态 */
 .sidebar-header {
   padding: 24px 20px 16px;
@@ -562,12 +631,6 @@ export default {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.logo-image {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
 }
 
 .brand-name {
@@ -590,12 +653,6 @@ export default {
 .logo-collapsed {
   display: flex;
   justify-content: center;
-}
-
-.logo-image-collapsed {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
 }
 
 /* Navigation */
@@ -918,10 +975,21 @@ export default {
   gap: 10px;
 }
 
-.mobile-logo-image {
+.mobile-logo-placeholder {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mobile-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mobile-app-name {
