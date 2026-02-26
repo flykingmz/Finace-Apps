@@ -1,13 +1,16 @@
 <template>
+<!-- 添加home连接，距离下面的div有间距 -->
+  <div style="max-width: 1280px; margin: 20px auto 0; padding: 0 1.5rem;">
+    <div style="margin-bottom: 20px;">
+      <a href="/dashboard" style="color: #4f46e5; text-decoration: none; font-weight: 500; font-size: 1rem;">Home</a>
+    </div>
+  </div>
+  
   <div class="pension-calculator">
     <!-- 广告区域（默认隐藏） -->
     <div class="ads-container" style="display: none;">
       <!-- Google Ads 占位符 -->
       <div class="google-ads">Google Ads Here</div>
-    </div>
-
-    <div>
-      <a href="/dashboard" class="link-content">Home</a>
     </div>
 
     <!-- 标题层 -->

@@ -1,12 +1,15 @@
 <template>
+<!-- 添加home连接，距离下面的div有间距 -->
+  <div style="max-width: 1280px; margin: 20px auto 0; padding: 0 1.5rem;">
+    <div style="margin-bottom: 20px;">
+      <a href="/dashboard" style="color: #4f46e5; text-decoration: none; font-weight: 500; font-size: 1rem;">Home</a>
+    </div>
+  </div>
   <div class="global-price-calculator">
     <!-- Google Ad Placeholder -->
     <div class="ad-placeholder">
       <div class="ad-label">Advertisement</div>
       <div class="ad-content">Google Ad Space (728x90)</div>
-    </div>
-    <div>
-      <a href="/dashboard" class="link-content">Home</a>
     </div>
     <!-- Page Title -->
     <div class="page-title-container">
