@@ -1,8 +1,9 @@
 <template>
-  <div class="financial-home">
-    <div>
+   <div style="margin-bottom: 5px;">
       <a href="/dashboard" class="link-content">Home</a>
     </div>
+
+  <div class="financial-home">
 
     <!-- Header -->
     <h1>📊 Free Financial Calculators</h1>
@@ -557,5 +558,23 @@ hr {
   color: #64748b;
   font-size: 0.9rem;
   margin-top: 4rem;
+}
+.link-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  min-height: 40px;
+  min-width: 40px;
+  box-sizing: border-box;
 }
 </style>
