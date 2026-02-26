@@ -139,12 +139,13 @@ export default {
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
+    /*
     this.injectJsonLdToHead()
     // 延迟再次注入，确保不被覆盖
     setTimeout(() => {
       this.injectJsonLdToHead()
     }, 1000)
-   
+   */
   },
   methods: {
     // navigateTo(calculator) {

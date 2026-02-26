@@ -182,8 +182,7 @@
 export default {
   name: 'financial tools home',
   mounted() {
-    //console.log('injectJsonLdToHead script start.');
-    document.title = 'Financial Calculators — Free Tax, Paycheck, VAT, Mortgage & Retirement Calculators'
+    document.title = 'Financial Calculators — Free Tax, Paycheck, VAT, Mortgage, Investment & Retirement Calculators'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
@@ -242,7 +241,7 @@ export default {
       const jsonLd ={
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Financial Calculators — Free Tax, Paycheck, VAT, Mortgage & Retirement Calculators",
+        "name": "Financial Calculators — Free Tax, Paycheck, VAT, Mortgage, Investment & Retirement Calculators",
         "description": "Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
