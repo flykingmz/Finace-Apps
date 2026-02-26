@@ -1,26 +1,31 @@
 <template>
-  <div :class="['sidebar', isCollapsed ? 'collapsed' : 'expanded']">
-    <!-- Toggle Button -->
-    <div class="toggle-btn" @click="toggleSidebar">
+  <div :class="['sidebar', isMobile ? 'mobile-hidden' : (isCollapsed ? 'collapsed' : 'expanded')]">
+    <!-- Toggle Button - 只在桌面端显示 -->
+    <div class="toggle-btn" @click="toggleSidebar" v-if="!isMobile">
       {{ isCollapsed ? '➡️' : '⬅️' }}
     </div>
     
+    <!-- 移动端菜单按钮 - 只在移动端显示 -->
+    <div class="mobile-menu-btn" v-if="isMobile" @click="openMobileMenu">
+      ☰
+    </div>
+    
     <!-- Sidebar Header - 在折叠时只显示logo -->
-    <div class="sidebar-header" v-if="!isCollapsed">
+    <div class="sidebar-header" v-if="!isCollapsed && !isMobile">
       <div class="logo">
         <img src="/logo1.webp" alt="Taxo Logo" class="logo-image" fetchpriority="high">
       </div>
       <!-- <div class="sidebar-title">Taxo Financial Free Calculators</div> -->
     </div>
-    <!-- 折叠时显示小logo -->
-    <div class="sidebar-header-collapsed" v-else>
+    <!-- 折叠时显示小logo - 只在桌面端显示 -->
+    <div class="sidebar-header-collapsed" v-else-if="isCollapsed && !isMobile">
       <div class="logo-collapsed">
         <img src="/logo1.webp" alt="Taxo Logo" class="logo-image-collapsed">
       </div>
     </div>
       
-    <!-- Navigation - 未折叠时才显示 -->
-    <div class="sidebar-nav" v-if="!isCollapsed">
+    <!-- Navigation - 只在桌面端未折叠时显示 -->
+    <div class="sidebar-nav" v-if="!isCollapsed && !isMobile">
       <template v-for="nav in navigation" :key="nav.id">
         <div 
           :class="['nav-item', nav.expanded ? 'expanded' : '', nav.active ? 'active' : '']"
@@ -51,8 +56,8 @@
       </template>
     </div>
     
-    <!-- Sidebar Footer - 未折叠时才显示 -->
-    <div class="sidebar-footer" v-if="!isCollapsed">
+    <!-- Sidebar Footer - 只在桌面端未折叠时显示 -->
+    <div class="sidebar-footer" v-if="!isCollapsed && !isMobile">
       <div class="footer-title">Spread the word</div>
       <div class="social-icons">
         <div class="social-icon" @click="shareOnTwitter">
@@ -60,6 +65,57 @@
         </div>
         <div class="social-icon" @click="shareOnFacebook">
           f
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 移动端全屏菜单 - 单独弹出层 -->
+  <div class="mobile-menu-overlay" v-if="isMobile && mobileMenuOpen" @click="closeMobileMenu">
+    <div class="mobile-menu-content" @click.stop>
+      <div class="mobile-menu-header">
+        <div class="mobile-logo">
+          <img src="/logo1.webp" alt="Taxo Logo" class="mobile-logo-image">
+          <span class="mobile-app-name">Financial Tools</span>
+        </div>
+        <button class="mobile-close-btn" @click="closeMobileMenu">✕</button>
+      </div>
+      
+      <div class="mobile-nav">
+        <template v-for="nav in navigation" :key="nav.id">
+          <div 
+            :class="['mobile-nav-item', nav.expanded ? 'expanded' : '']"
+            @click="toggleMobileNav(nav)"
+          >
+            <div class="mobile-nav-title">
+              <span class="mobile-nav-icon">{{ nav.icon }}</span>
+              <span class="mobile-nav-text">{{ nav.title }}</span>
+            </div>
+            <span v-if="nav.children" class="mobile-nav-arrow">▼</span>
+          </div>
+          
+          <!-- Mobile Sub Navigation -->
+          <div 
+            v-if="nav.children && nav.expanded"
+            :key="'mobile-sub-' + nav.id"
+            class="mobile-subnav"
+          >
+            <div 
+              v-for="child in nav.children" 
+              :key="child.id"
+              :class="['mobile-subnav-item', activeSubNav === child.id ? 'active' : '']"
+              @click="navigateToMobile(child)"
+            >
+              {{ child.title }}
+            </div>
+          </div>
+        </template>
+      </div>
+      
+      <div class="mobile-footer">
+        <div class="mobile-social-icons">
+          <div class="mobile-social-icon" @click="shareOnTwitter">𝕏</div>
+          <div class="mobile-social-icon" @click="shareOnFacebook">f</div>
         </div>
       </div>
     </div>
@@ -138,14 +194,14 @@ const navigationData = [
       {
         id: 'mortgage-ca',
         title: 'Mortgage Calculator',
-        route: '',
-        component: ''
+        route: '/a/mortgage',
+        component: 'MortgageCalculator'
       },
       {
         id: 'amortization-ca',
         title: 'Amortization Calculator',
-        route: '',
-        component: ''
+        route: '/a/amortization',
+        component: 'AmortizationCalculator'
       }
     ]
   },
@@ -159,20 +215,20 @@ const navigationData = [
       {
         id: 'interest-ca',
         title: 'Interest Calculator',
-        route: '',
-        component: ''
+        route: '/a/interest',
+        component: 'InterestCalculator'
       },
       {
         id: 'investment-ca',
         title: 'Investment Calculator',
-        route: '',
-        component: ''
+        route: '/a/investment',
+        component: 'InvestmentCalculator'
       },
       {
         id: 'finance-ca',
         title: 'Finance Calculator',
-        route: '',
-        component: ''
+        route: '/a/finance',
+        component: 'FinanceCalculator'
       }
     ]
   },
@@ -186,14 +242,14 @@ const navigationData = [
       {
         id: 'autoloan-ca',
         title: 'Auto Loan Calculator',
-        route: '',
-        component: ''
+        route: '/a/auto-loan',
+        component: 'AutoLoanCalculator'
       },
       {
         id: 'cashback-ca',
         title: 'Cash Back or Low Interest Calculator',
-        route: '',
-        component: ''
+        route: '/a/cashback',
+        component: 'CashbackCalculator'
       }
     ]
   },
@@ -207,14 +263,14 @@ const navigationData = [
       {
         id: 'loan-ca',
         title: 'Loan Calculator',
-        route: '',
-        component: ''
+        route: '/a/loan',
+        component: 'LoanCalculator'
       },
       {
         id: 'currency-ca',
         title: 'Currency Calculator',
-        route: '',
-        component: ''
+        route: '/a/currency',
+        component: 'CurrencyCalculator'
       }
     ]
   }
@@ -226,6 +282,7 @@ export default {
     return {
       isCollapsed: false,
       isMobile: false,
+      mobileMenuOpen: false,
       navigation: JSON.parse(JSON.stringify(navigationData)),
       activeSubNav: 'global-price'
     }
@@ -247,6 +304,10 @@ export default {
       handler(newPath) {
         console.log('Route changed to:', newPath)
         this.updateActiveNav()
+        // 移动端选择后关闭菜单
+        if (this.isMobile) {
+          this.mobileMenuOpen = false
+        }
       },
       immediate: true
     }
@@ -255,26 +316,29 @@ export default {
     checkMobile() {
       // 检测是否为移动端（宽度小于768px）
       this.isMobile = window.innerWidth < 768
-      // 如果是移动端，默认收起侧边栏
+      // 如果是移动端，强制收起侧边栏
       if (this.isMobile) {
-        this.isCollapsed = true
+        this.isCollapsed = false
+        this.mobileMenuOpen = false
       }
     },
     handleResize() {
       const wasMobile = this.isMobile
       this.checkMobile()
       
-      // 如果从桌面端切换到移动端，自动收起
+      // 如果从桌面端切换到移动端
       if (!wasMobile && this.isMobile) {
-        this.isCollapsed = true
+        this.isCollapsed = false
+        this.mobileMenuOpen = false
       }
-      // 如果从移动端切换到桌面端，自动展开
+      // 如果从移动端切换到桌面端
       else if (wasMobile && !this.isMobile) {
         this.isCollapsed = false
+        this.mobileMenuOpen = false
       }
     },
     toggleSidebar() {
-      // 切换侧边栏状态
+      // 桌面端切换侧边栏状态
       this.isCollapsed = !this.isCollapsed
       
       // 如果展开侧边栏，确保第一个导航项是展开状态
@@ -285,6 +349,18 @@ export default {
           nav.active = index === 0
         })
       }
+    },
+    openMobileMenu() {
+      this.mobileMenuOpen = true
+      // 重置导航状态
+      this.navigation.forEach((nav, index) => {
+        nav.expanded = index === 0
+      })
+      document.body.style.overflow = 'hidden' // 禁止背景滚动
+    },
+    closeMobileMenu() {
+      this.mobileMenuOpen = false
+      document.body.style.overflow = '' // 恢复背景滚动
     },
     toggleNav(navItem) {
       console.log('Toggle nav:', navItem.id)
@@ -300,6 +376,18 @@ export default {
         this._toggleNavInternal(navItem)
       }
     },
+    toggleMobileNav(navItem) {
+      // 移动端导航切换
+      this.navigation.forEach(nav => {
+        if (nav.id === navItem.id) {
+          nav.expanded = !nav.expanded
+          nav.active = true
+        } else {
+          nav.expanded = false
+          nav.active = false
+        }
+      })
+    },
     _toggleNavInternal(navItem) {
       this.navigation.forEach(nav => {
         if (nav.id === navItem.id) {
@@ -314,20 +402,12 @@ export default {
     navigateTo(child) {
       console.log('Navigating to:', child.route, 'Current route:', this.$route.path)
       
-      // 在移动端，点击子导航后自动收起侧边栏
-      if (this.isMobile) {
-        this.isCollapsed = true
-      }
-      
-      // 强制导航，即使路由相同也要刷新
+      // 强制导航
       if (this.$route.path === child.route) {
         console.log('Same route, forcing reload...')
-        // 方法1: 使用 replace 强制更新
         this.$router.replace(child.route).then(() => {
           console.log('Route replaced')
-          // 强制重新加载组件
           this.$forceUpdate()
-          // 触发 window 事件通知 Dashboard 组件
           window.dispatchEvent(new CustomEvent('route-changed', { 
             detail: { route: child.route }
           }))
@@ -335,7 +415,6 @@ export default {
           console.log('Navigation error:', err)
         })
       } else {
-        // 不同路由，正常导航
         this.$router.push(child.route).catch(err => {
           console.log('Navigation error:', err)
         })
@@ -343,6 +422,11 @@ export default {
       
       this.activeSubNav = child.id
       this.updateNavigationState(child.route)
+    },
+    navigateToMobile(child) {
+      // 移动端导航，然后关闭菜单
+      this.navigateTo(child)
+      this.closeMobileMenu()
     },
     updateActiveNav() {
       const currentRoute = this.$route.path
@@ -399,9 +483,14 @@ export default {
 </script>
 
 <style scoped>
-/* 添加一些响应式样式 */
+/* 基础样式 */
 .sidebar {
   transition: all 0.3s ease;
+  background: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1000;
 }
 
 .sidebar.collapsed {
@@ -410,6 +499,10 @@ export default {
 
 .sidebar.expanded {
   width: 250px;
+}
+
+.sidebar.mobile-hidden {
+  display: none; /* 移动端完全隐藏 */
 }
 
 .sidebar-header-collapsed {
@@ -423,54 +516,189 @@ export default {
   object-fit: contain;
 }
 
-/* 移动端优化 */
-@media (max-width: 767px) {
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 44px;
+  height: 44px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* 移动端全屏菜单覆盖层 */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.mobile-menu-content {
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.mobile-app-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.mobile-close-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav {
+  flex: 1;
+  padding: 16px;
+}
+
+.mobile-nav-item {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mobile-nav-title {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #f9fafb;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.mobile-nav-icon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.mobile-nav-text {
+  flex: 1;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.mobile-nav-arrow {
+  transition: transform 0.3s ease;
+  color: #6b7280;
+}
+
+.mobile-nav-item.expanded .mobile-nav-arrow {
+  transform: rotate(180deg);
+}
+
+.mobile-subnav {
+  padding-left: 44px;
+  background: #f9fafb;
+  margin-top: 2px;
+  border-radius: 8px;
+}
+
+.mobile-subnav-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.mobile-subnav-item.active {
+  color: #4f46e5;
+  font-weight: 500;
+  background: #eef2ff;
+}
+
+.mobile-footer {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mobile-social-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.mobile-social-icon {
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* 桌面端样式 */
+@media (min-width: 768px) {
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 1000;
-    background: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: relative;
   }
   
   .sidebar.collapsed {
     width: 60px;
-  }
-  
-  .sidebar.expanded {
-    width: 250px;
-  }
-  
-  /* 在移动端展开时，添加遮罩层效果 */
-  .sidebar.expanded::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 250px;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
-  }
-}
-
-/* 平板设备 */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .sidebar.collapsed {
-    width: 70px;
-  }
-  
-  .sidebar.expanded {
-    width: 220px;
-  }
-}
-
-/* 桌面端 */
-@media (min-width: 1025px) {
-  .sidebar.collapsed {
-    width: 80px;
   }
   
   .sidebar.expanded {
