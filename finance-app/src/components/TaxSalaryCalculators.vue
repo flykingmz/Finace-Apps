@@ -1,5 +1,9 @@
 <template>
   <div class="tax-salary-page">
+      <div>
+      <a href="/dashboard" class="link-content">Home</a>
+      </div>
+
     <!-- Header -->
     <h1>📊 Tax and Salary Calculators</h1>
     <p class="category-description">

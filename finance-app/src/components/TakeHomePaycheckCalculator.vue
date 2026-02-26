@@ -7,6 +7,10 @@
         <p>Google Ads Section (Hidden by default)</p>
       </div>
     </div>
+
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+      </div>
     <!-- Header Section -->
     <div class="header">
       <div class="title">

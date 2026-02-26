@@ -1,5 +1,9 @@
 <template>
   <div class="retirement-page">
+      <div>
+      <a href="/dashboard" class="link-content">Home</a>
+      </div>
+
     <!-- Header -->
     <h1>📈 Retirement Calculators</h1>
     <p class="category-description">

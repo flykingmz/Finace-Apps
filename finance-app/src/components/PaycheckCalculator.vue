@@ -5,7 +5,9 @@
       <div class="ad-label">Advertisement</div>
       <div class="ad-content">Google Ad Space (728x90)</div>
     </div>
-
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
     <!-- Page Title -->
     <div class="page-title-container">
       <h1 class="page-title">Paycheck Calculator</h1>

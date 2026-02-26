@@ -1,5 +1,8 @@
 <template>
   <div class="calculator-container">
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
     <!-- Header with Title (Dark Background) -->
     <header class="header">
       <div class="header-content">

@@ -1,6 +1,5 @@
 <template>
   <div class="financial-home">
-   <!-- 返回dashboard的链接 - 移动端居中优化 -->
     <div>
       <a href="/dashboard" class="link-content">Home</a>
     </div>

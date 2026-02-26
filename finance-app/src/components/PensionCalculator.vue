@@ -6,6 +6,10 @@
       <div class="google-ads">Google Ads Here</div>
     </div>
 
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
+
     <!-- 标题层 -->
     <div class="header-section">
       <h1>Pension Calculator</h1>

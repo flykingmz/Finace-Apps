@@ -1,5 +1,8 @@
 <template>
  <div class="home-page">
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
     <!-- 页面顶部区域 -->
     <div class="page-top">
       <!-- 标题部分 -->

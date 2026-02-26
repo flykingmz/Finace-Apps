@@ -11,8 +11,13 @@
           </div>
         </div>
       </div>
+
+      <div>
+      <a href="/dashboard" class="link-content">Home</a>
+      </div>
       
       <div class="header">
+      
         <h1><i class="fas fa-calculator"></i> Income Tax Calculator</h1>
         <p class="subtitle">Use our Income Tax Calculator to estimate your tax liability, tax refund, and after-tax income based on your earnings, filing status, and tax rates. Calculate federal and state income taxes, deductions, and credits to understand how much tax you owe or how much refund you may receive. This tool helps individuals, employees, and freelancers plan finances with accurate tax estimates.</p>
         

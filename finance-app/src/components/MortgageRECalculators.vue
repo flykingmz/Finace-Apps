@@ -1,5 +1,8 @@
 <template>
   <div class="mortgage-page">
+  <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
     <!-- Header -->
     <h1>🏠 Mortgage and Real Estate Calculators</h1>
     <p class="category-description">

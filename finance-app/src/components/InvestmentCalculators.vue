@@ -1,5 +1,8 @@
 <template>
   <div class="investment-page">
+  <div>
+      <a href="/dashboard" class="link-content">Home</a>
+    </div>
     <!-- Header -->
     <h1>📊 Investment Calculators</h1>
     <p class="category-description">

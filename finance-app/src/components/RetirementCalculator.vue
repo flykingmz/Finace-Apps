@@ -7,7 +7,9 @@
         <p>Google Ads Section (Hidden by default)</p>
       </div>
     </div>
-
+    <div>
+      <a href="/dashboard" class="link-content">Home</a>
+      </div>
     <!-- Title Section -->
     <header class="calculator-header">
       <h1>Retirement Calculator</h1>
