@@ -14,7 +14,14 @@
     <div class="sidebar-header" v-if="!isCollapsed && !isMobile">
       <div class="logo">
         <div class="logo-placeholder">
-          <img src="/logo1.webp" alt="Taxo Logo" class="logo-image" @error="handleLogoError">
+          <img 
+            v-if="logoLoaded" 
+            src="/logo1.webp" 
+            alt="Taxo Logo" 
+            class="logo-image" 
+            @error="handleLogoError"
+          >
+          <span v-else class="fallback-logo">📊</span>
         </div>
         <span class="brand-name">Taxo</span>
       </div>
@@ -23,14 +30,22 @@
     <div class="sidebar-header-collapsed" v-else-if="isCollapsed && !isMobile">
       <div class="logo-collapsed">
         <div class="logo-placeholder-collapsed">
-          <img src="/logo1.webp" alt="Taxo Logo" class="logo-image-collapsed" @error="handleLogoError">
+          <img 
+            v-if="logoLoaded" 
+            src="/logo1.webp" 
+            alt="Taxo Logo" 
+            class="logo-image-collapsed" 
+            @error="handleLogoError"
+          >
+          <span v-else class="fallback-logo">📊</span>
         </div>
       </div>
     </div>
       
     <!-- Navigation - 只在桌面端未折叠时显示 -->
     <div class="sidebar-nav" v-if="!isCollapsed && !isMobile">
-      <template v-for="nav in navigation" :key="nav.id">
+      <!-- 使用索引作为key，避免冲突 -->
+      <div v-for="(nav, index) in navigation" :key="'nav-' + index">
         <!-- 主导航项 -->
         <div 
           :class="['nav-item', nav.expanded ? 'expanded' : '', nav.active ? 'active' : '']"
@@ -44,22 +59,21 @@
           <span v-if="nav.children && nav.children.length > 0" class="nav-arrow" :class="{ 'rotated': nav.expanded }">▶</span>
         </div>
         
-        <!-- Sub Navigation - 确保在expanded为true时显示 -->
+        <!-- Sub Navigation -->
         <div 
           v-if="nav.children && nav.children.length > 0 && nav.expanded"
-          :key="'sub-' + nav.id"
           class="subnav"
         >
           <div 
-            v-for="child in nav.children" 
-            :key="child.id"
+            v-for="(child, childIndex) in nav.children" 
+            :key="'sub-' + index + '-' + childIndex"
             :class="['subnav-item', activeSubNav === child.id ? 'active' : '']"
             @click="navigateTo(child)"
           >
             {{ child.title }}
           </div>
         </div>
-      </template>
+      </div>
     </div>
     
     <!-- Sidebar Footer - 只在桌面端未折叠时显示 -->
@@ -82,7 +96,14 @@
       <div class="mobile-menu-header">
         <div class="mobile-logo">
           <div class="mobile-logo-placeholder">
-            <img src="/logo1.webp" alt="Taxo Logo" class="mobile-logo-image" @error="handleLogoError">
+            <img 
+              v-if="logoLoaded" 
+              src="/logo1.webp" 
+              alt="Taxo Logo" 
+              class="mobile-logo-image" 
+              @error="handleLogoError"
+            >
+            <span v-else class="fallback-logo">📊</span>
           </div>
           <span class="mobile-app-name">Taxo</span>
         </div>
@@ -90,7 +111,7 @@
       </div>
       
       <div class="mobile-nav">
-        <template v-for="nav in navigation" :key="nav.id">
+        <div v-for="(nav, index) in navigation" :key="'mobile-nav-' + index">
           <div 
             :class="['mobile-nav-item', nav.expanded ? 'expanded' : '']"
             @click="toggleMobileNav(nav)"
@@ -105,19 +126,18 @@
           <!-- Mobile Sub Navigation -->
           <div 
             v-if="nav.children && nav.children.length > 0 && nav.expanded"
-            :key="'mobile-sub-' + nav.id"
             class="mobile-subnav"
           >
             <div 
-              v-for="child in nav.children" 
-              :key="child.id"
+              v-for="(child, childIndex) in nav.children" 
+              :key="'mobile-sub-' + index + '-' + childIndex"
               :class="['mobile-subnav-item', activeSubNav === child.id ? 'active' : '']"
               @click="navigateToMobile(child)"
             >
               {{ child.title }}
             </div>
           </div>
-        </template>
+        </div>
       </div>
       
       <div class="mobile-footer">
@@ -292,7 +312,8 @@ export default {
       isMobile: false,
       mobileMenuOpen: false,
       navigation: [],
-      activeSubNav: 'global-price'
+      activeSubNav: 'global-price',
+      logoLoaded: true // 默认尝试加载图片
     }
   },
   created() {
@@ -335,16 +356,7 @@ export default {
   methods: {
     handleLogoError(e) {
       console.log('Logo failed to load, using fallback')
-      // 如果图片加载失败，隐藏图片元素，显示纯文本logo
-      e.target.style.display = 'none'
-      // 添加一个纯文本备用logo
-      const parent = e.target.parentNode
-      if (!parent.querySelector('.fallback-logo')) {
-        const fallback = document.createElement('div')
-        fallback.className = 'fallback-logo'
-        fallback.innerText = '📊'
-        parent.appendChild(fallback)
-      }
+      this.logoLoaded = false
     },
     checkMobile() {
       // 检测是否为移动端（宽度小于768px）
@@ -416,9 +428,6 @@ export default {
           nav.active = false
         }
       })
-      
-      // 强制更新视图
-      this.$forceUpdate()
     },
     _toggleNavInternal(navItem) {
       console.log('Internal toggle for:', navItem.id)
@@ -433,9 +442,6 @@ export default {
           nav.active = false
         }
       })
-      
-      // 强制更新视图
-      this.$forceUpdate()
     },
     navigateTo(child) {
       console.log('Navigating to:', child.route, 'Current route:', this.$route.path)
@@ -448,7 +454,6 @@ export default {
         console.log('Same route, forcing reload...')
         this.$router.replace(child.route).then(() => {
           console.log('Route replaced')
-          this.$forceUpdate()
           window.dispatchEvent(new CustomEvent('route-changed', { 
             detail: { route: child.route }
           }))
@@ -600,19 +605,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* 改为visible确保图片可见 */
 }
 
-.logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logo-image-collapsed {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.logo-image,
+.logo-image-collapsed,
+.mobile-logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .fallback-logo {
@@ -983,13 +985,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mobile-logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .mobile-app-name {
