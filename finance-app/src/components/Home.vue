@@ -51,20 +51,16 @@
           <li><a href="" >🧮 Interest Calculator</a></li>
         </ul>
       </div>
-    </div>
-     <!-- Auto -->
+      <!-- Auto -->
       <div class="category-card">
-     <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
         <div class="category-title"><a href="#/a/auto-calculators">Auto</a> </div>
         <ul class="popular-list">
           <li><a href="" >📊 Auto Loan Calculator</a></li>
           <li><a href="" >🧮 Auto Lease Calculator</a></li>
         </ul>
       </div>
-    </div>
-     <!-- Other -->
+      <!-- Other -->
       <div class="category-card">
-     <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
         <div class="category-title"><a href="#/a/other-calculators">Other</a> </div>
         <ul class="popular-list">
           <li><a href="" >📊 Currency Calculator</a></li>
@@ -72,7 +68,7 @@
           <li><a href="" >📈 Debt Payoff Calculator</a></li>
         </ul>
       </div>
-
+    </div>
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">
@@ -209,7 +205,7 @@
 
 <script>
 export default {
-  name: 'financial tools home',
+  name: 'FinancialToolsHome',
   mounted() {
     // 将长破折号 — 替换为普通的连字符 -
     document.title = 'Financial Calculators - Free Tax, Paycheck, VAT, Mortgage, Investment & Retirement Calculators';
