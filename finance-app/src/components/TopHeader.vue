@@ -1,6 +1,6 @@
 <template>
   <div class="top-header">
-    <!-- 返回dashboard的链接 - 优化移动端可见性 -->
+    <!-- 返回dashboard的链接 - 移动端居中优化 -->
     <div class="dashboard-link">
       <a href="/dashboard" class="link-content">
         <span class="link-icon">←</span>
@@ -40,17 +40,19 @@ export default {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-height: 64px; /* 确保最小高度 */
+  min-height: 64px;
   width: 100%;
   box-sizing: border-box;
+  position: relative; /* 为绝对定位做准备 */
 }
 
 .dashboard-link {
   flex-shrink: 0;
-  min-width: 44px; /* 确保移动端最小点击区域 */
+  min-width: 44px;
   margin-right: 0.5rem;
   display: flex;
   align-items: center;
+  z-index: 2; /* 确保可点击区域在最上层 */
 }
 
 .link-content {
@@ -67,8 +69,8 @@ export default {
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
   white-space: nowrap;
-  min-height: 40px; /* 确保点击区域足够大 */
-  min-width: 40px; /* 确保点击区域足够大 */
+  min-height: 40px;
+  min-width: 40px;
   box-sizing: border-box;
 }
 
@@ -88,7 +90,7 @@ export default {
 
 .link-text {
   white-space: nowrap;
-  display: inline-block; /* 确保文字正确显示 */
+  display: inline-block;
 }
 
 .page-title {
@@ -96,78 +98,124 @@ export default {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1f2937;
-  text-align: left;
+  text-align: center; /* 默认居中 */
   margin: 0 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-width: 0; /* 允许flex子项收缩 */
+  min-width: 0;
 }
 
 .user-info {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  min-width: 44px; /* 保持平衡，如果为空至少占位 */
+  min-width: 44px;
+  z-index: 2;
 }
 
-/* 移动端优化 - 确保Home始终可见且可点击 */
+/* 桌面端调整 */
+@media (min-width: 769px) {
+  .page-title {
+    text-align: left; /* 桌面端左对齐 */
+  }
+}
+
+/* 移动端优化 - Home按钮居中展示 */
 @media (max-width: 768px) {
   .top-header {
-    padding: 0.5rem 0.75rem;
-    min-height: 56px; /* 移动端稍小的高度 */
+    padding: 0.5rem 1rem;
+    min-height: 56px;
+    justify-content: center; /* 移动端改为居中布局 */
+    position: relative;
   }
   
+  /* 左侧Home按钮绝对定位到左边 */
   .dashboard-link {
-    margin-right: 0.25rem;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
   }
   
-  .link-content {
-    padding: 0.4rem 0.6rem;
-    background-color: #f1f5f9; /* 稍微加深背景，更显眼 */
-    border-color: #cbd5e1;
+  /* 右侧占位符绝对定位到右边，保持平衡 */
+  .user-info {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
   }
   
-  /* 确保Home文字在空间足够时显示，空间不够时隐藏 */
-  .link-text {
-    display: inline-block; /* 默认显示 */
-  }
-  
+  /* 标题居中，并留出两边空间 */
   .page-title {
-    font-size: 1.1rem; /* 移动端减小标题字号 */
-    margin: 0 0.25rem;
+    flex-grow: 0;
+    max-width: calc(100% - 120px); /* 减去两边按钮的宽度 */
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 10px;
   }
   
-  /* 当屏幕非常小（< 360px）时，隐藏文字只留图标 */
-  @media (max-width: 360px) {
+  /* 确保Home按钮在移动端更明显 */
+  .link-content {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0.5rem 0.6rem;
+  }
+  
+  /* 超小屏幕优化 */
+  @media (max-width: 480px) {
+    .page-title {
+      font-size: 1rem;
+      max-width: calc(100% - 100px);
+    }
+    
+    .dashboard-link {
+      left: 0.5rem;
+    }
+    
+    .user-info {
+      right: 0.5rem;
+    }
+    
+    /* 超小屏幕隐藏Home文字，只留图标 */
     .link-text {
-      display: none; /* 超小屏幕隐藏文字，只保留图标 */
+      display: none;
     }
     
     .link-icon {
       margin-right: 0;
+      font-size: 1.3rem;
     }
     
     .link-content {
       padding: 0.4rem;
-    }
-    
-    .page-title {
-      font-size: 1rem;
+      min-width: 40px;
     }
   }
 }
 
-/* 确保触摸区域足够大 */
+/* 触摸设备优化 */
 @media (hover: none) and (pointer: coarse) {
   .link-content {
     min-height: 44px;
     min-width: 44px;
-    padding: 0.6rem; /* 增大触摸区域 */
   }
   
   .dashboard-link {
     min-width: 44px;
+  }
+}
+
+/* 非常小的设备优化 */
+@media (max-width: 320px) {
+  .page-title {
+    font-size: 0.9rem;
+    max-width: calc(100% - 90px);
   }
 }
 </style>
