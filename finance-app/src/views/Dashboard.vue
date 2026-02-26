@@ -1,6 +1,6 @@
 <template>
   <div class="layout-container">
-    <Sidebar />
+    <!-- <Sidebar />  -->
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue'
+// import Sidebar from '../components/Sidebar.vue'
 import TopHeader from '../components/TopHeader.vue'
 import Foot from '../components/Foot.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-    Sidebar,
+   // Sidebar,
     TopHeader,
     Foot
   },
@@ -63,6 +63,7 @@ export default {
     }
   },
   methods: {
+    /*
     injectJsonLd() {
       // 移除旧的JSON-LD
       const oldScripts = document.querySelectorAll('script[type="application/ld+json"]')
@@ -130,6 +131,7 @@ export default {
         document.head.appendChild(script)
       }
     }
+    */
   }
 }
 </script>
