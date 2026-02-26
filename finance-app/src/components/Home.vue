@@ -52,6 +52,27 @@
         </ul>
       </div>
     </div>
+     <!-- Auto -->
+      <div class="category-card">
+     <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
+        <div class="category-title"><a href="#/a/auto-calculators">Auto</a> </div>
+        <ul class="popular-list">
+          <li><a href="" >📊 Auto Loan Calculator</a></li>
+          <li><a href="" >🧮 Auto Lease Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+     <!-- Other -->
+      <div class="category-card">
+     <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
+        <div class="category-title"><a href="#/a/other-calculators">Other</a> </div>
+        <ul class="popular-list">
+          <li><a href="" >📊 Currency Calculator</a></li>
+          <li><a href="" >🧮 Credit Card Calculator</a></li>
+          <li><a href="" >📈 Debt Payoff Calculator</a></li>
+        </ul>
+      </div>
+    </div>
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">

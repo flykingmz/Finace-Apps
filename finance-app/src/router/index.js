@@ -40,6 +40,16 @@ const routes = [
         component: () => import('../components/InvestmentCalculators.vue')
       },
       {
+        path: 'auto-calculators',
+        name: 'AutoCalculators',
+        component: () => import('../components/AutoCalculators.vue')
+      },
+      {
+        path: 'other-calculators',
+        name: 'OtherCalculators',
+        component: () => import('../components/OtherCalculators.vue')
+      },
+      {
         path: 'global-vat',
         name: 'GlobalPriceCalculator',
         component: () => import('../components/GlobalPriceCalculator.vue'),
