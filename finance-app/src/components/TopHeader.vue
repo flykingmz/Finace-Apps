@@ -223,8 +223,7 @@ export default {
   }
 }
 .logo-image {
-  width: 40px;
-  height: 40px;
+  height: 100px;
   object-fit: contain;
   border-radius: 10px;
 }
