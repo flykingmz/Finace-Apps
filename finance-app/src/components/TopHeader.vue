@@ -5,7 +5,9 @@
     <div class="logo-section">
       <img src="/logo1.webp" alt="Taxo Logo" class="logo-image">
     </div>
-   <a href="/dashboard" <div class="page-title">financial-calculator.net</div></a>
+   <div class="page-title">
+    <a href="/dashboard" style="text-decoration: none; color: inherit;">financial-calculator.net</a>
+    </div>
     <div class="user-info">
       <!-- 可选的用户信息区域，保持占位 -->
     </div>
