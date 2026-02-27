@@ -97,6 +97,7 @@ export default {
   font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive;
   font-size: 2.8rem;
   font-weight: 900;
+  color: #333; /* 添加固定颜色作为后备 */
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -110,6 +111,28 @@ export default {
   white-space: nowrap;
   min-width: 0;
   transition: all 0.3s ease;
+}
+
+/* 确保移动端字体大小和样式与PC端完全一致 */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.8rem; /* 保持和PC端相同的字体大小 */
+    font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive; /* 保持相同字体家族 */
+    font-weight: 900; /* 保持相同字重 */
+    letter-spacing: 1px; /* 保持相同字间距 */
+    /* 移除所有可能改变字体显示的属性 */
+    -webkit-font-smoothing: antialiased; /* 添加字体平滑，但不会改变字体样式 */
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* 超小屏幕可能还需要调整，但字体样式保持不变 */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2.8rem; /* 仍然保持相同大小，如果太大可以适当调整，但这里保持一致性 */
+    /* 如果需要调整大小可以取消下面的注释，但会破坏一致性 */
+    /* font-size: 2.2rem; */
+  }
 }
 
 .user-info {
