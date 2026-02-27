@@ -14,7 +14,8 @@
         <!-- 第一段 -->
         <section class="content-section">
           <p>
-            We are a group of IT professionals enthusiastic in creating quality free tools and content on the Internet. The main purpose of this website is to provide a comprehensive collection of free online Financial calculators for ease of public use. This site was launched on finace-apps-one.vercel.app.
+            We are a group of IT professionals enthusiastic in creating quality free tools and content on the Internet. The main purpose of this website is to provide a comprehensive collection of free online Financial calculators for ease of public use. This site was launched on 
+financial-calculator.net.
           </p>
         </section>
 
@@ -65,7 +66,7 @@
             <div class="owner-content">
               <h2 class="owner-title">Ownership</h2>
               <p class="owner-desc">
-                This site is owned and operated by <strong>flyking</strong>.
+                This site is owned and operated by <strong>©Taxo</strong>.
               </p>
               <div class="owner-details">
                 <div class="detail-item">
@@ -74,12 +75,13 @@
                 </div>
                 <div class="detail-item">
                   <span class="detail-label">Current Domain:</span>
-                  <span class="detail-value">finace-apps-one.vercel.app</span>
+                  <span class="detail-value">financial-calculator.net</span>
                 </div>
                 <div class="detail-item">
                   <span class="detail-label">Mission:</span>
-                  <span class="detail-value">Providing free, quality tools for public use</span>
+                  <span class="detail-value">Providing free, quality financial tools for public use</span>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -95,7 +97,7 @@
             </div>
             <div class="contact-item">
               <span class="contact-icon">🌐</span>
-              <a href="https://finace-apps-one.vercel.app/" class="contact-link" target="_blank">finace-apps-one.vercel.app</a>
+              <a href="https://financial-calculator.net/" class="contact-link" target="_blank">financial-calculator.net</a>
             </div>
           </div>
         </div>

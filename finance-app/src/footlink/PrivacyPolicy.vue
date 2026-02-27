@@ -16,7 +16,7 @@
             <div class="company-icon">🏢</div>
             <div class="company-details">
               <h2>Taxo Financial Free Calculators</h2>
-              <p>operates the <strong>finace-apps-one.vercel.app</strong> website, which provides the SERVICE.</p>
+              <p>operates the <strong>financial-calculator.net</strong> website, which provides the SERVICE.</p>
             </div>
           </div>
           <p class="intro-text">
@@ -226,7 +226,7 @@
                 </div>
                 <div class="contact-item">
                   <span class="item-icon">🌐</span>
-                  <a href="https://finace-apps-one.vercel.app/" class="contact-link" target="_blank">Financial Free Calculators</a>
+                  <a href="https://financial-calculator.net/" class="contact-link" target="_blank">Financial Free Calculators</a>
                 </div>
               </div>
             </div>
