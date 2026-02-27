@@ -102,15 +102,15 @@
         <div class="card-content">
           <h3>RMD Calculator</h3>
           <p>Calculate Required Minimum Distributions from your retirement accounts after age 73 to avoid IRS penalties.</p>
-          <a href="/calculators/rmd" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/calculators/rmd" class="card-link">Open Calculator →</a>
         </div>
       </div>
     </div>
 
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
-      <a href="/" class="back-link" @click.prevent="navigate">← Back to Home</a>
-      <a href="/calculators/all" class="back-link" @click.prevent="navigate">All Calculators →</a>
+      <a href="/dashboard" class="back-link">← Back to Home</a>
+      <a href="#/a/all-calculators" class="back-link">All Calculators →</a>
     </div>
   </div>
 </template>

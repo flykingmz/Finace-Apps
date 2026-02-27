@@ -79,8 +79,8 @@
 
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
-      <a href="/" class="back-link" @click.prevent="navigate">← Back to Home</a>
-      <a href="/calculators/all" class="back-link" @click.prevent="navigate">All Calculators →</a>
+      <a href="/dashboard" class="back-link">← Back to Home</a>
+      <a href="#/a/all-calculators" class="back-link" >All Calculators →</a>
     </div>
   </div>
 </template>
