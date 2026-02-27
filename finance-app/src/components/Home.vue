@@ -271,8 +271,8 @@ export default {
         "description": "Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
-        "url": "https://finace-apps-one.vercel.app/",
-        "logo": "https://finace-apps-one.vercel.app/logo.png",
+        "url": "https://financial-calculator.net/",
+        "logo": "https://financial-calculator.net/logo.png",
         "offers": {
           "@type": "Offer",
           "price": "0",
