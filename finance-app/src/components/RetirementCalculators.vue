@@ -22,7 +22,7 @@
         <div class="card-content">
           <h3>Retirement Calculator</h3>
           <p>Estimate how much you need to save for retirement and project your future nest egg based on current savings, contributions, and expected returns.</p>
-          <a href="/calculators/retirement" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="#/a/retirement" class="card-link" @click.prevent="navigate">Open Calculator →</a>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
         <div class="card-content">
           <h3>401(k) Calculator</h3>
           <p>Calculate your 401(k) balance at retirement including employer match, contribution growth, and investment returns over time.</p>
-          <a href="/calculators/401k" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="#/a/401k" class="card-link" @click.prevent="navigate">Open Calculator →</a>
         </div>
       </div>
 
@@ -42,7 +42,7 @@
         <div class="card-content">
           <h3>Pension Calculator</h3>
           <p>Estimate your monthly pension income based on years of service, salary history, and pension plan formulas.</p>
-          <a href="/calculators/pension" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="#/a/pension" class="card-link" @click.prevent="navigate">Open Calculator →</a>
         </div>
       </div>
 
