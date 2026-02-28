@@ -27,10 +27,10 @@
             <div class="category-count">3 tools</div>
           </div>
           <div class="tools-list">
-            <a href="#/a/global-vat" class="tool-link">Global VAT Calculator</a>
-            <a href="#/a/income-tax" class="tool-link">Income Tax Calculator</a>
-            <a href="#/a/paycheck" class="tool-link">Paycheck Calculator</a>
-            <a href="#/a/take-home-paycheck-calculator" class="tool-link">TakeHome Paycheck Calculator</a>
+            <a href="/global-vat" class="tool-link">Global VAT Calculator</a>
+            <a href="/income-tax" class="tool-link">Income Tax Calculator</a>
+            <a href="/paycheck" class="tool-link">Paycheck Calculator</a>
+            <a href="/take-home-paycheck-calculator" class="tool-link">TakeHome Paycheck Calculator</a>
           </div>
         </div>
 
@@ -41,9 +41,9 @@
             <div class="category-count">9 tools</div>
           </div>
           <div class="tools-list">
-            <a href="#/a/retirement" class="tool-link">Retirement Calculator</a>
-            <a href="#/a/401k" class="tool-link">401K Calculator</a>
-            <a href="#/a/pension" class="tool-link">Pension Calculator</a>
+            <a href="/retirement" class="tool-link">Retirement Calculator</a>
+            <a href="/401k" class="tool-link">401K Calculator</a>
+            <a href="/pension" class="tool-link">Pension Calculator</a>
             <a href="#" class="tool-link">Social Security Calculator</a>
             <a href="#" class="tool-link">Annuity Calculator</a>
             <a href="#" class="tool-link">Annuity Payout Calculator</a>
@@ -210,8 +210,8 @@ export default {
         "description": "Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
-        "url": "https://finace-apps-one.vercel.app/",
-        "logo": "https://finace-apps-one.vercel.app/logo.png",
+        "url": "https://financial-calculator.net/",
+        "logo": "https://financial-calculator.net/logo.png",
         "offers": {
           "@type": "Offer",
           "price": "0",
