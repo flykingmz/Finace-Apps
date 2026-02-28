@@ -120,12 +120,7 @@ const router = createRouter({
 
 // 添加全局路由守卫
 router.beforeEach((to, from, next) => {
-  if (window.location.hash) {
-    const path = window.location.hash.replace('#', '')
-    next(path)
-  } else {
-    next()
-  }
+  next()
 })
 
 // 添加路由解析守卫
