@@ -5,9 +5,45 @@
     <div class="logo-section">
       <img src="/logo1.webp" alt="Taxo Logo" class="logo-image">
     </div>
-   <div class="page-title">
-    <a href="/" style="text-decoration: none; color: inherit;">financial-calculator.net</a>
+    
+    <div class="page-title">
+      <a href="/" style="text-decoration: none; color: inherit;">financial-calculator.net</a>
     </div>
+    
+    <!-- 分类导航按钮 -->
+    <div class="nav-buttons">
+      <a 
+        href="/tax-salary-calculators" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'tax' }"
+        @click="setActive('tax')"
+      >Tax</a>
+      <a 
+        href="/retirement-calculators" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'retirement' }"
+        @click="setActive('retirement')"
+      >Retirement</a>
+      <a 
+        href="/mortgage-RE-calculators" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'mortgage' }"
+        @click="setActive('mortgage')"
+      >Mortgage</a>
+      <a 
+        href="/investment-calculators" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'investment' }"
+        @click="setActive('investment')"
+      >Investment</a>
+      <a 
+        href="/other-calculators" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'other' }"
+        @click="setActive('other')"
+      >Other</a>
+    </div>
+    
     <div class="user-info">
       <!-- 可选的用户信息区域，保持占位 -->
     </div>
@@ -23,8 +59,34 @@ export default {
       default: 'Dashboard'
     }
   },
+  data() {
+    return {
+      activeNav: '' // 当前选中的导航按钮
+    }
+  },
   mounted() {
-    console.log('TopHeader mounted with title:', this.pageTitle)
+    console.log('TopHeader mounted with title:', this.pageTitle);
+    // 根据当前路径设置激活状态
+    this.setActiveFromPath();
+  },
+  watch: {
+    '$route.path'() {
+      this.setActiveFromPath();
+    }
+  },
+  methods: {
+    setActive(nav) {
+      this.activeNav = nav;
+    },
+    setActiveFromPath() {
+      const path = window.location.hash || this.$route?.path || '';
+      if (path.includes('tax-salary')) this.activeNav = 'tax';
+      else if (path.includes('retirement')) this.activeNav = 'retirement';
+      else if (path.includes('mortgage')) this.activeNav = 'mortgage';
+      else if (path.includes('investment')) this.activeNav = 'investment';
+      else if (path.includes('other')) this.activeNav = 'other';
+      else this.activeNav = '';
+    }
   }
 }
 </script>
@@ -41,7 +103,7 @@ export default {
   min-height: 64px;
   width: 100%;
   box-sizing: border-box;
-  position: relative; /* 为绝对定位做准备 */
+  position: relative;
 }
 
 .dashboard-link {
@@ -50,7 +112,7 @@ export default {
   margin-right: 0.5rem;
   display: flex;
   align-items: center;
-  z-index: 2; /* 确保可点击区域在最上层 */
+  z-index: 2;
 }
 
 .link-content {
@@ -97,7 +159,7 @@ export default {
   font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive;
   font-size: 2.8rem;
   font-weight: 900;
-  color: #333; /* 添加固定颜色作为后备 */
+  color: #333;
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -113,25 +175,76 @@ export default {
   transition: all 0.3s ease;
 }
 
+/* 分类导航按钮样式 */
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn.active {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
 /* 确保移动端字体大小和样式与PC端完全一致 */
 @media (max-width: 768px) {
   .page-title {
-    font-size: 2.8rem; /* 保持和PC端相同的字体大小 */
-    font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive; /* 保持相同字体家族 */
-    font-weight: 900; /* 保持相同字重 */
-    letter-spacing: 1px; /* 保持相同字间距 */
-    /* 移除所有可能改变字体显示的属性 */
-    -webkit-font-smoothing: antialiased; /* 添加字体平滑，但不会改变字体样式 */
+    font-size: 2.8rem;
+    font-family: 'Pacifico', 'Dancing Script', 'Courgette', 'Kaushan Script', cursive;
+    font-weight: 900;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* 移动端按钮样式调整 */
+  .nav-buttons {
+    gap: 0.3rem;
+    margin-right: 0.5rem;
+  }
+  
+  .nav-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
-/* 超小屏幕可能还需要调整，但字体样式保持不变 */
+/* 超小屏幕优化 */
 @media (max-width: 480px) {
   .page-title {
-    font-size: 2.8rem; /* 仍然保持相同大小，如果太大可以适当调整，但这里保持一致性 */
-    /* 如果需要调整大小可以取消下面的注释，但会破坏一致性 */
-    /* font-size: 2.2rem; */
+    font-size: 2.8rem;
+  }
+  
+  .nav-buttons {
+    gap: 0.2rem;
+  }
+  
+  .nav-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -146,97 +259,65 @@ export default {
 /* 桌面端调整 */
 @media (min-width: 769px) {
   .page-title {
-    text-align: left; /* 桌面端左对齐 */
+    text-align: left;
   }
 }
 
-/* 移动端优化 - Home按钮居中展示 */
+/* 移动端优化 */
 @media (max-width: 768px) {
   .top-header {
     padding: 0.5rem 1rem;
     min-height: 56px;
-    justify-content: center; /* 移动端改为居中布局 */
+    justify-content: center;
     position: relative;
   }
   
-  /* 左侧Home按钮绝对定位到左边 */
-  .dashboard-link {
+  /* 左侧Logo绝对定位到左边 */
+  .logo-section {
     position: absolute;
-    left: 1rem;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* 右侧按钮组绝对定位到右边 */
+  .nav-buttons {
+    position: absolute;
+    right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
     margin-right: 0;
   }
   
-  /* 右侧占位符绝对定位到右边，保持平衡 */
+  /* 右侧占位符移除，因为按钮组已经占据位置 */
   .user-info {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
+    display: none;
   }
   
   /* 标题居中，并留出两边空间 */
   .page-title {
     flex-grow: 0;
-    max-width: calc(100% - 120px); /* 减去两边按钮的宽度 */
+    max-width: calc(100% - 180px);
     margin: 0;
     font-size: 1.2rem;
     text-align: center;
     padding: 0 10px;
   }
   
-  /* 确保Home按钮在移动端更明显 */
-  .link-content {
-    background-color: #f1f5f9;
-    border-color: #cbd5e1;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    padding: 0.5rem 0.6rem;
-  }
-  
   /* 超小屏幕优化 */
   @media (max-width: 480px) {
     .page-title {
       font-size: 1rem;
-      max-width: calc(100% - 100px);
+      max-width: calc(100% - 160px);
     }
     
-    .dashboard-link {
-      left: 0.5rem;
+    .logo-section {
+      left: 0.25rem;
     }
     
-    .user-info {
-      right: 0.5rem;
+    .nav-buttons {
+      right: 0.25rem;
     }
-    
-    /* 超小屏幕隐藏Home文字，只留图标 */
-    .link-text {
-      display: none;
-    }
-    
-    .link-icon {
-      margin-right: 0;
-      font-size: 1.3rem;
-    }
-    
-    .link-content {
-      padding: 0.4rem;
-      min-width: 40px;
-    }
-  }
-}
-
-/* 触摸设备优化 */
-@media (hover: none) and (pointer: coarse) {
-  .link-content {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  .dashboard-link {
-    min-width: 44px;
   }
 }
 
@@ -244,9 +325,15 @@ export default {
 @media (max-width: 320px) {
   .page-title {
     font-size: 0.9rem;
-    max-width: calc(100% - 90px);
+    max-width: calc(100% - 150px);
+  }
+  
+  .nav-btn {
+    padding: 0.15rem 0.3rem;
+    font-size: 0.65rem;
   }
 }
+
 .logo-image {
   height: 100px;
   object-fit: contain;
