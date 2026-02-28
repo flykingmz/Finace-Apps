@@ -4,11 +4,15 @@
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
-        <router-view v-slot="{ Component, route }">
-        <component :is="Component" :key="route.fullPath" />
-        <div v-if="!Component">Component is undefined: {{ route.fullPath }}</div>
-        <div v-if="Component">Component is defined: {{ route.fullPath }}</div>
-        </router-view>
+       <router-view v-slot="{ Component, route }">
+  <div>Route path: {{ route.fullPath }}</div>
+  <div v-if="Component">
+    <component :is="Component" :key="route.fullPath"/>
+  </div>
+  <div v-else>
+    Component is undefined
+  </div>
+</router-view>
       </div>
     </div>
     <Foot />
