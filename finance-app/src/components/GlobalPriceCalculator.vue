@@ -259,7 +259,7 @@
     <!-- VAT FAQ信息展示区域 -->
   <div class="vat-info-section">
     <div class="vat-info-header">
-      <h3 class="vat-info-title">What is VAT/GST/Sales Tax?</h3>
+      <h3 class="vat-info-title">1️⃣ What is VAT/GST/Sales Tax?</h3>
     </div>
     
     <div class="vat-info-content">
