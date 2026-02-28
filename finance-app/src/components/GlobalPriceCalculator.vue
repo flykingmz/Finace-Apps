@@ -267,10 +267,9 @@
       
       <p>VAT is commonly used by governments around the world as one of their main sources of revenue, and accounts for approximately 20 percent of worldwide tax revenue. It is the most common consumption tax in the world and is enforced in more than 160 countries. All countries that are part of the European Union (EU) are legally required to enforce a minimum VAT rate, and since its introduction in the 20th century, European VAT rates have consistently increased. The U.S. is the only developed country in the world that doesn't use VAT.</p>
 
-      <p> GST (Goods and Services Tax)  is a value-added consumption tax levied on the supply of goods and services at each stage of the production and distribution chain. It is ultimately borne by the end consumer, while businesses can generally claim credits for the GST paid on their inputs.</p>
+      <p>GST (Goods and Services Tax) is a value-added consumption tax levied on the supply of goods and services at each stage of the production and distribution chain. It is ultimately borne by the end consumer, while businesses can generally claim credits for the GST paid on their inputs.</p>
 
       <p>Sales Tax is a consumption tax charged only at the point of final sale of goods or services to the end consumer. Unlike VAT or GST, it is not collected at intermediate stages of production or distribution, and there is generally no input tax credit for businesses.</p>
-    
     </div>
     
     <div class="vat-comparison-section">
@@ -307,6 +306,123 @@
         </ul>
       </div>
     </div>
+
+    <!-- Question 2 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">2️⃣ Why do I need to know about VAT/GST/Sales Tax?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <ul class="faq-list">
+        <li>Understanding these taxes helps you calculate the real cost of goods or services.</li>
+        <li>When using our financial calculators, you can input VAT/GST/Sales Tax rates to:
+          <ul class="faq-sublist">
+            <li>Estimate total purchase prices</li>
+            <li>Compare prices across countries</li>
+            <li>Factor taxes into budgeting or business cost calculations</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">3️⃣ Are VAT/GST/Sales Tax rates the same for all products?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p>No, rates often vary by product type, digital vs physical goods, and country regulations.</p>
+      <p><strong>Examples:</strong></p>
+      <ul class="faq-list">
+        <li><strong>EU:</strong> Standard VAT 20%, reduced rate 5% for essential food.</li>
+        <li><strong>Canada:</strong> 5% federal GST, some provinces add HST/PST.</li>
+        <li><strong>US:</strong> Some states charge sales tax on digital products, others don't.</li>
+      </ul>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">4️⃣ How can I calculate VAT/GST/Sales Tax?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p><strong>Simple formulas for our calculators:</strong></p>
+      <ul class="faq-list">
+        <li><strong>VAT/GST Included Price:</strong> Price × (1 + Tax Rate)</li>
+        <li><strong>VAT/GST Excluded Price:</strong> Price ÷ (1 + Tax Rate)</li>
+        <li><strong>Sales Tax (added at checkout):</strong> Price + (Price × Tax Rate)</li>
+      </ul>
+      <p>Our VAT/GST/Sales Tax calculators allow you to input:</p>
+      <ul class="faq-list">
+        <li>Country or region</li>
+        <li>Type of product (physical/digital)</li>
+        <li>Tax rate (or use the default rate)</li>
+      </ul>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">5️⃣ Do digital goods have different tax rules?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p>Yes. Many countries now tax digital goods and services such as:</p>
+      <ul class="faq-list">
+        <li>Software subscriptions</li>
+        <li>eBooks, music, and streaming services</li>
+        <li>Online courses</li>
+      </ul>
+      <p><strong>Example:</strong> In the EU, digital services sold to consumers are taxed at the VAT rate of the buyer's country, not the seller's.</p>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">6️⃣ Can businesses reclaim VAT/GST?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p>Businesses registered for VAT/GST can often claim back the tax paid on business purchases.</p>
+      <p>This is not applicable to Sales Tax in the US; it is generally non-recoverable for end consumers, though businesses may have resale exemptions.</p>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">7️⃣ How does this relate to using financial calculators?</h3>
+    </div>
+    
+    <div class="vat-info-content">
+      <p>When planning budgets, pricing products, or comparing costs internationally:</p>
+      <ul class="faq-list">
+        <li>Enter the correct VAT/GST/Sales Tax rate in your calculator.</li>
+        <li>Adjust for digital vs physical goods.</li>
+        <li>See both inclusive and exclusive price scenarios.</li>
+      </ul>
+      <p>Our financial calculators make this fast and accurate for personal budgeting, online shopping, or business planning.</p>
+    </div>
+
+    <!-- Examples Section -->
+    <div class="vat-info-header">
+      <h3 class="vat-info-title">📝 Calculation Examples</h3>
+    </div>
+    
+    <div class="examples-section">
+      <div class="example-card">
+        <h4 class="example-title">Example 1 – VAT/GST: Buying a laptop in Germany</h4>
+        <div class="example-content">
+          <p>Net price: €500, VAT: 19%</p>
+          <p class="example-formula">Total price = €500 + (€500 × 19%) = €595</p>
+        </div>
+      </div>
+      
+      <div class="example-card">
+        <h4 class="example-title">Example 2 – Sales Tax: Buying a book in California</h4>
+        <div class="example-content">
+          <p>Price: $50, Sales Tax: 7.25%</p>
+          <p class="example-formula">Total price = $50 + ($50 × 7.25%) = $53.63</p>
+        </div>
+      </div>
+    </div>
+</div>
     
     <div class="vat-footnote">
       <p><strong>Note:</strong> VAT (Value Added Tax) and GST (Goods and Services Tax) are multi-stage consumption taxes applied at every stage of production and distribution, allowing businesses to claim input tax credits to avoid cascading, with VAT used in Europe and many countries, and GST being a regional naming variant in countries like India, Australia, and New Zealand. In contrast, Sales Tax is a single-stage tax applied only at the point of final sale to consumers, does not allow input tax credits, and is commonly used in the United States at the state and local level.</p>
@@ -1958,5 +2074,59 @@ export default {
         #666 10px         /* 实色部分到10像素处结束 */
     );                    /* 重复这个5px透明+5px实色的模式 */
     margin: 30px 0;       /* 上下边距形成空行效果 */
+}
+  /* Examples Section */
+.examples-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.example-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.example-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.example-content p {
+  margin: 0.5rem 0;
+  color: #475569;
+}
+
+.example-formula {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 1rem !important;
+  border: 1px dashed #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vat-comparison-section,
+  .examples-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .vat-info-title {
+    font-size: 1.4rem;
+  }
 }
 </style>
