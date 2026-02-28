@@ -18,25 +18,25 @@
       <!-- Tax and Salary -->
       <div class="category-card">
         <!-- <div class="category-icon"><i class="fas fa-file-invoice-dollar"></i></div> -->
-        <div class="category-title"><a href="#/a/tax-salary-calculators">Tax and Salary</a> </div>
+        <div class="category-title"><a href="/tax-salary-calculators">Tax and Salary</a> </div>
         <ul class="popular-list">
-          <li><a href="#/a/global-vat" >🌍 Global VAT/GST/Sales Tax Calculator</a></li>
-          <li><a href="#/a/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
+          <li><a href="/global-vat" >🌍 Global VAT/GST/Sales Tax Calculator</a></li>
+          <li><a href="/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
         </ul>
       </div>
       <!-- Retirement -->
       <div class="category-card">
        <!-- <div class="category-icon"><i class="fas fa-umbrella-beach"></i></div> -->
-        <div class="category-title"><a href="#/a/retirement-calculators">Retirement</a> </div>
+        <div class="category-title"><a href="/retirement-calculators">Retirement</a> </div>
         <ul class="popular-list">
-          <li><a href="#/a/retirement" >📈 Retirement Calculator</a></li>
-          <li><a href="#/a/401k" >💰 401(k) Calculator</a></li>
+          <li><a href="/retirement" >📈 Retirement Calculator</a></li>
+          <li><a href="/401k" >💰 401(k) Calculator</a></li>
         </ul>
       </div>
       <!-- Mortgage and Real Estate -->
       <div class="category-card">
       <!--  <div class="category-icon"><i class="fas fa-home"></i></div> -->
-        <div class="category-title"><a href="#/a/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
+        <div class="category-title"><a href="/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
         <ul class="popular-list">
           <li><a href="" >🏠 Mortgage Calculator</a></li>
           <li><a href="" >📉 Amortization Calculator</a></li>
@@ -45,7 +45,7 @@
       <!-- Investment -->
       <div class="category-card">
      <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
-        <div class="category-title"><a href="#/a/investment-calculators">Investment</a> </div>
+        <div class="category-title"><a href="/investment-calculators">Investment</a> </div>
         <ul class="popular-list">
           <li><a href="" >📊 Investment Calculator</a></li>
           <li><a href="" >🧮 Interest Calculator</a></li>
@@ -53,7 +53,7 @@
       </div>
       <!-- Auto -->
       <div class="category-card">
-        <div class="category-title"><a href="#/a/auto-calculators">Auto</a> </div>
+        <div class="category-title"><a href="/auto-calculators">Auto</a> </div>
         <ul class="popular-list">
           <li><a href="" >📊 Auto Loan Calculator</a></li>
           <li><a href="" >🧮 Auto Lease Calculator</a></li>
@@ -61,7 +61,7 @@
       </div>
       <!-- Other -->
       <div class="category-card">
-        <div class="category-title"><a href="#/a/other-calculators">Other</a> </div>
+        <div class="category-title"><a href="/other-calculators">Other</a> </div>
         <ul class="popular-list">
           <li><a href="" >📊 Currency Calculator</a></li>
           <li><a href="" >🧮 Credit Card Calculator</a></li>
@@ -72,7 +72,7 @@
 
     <!-- All Calculators button (leads to all calculators page) -->
     <div class="all-calculators-row">
-      <a href="#/a/all-calculators" class="btn-primary" >✨ All Calculators (50+ tools)</a>
+      <a href="/all-calculators" class="btn-primary" >✨ All Calculators (50+ tools)</a>
     </div>
 
     <!-- Featured Calculators section (as per 'all calculators' area) -->
@@ -80,11 +80,11 @@
     <div class="featured-grid">
       <div class="featured-item">
         <i class="fas fa-globe"></i>
-        <a href="#/a/global-vat" >Global VAT/GST/Sales Tax Calculator</a>
+        <a href="/global-vat" >Global VAT/GST/Sales Tax Calculator</a>
       </div>
       <div class="featured-item">
         <i class="fas fa-wallet"></i>
-        <a href="#/a/take-home-paycheck-calculator" >Take Home Paycheck Calculator</a>
+        <a href="/take-home-paycheck-calculator" >Take Home Paycheck Calculator</a>
       </div>
     </div>
 
