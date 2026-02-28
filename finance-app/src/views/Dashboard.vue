@@ -5,14 +5,7 @@
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
         <router-view v-slot="{ Component, route }">
-          <component 
-            :is="Component" 
-            :key="route.fullPath"
-            v-if="Component"
-          />
-          <div v-else class="loading-content">
-            Loading content...
-          </div>
+        <component :is="Component" :key="route.fullPath" />
         </router-view>
       </div>
     </div>
