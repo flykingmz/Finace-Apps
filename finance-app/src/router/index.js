@@ -3,10 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    redirect: '/a'
-  },
-  {
-    path: '/a',
     component: () => import('../views/Dashboard.vue'),
     children: [
       {
@@ -114,7 +110,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/'),
   routes
 })
 
