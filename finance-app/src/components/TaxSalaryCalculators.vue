@@ -79,7 +79,7 @@
 
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
-      <a href="/dashboard" class="back-link">← Back to Home</a>
+      <a href="/" class="back-link">← Back to Home</a>
       <a href="/all-calculators" class="back-link" >All Calculators →</a>
     </div>
   </div>
