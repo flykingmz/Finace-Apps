@@ -7,19 +7,19 @@
       </div>
       -->
       <div class="footer-links">
-        <a href="#/a/about-us" class="footer-link">
+        <a href="/about-us" class="footer-link">
           <span class="link-text">about us</span>
         </a>
         <span class="link-separator">|</span>
-        <a href="#/a/all-calculators" class="footer-link">
+        <a href="/all-calculators" class="footer-link">
           <span class="link-text">sitemap</span>
         </a>
         <span class="link-separator">|</span>
-        <a href="#/a/terms-of-use" class="footer-link">
+        <a href="/terms-of-use" class="footer-link">
           <span class="link-text">terms of use</span>
         </a>
         <span class="link-separator">|</span>
-        <a href="#/a/privacy-policy" class="footer-link">
+        <a href="/privacy-policy" class="footer-link">
           <span class="link-text">privacy policy</span>
         </a>
       </div>
