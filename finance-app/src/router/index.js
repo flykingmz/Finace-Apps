@@ -120,15 +120,12 @@ const router = createRouter({
 
 // 添加全局路由守卫
 router.beforeEach((to, from, next) => {
-  console.log('Route changing from:', from.path, 'to:', to.path)
-  
-  // 如果是相同路由，强制重新加载
-  if (to.path === from.path) {
-    console.log('Same route detected, forcing reload')
-    // 这里我们可以添加一些逻辑来强制刷新
+  if (window.location.hash) {
+    const path = window.location.hash.replace('#', '')
+    next(path)
+  } else {
+    next()
   }
-  
-  next()
 })
 
 // 添加路由解析守卫
