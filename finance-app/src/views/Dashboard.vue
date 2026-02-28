@@ -6,6 +6,8 @@
       <div class="content-area">
         <router-view v-slot="{ Component, route }">
         <component :is="Component" :key="route.fullPath" />
+        <div v-if="!Component">Component is undefined: {{ route.fullPath }}</div>
+        <div v-if="Component">Component is defined: {{ route.fullPath }}</div>
         </router-view>
       </div>
     </div>
