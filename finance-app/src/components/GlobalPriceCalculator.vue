@@ -422,7 +422,6 @@
         </div>
       </div>
     </div>
-</div>
     
     <div class="vat-footnote">
       <p><strong>Note:</strong> VAT (Value Added Tax) and GST (Goods and Services Tax) are multi-stage consumption taxes applied at every stage of production and distribution, allowing businesses to claim input tax credits to avoid cascading, with VAT used in Europe and many countries, and GST being a regional naming variant in countries like India, Australia, and New Zealand. In contrast, Sales Tax is a single-stage tax applied only at the point of final sale to consumers, does not allow input tax credits, and is commonly used in the United States at the state and local level.</p>
