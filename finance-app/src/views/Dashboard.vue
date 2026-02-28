@@ -46,12 +46,12 @@ export default {
     }
   },
   mounted() {
-    this.injectJsonLd()
+    //this.injectJsonLd()
   },
   watch: {
     '$route.path': {
       handler() {
-        this.injectJsonLd()
+       // this.injectJsonLd()
       }
     }
   },
