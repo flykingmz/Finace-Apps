@@ -5,14 +5,8 @@
       <TopHeader :page-title="currentPageTitle" />
       <div class="content-area">
        <router-view v-slot="{ Component, route }">
-  <div>Route path: {{ route.fullPath }}</div>
-  <div v-if="Component">
-    <component :is="Component" :key="route.fullPath"/>
-  </div>
-  <div v-else>
-    Component is undefined
-  </div>
-</router-view>
+          <component :is="Component" :key="route.fullPath"/>
+       </router-view>
       </div>
     </div>
     <Foot />
