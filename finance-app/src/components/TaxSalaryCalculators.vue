@@ -22,7 +22,7 @@
         <div class="card-content">
           <h3>Global VAT/GST/Sales Tax Calculator</h3>
           <p>Calculate value-added tax, goods and services tax, or sales tax for any amount across multiple jurisdictions.</p>
-          <a href="#/a/global-vat" class="card-link" >Open Calculator →</a>
+          <a href="/global-vat" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
         <div class="card-content">
           <h3>Income Tax Calculator</h3>
           <p>Estimate your federal and state income tax based on salary, deductions, and filing status.</p>
-          <a href="#/a/income-tax" class="card-link" >Open Calculator →</a>
+          <a href="/income-tax" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
@@ -42,7 +42,7 @@
         <div class="card-content">
           <h3>Paycheck Calculator</h3>
           <p>Break down your gross pay into net income after taxes, Social Security, Medicare, and other deductions.</p>
-          <a href="#/a/paycheck" class="card-link">Open Calculator →</a>
+          <a href="/paycheck" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
@@ -52,7 +52,7 @@
         <div class="card-content">
           <h3>Take Home Paycheck Calculator</h3>
           <p>See exactly how much money lands in your bank account after all withholdings and contributions.</p>
-          <a href="#/a/take-home-paycheck-calculator" class="card-link" >Open Calculator →</a>
+          <a href="/take-home-paycheck-calculator" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
@@ -80,7 +80,7 @@
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
       <a href="/dashboard" class="back-link">← Back to Home</a>
-      <a href="#/a/all-calculators" class="back-link" >All Calculators →</a>
+      <a href="/all-calculators" class="back-link" >All Calculators →</a>
     </div>
   </div>
 </template>
