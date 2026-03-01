@@ -401,7 +401,13 @@ Understand your paycheck breakdown and see how much income you actually take hom
           </div>
         </div>
       </div>
-
+<!-- Related tools -->
+    <div class="related-tools">
+      <span class="related-label">Related:</span>
+      <a href="/paycheck">Paycheck Calculator</a> <span class="sep">|</span>
+      <a href="/income-tax">Income Tax Calculator</a> <span class="sep">|</span>
+      <a href="/global-vat">Global VAT Calculator</a>
+    </div>
       <!-- FAQ Section - Always Visible -->
       <div class="faq-section">
         <div class="faq-header">
@@ -2020,6 +2026,29 @@ export default {
   font-weight: 600;
   margin-top: 20px;
   line-height: 1.5;
+}
+  .related-tools {
+  margin: 36px 0 24px;
+  padding: 18px 0;
+  border-top: 2px solid #dde3ea;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 1.1rem;
+}
+.related-label {
+  font-weight: 600;
+  margin-right: 18px;
+  color: #0f2a40;
+}
+.related-tools a {
+  color: #1f4a7a;
+  text-decoration: none;
+  margin: 0 6px;
+}
+.related-tools a:hover {
+  text-decoration: underline;
+}
+.sep {
+  color: #9aa9b9;
 }
 
 /* Responsive adjustments */
