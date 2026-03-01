@@ -327,7 +327,13 @@
           </div>
         </div>
       </section>
-      
+      <!-- Related tools -->
+    <div class="related-tools">
+      <span class="related-label">Related:</span>
+      <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
+      <a href="/pension">Pension Calculator</a> <span class="sep">|</span>
+      <a href="/401k">401K Calculator</a>
+    </div>
       <!-- FAQ Section -->
       <section class="faq-section" id="faq">
         <div class="faq-card">
@@ -1107,6 +1113,30 @@ td {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+  .related-tools {
+  margin: 36px 0 24px;
+  padding: 18px 0;
+  border-top: 2px solid #dde3ea;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 1.1rem;
+}
+.related-label {
+  font-weight: 600;
+  margin-right: 18px;
+  color: #0f2a40;
+}
+.related-tools a {
+  color: #1f4a7a;
+  text-decoration: none;
+  margin: 0 6px;
+}
+.related-tools a:hover {
+  text-decoration: underline;
+}
+.sep {
+  color: #9aa9b9;
 }
 
 @media (min-width: 768px) {
