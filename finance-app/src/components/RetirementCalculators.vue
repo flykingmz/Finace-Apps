@@ -52,7 +52,7 @@
         <div class="card-content">
           <h3>Social Security Calculator</h3>
           <p>Project your Social Security benefits at different claiming ages and understand how earnings history affects your payout.</p>
-          <a href="/calculators/social-security" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/social-security" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
