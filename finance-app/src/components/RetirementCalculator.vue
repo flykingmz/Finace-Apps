@@ -345,6 +345,13 @@
         </div>
       </section>
 
+       <!-- Related tools -->
+    <div class="related-tools">
+      <span class="related-label">Related:</span>
+      <a href="/401k">401k Calculator</a> <span class="sep">|</span>
+      <a href="/pension">Pension Calculator</a> <span class="sep">|</span>
+      <a href="/social-security">Social Security Calculator</a>
+    </div>
       <!-- FAQ Section -->
       <section class="faq-section">
         <h2>What is Retirement?</h2>
@@ -1265,6 +1272,30 @@ export default {
   -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
 }
 
+  .related-tools {
+  margin: 36px 0 24px;
+  padding: 18px 0;
+  border-top: 2px solid #dde3ea;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 1.1rem;
+}
+.related-label {
+  font-weight: 600;
+  margin-right: 18px;
+  color: #0f2a40;
+}
+.related-tools a {
+  color: #1f4a7a;
+  text-decoration: none;
+  margin: 0 6px;
+}
+.related-tools a:hover {
+  text-decoration: underline;
+}
+.sep {
+  color: #9aa9b9;
+}
+  
 /* 平板设备（768px以下） */
 @media (max-width: 768px) {
   .calculator-main {
