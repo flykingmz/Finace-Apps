@@ -80,7 +80,7 @@ const routes = [
         name: '401KCalculator',
         component: () => import('../components/401KCalculator.vue'),
         meta: { keepAlive: false }
-      },finance-app/src/components/
+      },
       {
         path: 'pension',
         name: 'PensionCalculator',
