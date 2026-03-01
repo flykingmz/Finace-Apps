@@ -321,6 +321,46 @@ export default {
     }
   },
   methods: {
+    
+setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Find the best age to claim U.S. Social Security retirement benefits between 62–70. Compare payout scenarios and optimize your retirement income with our Social Security calculator.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    },
     // 计算基于SSA规则的福利百分比
     benefitPercent(applyAge) {
       if (applyAge >= this.fra) {
@@ -483,6 +523,9 @@ export default {
     }
   },
   mounted() {
+    document.title = 'Social Security Calculator – Find Your Best Claiming Age (62–70)'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
     // 初始化计算
     this.calculateIdeal();
     this.calculateCompare();
