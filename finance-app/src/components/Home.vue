@@ -22,6 +22,8 @@
         <ul class="popular-list">
           <li><a href="/global-vat" >🌍 Global VAT/GST/Sales Tax Calculator</a></li>
           <li><a href="/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
+          <li><a href="/income-tax" >🌍 Income Tax Calculator</a></li>
+          <li><a href="/paycheck" >💵 Paycheck Calculator</a></li>
         </ul>
       </div>
       <!-- Retirement -->
@@ -31,6 +33,8 @@
         <ul class="popular-list">
           <li><a href="/retirement" >📈 Retirement Calculator</a></li>
           <li><a href="/401k" >💰 401(k) Calculator</a></li>
+          <li><a href="/pension" >📈 Pension Calculator</a></li>
+          <li><a href="/social-security" >💰 Social Security Calculator</a></li>
         </ul>
       </div>
       <!-- Mortgage and Real Estate -->
