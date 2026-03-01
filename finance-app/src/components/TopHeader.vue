@@ -10,8 +10,8 @@
       <a href="/" style="text-decoration: none; color: inherit;">financial-calculator.net</a>
     </div>
     
-    <!-- 分类导航按钮 -->
-    <div class="nav-buttons">
+    <!-- 分类导航按钮 - 只在桌面端显示 -->
+    <div class="nav-buttons desktop-only">
       <a 
         href="/tax-salary-calculators" 
         class="nav-btn" 
@@ -175,7 +175,7 @@ export default {
   transition: all 0.3s ease;
 }
 
-/* 分类导航按钮样式 */
+/* 分类导航按钮样式 - 只在桌面端显示 */
 .nav-buttons {
   display: flex;
   gap: 0.5rem;
@@ -220,15 +220,9 @@ export default {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* 移动端按钮样式调整 */
-  .nav-buttons {
-    gap: 0.3rem;
-    margin-right: 0.5rem;
-  }
-  
-  .nav-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
+  /* 移动端隐藏分类按钮 */
+  .desktop-only {
+    display: none;
   }
 }
 
@@ -236,15 +230,6 @@ export default {
 @media (max-width: 480px) {
   .page-title {
     font-size: 2.8rem;
-  }
-  
-  .nav-buttons {
-    gap: 0.2rem;
-  }
-  
-  .nav-btn {
-    padding: 0.2rem 0.4rem;
-    font-size: 0.7rem;
   }
 }
 
@@ -263,7 +248,7 @@ export default {
   }
 }
 
-/* 移动端优化 */
+/* 移动端优化 - 隐藏分类按钮后的布局调整 */
 @media (max-width: 768px) {
   .top-header {
     padding: 0.5rem 1rem;
@@ -280,24 +265,21 @@ export default {
     transform: translateY(-50%);
   }
   
-  /* 右侧按钮组绝对定位到右边 */
-  .nav-buttons {
+  /* 右侧占位符保留，保持平衡 */
+  .user-info {
     position: absolute;
     right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 0;
-  }
-  
-  /* 右侧占位符移除，因为按钮组已经占据位置 */
-  .user-info {
-    display: none;
+    width: 44px;
+    height: 44px;
+    display: flex;
   }
   
   /* 标题居中，并留出两边空间 */
   .page-title {
     flex-grow: 0;
-    max-width: calc(100% - 180px);
+    max-width: calc(100% - 120px);
     margin: 0;
     font-size: 1.2rem;
     text-align: center;
@@ -308,14 +290,14 @@ export default {
   @media (max-width: 480px) {
     .page-title {
       font-size: 1rem;
-      max-width: calc(100% - 160px);
+      max-width: calc(100% - 100px);
     }
     
     .logo-section {
       left: 0.25rem;
     }
     
-    .nav-buttons {
+    .user-info {
       right: 0.25rem;
     }
   }
@@ -325,12 +307,7 @@ export default {
 @media (max-width: 320px) {
   .page-title {
     font-size: 0.9rem;
-    max-width: calc(100% - 150px);
-  }
-  
-  .nav-btn {
-    padding: 0.15rem 0.3rem;
-    font-size: 0.65rem;
+    max-width: calc(100% - 90px);
   }
 }
 
