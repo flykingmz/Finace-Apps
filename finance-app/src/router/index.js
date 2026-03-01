@@ -93,6 +93,12 @@ const routes = [
         component: () => import('../components/SocialSecurityCalculator.vue'),
         meta: { keepAlive: false }
       },
+       {
+        path: 'annuity',
+        name: 'AnnuityCalculator',
+        component: () => import('../components/AnnuityCalculator.vue'),
+        meta: { keepAlive: false }
+      },
       {
         path: 'about-us',
         name: 'AboutUs',
