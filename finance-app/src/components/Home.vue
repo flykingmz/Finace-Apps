@@ -79,6 +79,14 @@
       <a href="/all-calculators" class="btn-primary" >✨ All Calculators (50+ tools)</a>
     </div>
 
+     <h2>📚 Financial Guides / Learn</h2>
+    <div class="featured-grid">
+      <div class="featured-item">
+        <i class="fas fa-globe"></i>
+        <a href="/blog" >Financial Calculator Blog</a>
+      </div>
+    </div>
+     
     <!-- Featured Calculators section (as per 'all calculators' area) -->
     <h2>⭐ Featured Calculators</h2>
     <div class="featured-grid">
