@@ -332,7 +332,7 @@
       <span class="related-label">Related:</span>
       <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
       <a href="/pension">Pension Calculator</a> <span class="sep">|</span>
-      <a href="/401k">401K Calculator</a>
+      <a href="/social-security">Social Security Calculator</a>
     </div>
       <!-- FAQ Section -->
       <section class="faq-section" id="faq">
