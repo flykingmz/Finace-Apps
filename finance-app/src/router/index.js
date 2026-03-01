@@ -116,6 +116,12 @@ const routes = [
         name: 'PrivacyPolicy',
         component: () => import('../footlink/PrivacyPolicy.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('../components/Blog.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
