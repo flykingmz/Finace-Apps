@@ -62,7 +62,7 @@
         <div class="card-content">
           <h3>Annuity Calculator</h3>
           <p>Determine the future value of an annuity or calculate the income stream you can expect from an annuity investment.</p>
-          <a href="/calculators/annuity" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/annuity" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
