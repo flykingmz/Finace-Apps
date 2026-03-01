@@ -12,40 +12,58 @@
       <h2>Annuity Calculator</h2>
       
       <div class="form-row">
-        <label>Initial deposit</label>
+        <label>Starting principal</label>
         <div class="input-with-symbol">
           <span class="currency-symbol">$</span>
-          <input type="number" v-model.number="form.initialDeposit" @input="calculate" />
+          <input type="number" v-model.number="form.startingPrincipal" @input="calculate" />
         </div>
       </div>
 
       <div class="form-row">
-        <label>Annual contribution amount</label>
+        <label>Annual addition</label>
         <div class="input-with-symbol">
           <span class="currency-symbol">$</span>
-          <input type="number" v-model.number="form.annualContribution" @input="calculate" />
+          <input type="number" v-model.number="form.annualAddition" @input="calculate" />
         </div>
       </div>
 
       <div class="form-row">
-        <label>Annual increase of contribution</label>
+        <label>Monthly addition</label>
         <div class="input-with-symbol">
-          <input type="number" step="0.1" v-model.number="form.contributionIncrease" @input="calculate" />
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.monthlyAddition" @input="calculate" />
+        </div>
+      </div>
+
+      <!-- Radio buttons for annuity type -->
+      <div class="form-row radio-row">
+        <label>Add at each period's</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" value="beginning" v-model="form.paymentTiming" @change="calculate" />
+            <span>beginning (annuity due)</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" value="end" v-model="form.paymentTiming" @change="calculate" />
+            <span>end (ordinary/immediate annuity)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Annual growth rate</label>
+        <div class="input-with-symbol">
+          <input type="number" step="0.1" v-model.number="form.growthRate" @input="calculate" />
           <span class="percent-symbol">%</span>
         </div>
       </div>
 
       <div class="form-row">
-        <label>Annual return</label>
+        <label>After</label>
         <div class="input-with-symbol">
-          <input type="number" step="0.1" v-model.number="form.annualReturn" @input="calculate" />
-          <span class="percent-symbol">%</span>
+          <input type="number" v-model.number="form.years" @input="calculate" />
+          <span>years</span>
         </div>
-      </div>
-
-      <div class="form-row">
-        <label>Number of years</label>
-        <input type="number" v-model.number="form.years" @input="calculate" />
       </div>
 
       <div class="form-actions">
@@ -55,8 +73,27 @@
     </div>
 
     <!-- Results Section - 完全按照附件2样式 -->
-    <div class="results-section" v-if="results.length > 0">
+    <div class="results-section" v-if="results.years > 0">
       <h2>Accumulation Schedule</h2>
+      
+      <!-- Summary Cards - 附件2风格 -->
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h3>Start principal</h3>
+          <div class="card-row">
+            <span>Start principal</span>
+            <span class="card-value">${{ formatNumber(form.startingPrincipal) }}</span>
+          </div>
+          <div class="card-row">
+            <span>Additions</span>
+            <span class="card-value">${{ formatNumber(totalAdditions) }}</span>
+          </div>
+          <div class="card-row">
+            <span>Return/interest</span>
+            <span class="card-value">${{ formatNumber(totalInterest) }}</span>
+          </div>
+        </div>
+      </div>
       
       <!-- Tab buttons for Annual/Monthly view -->
       <div class="schedule-tabs">
@@ -76,27 +113,7 @@
         </button>
       </div>
 
-      <!-- Summary numbers -->
-      <div class="summary-numbers">
-        <div class="summary-item">
-          <span class="summary-label">Starting amount:</span>
-          <span class="summary-value">${{ formatNumber(form.initialDeposit) }}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Total contributions:</span>
-          <span class="summary-value">${{ formatNumber(totalContributions) }}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Total interest earned:</span>
-          <span class="summary-value">${{ formatNumber(totalInterest) }}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Ending balance:</span>
-          <span class="summary-value ending-balance">${{ formatNumber(endingBalance) }}</span>
-        </div>
-      </div>
-
-      <!-- Table for Annual Schedule -->
+      <!-- Table for Annual Schedule - 附件3样式 -->
       <div v-if="scheduleView === 'annual'" class="schedule-table">
         <table>
           <thead>
@@ -110,46 +127,48 @@
           <tbody>
             <tr v-for="(row, index) in annualSchedule" :key="index">
               <td>{{ row.year }}</td>
-              <td>${{ formatNumber(row.addition) }}</td>
-              <td>${{ formatNumber(row.returnAmt) }}</td>
-              <td>${{ formatNumber(row.endingBalance) }}</td>
+              <td>${{ formatMoney(row.addition) }}</td>
+              <td>${{ formatMoney(row.returnAmt) }}</td>
+              <td>${{ formatMoney(row.endingBalance) }}</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Table for Monthly Schedule -->
-      <div v-if="scheduleView === 'monthly'" class="schedule-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Month</th>
-              <th>Addition</th>
-              <th>Return</th>
-              <th>Ending balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(row, index) in monthlySchedule" :key="index">
-              <td>{{ row.year }}</td>
-              <td>{{ row.month }}</td>
-              <td>${{ formatNumber(row.addition) }}</td>
-              <td>${{ formatNumber(row.returnAmt) }}</td>
-              <td>${{ formatNumber(row.endingBalance) }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Table for Monthly Schedule - 附件4样式 (分年显示) -->
+      <div v-if="scheduleView === 'monthly'" class="schedule-table monthly">
+        <div v-for="year in uniqueYears" :key="year" class="monthly-year-section">
+          <h4>Year {{ year }}</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Addition</th>
+                <th>Return</th>
+                <th>Ending balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in monthlySchedule.filter(r => r.year === year)" :key="row.month">
+                <td>{{ row.month }}</td>
+                <td>${{ formatMoney(row.addition) }}</td>
+                <td>${{ formatMoney(row.returnAmt) }}</td>
+                <td>${{ formatMoney(row.endingBalance) }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="year-separator" v-if="year < Math.max(...uniqueYears)">End of year {{ year }}</div>
+        </div>
       </div>
 
       <!-- Note about rounding -->
-      <p class="table-note">* Values are rounded to nearest dollar. Actual results may vary.</p>
+      <p class="table-note">* Values are rounded to nearest cent. Actual results may vary.</p>
     </div>
 
     <!-- Related Tools -->
     <div class="related-tools">
       <span class="related-label">Related:</span>
-      <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
+      <a href="#">Retirement Calculator</a> <span class="sep">|</span>
       <a href="#">Annuity Payout Calculator</a>
     </div>
 
@@ -175,7 +194,7 @@
 
       <div class="faq-item">
         <h3>What is the difference between fixed, variable, and indexed annuities?</h3>
-        <p><strong>Fixed Annuities:</strong> Fixed annuities pay out a guaranteed amount after a certain date, and a return rate is largely dependent on market interest rates at the time the annuity contract is signed. In theory, high interest rate environments allow for higher rate fixed annuities (annuity investors make more money). However, the value of existing, already issued fixed-rate annuities is not impacted by changes in interest rates. Most do not have cost-of-living adjustments (COLA), and as a result, their real purchasing power may decline with time. Unless insurance companies go bankrupt, fixed annuities promise the return of principal. As a result, they are commonly used by retirees to guarantee themselves a steady income for the rest of their lives. They also tend to be useful for more conservative investors or people who want a way to control their spending through regulated, steady cash flows.</p>
+        <p><strong>Fixed Annuities:</strong> Fixed annuities pay out a guaranteed amount after a certain date, and a return rate is largely dependent on market interest rates at the time the annuity contract is signed. In theory, high interest rate environments allow for higher rate fixed annuities (annuity investors make more money). However, the value of existing, already issued fixed-rate annuities is not impacted by changes in interest rates. Most do not have cost-of-living adjustments (COLA), and as a result, their real purchasing power may decline with time. Unless insurance companies go bankrupt, fixed annuities promise the return of principal. As a result, they are commonly used by retirees to guarantee themselves a steady income for the rest of their lives. They also tend to be useful for more conservative investors or people who want a way to control their spending through regulated, steady cash flows. It is worth mentioning that there exists a subset of fixed annuities called multi-year guarantee annuities (MYGA) that work a bit differently from traditional fixed annuities. Traditional fixed annuities earn interest based on a rate that is guaranteed one year at a time, with a minimum guaranteed rate that it cannot drop below. In contrast, MYGAs pay a specific percentage yield for a certain amount of time. MYGAs are a lot like Certificates of Deposit (CDs), except that they have tax deferral benefits, greater time horizons, and are usually purchased with a lump sum of funds. An MYGA's rate of return is generally similar to that of 10 or 20-year treasury bonds. Investors who can't decide between investing in a CD or annuity can consider an MYGA. For more information about or to do calculations involving CDs, please visit the CD Calculator.</p>
         <p><strong>Variable Annuities:</strong> Unlike fixed annuities, variable annuities pay out a fluctuating amount based on the investment performance of assets (usually mutual funds) in an annuity. This type of annuity allows the most flexibility in terms of where investments can go, such as large-cap stocks, foreign stocks, bonds, and money market instruments. As a result, this type of annuity requires that an investor spend some time managing these investments. It is important to note that variable annuities do not guarantee the return of principal. Because the funds are invested in assets that fluctuate in value, it is possible for the total value of assets in a variable annuity to be lower than the principal. Investors who cannot take on this risk are probably better off with a fixed annuity. Keep in mind that variable annuities have some of the highest fees in the financial industry.</p>
         <p><strong>Indexed Annuities:</strong> An indexed annuity, sometimes called an equity-indexed annuity, combines aspects of both fixed and variable annuities, though they are defined as a fixed annuity by legal statute. They pay out a guaranteed minimum such as a fixed annuity does, but a portion of it is also tied to the performance of the investments within, which is similar to a variable annuity. Unlike variable annuities, which allow the investor to pick and choose investments or asset allocations, indexed annuities are generally only offered as part of major financial indices such as the Standard and Poor's 500 (S&P 500). If an index of an indexed annuity doesn't receive enough positive growth, the annuity investor will receive a guaranteed minimum interest return at the bare minimum. The crediting formulas of indexed annuities generally have some type of limiting factor that is intended to cause interest earnings to be based only on a portion of the change in whatever index it is tied to. In other words, while the index of an index annuity may have a 15% return during a year, the indexed annuity may only payout 10% of returns that year to its investor because of a cap placed on gains. Clearly, there is a tradeoff between added guarantees and receiving 100% of market gains (most variable annuities receive 100%).</p>
       </div>
@@ -217,127 +236,202 @@ export default {
   name: 'AnnuityCalculator',
   data() {
     return {
-      // 表单数据 - 初始值与附件图片一致
+      // 表单数据 - 与附件1完全一致
       form: {
-        initialDeposit: 10000,
-        annualContribution: 2000,
-        contributionIncrease: 5,
-        annualReturn: 7,
+        startingPrincipal: 20000,
+        annualAddition: 10000,
+        monthlyAddition: 0,
+        paymentTiming: 'end', // 'beginning' 或 'end'
+        growthRate: 6,
         years: 10
       },
       // 视图选择: annual 或 monthly
       scheduleView: 'annual',
-      // 计算结果数据
-      results: [],
-      totalContributions: 0,
-      totalInterest: 0,
-      endingBalance: 0
+      // 计算结果
+      results: {
+        years: 0,
+        annualSchedule: [],
+        monthlySchedule: [],
+        totalAdditions: 0,
+        totalInterest: 0,
+        endingBalance: 0
+      }
     };
   },
   computed: {
-    // 年度时间表 (每年一行)
+    // 年度时间表
     annualSchedule() {
-      return this.results;
+      return this.results.annualSchedule || [];
     },
     
-    // 月度时间表 (每年12行)
+    // 月度时间表
     monthlySchedule() {
-      const monthly = [];
-      
-      if (!this.results.length) return monthly;
-      
-      // 基于年度数据生成月度明细
-      let balance = this.form.initialDeposit;
-      const monthlyReturn = Math.pow(1 + this.form.annualReturn / 100, 1/12) - 1;
-      
-      for (let year = 1; year <= this.form.years; year++) {
-        // 计算当年度的年化贡献金额
-        const annualContrib = this.form.annualContribution * 
-          Math.pow(1 + this.form.contributionIncrease / 100, year - 1);
-        
-        // 月度贡献 (假设每月均匀投入)
-        const monthlyContrib = annualContrib / 12;
-        
-        for (let month = 1; month <= 12; month++) {
-          // 月度贡献
-          balance += monthlyContrib;
-          
-          // 月度回报
-          const returnAmt = balance * monthlyReturn;
-          balance += returnAmt;
-          
-          monthly.push({
-            year: year,
-            month: month,
-            addition: Math.round(monthlyContrib),
-            returnAmt: Math.round(returnAmt),
-            endingBalance: Math.round(balance)
-          });
-        }
-      }
-      
-      return monthly;
+      return this.results.monthlySchedule || [];
+    },
+    
+    // 所有不重复的年份（用于月度表分组）
+    uniqueYears() {
+      return [...new Set(this.monthlySchedule.map(row => row.year))];
+    },
+    
+    // 总添加金额
+    totalAdditions() {
+      return this.results.totalAdditions || 0;
+    },
+    
+    // 总利息收入
+    totalInterest() {
+      return this.results.totalInterest || 0;
+    },
+    
+    // 最终余额
+    endingBalance() {
+      return this.results.endingBalance || 0;
     }
   },
   methods: {
-    // 主要计算逻辑
+    // 主要计算逻辑 - 精确匹配附件3和附件4的数据
     calculate() {
       // 确保数值有效
-      const initial = Number(this.form.initialDeposit) || 0;
-      const annualBase = Number(this.form.annualContribution) || 0;
-      const increaseRate = (Number(this.form.contributionIncrease) || 0) / 100;
-      const returnRate = (Number(this.form.annualReturn) || 0) / 100;
+      const startingPrincipal = Number(this.form.startingPrincipal) || 0;
+      const annualAddition = Number(this.form.annualAddition) || 0;
+      const monthlyAddition = Number(this.form.monthlyAddition) || 0;
+      const paymentTiming = this.form.paymentTiming;
+      const annualRate = (Number(this.form.growthRate) || 0) / 100;
       const years = Number(this.form.years) || 1;
       
-      let balance = initial;
+      // 计算月利率
+      const monthlyRate = Math.pow(1 + annualRate, 1/12) - 1;
+      
+      // 年度数据和月度数据数组
+      const annualSchedule = [];
+      const monthlySchedule = [];
+      
+      // 初始化余额
+      let balance = startingPrincipal;
       let totalAdditions = 0;
-      let totalInterestEarned = 0;
+      let totalInterest = 0;
       
-      const schedule = [];
+      // 计算每年总贡献（年度贡献 + 月度贡献总和）
+      const totalAnnualAddition = annualAddition + (monthlyAddition * 12);
       
+      // 按年循环
       for (let year = 1; year <= years; year++) {
-        // 计算当年度的贡献金额 (考虑年度递增)
-        const annualContrib = annualBase * Math.pow(1 + increaseRate, year - 1);
+        let yearAddition = 0;
+        let yearReturn = 0;
         
-        // 假设贡献在年初一次性投入
-        balance += annualContrib;
-        totalAdditions += annualContrib;
+        // 按月循环计算（即使只需要年度表，也通过月度累计得到精确的年度值）
+        for (let month = 1; month <= 12; month++) {
+          let monthAddition = 0;
+          
+          // 根据支付时间点添加贡献
+          if (paymentTiming === 'beginning') {
+            // 期初支付：在计算回报前添加贡献
+            if (month === 1) {
+              // 年初添加年度贡献
+              balance += annualAddition;
+              monthAddition += annualAddition;
+              totalAdditions += annualAddition;
+              yearAddition += annualAddition;
+            }
+            
+            // 每月添加月度贡献（包括第1个月）
+            balance += monthlyAddition;
+            monthAddition += monthlyAddition;
+            totalAdditions += monthlyAddition;
+            yearAddition += monthlyAddition;
+            
+            // 计算月回报
+            const monthReturn = balance * monthlyRate;
+            balance += monthReturn;
+            yearReturn += monthReturn;
+            totalInterest += monthReturn;
+            
+            // 记录月度数据
+            monthlySchedule.push({
+              year: year,
+              month: month,
+              addition: monthAddition,
+              returnAmt: monthReturn,
+              endingBalance: balance
+            });
+          } else {
+            // 期末支付：在计算回报后添加贡献
+            // 先计算当月回报（基于月初余额）
+            const monthReturn = balance * monthlyRate;
+            balance += monthReturn;
+            yearReturn += monthReturn;
+            totalInterest += monthReturn;
+            
+            // 然后添加贡献（期末）
+            if (month === 12) {
+              // 年末添加年度贡献
+              balance += annualAddition;
+              monthAddition += annualAddition;
+              totalAdditions += annualAddition;
+              yearAddition += annualAddition;
+            }
+            
+            // 每月添加月度贡献（在第1-11个月，回报后添加；第12个月，在年度贡献后添加）
+            balance += monthlyAddition;
+            monthAddition += monthlyAddition;
+            totalAdditions += monthlyAddition;
+            yearAddition += monthlyAddition;
+            
+            // 记录月度数据
+            monthlySchedule.push({
+              year: year,
+              month: month,
+              addition: monthAddition,
+              returnAmt: monthReturn,
+              endingBalance: balance
+            });
+          }
+        }
         
-        // 计算年度回报
-        const yearReturn = balance * returnRate;
-        balance += yearReturn;
-        totalInterestEarned += yearReturn;
-        
-        schedule.push({
+        // 记录年度数据
+        annualSchedule.push({
           year: year,
-          addition: Math.round(annualContrib),
-          returnAmt: Math.round(yearReturn),
-          endingBalance: Math.round(balance)
+          addition: yearAddition,
+          returnAmt: yearReturn,
+          endingBalance: balance
         });
       }
       
-      this.results = schedule;
-      this.totalContributions = Math.round(totalAdditions);
-      this.totalInterest = Math.round(totalInterestEarned);
-      this.endingBalance = Math.round(balance);
+      // 保存结果
+      this.results = {
+        years: years,
+        annualSchedule: annualSchedule,
+        monthlySchedule: monthlySchedule,
+        totalAdditions: totalAdditions,
+        totalInterest: totalInterest,
+        endingBalance: balance
+      };
     },
     
-    // 清除表单并重新计算
+    // 清除表单到默认值（与附件1一致）
     clearForm() {
       this.form = {
-        initialDeposit: 10000,
-        annualContribution: 2000,
-        contributionIncrease: 5,
-        annualReturn: 7,
+        startingPrincipal: 20000,
+        annualAddition: 10000,
+        monthlyAddition: 0,
+        paymentTiming: 'end',
+        growthRate: 6,
         years: 10
       };
       this.calculate();
     },
     
-    // 格式化数字显示 (带千位分隔符)
+    // 格式化数字显示（千位分隔符，保留两位小数）- 用于摘要
     formatNumber(value) {
       if (value === undefined || value === null) return '0';
       return Math.round(value).toLocaleString('en-US');
+    },
+    
+    // 格式化货币（两位小数）- 用于表格
+    formatMoney(value) {
+      if (value === undefined || value === null) return '0.00';
+      return value.toFixed(2).toLocaleString('en-US');
     }
   },
   mounted() {
@@ -346,10 +440,11 @@ export default {
   },
   watch: {
     // 监听所有表单字段变化，自动重新计算
-    'form.initialDeposit': 'calculate',
-    'form.annualContribution': 'calculate',
-    'form.contributionIncrease': 'calculate',
-    'form.annualReturn': 'calculate',
+    'form.startingPrincipal': 'calculate',
+    'form.annualAddition': 'calculate',
+    'form.monthlyAddition': 'calculate',
+    'form.paymentTiming': 'calculate',
+    'form.growthRate': 'calculate',
     'form.years': 'calculate'
   }
 };
@@ -412,10 +507,33 @@ export default {
 }
 
 .form-row label {
-  width: 240px;
+  width: 200px;
   font-weight: 500;
   color: #1a3349;
   font-size: 1.05rem;
+}
+
+.radio-row {
+  align-items: flex-start;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  width: auto;
+  margin: 0;
 }
 
 .input-with-symbol {
@@ -438,7 +556,7 @@ export default {
   margin-left: 4px;
 }
 
-.form-row input {
+.form-row input[type="number"] {
   padding: 12px 16px;
   border: 1px solid #b6c9dd;
   border-radius: 30px;
@@ -448,7 +566,7 @@ export default {
   transition: border-color 0.2s;
 }
 
-.form-row input:focus {
+.form-row input[type="number"]:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
@@ -503,6 +621,40 @@ button.clear:hover {
   color: #0b2b44;
 }
 
+/* Summary Cards - 附件2风格 */
+.summary-cards {
+  margin-bottom: 28px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 24px;
+  border: 1px solid #d9e2ef;
+  max-width: 400px;
+}
+
+.summary-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #1e3a5f;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.card-value {
+  font-weight: 600;
+  color: #0b2b44;
+}
+
 .schedule-tabs {
   display: flex;
   gap: 12px;
@@ -524,50 +676,51 @@ button.clear:hover {
   border-color: #1f3a5f;
 }
 
-.summary-numbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  background: white;
-  border-radius: 24px;
-  padding: 20px 28px;
-  margin-bottom: 28px;
-  border: 1px solid #d9e2ef;
-}
-
-.summary-item {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.summary-label {
-  font-weight: 500;
-  color: #4b5f73;
-}
-
-.summary-value {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #0b2b44;
-}
-
-.summary-value.ending-balance {
-  color: #16a34a;
-  font-size: 1.3rem;
-}
-
 .schedule-table {
   background: white;
   border-radius: 20px;
   overflow-x: auto;
   border: 1px solid #dde3ea;
+  margin-bottom: 16px;
+}
+
+.schedule-table.monthly {
+  background: transparent;
+  border: none;
+}
+
+.monthly-year-section {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #dde3ea;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.monthly-year-section h4 {
+  background: #e1eaf3;
+  margin: 0;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #1a3349;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.year-separator {
+  text-align: center;
+  padding: 16px;
+  font-weight: 600;
+  color: #4b5f73;
+  background: #f0f4fa;
+  border-top: 1px dashed #9aa9b9;
+  border-bottom: 1px dashed #9aa9b9;
+  margin: 0;
 }
 
 .schedule-table table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  min-width: 500px;
 }
 
 .schedule-table th {
@@ -688,9 +841,8 @@ button.clear:hover {
     width: 100%;
   }
   
-  .summary-numbers {
+  .summary-cards {
     flex-direction: column;
-    gap: 16px;
   }
 }
 </style>
