@@ -43,6 +43,16 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://financial-calculator.net/social-security</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/annuity</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 <!---calculators link -->
    <url>
     <loc>https://financial-calculator.net/tax-salary-calculators</loc>
