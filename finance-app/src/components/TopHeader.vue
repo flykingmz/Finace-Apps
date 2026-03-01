@@ -42,6 +42,12 @@
         :class="{ active: activeNav === 'other' }"
         @click="setActive('other')"
       >Other</a>
+      <a 
+        href="/blog" 
+        class="nav-btn" 
+        :class="{ active: activeNav === 'blog' }"
+        @click="setActive('other')"
+      >Blog</a>
     </div>
     
     <div class="user-info">
@@ -85,6 +91,7 @@ export default {
       else if (path.includes('mortgage')) this.activeNav = 'mortgage';
       else if (path.includes('investment')) this.activeNav = 'investment';
       else if (path.includes('other')) this.activeNav = 'other';
+      else if (path.includes('blog')) this.activeNav = 'blog';
       else this.activeNav = '';
     }
   }
