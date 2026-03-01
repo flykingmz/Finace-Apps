@@ -507,6 +507,14 @@
       </div>
     </div>
 
+     <!-- Related tools -->
+    <div class="related-tools">
+      <span class="related-label">Related:</span>
+      <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
+      <a href="/social-security">Social Security Calculator</a> <span class="sep">|</span>
+      <a href="/401k">401K Calculator</a>
+    </div>
+    
     <!-- FAQ部分 -->
     <div class="faq-section">
       <h2>Pensions</h2>
@@ -1326,6 +1334,30 @@ input:focus {
   opacity: 0.8;
 }
 
+  .related-tools {
+  margin: 36px 0 24px;
+  padding: 18px 0;
+  border-top: 2px solid #dde3ea;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 1.1rem;
+}
+.related-label {
+  font-weight: 600;
+  margin-right: 18px;
+  color: #0f2a40;
+}
+.related-tools a {
+  color: #1f4a7a;
+  text-decoration: none;
+  margin: 0 6px;
+}
+.related-tools a:hover {
+  text-decoration: underline;
+}
+.sep {
+  color: #9aa9b9;
+}
+  
 /* 响应式设计 */
 @media (max-width: 768px) {
   .calculator-selector {
