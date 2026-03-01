@@ -45,7 +45,7 @@
             <a href="/401k" class="tool-link">401K Calculator</a>
             <a href="/pension" class="tool-link">Pension Calculator</a>
             <a href="/social-security" class="tool-link">Social Security Calculator</a>
-            <a href="#" class="tool-link">Annuity Calculator</a>
+            <a href="/annuity" class="tool-link">Annuity Calculator</a>
             <a href="#" class="tool-link">Annuity Payout Calculator</a>
             <a href="#" class="tool-link">Roth IRA Calculator</a>
             <a href="#" class="tool-link">IRA Calculator</a>
