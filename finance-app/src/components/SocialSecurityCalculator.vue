@@ -21,12 +21,24 @@
 
     <!-- ========== TAB 1: IDEAL APPLICATION AGE ========== -->
     <div v-if="activeTab === 'ideal'" class="tab-pane">
-      <!-- 动态结果展示 -->
+      <!-- 动态结果展示 - 完全基于用户输入计算 -->
       <div class="result-card">
         <h2>Result</h2>
-        <p class="result-text" v-html="idealResultMessage"></p>
+        <div class="result-text" v-html="idealResultMessage"></div>
+        
+        <!-- 显示详细的决策依据 -->
+        <div class="decision-details" v-if="idealBestAge">
+          <h3>Why age {{ idealBestAge }} is optimal for you:</h3>
+          <ul>
+            <li>Your Full Retirement Age (FRA): <strong>{{ fra }}</strong></li>
+            <li>Life expectancy: <strong>{{ idealInput.lifeExpectancy }} years</strong></li>
+            <li>Investment return: <strong>{{ idealInput.investReturn }}%</strong></li>
+            <li>COLA: <strong>{{ idealInput.cola }}%</strong></li>
+            <li>Projected breakeven analysis suggests maximum lifetime value at age {{ idealBestAge }}</li>
+          </ul>
+        </div>
 
-        <!-- 相对价值表 (根据出生年份动态调整FRA和相关比例) -->
+        <!-- 各年龄段相对价值表 (基于FRA动态计算) -->
         <div class="value-comparison">
           <p><strong>Value comparison of application ages</strong></p>
           <div class="axis-labels">
@@ -35,39 +47,50 @@
           </div>
           <table class="mini-table">
             <thead>
-              <tr><th>Application age</th><th>Relative value</th></tr>
+              <tr><th>Application age</th><th>Relative value</th><th>Monthly benefit %</th></tr>
             </thead>
             <tbody>
-              <tr v-for="age in [62,63,64,65,66]" :key="age">
+              <tr v-for="age in [62,63,64,65,66,67,68,69,70]" :key="age" 
+                  :class="{ 'highlight-row': age === idealBestAge }">
                 <td>{{ age }}</td>
                 <td>{{ relativeValue(age) }}%</td>
+                <td>{{ benefitPercent(age) }}%</td>
               </tr>
             </tbody>
           </table>
-          <p class="table-note">* Relative to Primary Insurance Amount at Full Retirement Age ({{ fra }})</p>
+          <p class="table-note">* Relative value considers life expectancy, investment returns, and COLA. Monthly benefit % is based on SSA rules.</p>
         </div>
       </div>
 
-      <!-- 用户输入表单 -->
+      <!-- 用户输入表单 - 所有输入都会触发实时计算 -->
       <div class="calculator-form">
         <div class="form-row">
           <label>Your birth year:</label>
-          <input type="number" v-model.number="idealInput.birthYear" @input="recalcIdeal" />
+          <input type="number" v-model.number="idealInput.birthYear" @input="calculateIdeal" />
+          <span class="field-hint">Determines your Full Retirement Age</span>
         </div>
         <div class="form-row">
           <label>Your life expectancy:</label>
-          <input type="number" v-model.number="idealInput.lifeExpectancy" @input="recalcIdeal" /> <span>years</span>
+          <input type="number" v-model.number="idealInput.lifeExpectancy" @input="calculateIdeal" /> 
+          <span>years</span>
         </div>
         <div class="form-row">
           <label>Your investment return:</label>
-          <input type="number" step="0.1" v-model.number="idealInput.investReturn" @input="recalcIdeal" /> <span>% per year</span>
+          <input type="number" step="0.1" v-model.number="idealInput.investReturn" @input="calculateIdeal" /> 
+          <span>% per year</span>
         </div>
         <div class="form-row">
           <label>Cost of living adjustment*:</label>
-          <input type="number" step="0.1" v-model.number="idealInput.cola" @input="recalcIdeal" /> <span>% per year</span>
+          <input type="number" step="0.1" v-model.number="idealInput.cola" @input="calculateIdeal" /> 
+          <span>% per year</span>
+        </div>
+        <div class="form-row">
+          <label>Your Primary Insurance Amount (PIA):</label>
+          <input type="number" v-model.number="idealInput.pia" @input="calculateIdeal" /> 
+          <span>$ per month (at FRA)</span>
         </div>
         <div class="form-actions">
-          <button @click="recalcIdeal">Calculate</button>
+          <button @click="calculateIdeal">Calculate</button>
           <button class="clear" @click="clearIdeal">Clear</button>
         </div>
       </div>
@@ -75,56 +98,68 @@
 
     <!-- ========== TAB 2: COMPARE TWO APPLICATION AGES ========== -->
     <div v-if="activeTab === 'compare'" class="tab-pane">
-      <!-- 动态结果展示 -->
+      <!-- 动态结果展示 - 基于两个方案的对比 -->
       <div class="result-card">
         <h2>Result</h2>
-        <p class="result-text" v-html="compareResultMessage"></p>
+        <div class="result-text" v-html="compareResultMessage"></div>
 
-        <!-- 等效价值条形图 (动态生成) -->
+        <!-- 累积价值对比条形图 -->
         <div class="value-comparison">
-          <p><strong>Equivalent value at age 62</strong></p>
+          <p><strong>Cumulative benefits by age {{ compareInput.lifeExpectancy }}</strong></p>
           <div class="bar-chart-labels">
-            <span>If retire at age {{ compareInput.age1 }}</span>
-            <span>If retire at age {{ compareInput.age2 }}</span>
+            <span>Option {{ compareInput.age1 }}: ${{ formatNumber(totalValue1) }}</span>
+            <span>Option {{ compareInput.age2 }}: ${{ formatNumber(totalValue2) }}</span>
           </div>
           <div class="bar-chart">
             <div class="bar-container">
               <div class="bar" :style="{ width: barWidth1, background: '#2563eb' }">
-                ${{ formatNumber(cumulativeValue1) }}
+                ${{ formatNumber(totalValue1) }}
               </div>
             </div>
             <div class="bar-container">
               <div class="bar" :style="{ width: barWidth2, background: '#16a34a' }">
-                ${{ formatNumber(cumulativeValue2) }}
+                ${{ formatNumber(totalValue2) }}
               </div>
             </div>
           </div>
-          <div class="x-label">Life expectancy (age {{compareInput.lifeExpectancy || 82}})</div>
+          
+          <!-- 盈亏平衡分析 -->
+          <div class="breakeven-analysis" v-if="compareInput.age2 > compareInput.age1">
+            <p><strong>Breakeven analysis:</strong></p>
+            <p>You will receive higher total benefits from Option {{ compareInput.age2 }} if you live to age 
+               <strong>{{ breakevenAge }}</strong> or older.</p>
+            <p>Current life expectancy: {{ compareInput.lifeExpectancy }}</p>
+          </div>
         </div>
 
-        <!-- 选项卡片 (动态显示用户输入的金额) -->
+        <!-- 方案详情卡片 -->
         <div class="option-cards">
-          <div class="option">
+          <div class="option" :class="{ 'better-option': totalValue2 > totalValue1 && compareInput.lifeExpectancy >= breakevenAge }">
             <h3>Social security claim option 1</h3>
             <p>Retirement age: <strong>{{ compareInput.age1 }}</strong></p>
-            <p>Monthly payment: <strong>${{ formatNumber(compareInput.benefit1) }} per month</strong></p>
+            <p>Monthly payment: <strong>${{ formatNumber(compareInput.benefit1) }}</strong></p>
+            <p>Years of benefits: <strong>{{ benefitYears1 }}</strong></p>
+            <p>Total cumulative: <strong>${{ formatNumber(totalValue1) }}</strong></p>
           </div>
-          <div class="option">
+          <div class="option" :class="{ 'better-option': totalValue2 > totalValue1 && compareInput.lifeExpectancy >= breakevenAge ? false : totalValue1 < totalValue2 }">
             <h3>Social security claim option 2 (work longer)</h3>
             <p>Retirement age: <strong>{{ compareInput.age2 }}</strong></p>
-            <p>Monthly payment: <strong>${{ formatNumber(compareInput.benefit2) }} per month</strong></p>
+            <p>Monthly payment: <strong>${{ formatNumber(compareInput.benefit2) }}</strong></p>
+            <p>Years of benefits: <strong>{{ benefitYears2 }}</strong></p>
+            <p>Total cumulative: <strong>${{ formatNumber(totalValue2) }}</strong></p>
           </div>
         </div>
 
-        <!-- 其他信息 (动态) -->
+        <!-- 其他信息 -->
         <div class="other-info">
-          <p><strong>Other information</strong></p>
-          <div class="info-row"><span>Your investment return:</span> {{ compareInput.investReturn }}% per year</div>
-          <div class="info-row"><span>Cost of living adjustment*:</span> {{ compareInput.cola }}% per year</div>
+          <p><strong>Calculation assumptions</strong></p>
+          <div class="info-row"><span>Investment return:</span> {{ compareInput.investReturn }}% per year</div>
+          <div class="info-row"><span>COLA:</span> {{ compareInput.cola }}% per year</div>
+          <div class="info-row"><span>Life expectancy:</span> {{ compareInput.lifeExpectancy }} years</div>
         </div>
       </div>
 
-      <!-- 用户输入表单 (所有字段均可编辑) -->
+      <!-- 用户输入表单 -->
       <div class="calculator-form">
         <p class="ssa-note">
           The U.S. Social Security website
@@ -133,34 +168,34 @@
         </p>
         <div class="form-row">
           <label>Option 1 age:</label>
-          <input type="number" v-model.number="compareInput.age1" @input="recalcCompare" />
+          <input type="number" v-model.number="compareInput.age1" @input="calculateCompare" />
         </div>
         <div class="form-row">
           <label>Option 1 monthly $:</label>
-          <input type="number" v-model.number="compareInput.benefit1" @input="recalcCompare" />
+          <input type="number" v-model.number="compareInput.benefit1" @input="calculateCompare" />
         </div>
         <div class="form-row">
           <label>Option 2 age:</label>
-          <input type="number" v-model.number="compareInput.age2" @input="recalcCompare" />
+          <input type="number" v-model.number="compareInput.age2" @input="calculateCompare" />
         </div>
         <div class="form-row">
           <label>Option 2 monthly $:</label>
-          <input type="number" v-model.number="compareInput.benefit2" @input="recalcCompare" />
+          <input type="number" v-model.number="compareInput.benefit2" @input="calculateCompare" />
         </div>
         <div class="form-row">
           <label>Your life expectancy:</label>
-          <input type="number" v-model.number="compareInput.lifeExpectancy" @input="recalcCompare" /> <span>years</span>
+          <input type="number" v-model.number="compareInput.lifeExpectancy" @input="calculateCompare" /> <span>years</span>
         </div>
         <div class="form-row">
           <label>Your investment return %:</label>
-          <input type="number" step="0.1" v-model.number="compareInput.investReturn" @input="recalcCompare" />
+          <input type="number" step="0.1" v-model.number="compareInput.investReturn" @input="calculateCompare" />
         </div>
         <div class="form-row">
           <label>COLA %:</label>
-          <input type="number" step="0.1" v-model.number="compareInput.cola" @input="recalcCompare" />
+          <input type="number" step="0.1" v-model.number="compareInput.cola" @input="calculateCompare" />
         </div>
         <div class="form-actions">
-          <button @click="recalcCompare">Calculate</button>
+          <button @click="calculateCompare">Calculate</button>
           <button class="clear" @click="clearCompare">Clear</button>
         </div>
       </div>
@@ -169,14 +204,15 @@
     <!-- Related tools -->
     <div class="related-tools">
       <span class="related-label">Related:</span>
-      <a href="#">Retirement Calculator</a> <span class="sep">|</span>
-      <a href="#">Pension Calculator</a> <span class="sep">|</span>
-      <a href="#">401K Calculator</a>
+      <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
+      <a href="/pension">Pension Calculator</a> <span class="sep">|</span>
+      <a href="/401k">401K Calculator</a>
     </div>
 
-    <!-- FAQ section (unchanged) -->
+    <!-- FAQ section (保持原样) -->
     <div class="faq-section">
       <h2>Social Security in the U.S. – FAQ</h2>
+      <!-- ... FAQ内容保持不变 ... -->
       <details><summary>What is Social Security and why was it created?</summary><p>Before 1935, care for the elderly/disabled was not a federal responsibility. The Social Security Act (originally Economic Security Act) was signed by President Roosevelt, with first taxes collected in 1937. It provided monetary assistance to qualified Americans with inadequate or no income. Initially just retirement benefits, it expanded to survivors (1939) and disability (1956).</p></details>
       <details><summary>How big is Social Security today?</summary><p>About 169 million Americans pay SS taxes, and roughly 65 million (1 in 5) collect monthly benefits. One out of four families receive benefits. For over 60% of beneficiaries, SS represents more than half of their income; for one‑third it is the only income.</p></details>
       <details><summary>What is Cost‑of‑Living Adjustment (COLA)?</summary><p>COLA preserves purchasing power against inflation. It's based on the CPI‑W from Q3 of prior year to Q3 of current year. If no increase, no COLA. It applies to both SS and Supplemental Security Income (SSI).</p></details>
@@ -198,12 +234,13 @@ export default {
   data() {
     return {
       activeTab: 'ideal',
-      // Tab1 输入模型
+      // Tab1 输入模型 - 添加了PIA字段
       idealInput: {
         birthYear: 1970,
         lifeExpectancy: 83,
         investReturn: 5.0,
         cola: 3.0,
+        pia: 2000, // Primary Insurance Amount at FRA
       },
       // Tab2 输入模型
       compareInput: {
@@ -215,125 +252,218 @@ export default {
         investReturn: 5.0,
         cola: 3.0,
       },
-      // 用于展示的计算结果
+      // 计算结果
       idealBestAge: 68,
       idealMonthsAfterFRA: 12,
       idealPercent: 108,
-      compareBreakeven: 82,
-      cumulativeValue1: 60000,
-      cumulativeValue2: 100000,
+      totalValue1: 60000,
+      totalValue2: 100000,
+      breakevenAge: 82,
     };
   },
   computed: {
-    // Full Retirement Age 根据出生年简单估算 (实际规则更复杂，这里简化为: 1960后=67，之前滑动)
+    // Full Retirement Age based on birth year (SSA rules)
     fra() {
       const year = this.idealInput.birthYear;
       if (year >= 1960) return 67;
-      if (year >= 1943) return 66; // 1943-1954 实际上是66，但为简化，只做演示
-      return 65; // 更早的简化
+      if (year >= 1955) return 66 + Math.floor((year - 1954) * 2); // 简化的渐进规则
+      if (year >= 1943) return 66;
+      if (year >= 1938) return 65 + Math.floor((year - 1937) * 0.5);
+      return 65;
     },
+    
     idealResultMessage() {
+      if (!this.idealBestAge) return 'Please enter your information and click Calculate';
+      
+      const monthsAfter = this.idealBestAge > this.fra ? 
+        (this.idealBestAge - this.fra) * 12 : 
+        (this.fra - this.idealBestAge) * -12;
+      
+      const action = this.idealBestAge > this.fra ? 'after' : 'before';
+      
       return `Financially, the best age for you to apply for Social Security retirement benefit is
       <strong>${this.idealBestAge}</strong>. At ${this.idealBestAge}, you receive benefits
-      <strong>${this.idealMonthsAfterFRA} months</strong> after you reach your normal retirement age of
+      <strong>${Math.abs(monthsAfter)} months</strong> ${action} you reach your normal retirement age of
       <strong>${this.fra}</strong>. Your benefit will be
-      <strong>${this.idealPercent}%</strong> of your primary insurance amount.`;
+      <strong>${this.benefitPercent(this.idealBestAge)}%</strong> of your primary insurance amount
+      ($${this.formatNumber(this.idealInput.pia)}).`;
     },
+    
     compareResultMessage() {
-      return `Financially, if you think you can live to <strong>${this.compareBreakeven} or older</strong>,
-      it is better to apply for social security at age ${this.compareInput.age2}. Otherwise, it is better
-      to apply for social security at age ${this.compareInput.age1}.`;
+      if (!this.compareInput.lifeExpectancy) return 'Please enter all values';
+      
+      const betterOption = this.totalValue2 > this.totalValue1 ? 
+        this.compareInput.age2 : this.compareInput.age1;
+      const worseOption = this.totalValue2 > this.totalValue1 ? 
+        this.compareInput.age1 : this.compareInput.age2;
+      
+      return `Based on your life expectancy of ${this.compareInput.lifeExpectancy} years,
+      <strong>Option ${betterOption}</strong> provides $${this.formatNumber(Math.abs(this.totalValue2 - this.totalValue1))} 
+      more in total benefits than Option ${worseOption}.`;
     },
+    
+    benefitYears1() {
+      return Math.max(0, this.compareInput.lifeExpectancy - this.compareInput.age1).toFixed(1);
+    },
+    
+    benefitYears2() {
+      return Math.max(0, this.compareInput.lifeExpectancy - this.compareInput.age2).toFixed(1);
+    },
+    
     barWidth1() {
-      const max = Math.max(this.cumulativeValue1, this.cumulativeValue2, 1);
-      return (this.cumulativeValue1 / max) * 100 + '%';
+      const max = Math.max(this.totalValue1, this.totalValue2, 1);
+      return (this.totalValue1 / max) * 100 + '%';
     },
+    
     barWidth2() {
-      const max = Math.max(this.cumulativeValue1, this.cumulativeValue2, 1);
-      return (this.cumulativeValue2 / max) * 100 + '%';
+      const max = Math.max(this.totalValue1, this.totalValue2, 1);
+      return (this.totalValue2 / max) * 100 + '%';
     }
   },
   methods: {
-    // 相对价值计算 (基于FRA和申请年龄的简单模拟)
-    relativeValue(applyAge) {
-      if (applyAge >= this.fra) return 100;
-      // 每早一年约减少6.67% (非常简化)
-      const monthsEarly = (this.fra - applyAge) * 12;
-      const reduction = Math.min(monthsEarly * 0.0055, 0.3); // 最多减30%
-      return Math.round(100 * (1 - reduction));
-    },
-
-    // 重新计算理想年龄 (模拟更真实的计算)
-    recalcIdeal() {
-      // 这里仅作演示逻辑：根据投资回报和寿命粗略估算最优年龄
-      const { lifeExpectancy, investReturn } = this.idealInput;
-      // 简单规则：寿命越长，越应该延迟领取；投资回报高也倾向于延迟（因为不急用钱）
-      if (lifeExpectancy > 85 && investReturn > 4) {
-        this.idealBestAge = 70;
-        this.idealMonthsAfterFRA = (70 - this.fra) * 12;
-        this.idealPercent = 124; // 粗略
-      } else if (lifeExpectancy > 80 || investReturn > 3) {
-        this.idealBestAge = 68;
-        this.idealMonthsAfterFRA = (68 - this.fra) * 12;
-        this.idealPercent = 108;
+    // 计算基于SSA规则的福利百分比
+    benefitPercent(applyAge) {
+      if (applyAge >= this.fra) {
+        // 延迟退休 credits: 每年增加8% (每月2/3%)
+        const monthsLate = Math.min((applyAge - this.fra) * 12, 36); // 最多到70岁
+        return Math.min(100 + monthsLate * (8/12), 124);
       } else {
-        this.idealBestAge = 65;
-        this.idealMonthsAfterFRA = (65 - this.fra) * 12;
-        this.idealPercent = 86;
-      }
-      // 如果寿命很短，建议尽早领取
-      if (lifeExpectancy < 75) {
-        this.idealBestAge = 62;
-        this.idealMonthsAfterFRA = (62 - this.fra) * 12;
-        this.idealPercent = 70;
+        // 提前退休 reduction: 36个月内每月减少5/9%，之后每月减少5/12%
+        const monthsEarly = (this.fra - applyAge) * 12;
+        if (monthsEarly <= 36) {
+          return 100 - (monthsEarly * (5/9));
+        } else {
+          return 100 - (36 * (5/9) + (monthsEarly - 36) * (5/12));
+        }
       }
     },
-
+    
+    // 计算相对价值 (考虑寿命、投资回报和COLA)
+    relativeValue(applyAge) {
+      if (!this.idealInput.lifeExpectancy) return 0;
+      
+      const months = (this.idealInput.lifeExpectancy - applyAge) * 12;
+      if (months <= 0) return 0;
+      
+      const monthlyBenefit = this.idealInput.pia * (this.benefitPercent(applyAge) / 100);
+      
+      // 简单现值计算 (不考虑COLA的复合效应，仅示意)
+      let totalValue = 0;
+      for (let m = 0; m < months; m++) {
+        // 每月折现
+        const discountFactor = Math.pow(1 + this.idealInput.investReturn / 100 / 12, -m);
+        totalValue += monthlyBenefit * discountFactor;
+      }
+      
+      // 找到所有年龄中的最大值作为基准
+      let maxValue = 0;
+      for (let age = 62; age <= 70; age++) {
+        const ageMonths = (this.idealInput.lifeExpectancy - age) * 12;
+        if (ageMonths <= 0) continue;
+        const ageBenefit = this.idealInput.pia * (this.benefitPercent(age) / 100);
+        let ageTotal = 0;
+        for (let m = 0; m < ageMonths; m++) {
+          ageTotal += ageBenefit * Math.pow(1 + this.idealInput.investReturn / 100 / 12, -m);
+        }
+        if (ageTotal > maxValue) maxValue = ageTotal;
+      }
+      
+      if (maxValue === 0) return 0;
+      return Math.round((totalValue / maxValue) * 100);
+    },
+    
+    // 计算最优申领年龄
+    calculateIdeal() {
+      if (!this.idealInput.lifeExpectancy || !this.idealInput.pia) return;
+      
+      let bestAge = 62;
+      let bestValue = -1;
+      
+      // 遍历所有可能的申领年龄 (62-70)
+      for (let age = 62; age <= 70; age++) {
+        const months = (this.idealInput.lifeExpectancy - age) * 12;
+        if (months <= 0) continue;
+        
+        const monthlyBenefit = this.idealInput.pia * (this.benefitPercent(age) / 100);
+        
+        // 计算考虑COLA和投资回报的现值
+        let totalPV = 0;
+        for (let m = 0; m < months; m++) {
+          // COLA每年调整一次 (简化: 每年初调整)
+          const year = Math.floor(m / 12);
+          const colaFactor = Math.pow(1 + this.idealInput.cola / 100, year);
+          
+          // 每月折现
+          const discountFactor = Math.pow(1 + this.idealInput.investReturn / 100 / 12, -m);
+          
+          totalPV += monthlyBenefit * colaFactor * discountFactor;
+        }
+        
+        if (totalPV > bestValue) {
+          bestValue = totalPV;
+          bestAge = age;
+        }
+      }
+      
+      this.idealBestAge = bestAge;
+      this.idealMonthsAfterFRA = bestAge > this.fra ? 
+        (bestAge - this.fra) * 12 : 
+        (this.fra - bestAge) * -12;
+      this.idealPercent = Math.round(this.benefitPercent(bestAge));
+    },
+    
     clearIdeal() {
       this.idealInput = {
         birthYear: 1970,
         lifeExpectancy: 83,
         investReturn: 5.0,
         cola: 3.0,
+        pia: 2000,
       };
-      this.recalcIdeal();
+      this.calculateIdeal();
     },
-
-    // 重新计算对比数据 (基于用户输入的收益、COLA等)
-    recalcCompare() {
-      const { age1, benefit1, age2, benefit2, lifeExpectancy, investReturn, cola } = this.compareInput;
-      if (!lifeExpectancy) return;
+    
+    // 计算方案对比
+    calculateCompare() {
+      if (!this.compareInput.lifeExpectancy) return;
       
-      // 简化模型：不考虑COLA和投资回报的精细折现，只简单累积到预期寿命
-      const years1 = Math.max(0, lifeExpectancy - age1);
-      const years2 = Math.max(0, lifeExpectancy - age2);
-      
-      // 非常粗略的累积 (未折现)
-      let total1 = benefit1 * 12 * years1;
-      let total2 = benefit2 * 12 * years2;
-      
-      // 加入投资回报的粗略影响: 简单乘以因子 (完全非精确，仅示意)
-      if (investReturn > 0) {
-        total1 = total1 * (1 + investReturn / 100);
-        total2 = total2 * (1 + investReturn / 100);
+      // 计算Option 1的总价值
+      const months1 = Math.max(0, (this.compareInput.lifeExpectancy - this.compareInput.age1) * 12);
+      let total1 = 0;
+      for (let m = 0; m < months1; m++) {
+        const year = Math.floor(m / 12);
+        const colaFactor = Math.pow(1 + this.compareInput.cola / 100, year);
+        const discountFactor = Math.pow(1 + this.compareInput.investReturn / 100 / 12, -m);
+        total1 += this.compareInput.benefit1 * colaFactor * discountFactor;
       }
       
-      this.cumulativeValue1 = Math.round(total1 / 1000) * 1000;
-      this.cumulativeValue2 = Math.round(total2 / 1000) * 1000;
+      // 计算Option 2的总价值
+      const months2 = Math.max(0, (this.compareInput.lifeExpectancy - this.compareInput.age2) * 12);
+      let total2 = 0;
+      for (let m = 0; m < months2; m++) {
+        const year = Math.floor(m / 12);
+        const colaFactor = Math.pow(1 + this.compareInput.cola / 100, year);
+        const discountFactor = Math.pow(1 + this.compareInput.investReturn / 100 / 12, -m);
+        total2 += this.compareInput.benefit2 * colaFactor * discountFactor;
+      }
       
-      // 盈亏平衡点 (粗略)
-      if (benefit2 > benefit1 && age2 > age1) {
-        const monthlyDiff = benefit2 - benefit1;
-        const yearsDiff = age2 - age1;
-        const lostDuringDelay = benefit1 * 12 * yearsDiff;
-        // 需要多少个月弥补损失
+      this.totalValue1 = Math.round(total1);
+      this.totalValue2 = Math.round(total2);
+      
+      // 计算盈亏平衡年龄
+      if (this.compareInput.age2 > this.compareInput.age1 && this.compareInput.benefit2 > this.compareInput.benefit1) {
+        const monthlyDiff = this.compareInput.benefit2 - this.compareInput.benefit1;
+        const delayMonths = (this.compareInput.age2 - this.compareInput.age1) * 12;
+        const lostDuringDelay = this.compareInput.benefit1 * delayMonths;
+        
+        // 考虑COLA和投资回报的盈亏平衡点 (简化)
         const monthsToBreakeven = lostDuringDelay / monthlyDiff;
-        this.compareBreakeven = Math.ceil(age2 + monthsToBreakeven / 12);
+        this.breakevenAge = this.compareInput.age2 + monthsToBreakeven / 12;
       } else {
-        this.compareBreakeven = 82; // 默认
+        this.breakevenAge = this.compareInput.age2;
       }
     },
-
+    
     clearCompare() {
       this.compareInput = {
         age1: 62,
@@ -344,23 +474,43 @@ export default {
         investReturn: 5.0,
         cola: 3.0,
       };
-      this.recalcCompare();
+      this.calculateCompare();
     },
-
+    
     formatNumber(val) {
-      return val.toLocaleString();
+      if (val === undefined || val === null) return '0';
+      return Math.round(val).toLocaleString();
     }
   },
   mounted() {
     // 初始化计算
-    this.recalcIdeal();
-    this.recalcCompare();
+    this.calculateIdeal();
+    this.calculateCompare();
+  },
+  watch: {
+    // 监听所有输入字段的变化，实时重新计算
+    'idealInput.birthYear': {
+      handler: 'calculateIdeal',
+      deep: true
+    },
+    'idealInput.lifeExpectancy': 'calculateIdeal',
+    'idealInput.investReturn': 'calculateIdeal',
+    'idealInput.cola': 'calculateIdeal',
+    'idealInput.pia': 'calculateIdeal',
+    
+    'compareInput.age1': 'calculateCompare',
+    'compareInput.benefit1': 'calculateCompare',
+    'compareInput.age2': 'calculateCompare',
+    'compareInput.benefit2': 'calculateCompare',
+    'compareInput.lifeExpectancy': 'calculateCompare',
+    'compareInput.investReturn': 'calculateCompare',
+    'compareInput.cola': 'calculateCompare',
   }
 };
 </script>
 
 <style scoped>
-/* 样式与之前完全相同，保证布局不变 */
+/* 样式基本保持不变，添加一些新样式 */
 .ss-calculator-app {
   max-width: 1100px;
   margin: 0 auto;
@@ -432,6 +582,25 @@ export default {
   border-radius: 20px;
   margin-bottom: 24px;
 }
+.decision-details {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-left: 4px solid #2563eb;
+}
+.decision-details h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1e3a5f;
+}
+.decision-details ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.decision-details li {
+  margin-bottom: 6px;
+}
 .value-comparison {
   margin-top: 24px;
 }
@@ -443,7 +612,8 @@ export default {
   margin-bottom: 8px;
 }
 .mini-table {
-  width: 280px;
+  width: 100%;
+  max-width: 400px;
   border-collapse: collapse;
   background: white;
   border-radius: 16px;
@@ -459,14 +629,23 @@ export default {
   padding: 8px 12px;
   border-bottom: 1px solid #eef2f6;
 }
+.mini-table .highlight-row {
+  background: #fef9c3;
+  font-weight: 600;
+}
 .table-note {
   font-size: 0.85rem;
   color: #4b6584;
   margin-top: 8px;
 }
+.field-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-style: italic;
+}
 .bar-chart-labels {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
   margin: 16px 0 8px;
   font-weight: 500;
 }
@@ -474,7 +653,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 .bar-container {
   background: #e9edf2;
@@ -494,13 +673,14 @@ export default {
   color: white;
   font-weight: 500;
   font-size: 0.9rem;
-  min-width: 60px;
-  transition: width 0.2s;
+  min-width: 80px;
+  transition: width 0.3s ease;
 }
-.x-label {
-  font-size: 0.9rem;
-  color: #2f4052;
-  margin-top: 8px;
+.breakeven-analysis {
+  background: #e8f0fe;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 16px;
 }
 .option-cards {
   display: flex;
@@ -515,6 +695,11 @@ export default {
   padding: 16px 22px;
   flex: 1 1 260px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+  transition: all 0.2s;
+}
+.option.better-option {
+  border: 2px solid #16a34a;
+  background: #f0fdf4;
 }
 .option h3 {
   font-size: 1.1rem;
