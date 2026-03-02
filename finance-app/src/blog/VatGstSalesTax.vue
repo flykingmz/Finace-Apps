@@ -1,5 +1,11 @@
 <template>
   <article class="blog-container">
+  <!-- Back Button -->
+    <div class="back-wrapper">
+        <a href="/blog" class="back-btn">
+         ← Back to Blog
+        </a>
+    </div>
     <!-- Hero -->
     <header class="hero">
       <h1>VAT vs GST vs Sales Tax: A Global Guide to Consumption Taxes</h1>
@@ -393,6 +399,25 @@ td {
 
 th {
   background: #f7f7f7;
+}
+
+.back-wrapper {
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #eaeaea;
 }
 
 @media (max-width: 768px) {
