@@ -2,7 +2,7 @@
   <div class="blog-list-app">
     <!-- Simple header -->
     <div class="blog-header">
-      <h1 class="main-title">Financial Insights Blog</h1>
+      <h1 class="main-title">Financial Calculator Blog</h1>
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
