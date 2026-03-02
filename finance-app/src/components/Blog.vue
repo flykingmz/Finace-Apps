@@ -111,7 +111,7 @@ export default {
     document.title = 'Financial Insights Blog – Tax, Retirement, Investment & Financial Planning Guides'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
-  },
+  }
 };
 </script>
 
