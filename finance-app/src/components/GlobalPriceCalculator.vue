@@ -433,44 +433,12 @@
       <p><strong>Note:</strong> VAT (Value Added Tax) and GST (Goods and Services Tax) are multi-stage consumption taxes applied at every stage of production and distribution, allowing businesses to claim input tax credits to avoid cascading, with VAT used in Europe and many countries, and GST being a regional naming variant in countries like India, Australia, and New Zealand. In contrast, Sales Tax is a single-stage tax applied only at the point of final sale to consumers, does not allow input tax credits, and is commonly used in the United States at the state and local level.</p>
     </div>
   </div>
-    
-    <!-- Footer -->
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>About This Tool</h4>
-          <p>This calculator helps you estimate the final price of products including country-specific taxes and platform fees.</p>
-        </div>
-        <!--
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#" @click.prevent="goToPaycheck">Paycheck Calculator</a></li>
-            <li><a href="#" @click.prevent="goToTax">Income Tax Calculator</a></li>
-            <li><a href="#">Currency Converter</a></li>
-            <li><a href="#">VAT Calculator</a></li>
-          </ul>
-        </div>
-        -->
-        <div class="footer-section">
-          <h4>Data Statement</h4>
-          <p>Tax rates are based on the latest available data and may vary by region within each country.</p>
-          <p>This tool provides estimates only.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Contact & Feedback</h4>
-          <p>Have questions or suggestions?</p>
-          <p>Email:flykingmz@gmail.com</p>
-          <button class="feedback-btn" @click="sendFeedback">
-            <span class="btn-icon">📧</span>
-            Send Feedback
-          </button>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Taxo Finance Apps - Global VAT Calculator. All rights reserved.</p>
-      </div>
-    </div>
+  <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/vat-gst-sales-tax-blog" class="calculator-btn">
+    More Global VAT, GST & Sales Tax blog →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -2143,6 +2111,30 @@ export default {
   text-align: center;
   margin-top: 1rem !important;
   border: 1px dashed #2563eb;
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 
 /* Responsive */
