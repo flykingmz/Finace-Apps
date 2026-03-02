@@ -56,6 +56,16 @@
         </div>
       </div>
 
+ <!-- Marriage Tax Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-heart"></i></div>
+        <div class="card-content">
+          <h3>Marriage Tax Calculator</h3>
+          <p>Compare tax scenarios for married couples filing jointly vs. separately and understand the marriage penalty or bonus.</p>
+          <a href="/marriage-tax-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
+
       <!-- Salary Calculator -->
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-chart-line"></i></div>
@@ -66,15 +76,6 @@
         </div>
       </div>
 
-      <!-- Marriage Tax Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-heart"></i></div>
-        <div class="card-content">
-          <h3>Marriage Tax Calculator</h3>
-          <p>Compare tax scenarios for married couples filing jointly vs. separately and understand the marriage penalty or bonus.</p>
-          <a href="/calculators/marriage-tax" class="card-link" @click.prevent="navigate">Open Calculator →</a>
-        </div>
-      </div>
     </div>
 
     <!-- Back to Home / All Calculators Link -->
