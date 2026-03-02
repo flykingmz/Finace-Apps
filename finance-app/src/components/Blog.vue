@@ -3,7 +3,7 @@
     <!-- Simple header -->
     <div class="blog-header">
       <h1 class="main-title">Financial Insights Blog</h1>
-      <p class="header-description">Expert articles on taxes, retirement, and personal finance</p>
+      <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
     <!-- Blog List Section -->
@@ -65,7 +65,53 @@
 
 <script>
 export default {
-  name: 'BlogListPage'
+  name: 'BlogListPage',
+  methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Expert financial guides on taxes, retirement, paycheck planning, investments, and personal finance decisions. Learn how to calculate, compare scenarios, and optimize your financial future with practical insights.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
+    }
+  },
+  mounted() {
+    document.title = 'Financial Insights Blog – Tax, Retirement, Investment & Financial Planning Guides'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
+  },
 };
 </script>
 
