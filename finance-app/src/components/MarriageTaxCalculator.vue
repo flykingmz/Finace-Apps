@@ -9,96 +9,212 @@
     <!-- Calculator Form - 附件1样式 -->
     <div class="calculator-form">
       <h2>Marriage Tax Calculator</h2>
-      
-      <!-- Spouse 1 Income -->
+
+      <!-- Salary + Business Income -->
       <div class="form-row">
-        <label>Spouse 1 annual income</label>
-        <div class="input-with-symbol">
+        <label>Salary + Business Income</label>
+        <div class="input-group">
           <span class="currency-symbol">$</span>
-          <input 
-            type="number" 
-            v-model.number="form.spouse1Income" 
-            @input="calculate"
-            min="0"
-            step="1000"
-          />
+          <input type="number" v-model.number="form.spouse1.salary" @input="calculate" min="0" step="1000" />
         </div>
-      </div>
-
-      <!-- Spouse 2 Income -->
-      <div class="form-row">
-        <label>Spouse 2 annual income</label>
-        <div class="input-with-symbol">
+        <div class="input-group">
           <span class="currency-symbol">$</span>
-          <input 
-            type="number" 
-            v-model.number="form.spouse2Income" 
-            @input="calculate"
-            min="0"
-            step="1000"
-          />
+          <input type="number" v-model.number="form.spouse2.salary" @input="calculate" min="0" step="1000" />
         </div>
       </div>
 
-      <!-- Filing Status (for reference) -->
+      <!-- Interest + Dividends Income -->
       <div class="form-row">
-        <label>Filing status (married)</label>
-        <div class="filing-status-display">
-          <span class="status-badge">Married Filing Jointly</span>
-        </div>
-      </div>
-
-      <!-- Standard Deduction Option -->
-      <div class="form-row checkbox-row">
-        <label class="checkbox-label">
-          <input 
-            type="checkbox" 
-            v-model="form.useStandardDeduction" 
-            @change="calculate"
-          />
-          <span>Use standard deduction</span>
-        </label>
-      </div>
-
-      <!-- Itemized Deductions (if not using standard) -->
-      <div class="form-row" v-if="!form.useStandardDeduction">
-        <label>Itemized deductions</label>
-        <div class="input-with-symbol">
+        <label>Interest + Dividends Income</label>
+        <div class="input-group">
           <span class="currency-symbol">$</span>
-          <input 
-            type="number" 
-            v-model.number="form.itemizedDeductions" 
-            @input="calculate"
-            min="0"
-            step="1000"
-          />
+          <input type="number" v-model.number="form.spouse1.interest" @input="calculate" min="0" step="100" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.interest" @input="calculate" min="0" step="100" />
         </div>
       </div>
 
-      <!-- State Tax Rate -->
+      <!-- Rental, Royalty, Passive Income -->
       <div class="form-row">
-        <label>State tax rate (estimated)</label>
+        <label>Rental, Royalty, Passive Income</label>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse1.rental" @input="calculate" min="0" step="100" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.rental" @input="calculate" min="0" step="100" />
+        </div>
+      </div>
+
+      <!-- Short Term Capital Gain -->
+      <div class="form-row">
+        <label>Short Term Capital Gain</label>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse1.shortTermGain" @input="calculate" min="0" step="100" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.shortTermGain" @input="calculate" min="0" step="100" />
+        </div>
+      </div>
+
+      <!-- Long Term Capital Gain -->
+      <div class="form-row">
+        <label>Long Term Capital Gain</label>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse1.longTermGain" @input="calculate" min="0" step="100" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.longTermGain" @input="calculate" min="0" step="100" />
+        </div>
+      </div>
+
+      <!-- Qualified Dividends -->
+      <div class="form-row">
+        <label>Qualified Dividends</label>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse1.qualifiedDividends" @input="calculate" min="0" step="100" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.qualifiedDividends" @input="calculate" min="0" step="100" />
+        </div>
+      </div>
+
+      <!-- 401K, IRA... Savings -->
+      <div class="form-row">
+        <label>401K, IRA... Savings</label>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse1.retirementSavings" @input="calculate" min="0" step="500" />
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">$</span>
+          <input type="number" v-model.number="form.spouse2.retirementSavings" @input="calculate" min="0" step="500" />
+        </div>
+      </div>
+
+      <!-- File Status (Before Marriage) -->
+      <div class="form-row">
+        <label>File Status (Before Marriage)</label>
+        <div class="status-display">Single</div>
+        <div class="status-displace"></div>
+      </div>
+
+      <!-- No. of Dependents -->
+      <div class="form-row">
+        <label>No. of Dependents</label>
+        <div class="input-group">
+          <input type="number" v-model.number="form.dependents" @input="calculate" min="0" max="10" step="1" />
+        </div>
+        <div class="input-group"></div>
+      </div>
+
+      <!-- Deductions Section -->
+      <div class="deductions-section">
+        <label>Deductions:</label>
+        <div class="deductions-grid">
+          <div class="deduction-item">
+            <label class="checkbox-label">
+              <input type="checkbox" v-model="form.deductions.mortgageInterest" @change="calculate" />
+              <span>Mortgage Interest</span>
+            </label>
+            <div class="input-with-symbol" v-if="form.deductions.mortgageInterest">
+              <span class="currency-symbol">$</span>
+              <input type="number" v-model.number="form.deductionAmounts.mortgageInterest" @input="calculate" min="0" step="500" />
+            </div>
+          </div>
+
+          <div class="deduction-item">
+            <label class="checkbox-label">
+              <input type="checkbox" v-model="form.deductions.charitableDonations" @change="calculate" />
+              <span>Charitable Donations</span>
+            </label>
+            <div class="input-with-symbol" v-if="form.deductions.charitableDonations">
+              <span class="currency-symbol">$</span>
+              <input type="number" v-model.number="form.deductionAmounts.charitableDonations" @input="calculate" min="0" step="100" />
+            </div>
+          </div>
+
+          <div class="deduction-item">
+            <label class="checkbox-label">
+              <input type="checkbox" v-model="form.deductions.studentLoanInterest" @change="calculate" />
+              <span>Student Loan Interest, $2,500 Max</span>
+            </label>
+            <div class="input-with-symbol" v-if="form.deductions.studentLoanInterest">
+              <span class="currency-symbol">$</span>
+              <input type="number" v-model.number="form.deductionAmounts.studentLoanInterest" @input="calculate" min="0" max="2500" step="100" />
+            </div>
+          </div>
+
+          <div class="deduction-item">
+            <label class="checkbox-label">
+              <input type="checkbox" v-model="form.deductions.childCareExpenses" @change="calculate" />
+              <span>Child Care Expenses, $3,000 Max</span>
+            </label>
+            <div class="input-with-symbol" v-if="form.deductions.childCareExpenses">
+              <span class="currency-symbol">$</span>
+              <input type="number" v-model.number="form.deductionAmounts.childCareExpenses" @input="calculate" min="0" max="3000" step="100" />
+            </div>
+          </div>
+
+          <div class="deduction-item">
+            <label class="checkbox-label">
+              <input type="checkbox" v-model="form.deductions.educationTuition" @change="calculate" />
+              <span>Education Tuition, $4,000 Max</span>
+            </label>
+            <div class="input-with-symbol" v-if="form.deductions.educationTuition">
+              <span class="currency-symbol">$</span>
+              <input type="number" v-model.number="form.deductionAmounts.educationTuition" @input="calculate" min="0" max="4000" step="100" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Use Standard Deduction? -->
+      <div class="form-row radio-row">
+        <label>Use Standard Deduction?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" value="yes" v-model="form.useStandardDeduction" @change="calculate" />
+            <span>yes</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" value="no" v-model="form.useStandardDeduction" @change="calculate" />
+            <span>no</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- State + City Tax Rate -->
+      <div class="form-row">
+        <label>State + City Tax Rate</label>
         <div class="input-with-symbol">
-          <input 
-            type="number" 
-            step="0.1" 
-            v-model.number="form.stateTaxRate" 
-            @input="calculate"
-            min="0"
-            max="13.3"
-          />
+          <input type="number" step="0.1" v-model.number="form.stateTaxRate" @input="calculate" min="0" max="13.3" />
           <span class="percent-symbol">%</span>
         </div>
       </div>
 
-      <!-- Tax Year -->
-      <div class="form-row">
-        <label>Tax year</label>
-        <select v-model="form.taxYear" @change="calculate" class="year-select">
-          <option value="2026">2026</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-        </select>
+      <!-- Self-Employed -->
+      <div class="form-row radio-row">
+        <label>Self-Employed</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" value="yes" v-model="form.selfEmployed" @change="calculate" />
+            <span>yes</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" value="no" v-model="form.selfEmployed" @change="calculate" />
+            <span>no</span>
+          </label>
+        </div>
       </div>
 
       <div class="form-actions">
@@ -109,123 +225,105 @@
 
     <!-- Results Section - 附件2样式 -->
     <div class="results-section" v-if="results.calculated">
-      <h2>Results</h2>
-      
-      <!-- Summary Cards -->
-      <div class="summary-cards">
-        <!-- Single Filers Combined Card -->
-        <div class="summary-card" :class="{ 'better': results.singleTax < results.marriedTax }">
-          <h3>Single Filers (Combined)</h3>
-          <div class="card-row">
-            <span>Total tax as singles</span>
-            <span class="card-value">${{ formatNumber(results.singleTax) }}</span>
-          </div>
-          <div class="card-row">
-            <span>Effective tax rate</span>
-            <span class="card-value">{{ results.singleRate }}%</span>
-          </div>
-          <div class="card-row">
-            <span>After-tax income</span>
-            <span class="card-value">${{ formatNumber(results.singleAfterTax) }}</span>
-          </div>
-        </div>
+      <h2>Results:</h2>
 
-        <!-- Married Filing Jointly Card -->
-        <div class="summary-card" :class="{ 'better': results.marriedTax < results.singleTax }">
-          <h3>Married Filing Jointly</h3>
-          <div class="card-row">
-            <span>Total tax as married</span>
-            <span class="card-value">${{ formatNumber(results.marriedTax) }}</span>
-          </div>
-          <div class="card-row">
-            <span>Effective tax rate</span>
-            <span class="card-value">{{ results.marriedRate }}%</span>
-          </div>
-          <div class="card-row">
-            <span>After-tax income</span>
-            <span class="card-value">${{ formatNumber(results.marriedAfterTax) }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Marriage Bonus/Penalty Card -->
-      <div class="penalty-card" :class="results.difference > 0 ? 'penalty' : 'bonus'">
-        <h3>{{ results.difference > 0 ? 'Marriage Penalty' : 'Marriage Bonus' }}</h3>
-        <div class="penalty-amount">
-          {{ results.difference > 0 ? '+' : '' }}${{ formatNumber(Math.abs(results.difference)) }}
-        </div>
-        <p class="penalty-description">
-          {{ results.difference > 0 
-            ? 'You pay more as a married couple than as two singles.' 
-            : 'You save money by filing jointly as a married couple.' 
-          }}
+      <div class="penalty-message" :class="results.difference > 0 ? 'penalty' : 'bonus'">
+        <p v-if="results.difference > 0">
+          Unfortunately, you will pay <strong>~ ${{ formatNumber(Math.abs(results.difference)) }} more</strong> federal income tax if married.
+        </p>
+        <p v-else>
+          Congratulations! You will save <strong>~ ${{ formatNumber(Math.abs(results.difference)) }}</strong> federal income tax if married.
         </p>
       </div>
 
-      <!-- Detailed Breakdown -->
-      <div class="breakdown-section">
-        <h3>Tax Breakdown</h3>
-        <table class="breakdown-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Single Filer 1</th>
-              <th>Single Filer 2</th>
-              <th>Married Joint</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gross Income</td>
-              <td>${{ formatNumber(form.spouse1Income) }}</td>
-              <td>${{ formatNumber(form.spouse2Income) }}</td>
-              <td>${{ formatNumber(form.spouse1Income + form.spouse2Income) }}</td>
-            </tr>
-            <tr>
-              <td>Standard Deduction</td>
-              <td>${{ formatNumber(getStandardDeduction('single')) }}</td>
-              <td>${{ formatNumber(getStandardDeduction('single')) }}</td>
-              <td>${{ formatNumber(getStandardDeduction('married')) }}</td>
-            </tr>
-            <tr>
-              <td>Taxable Income</td>
-              <td>${{ formatNumber(results.singleTaxable1) }}</td>
-              <td>${{ formatNumber(results.singleTaxable2) }}</td>
-              <td>${{ formatNumber(results.marriedTaxable) }}</td>
-            </tr>
-            <tr>
-              <td>Federal Tax</td>
-              <td>${{ formatNumber(results.singleFederal1) }}</td>
-              <td>${{ formatNumber(results.singleFederal2) }}</td>
-              <td>${{ formatNumber(results.marriedFederal) }}</td>
-            </tr>
-            <tr>
-              <td>State Tax</td>
-              <td>${{ formatNumber(results.singleState1) }}</td>
-              <td>${{ formatNumber(results.singleState2) }}</td>
-              <td>${{ formatNumber(results.marriedState) }}</td>
-            </tr>
-            <tr class="total-row">
-              <td>Total Tax</td>
-              <td colspan="2">${{ formatNumber(results.singleTax) }}</td>
-              <td>${{ formatNumber(results.marriedTax) }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="2">If Not Married</th>
+            <th>Combined</th>
+            <th>If Married</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>Spouse 1</th>
+            <th>Spouse 2</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>All Income</td>
+            <td>${{ formatNumber(results.spouse1.income) }}</td>
+            <td>${{ formatNumber(results.spouse2.income) }}</td>
+            <td>${{ formatNumber(results.combined.income) }}</td>
+            <td>${{ formatNumber(results.married.income) }}</td>
+          </tr>
+          <tr>
+            <td>Federal Income Tax</td>
+            <td>${{ formatNumber(results.spouse1.federalTax) }}</td>
+            <td>${{ formatNumber(results.spouse2.federalTax) }}</td>
+            <td>${{ formatNumber(results.combined.federalTax) }}</td>
+            <td>${{ formatNumber(results.married.federalTax) }}</td>
+          </tr>
+          <tr>
+            <td>Marginal Tax Rate</td>
+            <td>{{ results.spouse1.marginalRate }}%</td>
+            <td>{{ results.spouse2.marginalRate }}%</td>
+            <td></td>
+            <td>{{ results.married.marginalRate }}%</td>
+          </tr>
+          <tr>
+            <td>Social Security Tax</td>
+            <td>${{ formatNumber(results.spouse1.socialSecurityTax) }}</td>
+            <td>${{ formatNumber(results.spouse2.socialSecurityTax) }}</td>
+            <td>${{ formatNumber(results.combined.socialSecurityTax) }}</td>
+            <td>${{ formatNumber(results.married.socialSecurityTax) }}</td>
+          </tr>
+          <tr>
+            <td>Medicare Tax</td>
+            <td>${{ formatNumber(results.spouse1.medicareTax) }}</td>
+            <td>${{ formatNumber(results.spouse2.medicareTax) }}</td>
+            <td>${{ formatNumber(results.combined.medicareTax) }}</td>
+            <td>${{ formatNumber(results.married.medicareTax) }}</td>
+          </tr>
+          <tr>
+            <td>State + City Income Tax</td>
+            <td>${{ formatNumber(results.spouse1.stateTax) }}</td>
+            <td>${{ formatNumber(results.spouse2.stateTax) }}</td>
+            <td>${{ formatNumber(results.combined.stateTax) }}</td>
+            <td>${{ formatNumber(results.married.stateTax) }}</td>
+          </tr>
+          <tr>
+            <td>401K, IRA...</td>
+            <td>${{ formatNumber(results.spouse1.retirementSavings) }}</td>
+            <td>${{ formatNumber(results.spouse2.retirementSavings) }}</td>
+            <td>${{ formatNumber(results.combined.retirementSavings) }}</td>
+            <td>${{ formatNumber(results.married.retirementSavings) }}</td>
+          </tr>
+          <tr class="total-row">
+            <td>Final Take Home</td>
+            <td>${{ formatNumber(results.spouse1.takeHome) }}</td>
+            <td>${{ formatNumber(results.spouse2.takeHome) }}</td>
+            <td>${{ formatNumber(results.combined.takeHome) }}</td>
+            <td>${{ formatNumber(results.married.takeHome) }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Related Tools -->
     <div class="related-tools">
       <span class="related-label">Related:</span>
-      <a href="#">Income Tax Calculator</a> <span class="sep">|</span>
-      <a href="#">Take-Home-Paycheck Calculator</a>
+      <a href="/paycheck">Paycheck Calculator</a> <span class="sep">|</span>
+      <a href="/take-home-paycheck-calculator">Take-Home-Paycheck Calculator</a>
     </div>
 
     <!-- FAQ Section -->
     <div class="faq-section">
       <h2>Marriage Tax Information – FAQ</h2>
-      
+
       <div class="faq-item">
         <h3>How does marriage affect taxes?</h3>
         <p>Tax laws generally become more complicated after marriage, but marriage can present some opportunities to save additional money (compared to being single), particularly for those in single-income marriages or marriages in which there is a large difference between the income of the spouses. Depending on the specific situation of the couple, dual-income married couples can experience the opposite effect, paying more in taxes than they would as single, otherwise equivalent, individuals, or as a couple with only a single income.</p>
@@ -251,11 +349,6 @@
         <h3>What is the marriage penalty?</h3>
         <p>In some situations, married couples end up paying more in taxes than single, otherwise equivalent, individuals. This is referred to as the marriage penalty in the United States. This penalty can be significant if both individuals in the marriage have very high incomes since filing jointly can result in being subject to a higher tax bracket than the equivalent, combined income of two single people. Furthermore, having a lower joint income does not necessarily shield a couple from marriage penalties. As a result of their combined incomes being subject to additional restrictions, it is possible for two married individuals with lower incomes to be disqualified from receiving tax credits they would otherwise receive. There are other conditions under which marriage results in a tax penalty. However, situations can and often do change, and while marriage may result in short-term tax penalties, it can potentially have long-term tax benefits. While there are exceptions and multiple factors are involved, generally speaking, married couples with a sole source of income benefit from filing jointly, while dual-income couples may suffer marriage penalties.</p>
       </div>
-
-      <div class="faq-item">
-        <h3>How is the marriage bonus/penalty calculated?</h3>
-        <p>The calculator compares your total tax liability as a married couple filing jointly versus the combined tax liability if you both filed as single individuals. If the married tax is lower, you receive a marriage bonus. If the married tax is higher, you face a marriage penalty. The calculation takes into account federal income tax brackets, standard deductions, and estimated state tax.</p>
-      </div>
     </div>
   </div>
 </template>
@@ -266,35 +359,55 @@ export default {
   data() {
     return {
       form: {
-        spouse1Income: 75000,
-        spouse2Income: 45000,
-        useStandardDeduction: true,
-        itemizedDeductions: 20000,
-        stateTaxRate: 5.0,
-        taxYear: 2026
+        spouse1: {
+          salary: 65000,
+          interest: 0,
+          rental: 0,
+          shortTermGain: 0,
+          longTermGain: 0,
+          qualifiedDividends: 0,
+          retirementSavings: 10000
+        },
+        spouse2: {
+          salary: 45000,
+          interest: 0,
+          rental: 0,
+          shortTermGain: 0,
+          longTermGain: 0,
+          qualifiedDividends: 0,
+          retirementSavings: 6000
+        },
+        dependents: 0,
+        deductions: {
+          mortgageInterest: false,
+          charitableDonations: false,
+          studentLoanInterest: false,
+          childCareExpenses: false,
+          educationTuition: false
+        },
+        deductionAmounts: {
+          mortgageInterest: 0,
+          charitableDonations: 0,
+          studentLoanInterest: 0,
+          childCareExpenses: 0,
+          educationTuition: 0
+        },
+        useStandardDeduction: 'yes',
+        stateTaxRate: 5,
+        selfEmployed: 'no'
       },
       results: {
         calculated: false,
-        singleTax: 0,
-        marriedTax: 0,
-        singleRate: 0,
-        marriedRate: 0,
-        singleAfterTax: 0,
-        marriedAfterTax: 0,
         difference: 0,
-        singleTaxable1: 0,
-        singleTaxable2: 0,
-        marriedTaxable: 0,
-        singleFederal1: 0,
-        singleFederal2: 0,
-        marriedFederal: 0,
-        singleState1: 0,
-        singleState2: 0,
-        marriedState: 0
+        spouse1: {},
+        spouse2: {},
+        combined: {},
+        married: {}
       }
     };
   },
   methods: {
+
      setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
@@ -335,152 +448,199 @@ export default {
       console.log('Google meta tags set')
     },
     calculate() {
-      // Get standard deductions for the selected year
-      const stdSingle = this.getStandardDeduction('single');
-      const stdMarried = this.getStandardDeduction('married');
+      // Calculate total income for each spouse
+      const income1 = this.form.spouse1.salary + 
+                      this.form.spouse1.interest + 
+                      this.form.spouse1.rental + 
+                      this.form.spouse1.shortTermGain +
+                      this.form.spouse1.longTermGain +
+                      this.form.spouse1.qualifiedDividends;
       
+      const income2 = this.form.spouse2.salary + 
+                      this.form.spouse2.interest + 
+                      this.form.spouse2.rental + 
+                      this.form.spouse2.shortTermGain +
+                      this.form.spouse2.longTermGain +
+                      this.form.spouse2.qualifiedDividends;
+      
+      const totalIncome = income1 + income2;
+
       // Calculate deductions
-      const deduction1 = this.form.useStandardDeduction ? stdSingle : this.form.itemizedDeductions;
-      const deduction2 = this.form.useStandardDeduction ? stdSingle : this.form.itemizedDeductions;
-      const deductionMarried = this.form.useStandardDeduction ? stdMarried : this.form.itemizedDeductions;
-      
-      // Calculate taxable incomes
-      const taxable1 = Math.max(0, this.form.spouse1Income - deduction1);
-      const taxable2 = Math.max(0, this.form.spouse2Income - deduction2);
-      const taxableMarried = Math.max(0, (this.form.spouse1Income + this.form.spouse2Income) - deductionMarried);
-      
+      const standardDeductionSingle = 13850; // 2024 standard deduction
+      const standardDeductionMarried = 27700;
+
+      let itemizedDeductions1 = 0;
+      let itemizedDeductions2 = 0;
+      let itemizedDeductionsMarried = 0;
+
+      if (this.form.useStandardDeduction === 'no') {
+        // Calculate itemized deductions for each spouse
+        if (this.form.deductions.mortgageInterest) {
+          const amount = this.form.deductionAmounts.mortgageInterest || 0;
+          itemizedDeductions1 += amount / 2;
+          itemizedDeductions2 += amount / 2;
+          itemizedDeductionsMarried += amount;
+        }
+        if (this.form.deductions.charitableDonations) {
+          const amount = this.form.deductionAmounts.charitableDonations || 0;
+          itemizedDeductions1 += amount / 2;
+          itemizedDeductions2 += amount / 2;
+          itemizedDeductionsMarried += amount;
+        }
+        if (this.form.deductions.studentLoanInterest) {
+          const amount = Math.min(this.form.deductionAmounts.studentLoanInterest || 0, 2500);
+          itemizedDeductions1 += amount / 2;
+          itemizedDeductions2 += amount / 2;
+          itemizedDeductionsMarried += amount;
+        }
+        if (this.form.deductions.childCareExpenses) {
+          const amount = Math.min(this.form.deductionAmounts.childCareExpenses || 0, 3000);
+          itemizedDeductions1 += amount / 2;
+          itemizedDeductions2 += amount / 2;
+          itemizedDeductionsMarried += amount;
+        }
+        if (this.form.deductions.educationTuition) {
+          const amount = Math.min(this.form.deductionAmounts.educationTuition || 0, 4000);
+          itemizedDeductions1 += amount / 2;
+          itemizedDeductions2 += amount / 2;
+          itemizedDeductionsMarried += amount;
+        }
+      }
+
+      // Use the larger of standard or itemized deductions
+      const deduction1 = this.form.useStandardDeduction === 'yes' ? standardDeductionSingle : Math.max(standardDeductionSingle, itemizedDeductions1);
+      const deduction2 = this.form.useStandardDeduction === 'yes' ? standardDeductionSingle : Math.max(standardDeductionSingle, itemizedDeductions2);
+      const deductionMarried = this.form.useStandardDeduction === 'yes' ? standardDeductionMarried : Math.max(standardDeductionMarried, itemizedDeductionsMarried);
+
+      // Calculate taxable income (after retirement savings and deductions)
+      const taxable1 = Math.max(0, income1 - this.form.spouse1.retirementSavings - deduction1);
+      const taxable2 = Math.max(0, income2 - this.form.spouse2.retirementSavings - deduction2);
+      const taxableMarried = Math.max(0, totalIncome - this.form.spouse1.retirementSavings - this.form.spouse2.retirementSavings - deductionMarried);
+
+      // Federal income tax brackets (2024 simplified)
+      const brackets = {
+        single: [
+          { rate: 0.10, upTo: 11000 },
+          { rate: 0.12, upTo: 44725 },
+          { rate: 0.22, upTo: 95375 },
+          { rate: 0.24, upTo: 182100 },
+          { rate: 0.32, upTo: 231250 },
+          { rate: 0.35, upTo: 578125 },
+          { rate: 0.37, upTo: Infinity }
+        ],
+        married: [
+          { rate: 0.10, upTo: 22000 },
+          { rate: 0.12, upTo: 89450 },
+          { rate: 0.22, upTo: 190750 },
+          { rate: 0.24, upTo: 364200 },
+          { rate: 0.32, upTo: 462500 },
+          { rate: 0.35, upTo: 693750 },
+          { rate: 0.37, upTo: Infinity }
+        ]
+      };
+
       // Calculate federal tax
-      const brackets = this.getTaxBrackets();
+      const federalTax1 = this.calculateFederalTax(taxable1, brackets.single);
+      const federalTax2 = this.calculateFederalTax(taxable2, brackets.single);
+      const federalTaxMarried = this.calculateFederalTax(taxableMarried, brackets.married);
+
+      // Calculate marginal tax rates
+      const marginalRate1 = this.getMarginalRate(taxable1, brackets.single);
+      const marginalRate2 = this.getMarginalRate(taxable2, brackets.single);
+      const marginalRateMarried = this.getMarginalRate(taxableMarried, brackets.married);
+
+      // Social Security tax (6.2% up to wage base limit)
+      const wageBaseLimit = 168600;
+      const socialSecurityRate = 0.062;
       
-      const federal1 = this.calculateFederalTax(taxable1, 'single', brackets);
-      const federal2 = this.calculateFederalTax(taxable2, 'single', brackets);
-      const federalMarried = this.calculateFederalTax(taxableMarried, 'married', brackets);
-      
-      // Calculate state tax (simplified flat rate)
+      const ssTax1 = Math.min(income1, wageBaseLimit) * socialSecurityRate;
+      const ssTax2 = Math.min(income2, wageBaseLimit) * socialSecurityRate;
+      const ssTaxMarried = Math.min(income1, wageBaseLimit) * socialSecurityRate + 
+                           Math.min(income2, wageBaseLimit) * socialSecurityRate;
+
+      // Medicare tax (1.45%)
+      const medicareRate = 0.0145;
+      const medicareTax1 = income1 * medicareRate;
+      const medicareTax2 = income2 * medicareRate;
+      const medicareTaxMarried = totalIncome * medicareRate;
+
+      // Additional Medicare tax for high earners (simplified)
+      if (this.form.selfEmployed === 'yes') {
+        // Self-employed pay both employee and employer portions (2.9% total)
+        // Not implementing the full self-employed calculation for simplicity
+      }
+
+      // State tax
       const stateRate = this.form.stateTaxRate / 100;
-      const state1 = taxable1 * stateRate;
-      const state2 = taxable2 * stateRate;
-      const stateMarried = taxableMarried * stateRate;
-      
-      // Total taxes
-      const singleTotal = federal1 + federal2 + state1 + state2;
-      const marriedTotal = federalMarried + stateMarried;
-      
-      // After-tax incomes
-      const totalIncome = this.form.spouse1Income + this.form.spouse2Income;
-      const singleAfterTax = totalIncome - singleTotal;
-      const marriedAfterTax = totalIncome - marriedTotal;
-      
-      // Effective tax rates
-      const singleRate = totalIncome > 0 ? (singleTotal / totalIncome * 100).toFixed(1) : 0;
-      const marriedRate = totalIncome > 0 ? (marriedTotal / totalIncome * 100).toFixed(1) : 0;
-      
+      const stateTax1 = income1 * stateRate;
+      const stateTax2 = income2 * stateRate;
+      const stateTaxMarried = totalIncome * stateRate;
+
+      // Calculate take home pay
+      const takeHome1 = income1 - federalTax1 - ssTax1 - medicareTax1 - stateTax1 - this.form.spouse1.retirementSavings;
+      const takeHome2 = income2 - federalTax2 - ssTax2 - medicareTax2 - stateTax2 - this.form.spouse2.retirementSavings;
+      const takeHomeMarried = totalIncome - federalTaxMarried - ssTaxMarried - medicareTaxMarried - stateTaxMarried - 
+                              this.form.spouse1.retirementSavings - this.form.spouse2.retirementSavings;
+
+      const combinedFederal = federalTax1 + federalTax2;
+      const combinedSS = ssTax1 + ssTax2;
+      const combinedMedicare = medicareTax1 + medicareTax2;
+      const combinedState = stateTax1 + stateTax2;
+      const combinedTakeHome = takeHome1 + takeHome2;
+
       this.results = {
         calculated: true,
-        singleTax: Math.round(singleTotal),
-        marriedTax: Math.round(marriedTotal),
-        singleRate: singleRate,
-        marriedRate: marriedRate,
-        singleAfterTax: Math.round(singleAfterTax),
-        marriedAfterTax: Math.round(marriedAfterTax),
-        difference: Math.round(marriedTotal - singleTotal),
-        singleTaxable1: Math.round(taxable1),
-        singleTaxable2: Math.round(taxable2),
-        marriedTaxable: Math.round(taxableMarried),
-        singleFederal1: Math.round(federal1),
-        singleFederal2: Math.round(federal2),
-        marriedFederal: Math.round(federalMarried),
-        singleState1: Math.round(state1),
-        singleState2: Math.round(state2),
-        marriedState: Math.round(stateMarried)
-      };
-    },
-    
-    getStandardDeduction(filingStatus) {
-      // Standard deductions by tax year
-      const deductions = {
-        2026: { single: 15000, married: 30000 },
-        2025: { single: 14600, married: 29200 },
-        2024: { single: 13850, married: 27700 }
-      };
-      return deductions[this.form.taxYear]?.[filingStatus] || deductions[2026][filingStatus];
-    },
-    
-    getTaxBrackets() {
-      // Tax brackets by year and filing status (simplified)
-      return {
-        2026: {
-          single: [
-            { rate: 0.10, upTo: 11600 },
-            { rate: 0.12, upTo: 47150 },
-            { rate: 0.22, upTo: 100525 },
-            { rate: 0.24, upTo: 191950 },
-            { rate: 0.32, upTo: 243725 },
-            { rate: 0.35, upTo: 609350 },
-            { rate: 0.37, upTo: Infinity }
-          ],
-          married: [
-            { rate: 0.10, upTo: 23200 },
-            { rate: 0.12, upTo: 94300 },
-            { rate: 0.22, upTo: 201050 },
-            { rate: 0.24, upTo: 383900 },
-            { rate: 0.32, upTo: 487450 },
-            { rate: 0.35, upTo: 731200 },
-            { rate: 0.37, upTo: Infinity }
-          ]
+        difference: federalTaxMarried - combinedFederal,
+        spouse1: {
+          income: income1,
+          federalTax: federalTax1,
+          marginalRate: marginalRate1,
+          socialSecurityTax: ssTax1,
+          medicareTax: medicareTax1,
+          stateTax: stateTax1,
+          retirementSavings: this.form.spouse1.retirementSavings,
+          takeHome: takeHome1
         },
-        2025: {
-          single: [
-            { rate: 0.10, upTo: 11000 },
-            { rate: 0.12, upTo: 44725 },
-            { rate: 0.22, upTo: 95375 },
-            { rate: 0.24, upTo: 182100 },
-            { rate: 0.32, upTo: 231250 },
-            { rate: 0.35, upTo: 578125 },
-            { rate: 0.37, upTo: Infinity }
-          ],
-          married: [
-            { rate: 0.10, upTo: 22000 },
-            { rate: 0.12, upTo: 89450 },
-            { rate: 0.22, upTo: 190750 },
-            { rate: 0.24, upTo: 364200 },
-            { rate: 0.32, upTo: 462500 },
-            { rate: 0.35, upTo: 693750 },
-            { rate: 0.37, upTo: Infinity }
-          ]
+        spouse2: {
+          income: income2,
+          federalTax: federalTax2,
+          marginalRate: marginalRate2,
+          socialSecurityTax: ssTax2,
+          medicareTax: medicareTax2,
+          stateTax: stateTax2,
+          retirementSavings: this.form.spouse2.retirementSavings,
+          takeHome: takeHome2
         },
-        2024: {
-          single: [
-            { rate: 0.10, upTo: 11000 },
-            { rate: 0.12, upTo: 44725 },
-            { rate: 0.22, upTo: 95375 },
-            { rate: 0.24, upTo: 182100 },
-            { rate: 0.32, upTo: 231250 },
-            { rate: 0.35, upTo: 578125 },
-            { rate: 0.37, upTo: Infinity }
-          ],
-          married: [
-            { rate: 0.10, upTo: 22000 },
-            { rate: 0.12, upTo: 89450 },
-            { rate: 0.22, upTo: 190750 },
-            { rate: 0.24, upTo: 364200 },
-            { rate: 0.32, upTo: 462500 },
-            { rate: 0.35, upTo: 693750 },
-            { rate: 0.37, upTo: Infinity }
-          ]
+        combined: {
+          income: totalIncome,
+          federalTax: combinedFederal,
+          socialSecurityTax: combinedSS,
+          medicareTax: combinedMedicare,
+          stateTax: combinedState,
+          retirementSavings: this.form.spouse1.retirementSavings + this.form.spouse2.retirementSavings,
+          takeHome: combinedTakeHome
+        },
+        married: {
+          income: totalIncome,
+          federalTax: federalTaxMarried,
+          marginalRate: marginalRateMarried,
+          socialSecurityTax: ssTaxMarried,
+          medicareTax: medicareTaxMarried,
+          stateTax: stateTaxMarried,
+          retirementSavings: this.form.spouse1.retirementSavings + this.form.spouse2.retirementSavings,
+          takeHome: takeHomeMarried
         }
       };
     },
-    
-    calculateFederalTax(taxableIncome, filingStatus, brackets) {
+
+    calculateFederalTax(taxableIncome, brackets) {
       if (taxableIncome <= 0) return 0;
       
-      const yearBrackets = brackets[this.form.taxYear]?.[filingStatus] || brackets[2026][filingStatus];
       let tax = 0;
       let remainingIncome = taxableIncome;
       let previousLimit = 0;
       
-      for (const bracket of yearBrackets) {
+      for (const bracket of brackets) {
         if (remainingIncome <= 0) break;
         
         const taxableInBracket = Math.min(remainingIncome, bracket.upTo - previousLimit);
@@ -491,19 +651,60 @@ export default {
       
       return tax;
     },
-    
+
+    getMarginalRate(taxableIncome, brackets) {
+      if (taxableIncome <= 0) return 0;
+      
+      for (const bracket of brackets) {
+        if (taxableIncome <= bracket.upTo) {
+          return bracket.rate * 100;
+        }
+      }
+      return brackets[brackets.length - 1].rate * 100;
+    },
+
     clearForm() {
       this.form = {
-        spouse1Income: 75000,
-        spouse2Income: 45000,
-        useStandardDeduction: true,
-        itemizedDeductions: 20000,
-        stateTaxRate: 5.0,
-        taxYear: 2026
+        spouse1: {
+          salary: 65000,
+          interest: 0,
+          rental: 0,
+          shortTermGain: 0,
+          longTermGain: 0,
+          qualifiedDividends: 0,
+          retirementSavings: 10000
+        },
+        spouse2: {
+          salary: 45000,
+          interest: 0,
+          rental: 0,
+          shortTermGain: 0,
+          longTermGain: 0,
+          qualifiedDividends: 0,
+          retirementSavings: 6000
+        },
+        dependents: 0,
+        deductions: {
+          mortgageInterest: false,
+          charitableDonations: false,
+          studentLoanInterest: false,
+          childCareExpenses: false,
+          educationTuition: false
+        },
+        deductionAmounts: {
+          mortgageInterest: 0,
+          charitableDonations: 0,
+          studentLoanInterest: 0,
+          childCareExpenses: 0,
+          educationTuition: 0
+        },
+        useStandardDeduction: 'yes',
+        stateTaxRate: 5,
+        selfEmployed: 'no'
       };
       this.calculate();
     },
-    
+
     formatNumber(value) {
       if (value === undefined || value === null) return '0';
       return Math.round(value).toLocaleString('en-US');
@@ -555,7 +756,6 @@ export default {
   border: 1px solid #c7daf0;
 }
 
-/* Calculator Form */
 .calculator-form {
   background: #f2f6fb;
   border-radius: 28px;
@@ -575,112 +775,144 @@ export default {
 .form-row {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
 .form-row label {
-  width: 200px;
+  width: 220px;
   font-weight: 500;
   color: #1a3349;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
-.checkbox-row {
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.input-group .currency-symbol {
+  font-weight: 500;
+  color: #1a3349;
+}
+
+.status-display {
+  flex: 1;
+  padding: 8px 0;
+  font-weight: 500;
+  color: #1f4a7a;
+}
+
+.status-displace {
+  flex: 1;
+}
+
+.input-group input,
+.input-with-symbol input {
+  padding: 8px 12px;
+  border: 1px solid #b6c9dd;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  width: 140px;
+  background: white;
+}
+
+.radio-row {
   align-items: flex-start;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.deductions-section {
+  margin: 20px 0;
+  padding: 16px;
+  background: #e8f0fe;
+  border-radius: 20px;
+}
+
+.deductions-section label {
+  font-weight: 600;
+  color: #1a3349;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.deductions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.deduction-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
-  font-weight: 500;
-  color: #1a3349;
+  font-weight: normal;
 }
 
 .checkbox-label input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.filing-status-display {
-  flex: 1;
-}
-
-.status-badge {
-  background: #d4e2f0;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 0.95rem;
-  color: #1a3349;
-  font-weight: 500;
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 .input-with-symbol {
   display: flex;
   align-items: center;
   gap: 4px;
-  flex: 1;
-  max-width: 250px;
+  margin-left: 24px;
 }
 
-.currency-symbol {
-  font-weight: 500;
-  color: #1a3349;
-  font-size: 1.1rem;
-  margin-right: 4px;
+.input-with-symbol input {
+  width: 120px;
+  padding: 6px 10px;
 }
 
 .percent-symbol {
   font-weight: 500;
   color: #1a3349;
-  font-size: 1.1rem;
-  margin-left: 4px;
-}
-
-.year-select {
-  padding: 10px 16px;
-  border: 1px solid #b6c9dd;
-  border-radius: 30px;
-  font-size: 1rem;
-  background: white;
-  min-width: 120px;
-}
-
-.form-row input[type="number"],
-.year-select {
-  padding: 12px 16px;
-  border: 1px solid #b6c9dd;
-  border-radius: 30px;
-  font-size: 1rem;
-  width: 200px;
-  background: white;
-  transition: border-color 0.2s;
-}
-
-.form-row input[type="number"]:focus,
-.year-select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .form-actions {
   display: flex;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 button {
   background: #1f3a5f;
   border: none;
   color: white;
-  padding: 14px 38px;
+  padding: 12px 32px;
   border-radius: 40px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: 0.15s;
@@ -700,7 +932,6 @@ button.clear:hover {
   background: #e4ecf5;
 }
 
-/* Results Section */
 .results-section {
   background: #f8fafd;
   border-radius: 28px;
@@ -713,139 +944,62 @@ button.clear:hover {
   font-size: 1.8rem;
   font-weight: 500;
   margin-top: 0;
+  margin-bottom: 20px;
+  color: #0b2b44;
+}
+
+.penalty-message {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 24px;
   margin-bottom: 24px;
-  color: #0b2b44;
+  font-size: 1.2rem;
 }
 
-.summary-cards {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-
-.summary-card {
-  flex: 1;
-  min-width: 280px;
-  background: white;
-  border-radius: 24px;
-  padding: 24px;
-  border: 1px solid #d9e2ef;
-  transition: transform 0.2s;
-}
-
-.summary-card.better {
-  border: 2px solid #16a34a;
-  background: #f0fdf4;
-}
-
-.summary-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0 0 16px 0;
-  color: #1e3a5f;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 12px;
-}
-
-.card-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.card-value {
-  font-weight: 600;
-  color: #0b2b44;
-}
-
-.penalty-card {
-  background: white;
-  border-radius: 20px;
-  padding: 24px;
-  margin-bottom: 28px;
-  text-align: center;
-  border: 1px solid #d9e2ef;
-}
-
-.penalty-card.penalty {
+.penalty-message.penalty {
   border-left: 6px solid #dc2626;
 }
 
-.penalty-card.bonus {
+.penalty-message.bonus {
   border-left: 6px solid #16a34a;
 }
 
-.penalty-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 0 12px 0;
-  color: #1e3a5f;
+.penalty-message strong {
+  font-size: 1.4rem;
 }
 
-.penalty-amount {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.penalty-card.penalty .penalty-amount {
-  color: #dc2626;
-}
-
-.penalty-card.bonus .penalty-amount {
-  color: #16a34a;
-}
-
-.penalty-description {
-  font-size: 1.1rem;
-  color: #4b5f73;
-}
-
-.breakdown-section {
-  background: white;
-  border-radius: 20px;
-  padding: 24px;
-  border: 1px solid #d9e2ef;
-}
-
-.breakdown-section h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0 0 20px 0;
-  color: #1e3a5f;
-}
-
-.breakdown-table {
+.results-table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.breakdown-table th {
-  text-align: left;
-  padding: 12px 16px;
+.results-table th {
   background: #e1eaf3;
+  padding: 14px 12px;
+  text-align: left;
   font-weight: 600;
   color: #1a3349;
 }
 
-.breakdown-table td {
-  padding: 12px 16px;
+.results-table td {
+  padding: 12px;
   border-bottom: 1px solid #e9eef3;
   color: #2c405c;
 }
 
-.breakdown-table .total-row {
+.results-table .total-row {
   font-weight: 600;
   background: #ecf3fa;
 }
 
-.breakdown-table .total-row td {
+.results-table .total-row td {
   border-top: 2px solid #cbd5e1;
 }
 
-/* Related Tools */
 .related-tools {
   margin: 32px 0 28px;
   padding: 18px 0;
@@ -874,7 +1028,6 @@ button.clear:hover {
   color: #9aa9b9;
 }
 
-/* FAQ Section */
 .faq-section {
   margin-top: 28px;
   background: #f3f7fc;
@@ -923,43 +1076,31 @@ button.clear:hover {
   color: #2c405c;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .marriage-tax-calculator {
-    padding: 20px;
-  }
-  
+@media (max-width: 800px) {
   .form-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
   }
   
   .form-row label {
     width: 100%;
   }
   
-  .input-with-symbol {
-    max-width: 100%;
+  .input-group {
     width: 100%;
   }
   
-  .form-row input[type="number"],
-  .year-select {
+  .input-group input {
     width: 100%;
   }
   
-  .summary-cards {
-    flex-direction: column;
-  }
-  
-  .breakdown-table {
+  .results-table {
     font-size: 0.9rem;
   }
   
-  .breakdown-table td,
-  .breakdown-table th {
-    padding: 8px;
+  .results-table th,
+  .results-table td {
+    padding: 8px 6px;
   }
 }
 </style>
