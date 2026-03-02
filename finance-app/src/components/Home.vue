@@ -24,7 +24,7 @@
           <li><a href="/take-home-paycheck-calculator" >💵 Take Home Paycheck Calculator</a></li>
           <li><a href="/income-tax" >🌍 Income Tax Calculator</a></li>
           <li><a href="/paycheck" >💵 Paycheck Calculator</a></li>
-          <li><a href="/paycheck" >📋 Marriage Tax  Calculator</a></li>
+          <li><a href="/marriage-tax-calculator" >📋 Marriage Tax  Calculator</a></li>
         </ul>
       </div>
       <!-- Retirement -->
