@@ -9,6 +9,16 @@
     <!-- Calculator Form - 附件1样式 -->
     <div class="calculator-form">
       <h2>Marriage Tax Calculator</h2>
+      <!-- title -->
+      <div class="form-row">
+        <label></label>
+        <div class="input-group">
+          <span class="currency-symbol">Spouse 1</span>
+        </div>
+        <div class="input-group">
+          <span class="currency-symbol">Spouse 2</span>
+        </div>
+      </div>
 
       <!-- Salary + Business Income -->
       <div class="form-row">
