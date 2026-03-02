@@ -16,7 +16,7 @@
             <span class="publish-date">March 1, 2026</span>
           </div>
           <p class="blog-excerpt">Understanding the differences between Value-Added Tax (VAT), Goods and Services Tax (GST), and traditional Sales Tax is crucial for businesses and consumers alike. This article breaks down how each tax system works, where they are commonly used, and their impact on pricing and compliance.</p>
-          <a href="#" class="learn-more">Detail →</a>
+          <a href="/vat-gst-sales-tax-blog" class="learn-more">Detail →</a>
         </div>
 
         <!-- Blog 2: How Social Security Benefits Work -->

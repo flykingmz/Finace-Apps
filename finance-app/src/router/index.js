@@ -128,6 +128,12 @@ const routes = [
         name: 'Blog',
         component: () => import('../components/Blog.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'vat-gst-sales-tax-blog',
+        name: 'VatGstSalesTax',
+        component: () => import('../blog/VatGstSalesTax.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
