@@ -220,7 +220,7 @@ export default {
   name: 'FinancialToolsHome',
   mounted() {
     // 将长破折号 — 替换为普通的连字符 -
-    document.title = 'Financial Calculators - Free Tax, Paycheck, VAT, Mortgage, Investment & Retirement Calculators';
+    document.title = 'Financial Calculators - Free Tax, Paycheck, VAT, Mortgage, Investment and Retirement Calculators';
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 

@@ -108,7 +108,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'Financial Insights Blog – Tax, Retirement, Investment & Financial Planning Guides'
+    document.title = 'Financial Insights Blog – Tax, Retirement, Investment and Financial Planning Guides'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
   }
