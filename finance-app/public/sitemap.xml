@@ -115,8 +115,19 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <!---blog link -->
   <url>
     <loc>https://financial-calculator.net/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/vat-gst-sales-tax-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/social-security-blog</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
