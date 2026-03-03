@@ -72,7 +72,7 @@
         <div class="card-content">
           <h3>Annuity Payout Calculator</h3>
           <p>Calculate periodic payouts from an annuity based on principal, interest rate, and payout duration.</p>
-          <a href="/calculators/annuity-payout" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/annuity-payout" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 

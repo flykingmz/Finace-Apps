@@ -225,6 +225,13 @@
       <details><summary>How do spousal or survivor benefits work?</summary><p>Spouses aged 62+ can receive up to 50% of the worker's benefit. Widows/widowers can start as early as 60. Divorced spouses (marriage ≥10 years, not remarried) may claim on ex‑spouse's record. Survivor cannot collect both own and spouse's benefit—they receive the larger.</p></details>
       <p class="faq-footnote">*This FAQ summarizes key points from the extensive Social Security description provided. Always consult <a href="https://www.ssa.gov/" target="_blank">ssa.gov</a> for official details.</p>
     </div>
+
+    <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/social-security-blog" class="calculator-btn">
+    More social security blog →
+    </a>
+    </section>
   </div>
 </template>
 

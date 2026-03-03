@@ -105,6 +105,12 @@ const routes = [
         component: () => import('../components/AnnuityCalculator.vue'),
         meta: { keepAlive: false }
       },
+       {
+        path: 'annuity-payout',
+        name: 'AnnuityPayoutCalculator',
+        component: () => import('../components/AnnuityPayoutCalculator.vue'),
+        meta: { keepAlive: false }
+      },
       {
         path: 'about-us',
         name: 'AboutUs',
@@ -133,6 +139,12 @@ const routes = [
         path: 'vat-gst-sales-tax-blog',
         name: 'VatGstSalesTax',
         component: () => import('../blog/VatGstSalesTax.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'social-security-blog',
+        name: 'SocialSecurity',
+        component: () => import('../blog/SocialSecurity.vue'),
         meta: { keepAlive: false }
       }
     ]

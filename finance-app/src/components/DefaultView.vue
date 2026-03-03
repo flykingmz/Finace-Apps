@@ -47,7 +47,7 @@
             <a href="/pension" class="tool-link">Pension Calculator</a>
             <a href="/social-security" class="tool-link">Social Security Calculator</a>
             <a href="/annuity" class="tool-link">Annuity Calculator</a>
-            <a href="#" class="tool-link">Annuity Payout Calculator</a>
+            <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
             <a href="#" class="tool-link">Roth IRA Calculator</a>
             <a href="#" class="tool-link">IRA Calculator</a>
             <a href="#" class="tool-link">RMD Calculator</a>

@@ -21,12 +21,12 @@
 
         <!-- Blog 2: How Social Security Benefits Work -->
         <div class="blog-card">
-          <h2 class="blog-title">How Social Security Benefits Work?</h2>
+          <h2 class="blog-title">Understanding U.S. Social Security: A Complete Guide</h2>
           <div class="blog-meta">
             <span class="publish-date">February 25, 2026</span>
           </div>
           <p class="blog-excerpt">Social Security is a vital source of retirement income for millions of Americans. Learn about how benefits are calculated based on your lifetime earnings, the importance of work credits, and how your claiming age affects monthly payments.</p>
-          <a href="#" class="learn-more">Detail →</a>
+          <a href="/social-security-blog" class="learn-more">Detail →</a>
         </div>
 
         <!-- Blog 3: Best Age to Claim Social Security -->
