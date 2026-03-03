@@ -713,6 +713,13 @@ Understand your paycheck breakdown and see how much income you actually take hom
       <p>A breakdown provides transparency and reduces confusion.</p>
     </div>
 
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/bt-at-income-blog" class="calculator-btn">
+    More Before-Tax vs. After-Tax Income blog →
+    </a>
+    </section>
+
           <div class="faq-footer">
             <div class="what-is">
               <h4>What this calculator is (and is not)</h4>

@@ -227,6 +227,14 @@
         <h3>Can I roll over my 401(k) or IRA into an annuity?</h3>
         <p>It is possible to roll over qualified retirement plans like 401(k)s and IRAs into annuities tax-free. After all, these retirement savings accounts do have the primary purpose of providing income in retirement. Annuities can help dictate how retirees live in accordance with their funds or at least make their future income streams more predictable through fixed annuities. As a result, annuities can act as a sort of insurance for guaranteed income in retirement. The resulting annuities are classified as "qualified annuities," which means they are funded with pretax money. Several things to keep in mind: While transfers aren't taxable, they must still be reported on tax returns for that year. Only one IRA rollover to another account can be completed within any one-year period. When rolling into an annuity, remember to complete the transaction within 60 days. Any amount not rolled over is taxable as ordinary income. For more information about or to do calculations involving retirement, IRAs, or 401(k)s, please visit the Retirement Calculator, Roth IRA Calculator, IRA Calculator, or 401K Calculator.</p>
       </div>
+
+      <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/general-annuity-info-blog" class="calculator-btn">
+    More What Is an Annuity? blog →
+    </a>
+    </section>
+
     </div>
   </div>
 </template>

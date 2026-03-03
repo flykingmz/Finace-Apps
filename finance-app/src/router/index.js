@@ -146,6 +146,18 @@ const routes = [
         name: 'SocialSecurity',
         component: () => import('../blog/SocialSecurity.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'bt-at-income-blog',
+        name: 'BTvsATIncome',
+        component: () => import('../blog/BTvsATIncome.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'general-annuity-info-blog',
+        name: 'GeneralAnnuityInfo',
+        component: () => import('../blog/GeneralAnnuityInfo.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

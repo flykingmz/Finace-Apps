@@ -36,27 +36,27 @@
             <span class="publish-date">February 18, 2026</span>
           </div>
           <p class="blog-excerpt">Deciding when to claim Social Security benefits is one of the most important financial decisions you'll make. This article analyzes the trade-offs between claiming early at 62, waiting until Full Retirement Age, or delaying until 70 to maximize lifetime benefits.</p>
-          <a href="#" class="learn-more">Detail →</a>
+          <a href="/" class="learn-more">Detail →</a>
         </div>
 
         <!-- Blog 4: How Annuities Work -->
         <div class="blog-card">
-          <h2 class="blog-title">How Annuities Work?</h2>
+          <h2 class="blog-title">What Is an Annuity? Types, Tax Benefits, and How Annuities Work for Retirement Planning</h2>
           <div class="blog-meta">
             <span class="publish-date">February 10, 2026</span>
           </div>
-          <p class="blog-excerpt">Annuities can provide guaranteed lifetime income, but they come with complexity and fees. This comprehensive guide explains the different types of annuities—fixed, variable, and indexed—and helps you understand whether they belong in your retirement portfolio.</p>
-          <a href="#" class="learn-more">Detail →</a>
+          <p class="blog-excerpt">Learn what an annuity is, how it works, and the different types available in the U.S. Explore tax-deferred growth, fixed vs. variable annuities, immediate vs. deferred options, and how annuities fit into retirement planning strategies.</p>
+          <a href="/general-annuity-info-blog" class="learn-more">Detail →</a>
         </div>
 
         <!-- Blog 5: How Take Home Pay Is Calculated -->
         <div class="blog-card">
-          <h2 class="blog-title">How Take Home Pay Is Calculated?</h2>
+          <h2 class="blog-title">Before-Tax vs. After-Tax Income</h2>
           <div class="blog-meta">
             <span class="publish-date">February 3, 2026</span>
           </div>
-          <p class="blog-excerpt">Ever wonder why your take home pay is less than your salary? This article walks through all the deductions—federal and state income tax, FICA (Social Security and Medicare), and other withholdings—that determine your actual paycheck amount.</p>
-          <a href="#" class="learn-more">Detail →</a>
+          <p class="blog-excerpt">Before-Tax vs. After-Tax Income is a fundamental concept in personal finance that affects how you budget, compare salaries, and evaluate job offers. Before-tax income—also known as gross income—represents your total earnings before any deductions are applied. After-tax income, or take-home pay, is the amount you actually receive after federal and state taxes, payroll taxes, benefits, and other withholdings are deducted. Understanding the difference between these two figures helps you better assess your real purchasing power, plan for expenses, and make informed financial decisions.</p>
+          <a href="/bt-at-income-blog" class="learn-more">Detail →</a>
         </div>
       </div>
     </div>
