@@ -146,7 +146,7 @@
         <p>You can withdraw <strong>${{ formatMoney(results.monthlyPayment) }}</strong> monthly.</p>
       </div>
       <div class="result-message" v-else>
-        <p>Your annuity will last approximately <strong>{{ results.payoutYears }} years</strong> ({{ results.totalPayments }} payments).</p>
+        <p>Your annuity will last approximately <strong>{{ formatNumber(results.payoutYears) }} years</strong> ({{ results.totalPayments }} payments).</p>
       </div>
 
       <!-- Summary Cards -->
@@ -164,15 +164,15 @@
       </div>
 
       <!-- Chart Placeholder (simplified representation) -->
-      <div class="chart-container">
+      <div class="chart-container" v-if="results.balances && results.balances.length > 0">
         <h3>Chart:</h3>
         <div class="chart">
           <div class="y-axis">
-            <div>$500K</div>
-            <div>$400K</div>
-            <div>$300K</div>
-            <div>$200K</div>
-            <div>$100K</div>
+            <div>${{ formatNumber(maxBalance) }}K</div>
+            <div>${{ formatNumber(maxBalance * 0.8) }}K</div>
+            <div>${{ formatNumber(maxBalance * 0.6) }}K</div>
+            <div>${{ formatNumber(maxBalance * 0.4) }}K</div>
+            <div>${{ formatNumber(maxBalance * 0.2) }}K</div>
             <div>$0</div>
           </div>
           <div class="chart-bars">
@@ -192,7 +192,7 @@
       </div>
 
       <!-- Annuity Balances Table - 附件4样式 -->
-      <div class="balances-section">
+      <div class="balances-section" v-if="results.balances && results.balances.length > 0">
         <h3>Annuity Balances</h3>
         <table class="balances-table">
           <thead>
@@ -218,8 +218,8 @@
     <!-- Related Tools -->
     <div class="related-tools">
       <span class="related-label">Related:</span>
-      <a href="/retirement">Retirement Calculator</a> <span class="sep">|</span>
-      <a href="/annuity">Annuity Calculator</a>
+      <a href="#">Retirement Calculator</a> <span class="sep">|</span>
+      <a href="#">Annuity Calculator</a>
     </div>
 
     <!-- FAQ Section -->
@@ -299,38 +299,41 @@ export default {
     };
   },
   computed: {
+    maxBalance() {
+      if (!this.results.balances || this.results.balances.length === 0) return 500;
+      const max = Math.max(...this.results.balances.map(b => b.beginningBalance));
+      return Math.round(max / 1000);
+    },
     chartYears() {
       const years = [];
       const balances = this.results.balances || [];
       
-      for (let i = 0; i < balances.length; i++) {
-        if (i % 2 === 0 || i === balances.length - 1) {
-          years.push({
-            label: i === 0 ? '0' : (i / 2).toString(),
-            balance: balances[i].beginningBalance,
-            interest: balances[i].interest
-          });
-        }
+      if (balances.length === 0) return [];
+      
+      // Create 6 evenly spaced points for the chart
+      const step = Math.max(1, Math.floor(balances.length / 5));
+      for (let i = 0; i < balances.length; i += step) {
+        years.push({
+          label: i === 0 ? '0' : balances[i].year.toString(),
+          balance: balances[i].beginningBalance,
+          interest: balances[i].interest
+        });
       }
       
-      // Ensure we have at least 5 points for the chart
-      if (years.length < 5 && balances.length > 0) {
-        const step = Math.floor(balances.length / 5);
-        for (let i = 0; i < 5; i++) {
-          const index = Math.min(i * step, balances.length - 1);
-          years.push({
-            label: index.toString(),
-            balance: balances[index].beginningBalance,
-            interest: balances[index].interest
-          });
-        }
+      // Ensure we have the last year
+      if (years[years.length - 1]?.year !== balances[balances.length - 1].year) {
+        years.push({
+          label: balances[balances.length - 1].year.toString(),
+          balance: balances[balances.length - 1].beginningBalance,
+          interest: balances[balances.length - 1].interest
+        });
       }
       
-      return years.slice(0, 6); // Max 6 points for clarity
+      return years.slice(0, 6);
     }
   },
   methods: {
-    setGoogleMetaTags() {
+  setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
@@ -382,6 +385,11 @@ export default {
       const annualRate = this.form.fixedLength.interestRate / 100;
       const years = this.form.fixedLength.years;
       
+      if (!principal || principal <= 0 || !years || years <= 0) {
+        this.results = { calculated: false, balances: [] };
+        return;
+      }
+      
       // Monthly rate
       const monthlyRate = annualRate / 12;
       const totalMonths = years * 12;
@@ -412,14 +420,17 @@ export default {
           totalInterest += interest;
           
           balance = balance + interest - monthlyPayment;
+          if (balance < 0.01) balance = 0;
         }
         
         balances.push({
           year,
           beginningBalance,
           interest: yearInterest,
-          endingBalance: Math.max(0, balance)
+          endingBalance: balance
         });
+        
+        if (balance <= 0) break;
       }
       
       const totalPayout = monthlyPayment * totalMonths;
@@ -440,6 +451,11 @@ export default {
       const annualRate = this.form.fixedPayment.interestRate / 100;
       const monthlyPayment = this.form.fixedPayment.payoutAmount;
       
+      if (!principal || principal <= 0 || !monthlyPayment || monthlyPayment <= 0) {
+        this.results = { calculated: false, balances: [] };
+        return;
+      }
+      
       // Monthly rate
       const monthlyRate = annualRate / 12;
       
@@ -450,30 +466,22 @@ export default {
       if (monthlyRate === 0) {
         totalMonths = Math.floor(principal / monthlyPayment);
       } else {
-        if (monthlyPayment <= principal * monthlyRate) {
-          // Payment is less than interest, annuity will never deplete
-          totalMonths = Infinity;
+        // Check if payment is less than interest (annuity never depletes)
+        const firstMonthInterest = principal * monthlyRate;
+        if (monthlyPayment <= firstMonthInterest) {
+          // Payment is less than or equal to interest, annuity will never deplete
+          // Still show first year for demonstration
+          totalMonths = 12 * 100; // Show 100 years max
         } else {
           totalMonths = Math.floor(
-            -Math.log(1 - principal * monthlyRate / monthlyPayment) / 
+            -Math.log(1 - (principal * monthlyRate) / monthlyPayment) / 
             Math.log(1 + monthlyRate)
           );
         }
       }
       
-      if (!isFinite(totalMonths)) {
-        // Handle case where annuity never depletes
-        this.results = {
-          calculated: true,
-          monthlyPayment,
-          payoutYears: Infinity,
-          totalPayments: Infinity,
-          totalPayout: Infinity,
-          totalInterest: Infinity,
-          balances: []
-        };
-        return;
-      }
+      // Cap at a reasonable number
+      totalMonths = Math.min(totalMonths, 12 * 100);
       
       const years = Math.ceil(totalMonths / 12);
       
@@ -484,7 +492,7 @@ export default {
       let monthsRemaining = totalMonths;
       
       for (let year = 1; year <= years; year++) {
-        if (balance <= 0) break;
+        if (balance <= 0.01) break;
         
         let beginningBalance = balance;
         let yearInterest = 0;
@@ -496,7 +504,7 @@ export default {
           totalInterest += interest;
           
           balance = balance + interest - monthlyPayment;
-          if (balance < 0) balance = 0;
+          if (balance < 0.01) balance = 0;
         }
         
         balances.push({
@@ -507,6 +515,7 @@ export default {
         });
         
         monthsRemaining -= monthsInYear;
+        if (balance <= 0) break;
       }
       
       const totalPayout = monthlyPayment * totalMonths;
@@ -543,6 +552,11 @@ export default {
       return value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     },
 
+    formatNumber(value) {
+      if (value === undefined || value === null || !isFinite(value)) return '0';
+      return value.toFixed(1);
+    },
+
     getBarHeight(value) {
       const maxBalance = Math.max(...this.results.balances.map(b => b.beginningBalance));
       if (maxBalance === 0) return 0;
@@ -557,15 +571,26 @@ export default {
   },
   watch: {
     activeTab: {
+      handler: 'calculate',
+      immediate: true
+    },
+    'form.fixedLength.principal': {
       handler: 'calculate'
     },
-    'form.fixedLength': {
-      handler: 'calculate',
-      deep: true
+    'form.fixedLength.interestRate': {
+      handler: 'calculate'
     },
-    'form.fixedPayment': {
-      handler: 'calculate',
-      deep: true
+    'form.fixedLength.years': {
+      handler: 'calculate'
+    },
+    'form.fixedPayment.principal': {
+      handler: 'calculate'
+    },
+    'form.fixedPayment.interestRate': {
+      handler: 'calculate'
+    },
+    'form.fixedPayment.payoutAmount': {
+      handler: 'calculate'
     }
   }
 };
@@ -827,7 +852,7 @@ button.clear:hover {
   border-right: 2px solid #cbd5e1;
   font-size: 0.9rem;
   color: #4b5f73;
-  min-width: 60px;
+  min-width: 70px;
 }
 
 .chart-bars {
@@ -855,13 +880,11 @@ button.clear:hover {
 
 .balance-bar {
   background: #2563eb;
-  height: 0;
   opacity: 0.8;
 }
 
 .interest-bar {
   background: #16a34a;
-  height: 0;
   opacity: 0.6;
 }
 
@@ -869,7 +892,7 @@ button.clear:hover {
   display: flex;
   justify-content: space-around;
   margin-top: 12px;
-  padding-left: 80px;
+  padding-left: 90px;
   font-size: 0.9rem;
   color: #4b5f73;
 }
@@ -1051,6 +1074,8 @@ button.clear:hover {
     border-bottom: 2px solid #cbd5e1;
     padding-bottom: 8px;
     margin-bottom: 8px;
+    min-width: auto;
+    justify-content: space-between;
   }
   
   .x-axis {
