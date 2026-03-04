@@ -139,6 +139,491 @@
           <h2>2025 Tax Brackets</h2>
           <div class="table-wrap"><table><thead><tr><th>Taxable Income Single</th><th>Joint</th><th>Head of Household</th><th>Tax Rate</th></tr></thead><tbody><tr><td>$0 to $11,925</td><td>$0 to $23,850</td><td>$0 to $17,000</td><td>10%</td></tr><tr><td>$11,925 to $48,475</td><td>$23,850 to $96,950</td><td>$17,000 to $64,850</td><td>12%</td></tr><tr><td>$48,475 to $103,350</td><td>$96,950 to $206,700</td><td>$64,850 to $103,350</td><td>22%</td></tr><tr><td>$103,350 to $197,300</td><td>$206,700 to $394,600</td><td>$103,350 to $197,300</td><td>24%</td></tr><tr><td>$197,300 to $250,525</td><td>$394,600 to $501,050</td><td>$197,300 to $250,500</td><td>32%</td></tr><tr><td>$250,525 to $626,350</td><td>$501,050 to $751,600</td><td>$250,500 to $626,350</td><td>35%</td></tr><tr><td>$626,350+</td><td>$751,600+</td><td>$626,350+</td><td>37%</td></tr></tbody></table></div><p><strong>2025 Deductions</strong> Single $15,750 Joint $31,500 Head $23,625</p>
         
+        <!-- 2024 Tax Brackets -->
+<h2>2024 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $11,600</td>
+        <td>$0 to $23,200</td>
+        <td>$0 to $16,550</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$11,600 to $47,150</td>
+        <td>$23,200 to $94,300</td>
+        <td>$16,550 to $63,100</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$47,150 to $100,525</td>
+        <td>$94,300 to $201,050</td>
+        <td>$63,100 to $100,500</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$100,525 to $191,950</td>
+        <td>$201,050 to $383,900</td>
+        <td>$100,500 to $191,950</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$191,950 to $243,725</td>
+        <td>$383,900 to $487,450</td>
+        <td>$191,950 to $243,700</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$243,725 to $609,350</td>
+        <td>$487,450 to $731,200</td>
+        <td>$243,700 to $609,350</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$609,350+</td>
+        <td>$731,200+</td>
+        <td>$609,350+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2024 Deductions and Exemptions</strong> — Single: $14,600, Joint: $29,200, Head of Household: $21,900</p>
+
+<!-- 2023 Tax Brackets -->
+<h2>2023 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $11,000</td>
+        <td>$0 to $22,000</td>
+        <td>$0 to $15,700</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$11,001 to $44,725</td>
+        <td>$22,001 to $89,450</td>
+        <td>$15,701 to $59,850</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$44,726 to $95,375</td>
+        <td>$89,451 to $190,750</td>
+        <td>$59,851 to $95,350</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$95,376 to $182,100</td>
+        <td>$190,751 to $364,200</td>
+        <td>$95,351 to $182,100</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$182,101 to $231,250</td>
+        <td>$364,201 to $462,500</td>
+        <td>$182,101 to $231,250</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$231,251 to $578,125</td>
+        <td>$462,501 to $693,750</td>
+        <td>$231,251 to $578,100</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$578,125+</td>
+        <td>$693,750+</td>
+        <td>$578,100+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2023 Deductions and Exemptions</strong> — Single: $13,850, Joint: $27,700, Head of Household: $20,800</p>
+
+<!-- 2022 Tax Brackets -->
+<h2>2022 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $10,275</td>
+        <td>$0 to $20,550</td>
+        <td>$0 to $14,650</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$10,276 to $41,775</td>
+        <td>$20,551 to $83,550</td>
+        <td>$14,651 to $55,900</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$41,776 to $89,075</td>
+        <td>$83,551 to $178,150</td>
+        <td>$55,901 to $89,050</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$89,076 to $170,050</td>
+        <td>$178,151 to $340,100</td>
+        <td>$89,051 to $170,050</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$170,051 to $215,950</td>
+        <td>$340,101 to $431,900</td>
+        <td>$170,051 to $215,950</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$215,951 to $539,900</td>
+        <td>$431,901 to $647,850</td>
+        <td>$215,951 to $539,900</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$539,900+</td>
+        <td>$647,850+</td>
+        <td>$539,900+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2022 Deductions and Exemptions</strong> — Single: $12,950, Joint: $25,900, Head of Household: $19,400</p>
+
+<!-- 2021 Tax Brackets -->
+<h2>2021 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $9,950</td>
+        <td>$0 to $19,900</td>
+        <td>$0 to $14,200</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$9,951 to $40,525</td>
+        <td>$19,901 to $81,050</td>
+        <td>$14,201 to $54,200</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$40,526 to $86,375</td>
+        <td>$81,051 to $172,750</td>
+        <td>$54,201 to $86,350</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$86,376 to $164,925</td>
+        <td>$172,751 to $329,850</td>
+        <td>$86,351 to $164,900</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$164,926 to $209,425</td>
+        <td>$329,851 to $418,850</td>
+        <td>$164,901 to $209,400</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$209,426 to $523,600</td>
+        <td>$418,851 to $628,300</td>
+        <td>$209,401 to $523,600</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$523,600+</td>
+        <td>$628,300+</td>
+        <td>$523,600+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2021 Deductions and Exemptions</strong> — Single: $12,550, Joint: $25,100, Head of Household: $18,800</p>
+
+<!-- 2020 Tax Brackets -->
+<h2>2020 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $9,875</td>
+        <td>$0 to $19,750</td>
+        <td>$0 to $14,100</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$9,876 to $40,125</td>
+        <td>$19,751 to $80,250</td>
+        <td>$14,101 to $53,700</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$40,126 to $85,525</td>
+        <td>$80,251 to $171,050</td>
+        <td>$53,701 to $85,500</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$85,526 to $163,300</td>
+        <td>$171,051 to $326,600</td>
+        <td>$85,501 to $163,300</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$163,301 to $207,350</td>
+        <td>$326,601 to $414,700</td>
+        <td>$163,301 to $207,350</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$207,351 to $518,400</td>
+        <td>$414,701 to $622,050</td>
+        <td>$207,351 to $518,400</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$518,401+</td>
+        <td>$622,051+</td>
+        <td>$518,401+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2020 Deductions and Exemptions</strong> — Single: $12,400, Joint: $24,800, Head of Household: $18,650</p>
+
+<!-- 2019 Tax Brackets -->
+<h2>2019 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $9,700</td>
+        <td>$0 to $19,400</td>
+        <td>$0 to $13,850</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$9,700 to $39,475</td>
+        <td>$19,400 to $78,950</td>
+        <td>$13,850 to $52,850</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$39,475 to $84,200</td>
+        <td>$78,950 to $168,400</td>
+        <td>$52,850 to $84,200</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$84,200 to $160,725</td>
+        <td>$168,400 to $321,450</td>
+        <td>$84,200 to $160,700</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$160,725 to $204,100</td>
+        <td>$321,450 to $408,200</td>
+        <td>$160,700 to $204,100</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$204,100 to $510,300</td>
+        <td>$408,200 to $612,350</td>
+        <td>$204,100 to $510,300</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$510,300+</td>
+        <td>$612,350+</td>
+        <td>$510,300+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2019 Deductions and Exemptions</strong> — Single: $12,200, Joint: $24,400, Head of Household: $18,350<br>Personal Exemptions (PEP): $0 per person (not available anymore)</p>
+
+<!-- 2018 Tax Brackets -->
+<h2>2018 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $9,525</td>
+        <td>$0 to $19,050</td>
+        <td>$0 to $13,600</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$9,525 to $38,700</td>
+        <td>$19,050 to $77,400</td>
+        <td>$13,600 to $51,800</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>$38,700 to $82,500</td>
+        <td>$77,400 to $165,000</td>
+        <td>$51,800 to $82,500</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>$82,500 to $157,500</td>
+        <td>$165,000 to $315,000</td>
+        <td>$82,500 to $157,500</td>
+        <td>24%</td>
+      </tr>
+      <tr>
+        <td>$157,500 to $200,000</td>
+        <td>$315,000 to $400,000</td>
+        <td>$157,500 to $200,000</td>
+        <td>32%</td>
+      </tr>
+      <tr>
+        <td>$200,000 to $500,000</td>
+        <td>$400,000 to $600,000</td>
+        <td>$200,000 to $500,000</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$500,000+</td>
+        <td>$600,000+</td>
+        <td>$500,000+</td>
+        <td>37%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2018 Deductions and Exemptions</strong> — Single: $12,000, Joint: $24,000, Head of Household: $18,000<br>Personal Exemptions (PEP): $0 per person (not available anymore)</p>
+
+<!-- 2017 Tax Brackets -->
+<h2>2017 Tax Brackets</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable Income Single</th>
+        <th>Joint</th>
+        <th>Head of Household</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$0 to $9,325</td>
+        <td>$0 to $18,650</td>
+        <td>$0 to $13,350</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>$9,325 to $37,950</td>
+        <td>$18,650 to $75,900</td>
+        <td>$13,350 to $50,800</td>
+        <td>15%</td>
+      </tr>
+      <tr>
+        <td>$37,950 to $91,900</td>
+        <td>$75,900 to $153,100</td>
+        <td>$50,800 to $131,200</td>
+        <td>25%</td>
+      </tr>
+      <tr>
+        <td>$91,900 to $191,650</td>
+        <td>$153,100 to $233,350</td>
+        <td>$131,200 to $212,500</td>
+        <td>28%</td>
+      </tr>
+      <tr>
+        <td>$191,650 to $416,700</td>
+        <td>$233,350 to $416,700</td>
+        <td>$212,500 to $416,700</td>
+        <td>33%</td>
+      </tr>
+      <tr>
+        <td>$416,700 to $418,400</td>
+        <td>$416,700 to $470,700</td>
+        <td>$416,700 to $444,550</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>$418,400+</td>
+        <td>$470,700+</td>
+        <td>$444,550+</td>
+        <td>39.6%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>2017 Deductions and Exemptions</strong><br>
+Standard Deductions — Single: $6,350, Joint: $12,700, Head of Household: $9,350<br>
+Itemized Deduction Eliminated: $261,500 (Single), $313,800 (Joint), $287,650 (Head of Household)<br>
+Personal Exemptions (PEP): $4,050 per person<br>
+Personal Exemptions Phase-out Begin: $261,500 (Single), $313,800 (Joint), $287,650 (Head of Household)<br>
+Personal Exemptions Phase-out Completely: $384,000 (Single), $436,300 (Joint), $410,150 (Head of Household)</p>
+
         </article>
 
         <!-- 底部中间calculator按钮 -->
