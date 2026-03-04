@@ -21,7 +21,7 @@
         <div class="card-content">
           <h3>Mortgage Calculator</h3>
           <p>Calculate monthly mortgage payments including principal, interest, taxes, and insurance (PITI) for any loan amount and term.</p>
-          <a href="/calculators/mortgage" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/mortgage" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
