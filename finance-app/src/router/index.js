@@ -158,6 +158,12 @@ const routes = [
         name: 'GeneralAnnuityInfo',
         component: () => import('../blog/GeneralAnnuityInfo.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'marriage-tax-penalty-blog',
+        name: 'MarriageTaxPenalty',
+        component: () => import('../blog/MarriageTaxPenalty.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

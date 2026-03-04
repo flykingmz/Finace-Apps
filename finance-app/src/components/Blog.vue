@@ -9,6 +9,16 @@
     <!-- Blog List Section -->
     <div class="blog-list-section">
       <div class="blog-items">
+        <!-- Blog 6: The Real Marriage Tax Penalty: Data by Income Bracket (2026 Update) -->
+        <div class="blog-card">
+          <h2 class="blog-title">The Real Marriage Tax Penalty: Data by Income Bracket (2026 Update)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 3, 2026</span>
+          </div>
+          <p class="blog-excerpt">The marriage tax penalty occurs when a couple pays more filing jointly than they would as two unmarried individuals. Its impact depends on income level, earnings split, and tax credit eligibility. With 2026 income bracket changes and expiring TCJA provisions, penalties are becoming more common again — especially for dual-income and higher earners. This update breaks down the data by income bracket to show who benefits and who pays more.</p>
+          <a href="/marriage-tax-penalty-blog" class="learn-more">Detail →</a>
+        </div>
+
         <!-- Blog 1: VAT vs GST vs Sales Tax -->
         <div class="blog-card">
           <h2 class="blog-title">VAT vs GST vs Sales Tax</h2>
@@ -58,6 +68,7 @@
           <p class="blog-excerpt">Before-Tax vs. After-Tax Income is a fundamental concept in personal finance that affects how you budget, compare salaries, and evaluate job offers. Before-tax income—also known as gross income—represents your total earnings before any deductions are applied. After-tax income, or take-home pay, is the amount you actually receive after federal and state taxes, payroll taxes, benefits, and other withholdings are deducted. Understanding the difference between these two figures helps you better assess your real purchasing power, plan for expenses, and make informed financial decisions.</p>
           <a href="/bt-at-income-blog" class="learn-more">Detail →</a>
         </div>
+
       </div>
     </div>
   </div>
