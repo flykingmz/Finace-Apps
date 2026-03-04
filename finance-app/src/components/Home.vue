@@ -43,7 +43,7 @@
       <!--  <div class="category-icon"><i class="fas fa-home"></i></div> -->
         <div class="category-title"><a href="/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
         <ul class="popular-list">
-          <li><a href="" >🏠 Mortgage Calculator</a></li>
+          <li><a href="/mortgage" >🏠 Mortgage Calculator</a></li>
           <li><a href="" >📉 Amortization Calculator</a></li>
         </ul>
       </div>

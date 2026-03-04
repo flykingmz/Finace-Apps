@@ -111,6 +111,12 @@ const routes = [
         component: () => import('../components/AnnuityPayoutCalculator.vue'),
         meta: { keepAlive: false }
       },
+       {
+        path: 'mortgage',
+        name: 'MortgageCalculator',
+        component: () => import('../components/MortgageCalculator.vue'),
+        meta: { keepAlive: false }
+      },
       {
         path: 'about-us',
         name: 'AboutUs',

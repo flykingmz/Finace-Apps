@@ -61,7 +61,7 @@
             <div class="category-count">16 tools</div>
           </div>
           <div class="tools-list">
-            <a href="#" class="tool-link">Mortgage Calculator</a>
+            <a href="/mortgage" class="tool-link">Mortgage Calculator</a>
             <a href="#" class="tool-link">Amortization Calculator</a>
             <a href="#" class="tool-link">Mortgage Payoff Calculator</a>
             <a href="#" class="tool-link">House Affordability Calculator</a>
