@@ -63,6 +63,12 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+  <!---mortgage link -->
+  <url>
+    <loc>https://financial-calculator.net/mortgage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 <!---calculators link -->
    <url>
     <loc>https://financial-calculator.net/tax-salary-calculators</loc>
