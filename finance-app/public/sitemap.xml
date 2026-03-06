@@ -162,4 +162,9 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://financial-calculator.net/vat-vs-gst-vs-sales-tax-a-global-comparison-table-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
