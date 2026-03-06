@@ -2,13 +2,23 @@
   <div class="blog-list-app">
     <!-- Simple header -->
     <div class="blog-header">
-      <h1 class="main-title">Financial Calculator Blog</h1>
+      <h1 class="main-title">Financial Blog</h1>
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
     <!-- Blog List Section -->
     <div class="blog-list-section">
       <div class="blog-items">
+
+      <!-- Blog 9: VAT vs GST vs Sales Tax: A Global Comparison Table (150+ Countries & Regions) -->
+        <div class="blog-card">
+          <h2 class="blog-title">VAT vs GST vs Sales Tax: A Global Comparison Table (150+ Countries & Regions)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 6, 2026</span>
+          </div>
+          <p class="blog-excerpt">Consumption taxes vary widely across the world, but most countries rely on one of three systems: VAT, GST, or Sales Tax. Understanding the differences is essential for businesses, SaaS platforms, and global e-commerce sellers operating across borders. This guide compares VAT, GST, and Sales Tax systems across 150+ countries and regions, including standard tax rates, registration thresholds, and common exemptions. Through structured tables and scenario comparisons, we break down how each system works and where it applies. Whether you're analyzing international pricing or planning cross-border expansion, this global comparison provides a clear overview of how consumption taxes differ worldwide.</p>
+          <a href="/vat-vs-gst-vs-sales-tax-a-global-comparison-table-blog" class="learn-more">Detail →</a>
+        </div>
 
        <!-- Blog 8: How Long Will $500,000 Last in Retirement? Scenario Analysis -->
         <div class="blog-card">

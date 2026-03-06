@@ -435,8 +435,8 @@
   </div>
   <!-- Calculator CTA -->
     <section class="section calculator-cta">
-    <a href="/vat-gst-sales-tax-blog" class="calculator-btn">
-    More Global VAT, GST & Sales Tax blog →
+    <a href="/vat-vs-gst-vs-sales-tax-a-global-comparison-table-blog" class="calculator-btn">
+    More Global Comparison Table（VAT, GST & Sales Tax）blog →
     </a>
     </section>
   </div>

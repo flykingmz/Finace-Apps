@@ -84,7 +84,7 @@
     <div class="featured-grid">
       <div class="featured-item">
         <i class="fas fa-globe"></i>
-        <a href="/blog" >Financial Calculator Blog</a>
+        <a href="/blog" >Financial Blog</a>
       </div>
     </div>
      

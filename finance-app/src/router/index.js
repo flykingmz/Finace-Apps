@@ -182,6 +182,12 @@ const routes = [
         name: 'HowLongWillLastInRetirement',
         component: () => import('../blog/HowLongWillLastInRetirement.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'vat-vs-gst-vs-sales-tax-a-global-comparison-table-blog',
+        name: 'VATvsGSTvsSalesTaxAGlobalComparisonTable',
+        component: () => import('../blog/VATvsGSTvsSalesTaxAGlobalComparisonTable.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
