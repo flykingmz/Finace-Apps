@@ -170,6 +170,18 @@ const routes = [
         name: 'MarriageTaxPenalty',
         component: () => import('../blog/MarriageTaxPenalty.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'when-should-you-claim-social-security-blog',
+        name: 'WhenShouldYouClaimSocialSecurity',
+        component: () => import('../blog/WhenShouldYouClaimSocialSecurity.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'how-long-will-last-in-retirement-blog',
+        name: 'HowLongWillLastInRetirement',
+        component: () => import('../blog/HowLongWillLastInRetirement.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

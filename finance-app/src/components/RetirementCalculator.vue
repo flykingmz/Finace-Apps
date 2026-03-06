@@ -440,27 +440,15 @@ That's not to say that there aren't certain benefits to having some savings in a
         <p>An inheritance is a portion of assets given to the heirs of the deceased, which an heir can use as income for retirement. However, because the estates of owners that die haven't exchanged hands since ownership, they may still be subject to tax, whether state or federal (In the U.S., along with the mandatory federal estate tax, six states mandate the payment of a separate inheritance tax). Also, the value of estates may change due to factors such as legal rights or financial volatility. Tangible assets such as real estate or jewelry may require the payment of capital gains tax if the assets are sold for profit. For more information about inheritances or to do calculations involving estate tax, please visit the Estate Tax Calculator.</p>
   
       </section>
-    </main>
 
-    <!-- Footer Section -->
-    <footer class="calculator-footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Tool Statement</h4>
-          <p>This retirement calculator is provided for educational and informational purposes only. Results are estimates and should not be considered as financial advice.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Data Statement</h4>
-          <p>All data entered is processed locally in your browser and is not stored or transmitted to any servers. Your privacy is protected.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Contact & Feedback</h4>
-          <p>For questions or feedback about this calculator, please contact us at flykingmz@gmail.com</p>
-        </div>
-      </div>
-    </footer>
+       <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-long-will-last-in-retirement-blog" class="calculator-btn">
+    More Retirement Scenario Analysis blog →
+    </a>
+    </section>
+
+    </main>
   </div>
 </template>
 
@@ -1294,6 +1282,30 @@ export default {
 }
 .sep {
   color: #9aa9b9;
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
   
 /* 平板设备（768px以下） */

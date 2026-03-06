@@ -9,6 +9,27 @@
     <!-- Blog List Section -->
     <div class="blog-list-section">
       <div class="blog-items">
+
+       <!-- Blog 8: How Long Will $500,000 Last in Retirement? Scenario Analysis -->
+        <div class="blog-card">
+          <h2 class="blog-title">How Long Will $500,000 Last in Retirement? Scenario Analysis</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 6, 2026</span>
+          </div>
+          <p class="blog-excerpt">How long can $500,000 last in retirement? The answer depends on withdrawal rates, investment returns, and inflation. This article analyzes multiple retirement scenarios to estimate how long a $500,000 portfolio may sustain retirement spending. Using common strategies such as the 3%, 4%, 5%, and 6% withdrawal rules, we compare outcomes under different market return assumptions. The analysis includes scenario comparison tables, visual breakdowns, and interpretation of key risks like inflation and sequence of returns. The results show that small changes in spending or investment performance can significantly affect retirement sustainability, helping retirees better plan for long-term financial security.</p>
+          <a href="/how-long-will-last-in-retirement-blog" class="learn-more">Detail →</a>
+        </div>
+
+       <!-- Blog 7: When Should You Claim Social Security? -->
+        <div class="blog-card">
+          <h2 class="blog-title">When Should You Claim Social Security? A Break-Even Analysis (Age 62 vs 67 vs 70)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 6, 2026</span>
+          </div>
+          <p class="blog-excerpt">Choosing when to claim Social Security (62, 67, or 70) can significantly affect your lifetime retirement income. Claiming early gives you payments sooner but permanently reduces monthly benefits, while delaying increases them. This article uses a break-even analysis to compare the total lifetime benefits of each strategy, showing when waiting becomes financially advantageous and helping retirees decide based on longevity expectations and income needs.</p>
+          <a href="/when-should-you-claim-social-security-blog" class="learn-more">Detail →</a>
+        </div>
+
         <!-- Blog 6: The Real Marriage Tax Penalty: Data by Income Bracket (2026 Update) -->
         <div class="blog-card">
           <h2 class="blog-title">The Real Marriage Tax Penalty: Data by Income Bracket (2026 Update)</h2>
