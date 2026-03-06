@@ -6,9 +6,19 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section -->
+    <!-- Blog List Section the-hidden-cost-of-filing-taxes-jointly-vs-separately-blog-->
     <div class="blog-list-section">
       <div class="blog-items">
+
+      <!-- Blog 10: The Hidden Cost of Filing Taxes Jointly vs Separately -->
+        <div class="blog-card">
+          <h2 class="blog-title">The Hidden Cost of Filing Taxes Jointly vs Separately</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 6, 2026</span>
+          </div>
+          <p class="blog-excerpt">This article analyzes the hidden financial impact of filing taxes jointly vs. separately for married couples. Using income scenarios, tax assumptions, and comparison tables, it shows when Married Filing Jointly (MFJ) creates a tax bonus and when it may cause a marriage tax penalty. The analysis also highlights credit restrictions, deduction differences, and real situations where filing separately may reduce tax liability.</p>
+          <a href="/the-hidden-cost-of-filing-taxes-jointly-vs-separately-blog" class="learn-more">Detail →</a>
+        </div>
 
       <!-- Blog 9: VAT vs GST vs Sales Tax: A Global Comparison Table (150+ Countries & Regions) -->
         <div class="blog-card">

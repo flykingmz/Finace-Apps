@@ -363,8 +363,8 @@
 
      <!-- Calculator CTA -->
     <section class="section calculator-cta">
-    <a href="/bt-at-income-blog" class="calculator-btn">
-    More Before-Tax vs. After-Tax Income blog →
+    <a href="/the-hidden-cost-of-filing-taxes-jointly-vs-separately-blog" class="calculator-btn">
+    More The Hidden Cost of Filing Taxes Jointly vs Separately blog →
     </a>
     </section>
   </div>

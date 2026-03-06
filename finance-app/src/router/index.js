@@ -188,6 +188,12 @@ const routes = [
         name: 'VATvsGSTvsSalesTaxAGlobalComparisonTable',
         component: () => import('../blog/VATvsGSTvsSalesTaxAGlobalComparisonTable.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'the-hidden-cost-of-filing-taxes-jointly-vs-separately-blog',
+        name: 'TheHiddenCostofFilingTaxesJointlyvsSeparately',
+        component: () => import('../blog/TheHiddenCostofFilingTaxesJointlyvsSeparately.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
