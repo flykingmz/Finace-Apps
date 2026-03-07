@@ -6,10 +6,20 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section the-hidden-cost-of-filing-taxes-jointly-vs-separately-blog-->
+    <!-- Blog List Section -->
     <div class="blog-list-section">
       <div class="blog-items">
 
+        <!-- Blog 11: How Much House Can I Afford? A Practical Guide Based on Income -->
+        <div class="blog-card">
+          <h2 class="blog-title">How Much House Can I Afford? A Practical Guide Based on Income</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 7, 2026</span>
+          </div>
+          <p class="blog-excerpt">Buying a home is one of the most significant financial decisions most people will make. While homeownership offers long-term benefits such as stability, equity building, and potential appreciation, it also requires careful financial planning. One of the most common questions prospective buyers ask is simple:How much house can I realistically afford based on my income?</p>
+          <a href="/how-much-house-can-i-afford-blog" class="learn-more">Detail →</a>
+        </div>
+        
       <!-- Blog 10: The Hidden Cost of Filing Taxes Jointly vs Separately -->
         <div class="blog-card">
           <h2 class="blog-title">The Hidden Cost of Filing Taxes Jointly vs Separately</h2>
