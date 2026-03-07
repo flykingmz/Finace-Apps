@@ -200,6 +200,12 @@ const routes = [
         name: 'HowMuchHouseCanIAfford',
         component: () => import('../blog/HowMuchHouseCanIAfford.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: '30-year-vs-15-year-mortgage-blog',
+        name: '30-Yearvs15-YearMortgage',
+        component: () => import('../blog/30-Yearvs15-YearMortgage.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
