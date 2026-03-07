@@ -194,6 +194,12 @@ const routes = [
         name: 'TheHiddenCostofFilingTaxesJointlyvsSeparately',
         component: () => import('../blog/TheHiddenCostofFilingTaxesJointlyvsSeparately.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-house-can-i-afford-blog',
+        name: 'HowMuchHouseCanIAfford',
+        component: () => import('../blog/HowMuchHouseCanIAfford.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
