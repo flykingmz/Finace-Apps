@@ -10,6 +10,16 @@
     <div class="blog-list-section">
       <div class="blog-items">
 
+        <!-- Blog 12: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
+        <div class="blog-card">
+          <h2 class="blog-title">30-Year vs 15-Year Mortgage: Which One Saves You More Money?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 7, 2026</span>
+          </div>
+          <p class="blog-excerpt">Buying a home is often the largest financial decision most people make in their lifetime. One of the most critical choices in the homebuying process is selecting the mortgage term. The two most common options are the 30-year mortgage and the 15-year mortgage.</p>
+          <a href="/30-year-vs-15-year-mortgage-blog" class="learn-more">Detail →</a>
+        </div>
+        
         <!-- Blog 11: How Much House Can I Afford? A Practical Guide Based on Income -->
         <div class="blog-card">
           <h2 class="blog-title">How Much House Can I Afford? A Practical Guide Based on Income</h2>
