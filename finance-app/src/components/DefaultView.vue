@@ -64,7 +64,7 @@
           </div>
           <div class="tools-list">
             <a href="/mortgage" class="tool-link">Mortgage Calculator</a>
-            <a href="#" class="tool-link">Amortization Calculator</a>
+            <a href="/amortization" class="tool-link">Amortization Calculator</a>
             <a href="#" class="tool-link">Mortgage Payoff Calculator</a>
             <a href="#" class="tool-link">House Affordability Calculator</a>
             <a href="#" class="tool-link">Rent Calculator</a>
