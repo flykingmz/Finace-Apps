@@ -6,10 +6,20 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section  -->
+    <!-- Blog List Section  what-is-an-amortization-schedule-blog  -->
     <div class="blog-list-section">
       <div class="blog-items">
 
+         <!-- Blog 14: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
+        <div class="blog-card">
+          <h2 class="blog-title">What Is an Amortization Schedule? A Simple Explanation for Homebuyers</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 8, 2026</span>
+          </div>
+          <p class="blog-excerpt">For many homebuyers, a mortgage is the largest financial commitment they will ever make. While most borrowers understand their monthly payment amount, far fewer understand how that payment is structured over time.</p>
+          <a href="/what-is-an-amortization-schedule-blog" class="learn-more">Detail →</a>
+        </div>
+        
         <!-- Blog 13: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
         <div class="blog-card">
           <h2 class="blog-title">How Mortgage Payments Are Calculated (With Formula & Real Examples)</h2>
