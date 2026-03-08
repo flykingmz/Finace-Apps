@@ -278,6 +278,14 @@
         <p>In the U.S., business startup costs, defined as costs incurred to investigate the potential of creating or acquiring an active business and costs to create an active business, can only be amortized under certain conditions. They must be expenses that are deducted as business expenses if incurred by an existing active business and must be incurred before the active business begins. Examples of these costs include consulting fees, financial analysis of potential acquisitions, advertising expenditures, and payments to employees, all of which must be incurred before the business is deemed active. According to IRS guidelines, initial startup costs must be amortized.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/what-is-an-amortization-schedule-blog" class="calculator-btn">
+    More What Is an Amortization Schedule blog →
+    </a>
+    </section>
+    
   </div>
 </template>
 
@@ -962,6 +970,30 @@ button.clear:hover {
 
 .sep {
   color: #9aa9b9;
+}
+
+  /* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 480px) {
