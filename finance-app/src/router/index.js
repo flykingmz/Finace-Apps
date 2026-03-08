@@ -224,6 +224,12 @@ const routes = [
         name: 'HowMortgagePaymentsAreCalculated',
         component: () => import('../blog/HowMortgagePaymentsAreCalculated.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'what-is-an-amortization-schedule-blog',
+        name: 'WhatIsanAmortizationSchedule',
+        component: () => import('../blog/WhatIsanAmortizationSchedule.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
