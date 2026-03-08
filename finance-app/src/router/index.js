@@ -218,6 +218,12 @@ const routes = [
         name: '30-Yearvs15-YearMortgage',
         component: () => import('../blog/30-Yearvs15-YearMortgage.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-mortgage-payments-are-calculated-blog',
+        name: 'HowMortgagePaymentsAreCalculated',
+        component: () => import('../blog/HowMortgagePaymentsAreCalculated.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
