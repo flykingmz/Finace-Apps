@@ -58,7 +58,7 @@
 
         <!-- Mortgage and Real Estate -->
         <div class="category-card">
-          <div class="category-header">
+          <div class="category-header-active">
             <h2 class="category-title">Mortgage and Real Estate（TBC）</h2>
             <div class="category-count">16 tools</div>
           </div>
