@@ -45,7 +45,7 @@
         <div class="category-title"><a href="/mortgage-RE-calculators">Mortgage and Real Estate</a> </div>
         <ul class="popular-list">
           <li><a href="/mortgage" >🏠 Mortgage Calculator</a></li>
-          <li><a href="" >📉 Amortization Calculator</a></li>
+          <li><a href="/amortization" >📉 Amortization Calculator</a></li>
         </ul>
       </div>
       <!-- Investment -->
