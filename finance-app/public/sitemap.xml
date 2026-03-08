@@ -32,6 +32,11 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://financial-calculator.net/salary-calculator</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!---retirement link -->
   <url>
     <loc>https://financial-calculator.net/retirement</loc>
