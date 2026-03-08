@@ -6,10 +6,20 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section -->
+    <!-- Blog List Section how-mortgage-payments-are-calculated-blog -->
     <div class="blog-list-section">
       <div class="blog-items">
 
+        <!-- Blog 13: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
+        <div class="blog-card">
+          <h2 class="blog-title">How Mortgage Payments Are Calculated (With Formula & Real Examples)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 8, 2026</span>
+          </div>
+          <p class="blog-excerpt">Understanding how mortgage payments are calculated is essential for anyone buying a home or refinancing a loan. Many borrowers see their monthly payment but don't fully understand how the numbers are derived, why payments are structured the way they are, and how interest impacts long-term borrowing costs.</p>
+          <a href="/30-year-vs-15-year-mortgage-blog" class="learn-more">Detail →</a>
+        </div>
+        
         <!-- Blog 12: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
         <div class="blog-card">
           <h2 class="blog-title">30-Year vs 15-Year Mortgage: Which One Saves You More Money?</h2>
