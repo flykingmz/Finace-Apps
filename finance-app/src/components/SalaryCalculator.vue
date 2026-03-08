@@ -1,8 +1,8 @@
 <template>
   <div class="salary-calculator">
-    <!-- 主卡片：计算器 + 结果表格 (左右布局，对应附件1和2) -->
-    <div class="calculator-grid">
-      <!-- 左侧：计算器表单 (附件1样式) -->
+    <!-- 主卡片：计算器在上方，结果表格在下方 (垂直布局) -->
+    <div class="calculator-vertical">
+      <!-- 上方：计算器表单 (附件1样式) -->
       <div class="input-panel">
         <h1>Salary Calculator</h1>
         <p>The Salary Calculator helps you convert income amounts between different pay frequencies, including hourly, weekly, biweekly, semi-monthly, monthly, and annual salaries. It provides both unadjusted results and adjusted figures that consider vacation days and paid holidays throughout the year. This makes it easier to understand your true earnings, compare job offers, and estimate income across different payment schedules.</p>
@@ -24,8 +24,7 @@
             </div>
           </div>
 
-          <!-- Hours per week (display field, but we need hours/day & days/week to match screenshot) -->
-          <!-- The screenshot shows "Hours per week" but we keep both for completeness -->
+          <!-- Hours per week -->
           <div class="form-row">
             <label>Hours per week</label>
             <input type="number" v-model.number="inputs.hoursPerWeek" min="0" step="0.5" />
@@ -55,7 +54,7 @@
         </form>
       </div>
 
-      <!-- 右侧：计算结果表格 (附件2样式) -->
+      <!-- 下方：计算结果表格 (附件2样式) -->
       <div class="result-panel">
         <h3>Result</h3>
         <table class="salary-table">
@@ -82,9 +81,9 @@
     <div class="related-section">
       <h4>Related</h4>
       <div class="related-links">
-        <a href="/take-home-paycheck-calculator" target="_blank">Take Home Pay Calculator</a>
+        <a href="#" target="_blank">Take Home Pay Calculator</a>
         <span>|</span>
-        <a href="/paycheck" target="_blank">paycheck Calculator</a>
+        <a href="#" target="_blank">paycheck Calculator</a>
       </div>
     </div>
 
@@ -222,8 +221,32 @@ export default {
       ];
     }
   },
+  mounted() {
+    // 设置页面标题
+    document.title = 'Salary Calculator – Convert Annual, Monthly, Weekly & Hourly Pay'
+    
+    // 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags();
+  },
   methods: {
-    setGoogleMetaTags() {
+    noop() {},
+    clearInputs() {
+      this.inputs = {
+        amount: 50,
+        period: 'hour',
+        hoursPerWeek: 40,
+        daysPerWeek: 5,
+        holidays: 10,
+        vacation: 15,
+      };
+    },
+    formatMoney(value) {
+      if (isNaN(value) || value === null || value === undefined) return '$0.00';
+      // round to two decimals, but show as needed (for large numbers maybe no decimals, but keep consistent)
+      const rounded = Math.round(value * 100) / 100;
+      return '$' + rounded.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    },
+   setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
@@ -261,44 +284,21 @@ export default {
       canonical.href = window.location.href
       
       console.log('Google meta tags set')
-    },
-    noop() {},
-    clearInputs() {
-      this.inputs = {
-        amount: 50,
-        period: 'hour',
-        hoursPerWeek: 40,
-        daysPerWeek: 5,
-        holidays: 10,
-        vacation: 15,
-      };
-    },
-    formatMoney(value) {
-      if (isNaN(value) || value === null || value === undefined) return '$0.00';
-      // round to two decimals, but show as needed (for large numbers maybe no decimals, but keep consistent)
-      const rounded = Math.round(value * 100) / 100;
-      return '$' + rounded.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    },
-   mounted() {
-    document.title = 'Salary Calculator – Convert Annual, Monthly, Weekly & Hourly Pay'
-    // 2. 设置关键meta标签（Google最关注的）
-    this.setGoogleMetaTags()
-  }
-  }
+    }
 };
 </script>
 
 <style scoped>
 .salary-calculator {
-  max-width: 1400px;
+  max-width: 1000px;
   margin: 0 auto;
   background: #f8fafc;
   padding: 2rem;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
-.calculator-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
+.calculator-vertical {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
   background: white;
   border-radius: 2rem;
