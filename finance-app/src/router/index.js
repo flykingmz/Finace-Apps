@@ -124,6 +124,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'amortization',
+        name: 'AmortizationCalculator',
+        component: () => import('../components/AmortizationCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'about-us',
         name: 'AboutUs',
         component: () => import('../footlink/AboutUs.vue'),
