@@ -4,7 +4,7 @@
     <div class="calculator-vertical">
       <!-- 上方：计算器表单 (附件1样式) -->
       <div class="input-panel">
-       <h1>Salary Calculator</h1>
+        <h1>Salary Calculator</h1>
         <p>The Salary Calculator helps you convert income amounts between different pay frequencies, including hourly, weekly, biweekly, semi-monthly, monthly, and annual salaries. It provides both unadjusted results and adjusted figures that consider vacation days and paid holidays throughout the year. This makes it easier to understand your true earnings, compare job offers, and estimate income across different payment schedules.</p>
         <form @submit.prevent="noop">
           <!-- Salary amount with per selector -->
@@ -57,22 +57,24 @@
       <!-- 下方：计算结果表格 (附件2样式) -->
       <div class="result-panel">
         <h3>Result</h3>
-        <table class="salary-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Unadjusted</th>
-              <th>Holidays & vacation days adjusted</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="row in resultRows" :key="row.label">
-              <td>{{ row.label }}</td>
-              <td>{{ formatMoney(row.unadjusted) }}</td>
-              <td>{{ formatMoney(row.adjusted) }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="salary-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Unadjusted</th>
+                <th>Holidays & vacation days adjusted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in resultRows" :key="row.label">
+                <td data-label="Period">{{ row.label }}</td>
+                <td data-label="Unadjusted">{{ formatMoney(row.unadjusted) }}</td>
+                <td data-label="Adjusted">{{ formatMoney(row.adjusted) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="save-row">save</div>
       </div>
     </div>
@@ -271,241 +273,538 @@ export default {
         meta.content = content;
       });
       
-      // 设置viewport（移动端优化）
+      // 设置viewport（移动端优化）- 确保移动端显示良好
       let viewport = document.querySelector('meta[name="viewport"]');
       if (!viewport) {
         viewport = document.createElement('meta');
         viewport.name = 'viewport';
         document.head.appendChild(viewport);
       }
-      viewport.content = 'width=device-width, initial-scale=1.0';
+      viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes';
     }
   }
 };
 </script>
 
 <style scoped>
+/* 移动端优先的样式优化 */
 .salary-calculator {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   background: #f8fafc;
-  padding: 2rem;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 1rem;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
+/* 平板和桌面端增加内边距 */
+@media (min-width: 768px) {
+  .salary-calculator {
+    padding: 2rem;
+  }
+}
+
 .calculator-vertical {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   background: white;
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
   box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
 }
+
+@media (min-width: 768px) {
+  .calculator-vertical {
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+}
+
 .input-panel h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #0a1e2f;
 }
-.form-row {
-  margin-bottom: 1.5rem;
+
+@media (min-width: 768px) {
+  .input-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 }
+
+.form-row {
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .form-row label {
   display: block;
   font-weight: 500;
   color: #334155;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
 }
+
+@media (min-width: 768px) {
+  .form-row label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
 .amount-row .amount-input-group {
   display: flex;
   align-items: center;
   border: 1px solid #cbd5e1;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   overflow: hidden;
   background: white;
+  flex-wrap: wrap;
 }
+
+@media (min-width: 480px) {
+  .amount-row .amount-input-group {
+    flex-wrap: nowrap;
+    border-radius: 1rem;
+  }
+}
+
 .currency-symbol {
-  padding: 0 0.75rem;
+  padding: 0 0.6rem;
   background: #f1f5f9;
   font-weight: 500;
   color: #475569;
   border-right: 1px solid #cbd5e1;
-  line-height: 2.8rem;
+  line-height: 2.6rem;
+  font-size: 1rem;
 }
+
+@media (min-width: 768px) {
+  .currency-symbol {
+    padding: 0 0.75rem;
+    line-height: 2.8rem;
+  }
+}
+
 .amount-input-group input {
   flex: 2;
   border: none;
-  padding: 0.75rem 0.5rem;
+  padding: 0.7rem 0.5rem;
   font-size: 1rem;
   outline: none;
-  min-width: 100px;
+  min-width: 80px;
+  width: 100%;
 }
+
+@media (min-width: 480px) {
+  .amount-input-group input {
+    width: auto;
+  }
+}
+
 .period-select {
   flex: 1;
   border: none;
-  border-left: 1px solid #cbd5e1;
+  border-top: 1px solid #cbd5e1;
   background: #f8fafc;
-  padding: 0.75rem 0.5rem;
+  padding: 0.7rem 0.5rem;
   font-weight: 500;
   color: #1e293b;
   cursor: pointer;
   outline: none;
+  width: 100%;
 }
+
+@media (min-width: 480px) {
+  .period-select {
+    border-top: none;
+    border-left: 1px solid #cbd5e1;
+    width: auto;
+  }
+}
+
 .form-row input[type="number"] {
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid #cbd5e1;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   font-size: 1rem;
   background: white;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
+
+@media (min-width: 768px) {
+  .form-row input[type="number"] {
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+  }
+}
+
+.form-row input[type="number"]::-webkit-inner-spin-button,
+.form-row input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
+  height: 20px;
+}
+
 .action-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  flex-direction: column;
 }
+
+@media (min-width: 480px) {
+  .action-buttons {
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
+
 .btn-calculate {
   background: #1e3a5f;
   color: white;
   border: none;
-  padding: 0.9rem 2rem;
-  border-radius: 2.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 2rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: not-allowed;
   opacity: 0.9;
   flex: 1;
+  width: 100%;
 }
+
+@media (min-width: 480px) {
+  .btn-calculate {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    width: auto;
+  }
+}
+
 .btn-clear {
   background: white;
   color: #1e293b;
   border: 1px solid #94a3b8;
-  padding: 0.9rem 2rem;
-  border-radius: 2.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 2rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   flex: 1;
+  width: 100%;
+  transition: background-color 0.2s;
 }
+
+@media (min-width: 480px) {
+  .btn-clear {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    width: auto;
+  }
+}
+
 .btn-clear:hover {
   background: #f1f5f9;
 }
-.note { min-height: 1rem; }
+
+.btn-clear:active {
+  background: #e2e8f0;
+}
+
+.note { 
+  min-height: 0.5rem; 
+}
 
 /* result panel */
 .result-panel h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: #0a1e2f;
 }
+
+@media (min-width: 768px) {
+  .result-panel h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 表格响应式处理 */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
 .salary-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  min-width: 600px; /* 确保表格在小屏上可滚动 */
 }
+
+@media (max-width: 640px) {
+  .salary-table {
+    min-width: 500px;
+  }
+}
+
 .salary-table th {
   text-align: left;
-  padding: 1rem 1rem;
+  padding: 0.8rem 0.8rem;
   background: #f1f5f9;
   font-weight: 600;
   color: #1e293b;
   border-bottom: 2px solid #cbd5e1;
+  font-size: 0.9rem;
 }
+
+@media (min-width: 768px) {
+  .salary-table th {
+    padding: 1rem 1rem;
+    font-size: 1rem;
+  }
+}
+
 .salary-table td {
-  padding: 0.9rem 1rem;
+  padding: 0.7rem 0.8rem;
   border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
 }
+
+@media (min-width: 768px) {
+  .salary-table td {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}
+
 .salary-table tr:last-child td {
   border-bottom: none;
 }
+
 .salary-table td:first-child {
   font-weight: 500;
   color: #0f172a;
+  white-space: nowrap;
 }
+
 .salary-table td:nth-child(2),
 .salary-table td:nth-child(3) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
   color: #0b3b5c;
+  white-space: nowrap;
 }
+
+/* 移动端卡片式表格（备选，但保留滚动方案更简单） */
+@media (max-width: 480px) {
+  .salary-table th {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .salary-table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
 .save-row {
   text-align: right;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   font-weight: 500;
   color: #3b82f6;
   cursor: default;
   letter-spacing: 0.5px;
+  font-size: 0.9rem;
 }
+
+@media (min-width: 768px) {
+  .save-row {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
 .related-section {
-  margin-top: 2.5rem;
-  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.2rem;
   background: white;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   box-shadow: 0 10px 20px -10px rgba(0,0,0,0.05);
 }
+
+@media (min-width: 768px) {
+  .related-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+  }
+}
+
 .related-section h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.6rem 0;
   color: #0b2a41;
 }
+
+@media (min-width: 768px) {
+  .related-section h4 {
+    font-size: 1.4rem;
+    margin: 0 0 0.75rem 0;
+  }
+}
+
 .related-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .related-links a {
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 0.3rem 0;
 }
+
+@media (min-width: 768px) {
+  .related-links a {
+    font-size: 1.1rem;
+  }
+}
+
 .related-links a:hover {
   text-decoration: underline;
 }
+
 .related-links span {
   color: #94a3b8;
 }
+
 .faq-section {
-  margin-top: 2.5rem;
-  padding: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
   background: white;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   box-shadow: 0 10px 25px -10px rgba(0,0,0,0.05);
 }
+
+@media (min-width: 768px) {
+  .faq-section {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+}
+
 .faq-section h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #0a1f33;
 }
-.faq-item {
-  margin-bottom: 1.75rem;
-  border-bottom: 1px solid #e9eef3;
-  padding-bottom: 1.5rem;
+
+@media (min-width: 768px) {
+  .faq-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
 }
+
+.faq-item {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #e9eef3;
+  padding-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .faq-item {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
 .faq-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
+  margin-bottom: 0;
 }
+
 .faq-q {
   font-weight: 700;
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem 0;
   color: #1e3a5f;
+  line-height: 1.4;
 }
+
+@media (min-width: 768px) {
+  .faq-q {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+  }
+}
+
 .faq-a {
   margin: 0;
   color: #334155;
-  line-height: 1.6;
-  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .faq-a {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+}
+
+/* 触摸优化 */
+@media (max-width: 768px) {
+  button, 
+  .period-select,
+  .related-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-calculate,
+  .btn-clear {
+    min-height: 52px;
+  }
+  
+  .period-select {
+    min-height: 44px;
+  }
+  
+  input[type="number"] {
+    font-size: 16px !important; /* 防止iOS缩放 */
+  }
 }
 </style>
