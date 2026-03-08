@@ -72,7 +72,7 @@
         <div class="card-content">
           <h3>Salary Calculator</h3>
           <p>Convert between hourly, daily, weekly, monthly, and annual salary figures with ease.</p>
-          <a href="/calculators/salary" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/salary-calculator" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
