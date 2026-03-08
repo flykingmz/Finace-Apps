@@ -4,7 +4,7 @@
     <div class="calculator-vertical">
       <!-- 上方：计算器表单 (附件1样式) -->
       <div class="input-panel">
-        <h1>Salary Calculator</h1>
+       <h1>Salary Calculator</h1>
         <p>The Salary Calculator helps you convert income amounts between different pay frequencies, including hourly, weekly, biweekly, semi-monthly, monthly, and annual salaries. It provides both unadjusted results and adjusted figures that consider vacation days and paid holidays throughout the year. This makes it easier to understand your true earnings, compare job offers, and estimate income across different payment schedules.</p>
         <form @submit.prevent="noop">
           <!-- Salary amount with per selector -->
@@ -223,10 +223,12 @@ export default {
   },
   mounted() {
     // 设置页面标题
-    document.title = 'Salary Calculator – Convert Annual, Monthly, Weekly & Hourly Pay'
-    
-    // 设置关键meta标签（Google最关注的）
-    this.setGoogleMetaTags();
+    if (typeof document !== 'undefined') {
+      document.title = 'Salary Calculator – Convert Annual, Monthly, Weekly & Hourly Pay';
+      
+      // 设置关键meta标签（Google最关注的）
+      this.setGoogleMetaTags();
+    }
   },
   methods: {
     noop() {},
@@ -242,49 +244,43 @@ export default {
     },
     formatMoney(value) {
       if (isNaN(value) || value === null || value === undefined) return '$0.00';
-      // round to two decimals, but show as needed (for large numbers maybe no decimals, but keep consistent)
+      // round to two decimals, but show as needed
       const rounded = Math.round(value * 100) / 100;
       return '$' + rounded.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     },
-   setGoogleMetaTags() {
-      // 确保description存在且内容正确
-      let desc = document.querySelector('meta[name="description"]')
-      if (!desc) {
-        desc = document.createElement('meta')
-        desc.name = 'description'
-        document.head.appendChild(desc)
-      }
-      desc.content = 'Convert salary amounts between hourly, daily, weekly, biweekly, semi-monthly, monthly, and annual pay with our free Salary Calculator. See both unadjusted income and adjusted figures that account for vacation days and holidays.'
+    setGoogleMetaTags() {
+      // 确保在浏览器环境中
+      if (typeof document === 'undefined') return;
       
-      // 确保robots标签存在（告诉Google索引此页）
-      let robots = document.querySelector('meta[name="robots"]')
-      if (!robots) {
-        robots = document.createElement('meta')
-        robots.name = 'robots'
-        document.head.appendChild(robots)
-      }
-      robots.content = 'index, follow'
+      // 安全地获取或创建meta标签
+      const metaTags = {
+        description: 'Free salary calculator to convert between hourly, daily, weekly, monthly, and annual pay. Adjust for holidays and vacation days. Compare unadjusted and adjusted salaries instantly.',
+        keywords: 'salary calculator, paycheck calculator, hourly to annual, wage converter, take home pay, income calculator, pay frequency',
+        robots: 'index, follow',
+        author: 'Salary Calculator Tool'
+      };
       
-      // 添加Google专用的nositelinkssearchbox（可选）
-      let google = document.querySelector('meta[name="google"]')
-      if (!google) {
-        google = document.createElement('meta')
-        google.name = 'google'
-        document.head.appendChild(google)
-      }
-      google.content = 'nositelinkssearchbox'
+      // 设置或创建每个meta标签
+      Object.entries(metaTags).forEach(([name, content]) => {
+        let meta = document.querySelector(`meta[name="${name}"]`);
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.name = name;
+          document.head.appendChild(meta);
+        }
+        meta.content = content;
+      });
       
-      // 添加canonical链接（防止重复内容）
-      let canonical = document.querySelector('link[rel="canonical"]')
-      if (!canonical) {
-        canonical = document.createElement('link')
-        canonical.rel = 'canonical'
-        document.head.appendChild(canonical)
+      // 设置viewport（移动端优化）
+      let viewport = document.querySelector('meta[name="viewport"]');
+      if (!viewport) {
+        viewport = document.createElement('meta');
+        viewport.name = 'viewport';
+        document.head.appendChild(viewport);
       }
-      canonical.href = window.location.href
-      
-      console.log('Google meta tags set')
+      viewport.content = 'width=device-width, initial-scale=1.0';
     }
+  }
 };
 </script>
 
