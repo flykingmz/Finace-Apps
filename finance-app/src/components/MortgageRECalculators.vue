@@ -31,7 +31,7 @@
         <div class="card-content">
           <h3>Amortization Calculator</h3>
           <p>View detailed loan amortization schedules showing principal vs. interest payments over the life of your loan.</p>
-          <a href="/calculators/amortization" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/amortization" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
