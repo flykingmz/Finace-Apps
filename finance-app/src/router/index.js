@@ -76,6 +76,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'salary-calculator',
+        name: 'SalaryCalculator',
+        component: () => import('../components/SalaryCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'retirement',
         name: 'RetirementCalculator',
         component: () => import('../components/RetirementCalculator.vue'),
