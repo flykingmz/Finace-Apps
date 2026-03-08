@@ -82,9 +82,9 @@
     <div class="related-section">
       <h4>Related</h4>
       <div class="related-links">
-        <a href="#" target="_blank">Take Home Pay Calculator</a>
+        <a href="/take-home-paycheck-calculator" target="_blank">Take Home Pay Calculator</a>
         <span>|</span>
-        <a href="#" target="_blank">paycheck Calculator</a>
+        <a href="/paycheck" target="_blank">paycheck Calculator</a>
       </div>
     </div>
 
