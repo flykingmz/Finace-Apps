@@ -33,7 +33,7 @@
             <a href="/take-home-paycheck-calculator" class="tool-link">TakeHome Paycheck Calculator</a>
             <a href="/marriage-tax-calculator" class="tool-link">Marriage Tax Calculator</a>
             <a href="/salary-calculator" class="tool-link">Salary Calculator</a>
-            
+            <a href="/crypto-tax-calculator" class="tool-link">Crypto Tax Calculator</a>
           </div>
         </div>
 

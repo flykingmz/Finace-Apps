@@ -26,6 +26,16 @@
         </div>
       </div>
 
+    <!-- Crypto Tax Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-content">
+          <h3>Crypto Tax Calculator</h3>
+          <p>Estimate your cryptocurrency tax instantly with our Crypto Tax Calculator. Calculate capital gains for Bitcoin and other digital assets across the USA, UK, Canada, and Australia. Supports both single-asset and multi-asset crypto portfolios to help you understand potential tax liabilities.</p>
+          <a href="/finance-app/src/components/Home.vue" class="card-link" >Open Calculator →</a>
+        </div>
+      </div>
+
       <!-- Income Tax Calculator -->
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-file-invoice"></i></div>

@@ -25,7 +25,8 @@
           <li><a href="/income-tax" >🌍 Income Tax Calculator</a></li>
           <li><a href="/paycheck" >💵 Paycheck Calculator</a></li>
           <li><a href="/marriage-tax-calculator" >📋 Marriage Tax  Calculator</a></li>
-          <li><a href="/salary-calculator" >📋 Salary Calculator</a></li>
+          <li><a href="/salary-calculator" >📊 Salary Calculator</a></li>
+          <li><a href="/crypto-tax-calculator" >💰 Crypto Tax Calculator</a></li>
         </ul>
       </div>
       <!-- Retirement -->
