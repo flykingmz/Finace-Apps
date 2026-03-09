@@ -42,19 +42,19 @@
       <!-- Single Trade Form - 附件2样式 -->
       <div v-if="tradeType === 'single'" class="trade-form">
         <div class="form-row">
-          <label>Purchase Price ($)</label>
+          <label>Purchase Price ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="singleTrade.purchasePrice"
             @input="calculate"
             min="0"
             step="100"
-            placeholder="10000"
+            :placeholder="getCurrencySymbol + '10000'"
           />
         </div>
 
         <div class="form-row">
-          <label>Fees ($)</label>
+          <label>Fees ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="singleTrade.fees"
@@ -66,14 +66,14 @@
         </div>
 
         <div class="form-row">
-          <label>Total income ($)</label>
+          <label>Total income ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="singleTrade.totalIncome"
             @input="calculate"
             min="0"
             step="1000"
-            placeholder="120000"
+            :placeholder="getCurrencySymbol + '120000'"
           />
         </div>
 
@@ -100,34 +100,34 @@
         </div>
 
         <div class="form-row">
-          <label>Selling Price ($)</label>
+          <label>Selling Price ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="singleTrade.sellingPrice"
             @input="calculate"
             min="0"
             step="100"
-            placeholder="20000"
+            :placeholder="getCurrencySymbol + '20000'"
           />
         </div>
 
         <!-- Pre-tax gain display -->
         <div class="gain-display" v-if="singleTrade.purchasePrice && singleTrade.sellingPrice">
-          <p><strong>Your pre-tax gain is:</strong> ${{ formatMoney(preTaxGain) }}</p>
+          <p><strong>Your pre-tax gain is:</strong> {{ getCurrencySymbol }}{{ formatMoney(preTaxGain) }}</p>
         </div>
       </div>
 
       <!-- Multiple Trades Form - 附件3样式 -->
       <div v-if="tradeType === 'multiple'" class="trade-form">
         <div class="form-row">
-          <label>Gain from crypto ($)</label>
+          <label>Gain from crypto ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="multipleTrade.totalGain"
             @input="calculate"
             min="0"
             step="100"
-            placeholder="10000"
+            :placeholder="getCurrencySymbol + '10000'"
           />
         </div>
         
@@ -137,14 +137,14 @@
         </div>
 
         <div class="form-row">
-          <label>Total income ($)</label>
+          <label>Total income ({{ getCurrencySymbol }})</label>
           <input
             type="number"
             v-model.number="multipleTrade.totalIncome"
             @input="calculate"
             min="0"
             step="1000"
-            placeholder="120000"
+            :placeholder="getCurrencySymbol + '120000'"
           />
         </div>
 
@@ -163,33 +163,38 @@
 
     <!-- Results Section - 附件5样式 -->
     <div class="results-section" v-if="results.calculated">
-      <h2>Estimated {{ getTaxYearText }} Tax Summary</h2>
+      <h2>{{ getTaxYearText }}</h2>
 
       <div class="summary-list">
         <div class="summary-item">
           <span class="item-label">Profit from crypto</span>
-          <span class="item-value">${{ formatMoney(results.profit) }}</span>
+          <span class="item-value">{{ getCurrencySymbol }}{{ formatMoney(results.profit) }}</span>
         </div>
 
         <div v-if="results.discount > 0" class="summary-item discount">
-          <span class="item-label">50% CGT Discount</span>
-          <span class="item-value">-${{ formatMoney(results.discount) }}</span>
+          <span class="item-label">{{ getDiscountLabel }}</span>
+          <span class="item-value">-{{ getCurrencySymbol }}{{ formatMoney(results.discount) }}</span>
+        </div>
+
+        <div v-if="results.allowance > 0" class="summary-item allowance">
+          <span class="item-label">{{ getAllowanceLabel }}</span>
+          <span class="item-value">-{{ getCurrencySymbol }}{{ formatMoney(results.allowance) }}</span>
         </div>
 
         <div class="summary-item">
           <span class="item-label">Taxable profit</span>
-          <span class="item-value">${{ formatMoney(results.taxableProfit) }}</span>
+          <span class="item-value">{{ getCurrencySymbol }}{{ formatMoney(results.taxableProfit) }}</span>
         </div>
 
         <div class="summary-item">
           <span class="item-label">Capital gains tax</span>
-          <span class="item-value">${{ formatMoney(results.tax) }} ({{ results.taxRate }}%)</span>
+          <span class="item-value">{{ getCurrencySymbol }}{{ formatMoney(results.tax) }} ({{ results.taxRate }}%)</span>
         </div>
       </div>
 
       <div class="summary-totals">
         <p class="profit-after-tax">
-          <strong>Profit after tax = ${{ formatMoney(results.profitAfterTax) }}</strong>
+          <strong>Profit after tax = {{ getCurrencySymbol }}{{ formatMoney(results.profitAfterTax) }}</strong>
         </p>
         <p class="profit-percent">
           <strong>Percent of profit to taxes = {{ results.taxPercent }}%</strong>
@@ -197,7 +202,7 @@
       </div>
 
       <div class="disclaimer">
-        <p>Disclaimer: This information is only intended as a general estimate for Australia capital gains taxes and assumes that all amounts are provided in AUD. It does not include the potential effects of losses carried over from prior years, deductions, tax credits, or capital losses that may offset your capital gains. See a qualified tax advisor for details.</p>
+        <p>{{ getDisclaimerText }}</p>
       </div>
     </div>
 
@@ -209,7 +214,7 @@
       <a href="/salary-calculator">Salary Calculator</a>
     </div>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section (保持完整，与之前一致) -->
     <div class="faq-section">
       <h2>Crypto Tax Information – FAQ</h2>
 
@@ -526,6 +531,7 @@ export default {
         calculated: false,
         profit: 0,
         discount: 0,
+        allowance: 0,
         taxableProfit: 0,
         tax: 0,
         taxRate: 0,
@@ -535,21 +541,59 @@ export default {
     };
   },
   computed: {
+    getTaxPeriod() {
+      if (this.selectedCountry === 'au') return '1/7/2025 - 30/6/2026';
+      if (this.selectedCountry === 'uk') return '6/4/2025 - 5/4/2026';
+      if (this.selectedCountry === 'usa') return '1/1/2025 - 31/12/2025';
+      if (this.selectedCountry === 'canada') return '1/1/2025 - 31/12/2025';
+      return '';
+    },
+    getCurrencySymbol() {
+      if (this.selectedCountry === 'au') return 'A$';
+      if (this.selectedCountry === 'uk') return '£';
+      if (this.selectedCountry === 'usa') return '$';
+      if (this.selectedCountry === 'canada') return 'C$';
+      return '$';
+    },
     preTaxGain() {
       if (!this.singleTrade.purchasePrice || !this.singleTrade.sellingPrice) return 0;
       const gain = this.singleTrade.sellingPrice - this.singleTrade.purchasePrice - (this.singleTrade.fees || 0);
       return Math.max(0, gain);
     },
     getTaxYearText() {
-      if (this.selectedCountry === 'au') return '2025-26 Tax Summary';
-      if (this.selectedCountry === 'uk') return '2024-25 Tax Summary';
-      if (this.selectedCountry === 'usa') return '2025 Tax Summary';
-      if (this.selectedCountry === 'canada') return '2025 Tax Summary';
-      return 'Tax Summary';
+      if (this.selectedCountry === 'au') return 'Estimated 2025-26 Tax Summary';
+      if (this.selectedCountry === 'uk') return 'Estimated 2025-26 Tax Summary';
+      if (this.selectedCountry === 'usa') return 'Estimated 2025 Tax Summary';
+      if (this.selectedCountry === 'canada') return 'Estimated 2025 Tax Summary';
+      return 'Estimated Tax Summary';
+    },
+    getDiscountLabel() {
+      if (this.selectedCountry === 'au') return '50% CGT Discount';
+      if (this.selectedCountry === 'canada') return '50% Inclusion Rate Adjustment';
+      return 'Long-term discount';
+    },
+    getAllowanceLabel() {
+      if (this.selectedCountry === 'uk') return 'Tax-free allowance';
+      return '';
+    },
+    getDisclaimerText() {
+      if (this.selectedCountry === 'au') {
+        return 'Disclaimer: This information is only intended as a general estimate for Australia capital gains taxes and assumes that all amounts are provided in AUD. It does not include the potential effects of losses carried over from prior years, deductions, tax credits, or capital losses that may offset your capital gains. See a qualified tax advisor for details.';
+      }
+      if (this.selectedCountry === 'uk') {
+        return 'Disclaimer: This information is only intended as a general estimate for UK capital gains taxes and assumes that all amounts are provided in GBP. It does not include the potential effects of losses carried over from prior years, deductions, tax credits, or the personal allowance. See a qualified tax advisor for details.';
+      }
+      if (this.selectedCountry === 'usa') {
+        return 'Disclaimer: This information is only intended as a general estimate for US federal capital gains taxes and assumes that all amounts are provided in USD. It does not include state taxes, the potential effects of losses carried over from prior years, deductions, tax credits, or capital losses that may offset your capital gains. See a qualified tax advisor for details.';
+      }
+      if (this.selectedCountry === 'canada') {
+        return 'Disclaimer: This information is only intended as a general estimate for Canada capital gains taxes and assumes that all amounts are provided in CAD. It does not include provincial taxes, the potential effects of losses carried over from prior years, deductions, tax credits, or capital losses that may offset your capital gains. See a qualified tax advisor for details.';
+      }
+      return 'Disclaimer: This information is only intended as a general estimate. See a qualified tax advisor for details.';
     }
   },
   methods: {
-    setGoogleMetaTags() {
+setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
@@ -608,39 +652,43 @@ export default {
         return;
       }
 
-      // 根据国家计算税费
+      // 根据不同国家的税制计算
+      if (this.selectedCountry === 'au') {
+        this.calculateAustralia(profit, totalIncome, heldLongTerm);
+      } else if (this.selectedCountry === 'uk') {
+        this.calculateUK(profit, totalIncome, heldLongTerm);
+      } else if (this.selectedCountry === 'usa') {
+        this.calculateUSA(profit, totalIncome, heldLongTerm);
+      } else if (this.selectedCountry === 'canada') {
+        this.calculateCanada(profit, totalIncome, heldLongTerm);
+      }
+    },
+
+    calculateAustralia(profit, totalIncome, heldLongTerm) {
+      // Australia: 50% discount for long-term holdings
       let discount = 0;
+      let allowance = 0;
       let taxableProfit = profit;
+
+      if (heldLongTerm) {
+        discount = profit * 0.5;
+        taxableProfit = profit - discount;
+      }
+
+      // 根据收入确定税率 (包含利润后的总收入)
+      const totalAssessable = totalIncome + taxableProfit;
       let taxRate = 0;
 
-      if (this.selectedCountry === 'au') {
-        // Australia - 50% discount for long-term
-        if (heldLongTerm) {
-          discount = profit * 0.5;
-          taxableProfit = profit - discount;
-        }
-        
-        // 根据收入确定税率
-        taxRate = this.getAustralianTaxRate(totalIncome + taxableProfit);
-      } 
-      else if (this.selectedCountry === 'uk') {
-        // UK - 3000 allowance, rates 18%/24%
-        taxableProfit = Math.max(0, profit - 3000);
-        taxRate = totalIncome <= 50270 ? 18 : 24;
-      }
-      else if (this.selectedCountry === 'usa') {
-        // USA - long-term rates 0/15/20%, short-term at income rates
-        if (heldLongTerm) {
-          taxRate = this.getUSLongTermRate(totalIncome + profit);
-        } else {
-          taxRate = this.getUSIncomeTaxRate(totalIncome + profit);
-        }
-        taxableProfit = profit;
-      }
-      else if (this.selectedCountry === 'canada') {
-        // Canada - 50% inclusion rate
-        taxableProfit = profit * 0.5;
-        taxRate = this.getCanadianTaxRate(totalIncome + profit);
+      if (totalAssessable <= 18200) {
+        taxRate = 0;
+      } else if (totalAssessable <= 45000) {
+        taxRate = 16;
+      } else if (totalAssessable <= 135000) {
+        taxRate = 30;
+      } else if (totalAssessable <= 190000) {
+        taxRate = 37;
+      } else {
+        taxRate = 45;
       }
 
       const tax = taxableProfit * (taxRate / 100);
@@ -651,6 +699,7 @@ export default {
         calculated: true,
         profit: profit,
         discount: discount,
+        allowance: allowance,
         taxableProfit: taxableProfit,
         tax: tax,
         taxRate: taxRate.toFixed(1),
@@ -659,36 +708,133 @@ export default {
       };
     },
 
-    getAustralianTaxRate(income) {
-      if (income <= 18200) return 0;
-      if (income <= 45000) return 16;
-      if (income <= 135000) return 30;
-      if (income <= 190000) return 37;
-      return 45;
+    calculateUK(profit, totalIncome, heldLongTerm) {
+      // UK: £3,000 allowance, rates 18%/24%
+      const allowance = 3000;
+      const taxableProfit = Math.max(0, profit - allowance);
+      
+      // 根据总收入确定税率
+      const totalAssessable = totalIncome + profit;
+      let taxRate = 0;
+
+      if (totalAssessable <= 50270) {
+        taxRate = 18; // Basic rate
+      } else {
+        taxRate = 24; // Higher/Additional rate
+      }
+
+      const tax = taxableProfit * (taxRate / 100);
+      const profitAfterTax = profit - tax;
+      const taxPercent = profit > 0 ? (tax / profit * 100) : 0;
+
+      this.results = {
+        calculated: true,
+        profit: profit,
+        discount: 0,
+        allowance: allowance,
+        taxableProfit: taxableProfit,
+        tax: tax,
+        taxRate: taxRate.toFixed(1),
+        profitAfterTax: profitAfterTax,
+        taxPercent: taxPercent.toFixed(2)
+      };
     },
 
-    getUSIncomeTaxRate(income) {
-      if (income <= 11925) return 10;
-      if (income <= 48475) return 12;
-      if (income <= 103350) return 22;
-      if (income <= 197300) return 24;
-      if (income <= 250525) return 32;
-      if (income <= 626350) return 35;
-      return 37;
+    calculateUSA(profit, totalIncome, heldLongTerm) {
+      // USA: 短期按收入税率，长期按优惠税率
+      let discount = 0;
+      let allowance = 0;
+      let taxableProfit = profit;
+      let taxRate = 0;
+
+      const totalAssessable = totalIncome + profit;
+
+      if (heldLongTerm) {
+        // Long-term capital gains rates
+        if (totalAssessable <= 48350) {
+          taxRate = 0;
+        } else if (totalAssessable <= 533400) {
+          taxRate = 15;
+        } else {
+          taxRate = 20;
+        }
+      } else {
+        // Short-term (income tax rates)
+        if (totalAssessable <= 11925) {
+          taxRate = 10;
+        } else if (totalAssessable <= 48475) {
+          taxRate = 12;
+        } else if (totalAssessable <= 103350) {
+          taxRate = 22;
+        } else if (totalAssessable <= 197300) {
+          taxRate = 24;
+        } else if (totalAssessable <= 250525) {
+          taxRate = 32;
+        } else if (totalAssessable <= 626350) {
+          taxRate = 35;
+        } else {
+          taxRate = 37;
+        }
+      }
+
+      const tax = taxableProfit * (taxRate / 100);
+      const profitAfterTax = profit - tax;
+      const taxPercent = profit > 0 ? (tax / profit * 100) : 0;
+
+      this.results = {
+        calculated: true,
+        profit: profit,
+        discount: discount,
+        allowance: allowance,
+        taxableProfit: taxableProfit,
+        tax: tax,
+        taxRate: taxRate.toFixed(1),
+        profitAfterTax: profitAfterTax,
+        taxPercent: taxPercent.toFixed(2)
+      };
     },
 
-    getUSLongTermRate(income) {
-      if (income <= 48350) return 0;
-      if (income <= 533400) return 15;
-      return 20;
-    },
+    calculateCanada(profit, totalIncome, heldLongTerm) {
+      // Canada: 50% inclusion rate, 2/3 for gains over $250k
+      let discount = 0;
+      let allowance = 0;
+      let taxableProfit = profit;
 
-    getCanadianTaxRate(income) {
-      if (income <= 57375) return 14.5;
-      if (income <= 114750) return 20.5;
-      if (income <= 177882) return 26;
-      if (income <= 253414) return 29;
-      return 33;
+      // 50% inclusion rate for capital gains
+      taxableProfit = profit * 0.5;
+      discount = profit - taxableProfit;
+
+      const totalAssessable = totalIncome + profit;
+
+      // Federal tax rates
+      let taxRate = 0;
+      if (totalAssessable <= 57375) {
+        taxRate = 14.5;
+      } else if (totalAssessable <= 114750) {
+        taxRate = 20.5;
+      } else if (totalAssessable <= 177882) {
+        taxRate = 26;
+      } else if (totalAssessable <= 253414) {
+        taxRate = 29;
+      } else {
+        taxRate = 33;
+      }
+
+      const tax = taxableProfit * (taxRate / 100);
+      const profitAfterTax = profit - tax;
+      const taxPercent = profit > 0 ? (tax / profit * 100) : 0;
+
+      this.results = {
+        calculated: true,
+        profit: profit,
+        discount: discount,
+        allowance: allowance,
+        taxableProfit: taxableProfit,
+        tax: tax,
+        taxRate: taxRate.toFixed(1),
+        profitAfterTax: profitAfterTax,
+        taxPercent: taxPercent.toFixed(2)
+      };
     },
 
     formatMoney(value) {
@@ -729,6 +875,7 @@ export default {
     'singleTrade.purchasePrice': 'calculate',
     'singleTrade.fees': 'calculate',
     'singleTrade.totalIncome': 'calculate',
+    'singleTrade.asset': 'calculate',
     'singleTrade.heldLongTerm': 'calculate',
     'singleTrade.sellingPrice': 'calculate',
     'multipleTrade.totalGain': 'calculate',
@@ -739,7 +886,7 @@ export default {
 </script>
 
 <style scoped>
-/* 移动端优先的样式设计 */
+/* 移动端优先的样式设计 - 保持与之前完全一致 */
 .crypto-tax-calculator {
   max-width: 1100px;
   margin: 0 auto;
@@ -1023,6 +1170,10 @@ export default {
 }
 
 .summary-item.discount .item-value {
+  color: #16a34a;
+}
+
+.summary-item.allowance .item-value {
   color: #16a34a;
 }
 
