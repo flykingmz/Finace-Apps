@@ -37,11 +37,13 @@
           <p>Understanding how crypto taxes work can be challenging, especially when transactions involve multiple exchanges, wallets, or decentralized finance (DeFi) platforms. This is where a crypto tax calculator becomes essential.</p>
           
           <p>In this comprehensive guide, we explain how crypto capital gains are calculated, how a crypto tax calculator works, and how investors can estimate their tax liability accurately in 2026.</p>
-
-          <!-- 中间放置calculator链接按钮 -->
+          <a href="/crypto-tax-calculator" class="calculator-button">Explore Crypto Tax Calculator →</a>
+          <!-- 中间放置calculator链接按钮 
           <div class="inline-calculator-button">
-            <a href="/crypto-tax-calculator" class="calculator-button">Explore Crypto Tax Calculator →</a>
+         
+            
           </div>
+           -->
 
           <h2>Executive Summary</h2>
           
@@ -585,24 +587,23 @@ export default {
 }
 
 .calculator-button {
-  display: inline-block;
-  background: linear-gradient(145deg, #1f5f99, #134879);
-  color: white;
-  font-weight: 600;
-  font-size: 1.2rem;
-  padding: 0.9rem 2.5rem;
-  border-radius: 60px;
-  text-decoration: none;
-  box-shadow: 0 12px 24px -8px #0f3d60a0;
-  transition: all 0.2s ease;
-  border: 1px solid #3883c3;
-  letter-spacing: 0.02em;
+  color: #1f4a7a;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  letter-spacing: normal;
 }
 
 .calculator-button:hover {
-  background: #0b3f68;
-  box-shadow: 0 16px 28px -6px #06273f;
-  transform: scale(1.02);
+  color: #0b2b44;
+  text-decoration: underline;
+  background: none;
+  transform: none;
+  box-shadow: none;
 }
 
 @media (max-width: 700px) {
