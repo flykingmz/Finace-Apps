@@ -10,6 +10,16 @@
     <div class="blog-list-section">
       <div class="blog-items">
 
+      <!-- Blog 15: Crypto Tax Calculator: Estimate Bitcoin & Crypto Capital Gains (2026 Guide) -->
+        <div class="blog-card">
+          <h2 class="blog-title">Crypto Tax Calculator: Estimate Bitcoin & Crypto Capital Gains (2026 Guide)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 9, 2026</span>
+          </div>
+          <p class="blog-excerpt">Cryptocurrency has transformed the financial landscape, but it has also introduced complex tax reporting obligations. Many investors mistakenly believe crypto transactions are anonymous or untaxed. In reality, most tax authorities—including the Internal Revenue Service—require taxpayers to report gains, losses, and income from cryptocurrency transactions.</p>
+          <a href="/crypto-tax-calculator-estimate-bitcoin-crypto-capital-gains-blog" class="learn-more">Detail →</a>
+        </div>
+
          <!-- Blog 14: 30-Year vs 15-Year Mortgage: Which One Saves You More Money? -->
         <div class="blog-card">
           <h2 class="blog-title">What Is an Amortization Schedule? A Simple Explanation for Homebuyers</h2>

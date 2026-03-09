@@ -236,6 +236,12 @@ const routes = [
         name: 'WhatIsanAmortizationSchedule',
         component: () => import('../blog/WhatIsanAmortizationSchedule.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'crypto-tax-calculator-estimate-bitcoin-crypto-capital-gains-blog',
+        name: 'CryptoTaxCalculatorEstimateBitcoinCryptoCapitalGains',
+        component: () => import('../blog/CryptoTaxCalculatorEstimateBitcoinCryptoCapitalGains.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

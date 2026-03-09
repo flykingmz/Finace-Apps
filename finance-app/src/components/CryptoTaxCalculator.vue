@@ -494,6 +494,13 @@
         <p>Purchase and sale fees are deductible! This means they can be factored in as allowable expenses when calculating your cost basis, so you can use fees to reduce your tax liability.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/crypto-tax-calculator-estimate-bitcoin-crypto-capital-gains-blog" class="calculator-btn">
+    More Estimate Bitcoin & Crypto Capital Gains (2026 Guide) blog →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -1344,6 +1351,30 @@ th {
 td {
   padding: 0.7rem 1rem;
   border-bottom: 1px solid #c8daf2;
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 700px) {
