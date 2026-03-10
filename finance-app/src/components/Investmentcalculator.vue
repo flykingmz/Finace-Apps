@@ -23,7 +23,7 @@
     <div class="calculator-form">
       <h2>{{ getTabTitle }}</h2>
 
-      <!-- Target Amount (显示在 End Amount, Additional Contribution, Return Rate, Starting Amount, Investment Length 模式) -->
+      <!-- Target Amount (显示在除 End Amount 外的所有模式) -->
       <div class="form-row" v-if="activeTab !== 'end'">
         <label>Your Target ($)</label>
         <div class="input-wrapper">
@@ -135,7 +135,7 @@
             <input
               type="radio"
               value="beginning"
-              v-model="form.contributeAtBeginning"
+              v-model="form.contributeTiming"
               @change="calculate"
             />
             <span>beginning</span>
@@ -144,7 +144,7 @@
             <input
               type="radio"
               value="end"
-              v-model="form.contributeAtEnd"
+              v-model="form.contributeTiming"
               @change="calculate"
             />
             <span>end</span>
@@ -290,7 +290,7 @@
           </div>
         </div>
 
-        <!-- Monthly Schedule Table - 附件8样式，分年显示 -->
+        <!-- Monthly Schedule Table - 附件8样式，分年显示，每年12个月 -->
         <div v-if="scheduleView === 'monthly'" class="schedule-table-wrapper">
           <div v-for="year in uniqueYears" :key="year" class="monthly-year-section">
             <h4>Year {{ year }}</h4>
@@ -421,8 +421,7 @@ export default {
         returnRate: 6,
         compoundFrequency: 'annually',
         additionalContribution: 1000,
-        contributeAtBeginning: true,
-        contributeAtEnd: false,
+        contributeTiming: 'beginning',
         contributeFrequency: 'year'
       },
       results: {
@@ -601,7 +600,8 @@ export default {
       const rate = this.ratePerPeriod;
       const periodsPerYear = this.periodsPerYear;
       const totalPeriods = years * periodsPerYear;
-      const contributeAtBeginning = this.form.contributeAtBeginning;
+      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+      const isMonthlyContribution = this.form.contributeFrequency === 'month';
       
       let balance = principal;
       let totalContributions = 0;
@@ -610,10 +610,59 @@ export default {
       
       // 计算每期
       for (let period = 1; period <= totalPeriods; period++) {
+        // 计算当前期对应的年份和月份
+        const year = Math.ceil(period / periodsPerYear);
+        
+        // 对于月度贡献，我们需要记录真实的月份（1-12）
+        // 对于年度贡献，我们只记录贡献发生的月份（每年第一个月）
+        let month = 0;
+        if (isMonthlyContribution) {
+          // 如果是月度贡献，我们需要将期数映射到月份
+          // 由于复合频率可能不是月度的，我们需要根据复合频率计算对应的月份
+          if (periodsPerYear === 12) {
+            // 如果按月复利，则期数直接对应月份
+            month = ((period - 1) % 12) + 1;
+          } else {
+            // 如果按其他频率复利，我们仍然需要展示月份数据
+            // 这里我们根据期数在年内的比例估算月份
+            const periodInYear = ((period - 1) % periodsPerYear) + 1;
+            month = Math.ceil(periodInYear * (12 / periodsPerYear));
+            // 确保月份在1-12范围内
+            month = Math.min(month, 12);
+          }
+        } else {
+          // 年度贡献：只在每年第一期贡献
+          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+            month = 1; // 每年第一个月
+          } else {
+            month = ((period - 1) % periodsPerYear) + 1;
+            // 根据复合频率估算月份
+            month = Math.ceil(month * (12 / periodsPerYear));
+            month = Math.min(month, 12);
+          }
+        }
+        
+        // 记录期初余额（用于利息计算）
+        const startBalance = balance;
+        
         // 添加贡献 (根据时间点)
-        if (contributeAtBeginning) {
-          balance += contribution;
-          totalContributions += contribution;
+        let periodDeposit = 0;
+        if (isMonthlyContribution) {
+          // 月度贡献：每期都贡献
+          if (contributeAtBeginning) {
+            balance += contribution;
+            periodDeposit += contribution;
+            totalContributions += contribution;
+          }
+        } else {
+          // 年度贡献：只在每年第一期贡献
+          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+            if (contributeAtBeginning) {
+              balance += contribution;
+              periodDeposit += contribution;
+              totalContributions += contribution;
+            }
+          }
         }
         
         // 计算利息
@@ -621,31 +670,40 @@ export default {
         balance += interest;
         
         // 期末贡献
-        if (!contributeAtBeginning) {
-          balance += contribution;
-          totalContributions += contribution;
+        if (isMonthlyContribution) {
+          if (!contributeAtBeginning) {
+            balance += contribution;
+            periodDeposit += contribution;
+            totalContributions += contribution;
+          }
+        } else {
+          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+            if (!contributeAtBeginning) {
+              balance += contribution;
+              periodDeposit += contribution;
+              totalContributions += contribution;
+            }
+          }
         }
         
-        // 记录月度数据（如果是月或更细，我们按实际期间记录）
-        const currentYear = Math.ceil(period / periodsPerYear);
-        const monthInYear = Math.ceil((period % periodsPerYear) * (12 / periodsPerYear)) || 12;
-        
+        // 记录月度数据
         monthlySchedule.push({
-          year: currentYear,
-          month: monthInYear,
-          deposit: contribution,
+          year: year,
+          month: month,
+          deposit: periodDeposit,
           interest: interest,
           endingBalance: balance
         });
         
         // 每年末记录年度数据
         if (period % periodsPerYear === 0) {
-          const yearData = monthlySchedule.filter(row => row.year === currentYear);
+          // 获取当前年份的所有月度数据
+          const yearData = monthlySchedule.filter(row => row.year === year);
           const yearDeposit = yearData.reduce((sum, row) => sum + row.deposit, 0);
           const yearInterest = yearData.reduce((sum, row) => sum + row.interest, 0);
           
           annualSchedule.push({
-            year: currentYear,
+            year: year,
             deposit: yearDeposit,
             interest: yearInterest,
             endingBalance: balance
@@ -655,6 +713,12 @@ export default {
       
       const totalInterest = balance - principal - totalContributions;
       const total = principal + totalContributions + totalInterest;
+      
+      // 对月度数据按年份和月份排序
+      monthlySchedule.sort((a, b) => {
+        if (a.year !== b.year) return a.year - b.year;
+        return a.month - b.month;
+      });
       
       this.results = {
         calculated: true,
@@ -680,7 +744,8 @@ export default {
       const rate = this.ratePerPeriod;
       const periodsPerYear = this.periodsPerYear;
       const totalPeriods = years * periodsPerYear;
-      const contributeAtBeginning = this.form.contributeAtBeginning;
+      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+      const isMonthlyContribution = this.form.contributeFrequency === 'month';
       
       if (principal >= target) {
         this.form.additionalContribution = 0;
@@ -698,17 +763,38 @@ export default {
       while (iterations < maxIterations) {
         mid = (low + high) / 2;
         
+        // 根据贡献频率调整每期金额
+        const perPeriodContribution = isMonthlyContribution ? mid / 12 : mid;
+        
         let balance = principal;
         
         for (let period = 1; period <= totalPeriods; period++) {
-          if (contributeAtBeginning) {
-            balance += mid;
+          if (isMonthlyContribution) {
+            // 月度贡献：每期都贡献
+            if (contributeAtBeginning) {
+              balance += perPeriodContribution;
+            }
+          } else {
+            // 年度贡献：只在每年第一期贡献
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (contributeAtBeginning) {
+                balance += perPeriodContribution;
+              }
+            }
           }
           
           balance += balance * rate;
           
-          if (!contributeAtBeginning) {
-            balance += mid;
+          if (isMonthlyContribution) {
+            if (!contributeAtBeginning) {
+              balance += perPeriodContribution;
+            }
+          } else {
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (!contributeAtBeginning) {
+                balance += perPeriodContribution;
+              }
+            }
           }
         }
         
@@ -725,13 +811,7 @@ export default {
         iterations++;
       }
       
-      // 调整贡献金额
-      if (this.form.contributeFrequency === 'year') {
-        this.form.additionalContribution = mid;
-      } else {
-        this.form.additionalContribution = mid * 12;
-      }
-      
+      this.form.additionalContribution = mid;
       this.calculateEndAmount();
     },
 
@@ -743,7 +823,8 @@ export default {
       const contribution = this.contributionPerPeriod;
       const periodsPerYear = this.periodsPerYear;
       const totalPeriods = years * periodsPerYear;
-      const contributeAtBeginning = this.form.contributeAtBeginning;
+      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+      const isMonthlyContribution = this.form.contributeFrequency === 'month';
       
       if (principal >= target) {
         this.form.returnRate = 0;
@@ -764,14 +845,30 @@ export default {
         let balance = principal;
         
         for (let period = 1; period <= totalPeriods; period++) {
-          if (contributeAtBeginning) {
-            balance += contribution;
+          if (isMonthlyContribution) {
+            if (contributeAtBeginning) {
+              balance += contribution;
+            }
+          } else {
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (contributeAtBeginning) {
+                balance += contribution;
+              }
+            }
           }
           
           balance += balance * mid;
           
-          if (!contributeAtBeginning) {
-            balance += contribution;
+          if (isMonthlyContribution) {
+            if (!contributeAtBeginning) {
+              balance += contribution;
+            }
+          } else {
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (!contributeAtBeginning) {
+                balance += contribution;
+              }
+            }
           }
         }
         
@@ -807,7 +904,8 @@ export default {
       const rate = this.ratePerPeriod;
       const periodsPerYear = this.periodsPerYear;
       const totalPeriods = years * periodsPerYear;
-      const contributeAtBeginning = this.form.contributeAtBeginning;
+      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+      const isMonthlyContribution = this.form.contributeFrequency === 'month';
       
       // 二分法求解初始本金
       let low = 0;
@@ -822,14 +920,30 @@ export default {
         let balance = mid;
         
         for (let period = 1; period <= totalPeriods; period++) {
-          if (contributeAtBeginning) {
-            balance += contribution;
+          if (isMonthlyContribution) {
+            if (contributeAtBeginning) {
+              balance += contribution;
+            }
+          } else {
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (contributeAtBeginning) {
+                balance += contribution;
+              }
+            }
           }
           
           balance += balance * rate;
           
-          if (!contributeAtBeginning) {
-            balance += contribution;
+          if (isMonthlyContribution) {
+            if (!contributeAtBeginning) {
+              balance += contribution;
+            }
+          } else {
+            if (period % periodsPerYear === 1 || periodsPerYear === 1) {
+              if (!contributeAtBeginning) {
+                balance += contribution;
+              }
+            }
           }
         }
         
@@ -857,7 +971,8 @@ export default {
       const contribution = this.contributionPerPeriod;
       const rate = this.ratePerPeriod;
       const periodsPerYear = this.periodsPerYear;
-      const contributeAtBeginning = this.form.contributeAtBeginning;
+      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+      const isMonthlyContribution = this.form.contributeFrequency === 'month';
       
       if (principal >= target) {
         this.form.years = 0;
@@ -873,14 +988,30 @@ export default {
       while (balance < target && periods < maxPeriods) {
         periods++;
         
-        if (contributeAtBeginning) {
-          balance += contribution;
+        if (isMonthlyContribution) {
+          if (contributeAtBeginning) {
+            balance += contribution;
+          }
+        } else {
+          if (periods % periodsPerYear === 1 || periodsPerYear === 1) {
+            if (contributeAtBeginning) {
+              balance += contribution;
+            }
+          }
         }
         
         balance += balance * rate;
         
-        if (!contributeAtBeginning) {
-          balance += contribution;
+        if (isMonthlyContribution) {
+          if (!contributeAtBeginning) {
+            balance += contribution;
+          }
+        } else {
+          if (periods % periodsPerYear === 1 || periodsPerYear === 1) {
+            if (!contributeAtBeginning) {
+              balance += contribution;
+            }
+          }
         }
       }
       
@@ -905,8 +1036,7 @@ export default {
         returnRate: 6,
         compoundFrequency: 'annually',
         additionalContribution: 1000,
-        contributeAtBeginning: true,
-        contributeAtEnd: false,
+        contributeTiming: 'beginning',
         contributeFrequency: 'year'
       };
       this.calculate();
@@ -946,7 +1076,7 @@ export default {
 </script>
 
 <style scoped>
-/* 移动端优先的样式设计 */
+/* 移动端优先的样式设计 - 与之前完全一致 */
 .investment-calculator {
   max-width: 1200px;
   margin: 0 auto;
