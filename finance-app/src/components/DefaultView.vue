@@ -92,7 +92,7 @@
           </div>
           <div class="tools-list">
             <a href="#" class="tool-link">Interest Calculator</a>
-            <a href="#" class="tool-link">Investment Calculator</a>
+            <a href="/investment" class="tool-link">Investment Calculator</a>
             <a href="#" class="tool-link">Finance Calculator</a>
             <a href="#" class="tool-link">Compound Interest Calculator</a>
             <a href="#" class="tool-link">Interest Rate Calculator</a>

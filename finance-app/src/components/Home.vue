@@ -54,7 +54,7 @@
      <!--   <div class="category-icon"><i class="fas fa-chart-line"></i></div> -->
         <div class="category-title"><a href="/investment-calculators">Investment</a> </div>
         <ul class="popular-list">
-          <li><a href="" >📊 Investment Calculator</a></li>
+          <li><a href="/investment" >📊 Investment Calculator</a></li>
           <li><a href="" >🧮 Interest Calculator</a></li>
         </ul>
       </div>

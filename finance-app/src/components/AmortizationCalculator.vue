@@ -331,7 +331,7 @@ export default {
     }
   },
   methods: {
-setGoogleMetaTags() {
+    setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
