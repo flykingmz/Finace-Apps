@@ -593,7 +593,7 @@ export default {
     },
 
     // 计算终值
-calculateEndAmount() {
+    calculateEndAmount() {
   const principal = this.form.startingAmount || 0;
   const years = this.form.years || 1;
   const annualRate = (this.form.returnRate || 0) / 100;
@@ -735,7 +735,7 @@ calculateEndAmount() {
     annualSchedule,
     monthlySchedule
   };
-}
+  },
 
     // 计算所需额外贡献
     calculateAdditionalContribution() {
