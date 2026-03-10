@@ -593,148 +593,149 @@ export default {
     },
 
     // 计算终值
-    calculateEndAmount() {
-      const principal = this.form.startingAmount || 0;
-      const years = this.form.years || 1;
-      const contribution = this.contributionPerPeriod;
-      const rate = this.ratePerPeriod;
-      const periodsPerYear = this.periodsPerYear;
-      const totalPeriods = years * periodsPerYear;
-      const contributeAtBeginning = this.form.contributeTiming === 'beginning';
-      const isMonthlyContribution = this.form.contributeFrequency === 'month';
-      
-      let balance = principal;
-      let totalContributions = 0;
-      const monthlySchedule = [];
-      const annualSchedule = [];
-      
-      // 计算每期
-      for (let period = 1; period <= totalPeriods; period++) {
-        // 计算当前期对应的年份和月份
-        const year = Math.ceil(period / periodsPerYear);
-        
-        // 对于月度贡献，我们需要记录真实的月份（1-12）
-        // 对于年度贡献，我们只记录贡献发生的月份（每年第一个月）
-        let month = 0;
-        if (isMonthlyContribution) {
-          // 如果是月度贡献，我们需要将期数映射到月份
-          // 由于复合频率可能不是月度的，我们需要根据复合频率计算对应的月份
-          if (periodsPerYear === 12) {
-            // 如果按月复利，则期数直接对应月份
-            month = ((period - 1) % 12) + 1;
-          } else {
-            // 如果按其他频率复利，我们仍然需要展示月份数据
-            // 这里我们根据期数在年内的比例估算月份
-            const periodInYear = ((period - 1) % periodsPerYear) + 1;
-            month = Math.ceil(periodInYear * (12 / periodsPerYear));
-            // 确保月份在1-12范围内
-            month = Math.min(month, 12);
-          }
-        } else {
-          // 年度贡献：只在每年第一期贡献
-          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
-            month = 1; // 每年第一个月
-          } else {
-            month = ((period - 1) % periodsPerYear) + 1;
-            // 根据复合频率估算月份
-            month = Math.ceil(month * (12 / periodsPerYear));
-            month = Math.min(month, 12);
-          }
-        }
-        
-        // 记录期初余额（用于利息计算）
-        const startBalance = balance;
-        
-        // 添加贡献 (根据时间点)
-        let periodDeposit = 0;
-        if (isMonthlyContribution) {
-          // 月度贡献：每期都贡献
-          if (contributeAtBeginning) {
-            balance += contribution;
-            periodDeposit += contribution;
-            totalContributions += contribution;
-          }
-        } else {
-          // 年度贡献：只在每年第一期贡献
-          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
-            if (contributeAtBeginning) {
-              balance += contribution;
-              periodDeposit += contribution;
-              totalContributions += contribution;
-            }
-          }
-        }
-        
-        // 计算利息
-        const interest = balance * rate;
-        balance += interest;
-        
-        // 期末贡献
-        if (isMonthlyContribution) {
-          if (!contributeAtBeginning) {
-            balance += contribution;
-            periodDeposit += contribution;
-            totalContributions += contribution;
-          }
-        } else {
-          if (period % periodsPerYear === 1 || periodsPerYear === 1) {
-            if (!contributeAtBeginning) {
-              balance += contribution;
-              periodDeposit += contribution;
-              totalContributions += contribution;
-            }
-          }
-        }
-        
-        // 记录月度数据
-        monthlySchedule.push({
-          year: year,
-          month: month,
-          deposit: periodDeposit,
-          interest: interest,
-          endingBalance: balance
-        });
-        
-        // 每年末记录年度数据
-        if (period % periodsPerYear === 0) {
-          // 获取当前年份的所有月度数据
-          const yearData = monthlySchedule.filter(row => row.year === year);
-          const yearDeposit = yearData.reduce((sum, row) => sum + row.deposit, 0);
-          const yearInterest = yearData.reduce((sum, row) => sum + row.interest, 0);
-          
-          annualSchedule.push({
-            year: year,
-            deposit: yearDeposit,
-            interest: yearInterest,
-            endingBalance: balance
-          });
+calculateEndAmount() {
+  const principal = this.form.startingAmount || 0;
+  const years = this.form.years || 1;
+  const annualRate = (this.form.returnRate || 0) / 100;
+  const contribution = this.form.additionalContribution || 0;
+  const contributeAtBeginning = this.form.contributeTiming === 'beginning';
+  const isMonthlyContribution = this.form.contributeFrequency === 'month';
+  
+  // 计算等效月利率（基于选定的复合频率）
+  let monthlyRate;
+  const freq = this.form.compoundFrequency;
+  
+  if (freq === 'annually') {
+    // 按年复利：月利率 = (1 + 年利率)^(1/12) - 1
+    monthlyRate = Math.pow(1 + annualRate, 1/12) - 1;
+  } else if (freq === 'semiannually') {
+    // 半年复利：半年利率 = 年利率/2，再转为月利率
+    const semiRate = annualRate / 2;
+    monthlyRate = Math.pow(1 + semiRate, 1/6) - 1;
+  } else if (freq === 'quarterly') {
+    const quarterRate = annualRate / 4;
+    monthlyRate = Math.pow(1 + quarterRate, 1/3) - 1;
+  } else if (freq === 'monthly') {
+    monthlyRate = annualRate / 12;
+  } else if (freq === 'semimonthly') {
+    // 半月复利：半月利率 = 年利率/24，每月复利2次
+    const semiMonthlyRate = annualRate / 24;
+    monthlyRate = Math.pow(1 + semiMonthlyRate, 2) - 1;
+  } else if (freq === 'biweekly') {
+    // 双周复利：双周利率 = 年利率/26，每月约2.1667次
+    const biweeklyRate = annualRate / 26;
+    monthlyRate = Math.pow(1 + biweeklyRate, 26/12) - 1;
+  } else if (freq === 'weekly') {
+    // 周复利：周利率 = 年利率/52，每月约4.333次
+    const weeklyRate = annualRate / 52;
+    monthlyRate = Math.pow(1 + weeklyRate, 52/12) - 1;
+  } else if (freq === 'daily') {
+    // 日复利：日利率 = 年利率/365，每月约30.417次
+    const dailyRate = annualRate / 365;
+    monthlyRate = Math.pow(1 + dailyRate, 365/12) - 1;
+  } else if (freq === 'continuously') {
+    // 连续复利
+    monthlyRate = Math.exp(annualRate / 12) - 1;
+  } else {
+    monthlyRate = annualRate / 12; // 默认按月
+  }
+  
+  const totalMonths = years * 12;
+  let balance = principal;
+  let totalContributions = 0;
+  const monthlySchedule = [];
+  const annualSchedule = [];
+  
+  // 按月循环，共 totalMonths 个月
+  for (let month = 1; month <= totalMonths; month++) {
+    const year = Math.ceil(month / 12);
+    const monthInYear = ((month - 1) % 12) + 1;
+    
+    // 当月贡献金额
+    let monthDeposit = 0;
+    
+    // 添加贡献（根据时间点）
+    if (isMonthlyContribution) {
+      // 月度贡献：每月都贡献
+      if (contributeAtBeginning) {
+        balance += contribution;
+        monthDeposit += contribution;
+        totalContributions += contribution;
+      }
+    } else {
+      // 年度贡献：只在每年第一个月贡献
+      if (monthInYear === 1) {
+        if (contributeAtBeginning) {
+          balance += contribution;
+          monthDeposit += contribution;
+          totalContributions += contribution;
         }
       }
+    }
+    
+    // 计算当月利息
+    const interest = balance * monthlyRate;
+    balance += interest;
+    
+    // 期末贡献
+    if (isMonthlyContribution) {
+      if (!contributeAtBeginning) {
+        balance += contribution;
+        monthDeposit += contribution;
+        totalContributions += contribution;
+      }
+    } else {
+      if (monthInYear === 1) {
+        if (!contributeAtBeginning) {
+          balance += contribution;
+          monthDeposit += contribution;
+          totalContributions += contribution;
+        }
+      }
+    }
+    
+    // 记录月度数据
+    monthlySchedule.push({
+      year: year,
+      month: monthInYear,
+      deposit: monthDeposit,
+      interest: interest,
+      endingBalance: balance
+    });
+    
+    // 每年末记录年度数据
+    if (monthInYear === 12) {
+      const yearData = monthlySchedule.filter(row => row.year === year);
+      const yearDeposit = yearData.reduce((sum, row) => sum + row.deposit, 0);
+      const yearInterest = yearData.reduce((sum, row) => sum + row.interest, 0);
       
-      const totalInterest = balance - principal - totalContributions;
-      const total = principal + totalContributions + totalInterest;
-      
-      // 对月度数据按年份和月份排序
-      monthlySchedule.sort((a, b) => {
-        if (a.year !== b.year) return a.year - b.year;
-        return a.month - b.month;
+      annualSchedule.push({
+        year: year,
+        deposit: yearDeposit,
+        interest: yearInterest,
+        endingBalance: balance
       });
-      
-      this.results = {
-        calculated: true,
-        endBalance: balance,
-        startingAmount: principal,
-        totalContributions,
-        totalInterest,
-        startingPercent: total > 0 ? (principal / total * 100) : 0,
-        contributionsPercent: total > 0 ? (totalContributions / total * 100) : 0,
-        interestPercent: total > 0 ? (totalInterest / total * 100) : 0,
-        years: years,
-        targetAmount: 0,
-        annualSchedule,
-        monthlySchedule
-      };
-    },
+    }
+  }
+  
+  const totalInterest = balance - principal - totalContributions;
+  const total = principal + totalContributions + totalInterest;
+  
+  this.results = {
+    calculated: true,
+    endBalance: balance,
+    startingAmount: principal,
+    totalContributions,
+    totalInterest,
+    startingPercent: total > 0 ? (principal / total * 100) : 0,
+    contributionsPercent: total > 0 ? (totalContributions / total * 100) : 0,
+    interestPercent: total > 0 ? (totalInterest / total * 100) : 0,
+    years: years,
+    targetAmount: 0,
+    annualSchedule,
+    monthlySchedule
+  };
+}
 
     // 计算所需额外贡献
     calculateAdditionalContribution() {
