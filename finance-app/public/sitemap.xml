@@ -84,6 +84,14 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+
+<!---investment link  -->
+  <url>
+    <loc>https://financial-calculator.net/investment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
 <!---calculators link -->
    <url>
     <loc>https://financial-calculator.net/tax-salary-calculators</loc>
