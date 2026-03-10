@@ -248,6 +248,12 @@ const routes = [
         name: 'CryptoTaxCalculatorEstimateBitcoinCryptoCapitalGains',
         component: () => import('../blog/CryptoTaxCalculatorEstimateBitcoinCryptoCapitalGains.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'ultimate-investment-calculator-guide-maximize-your-returns-in-2026-blog',
+        name: 'UltimateInvestmentCalculatorGuideMaximizeYourReturnsin2026',
+        component: () => import('../blog/UltimateInvestmentCalculatorGuideMaximizeYourReturnsin2026.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
