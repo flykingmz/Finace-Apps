@@ -145,11 +145,14 @@ export default {
   border: 1px solid #e9eef3;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  height:100px;
+  display: none;
 }
 
 @media (max-width: 768px) {
   .ad-content {
     min-height: 80px;
+    display: none;
   }
 }
 </style>
