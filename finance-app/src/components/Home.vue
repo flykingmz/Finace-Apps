@@ -9,8 +9,8 @@
   <div class="financial-home">
 
     <!-- Header -->
-    <h1>📊 Free Financial Calculators</h1>
-    <div class="subhead">Estimate your take-home pay, calculate VAT and taxes, plan retirement, and analyze investments — all in one place.</div>
+    <h1>📊 All-in-One Free Financial Calculators: Tax, Salary, Retirement, Mortgage, Investment & More</h1>
+    <p class="subhead">Discover free online financial calculators to manage your money smarter. Our suite of tools covers Tax and Salary calculators, Retirement planning calculators, Mortgage and Real Estate calculators, Investment calculators, and Other financial tools. Easily calculate your income tax, take-home pay, 401(k) growth, mortgage payoff, real estate investment returns, and more. Perfect for personal finance enthusiasts, investors, and anyone looking to optimize their finances online—completely free, accurate, and easy to use.</p>
 
     <!-- Tool Categories + Popular Calculators (first screen) -->
     <h2>🔧 Tool Categories</h2>
@@ -217,7 +217,7 @@ export default {
   name: 'FinancialToolsHome',
   mounted() {
     // 将长破折号 — 替换为普通的连字符 -
-    document.title = 'Financial Calculators - Free Tax, Paycheck, VAT, Mortgage, Investment and Retirement Calculators';
+    document.title = 'Free Financial Calculators - For Tax, Paycheck, VAT, Mortgage, Investment and Retirement Calculators';
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
