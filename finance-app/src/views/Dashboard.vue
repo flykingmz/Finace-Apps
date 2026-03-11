@@ -140,26 +140,6 @@ export default {
 </script>
 
 <style scoped>
-.layout-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f5f7fa;
-}
-
-.main-content-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* 内容靠右对齐 */
-  padding-right: calc((100% - 1000px) / 2); /* 动态计算右内边距使内容靠右 */
-}
-
-.main-content {
-  width: 1000px; /* 固定宽度 */
-  margin-right: 0; /* 靠右 */
-  padding: 0 20px;
-  flex-shrink: 0; /* 防止压缩 */
-}
 
 /* 广告区域样式 */
 .ad-banner {
@@ -172,51 +152,7 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-.ad-label {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 10px;
-  color: #94a3b8;
-  background: #f1f5f9;
-  padding: 2px 8px;
-  border-radius: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.ad-content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-}
-
-.content-area {
-  background: transparent;
-  border-radius: 16px;
-}
-
-/* 响应式 */
-@media (max-width: 1100px) {
-  .main-content-wrapper {
-    justify-content: center; /* 小屏幕时居中 */
-    padding-right: 0;
-  }
-  
-  .main-content {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 768px) {
-  .main-content {
-    padding: 0 12px;
-  }
-  
   .ad-content {
     min-height: 80px;
   }
