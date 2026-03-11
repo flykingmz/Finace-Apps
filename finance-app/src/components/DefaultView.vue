@@ -40,7 +40,7 @@
         <!-- Retirement -->
         <div class="category-card">
           <div class="category-header-active">
-            <h2 class="category-title">Retirement（TBC）</h2>
+            <h2 class="category-title">Retirement</h2>
             <div class="category-count">9 tools</div>
           </div>
           <div class="tools-list">
@@ -50,35 +50,35 @@
             <a href="/social-security" class="tool-link">Social Security Calculator</a>
             <a href="/annuity" class="tool-link">Annuity Calculator</a>
             <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
-            <a href="#" class="tool-link">Roth IRA Calculator</a>
-            <a href="#" class="tool-link">IRA Calculator</a>
-            <a href="#" class="tool-link">RMD Calculator</a>
+            <a href="#" class="tool-link">Roth IRA Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">IRA Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">RMD Calculator(Coming Soon)</a>
           </div>
         </div>
 
         <!-- Mortgage and Real Estate -->
         <div class="category-card">
           <div class="category-header-active">
-            <h2 class="category-title">Mortgage and Real Estate（TBC）</h2>
+            <h2 class="category-title">Mortgage and Real Estate</h2>
             <div class="category-count">16 tools</div>
           </div>
           <div class="tools-list">
             <a href="/mortgage" class="tool-link">Mortgage Calculator</a>
             <a href="/amortization" class="tool-link">Amortization Calculator</a>
-            <a href="#" class="tool-link">Mortgage Payoff Calculator</a>
-            <a href="#" class="tool-link">House Affordability Calculator</a>
-            <a href="#" class="tool-link">Rent Calculator</a>
-            <a href="#" class="tool-link">Debt-to-Income Ratio Calculator</a>
-            <a href="#" class="tool-link">Real Estate Calculator</a>
-            <a href="#" class="tool-link">Refinance Calculator</a>
-            <a href="#" class="tool-link">Rental Property Calculator</a>
-            <a href="#" class="tool-link">APR Calculator</a>
-            <a href="#" class="tool-link">FHA Loan Calculator</a>
-            <a href="#" class="tool-link">VA Mortgage Calculator</a>
-            <a href="#" class="tool-link">Home Equity Loan Calculator</a>
-            <a href="#" class="tool-link">HELOC Calculator</a>
-            <a href="#" class="tool-link">Down Payment Calculator</a>
-            <a href="#" class="tool-link">Rent vs. Buy Calculator</a>
+            <a href="#" class="tool-link">Mortgage Payoff Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">House Affordability Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Rent Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Debt-to-Income Ratio Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Real Estate Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Refinance Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Rental Property Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">APR Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">FHA Loan Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">VA Mortgage Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Home Equity Loan Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">HELOC Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Down Payment Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Rent vs. Buy Calculator(Coming Soon)</a>
           </div>
         </div>
 
@@ -86,36 +86,23 @@
 
       <!-- Investment -->
         <div class="category-card">
-          <div class="category-header">
-            <h2 class="category-title">Investment（TBC）</h2>
+          <div class="category-header-active">
+            <h2 class="category-title">Investment</h2>
             <div class="category-count">3 tools</div>
           </div>
           <div class="tools-list">
             <a href="/interest" class="tool-link">Interest Calculator</a>
             <a href="/investment" class="tool-link">Investment Calculator</a>
-            <a href="#" class="tool-link">Finance Calculator</a>
-            <a href="#" class="tool-link">Compound Interest Calculator</a>
-            <a href="#" class="tool-link">Interest Rate Calculator</a>
-          </div>
-        </div>
-
-        <!-- Auto -->
-        <div class="category-card">
-          <div class="category-header">
-            <h2 class="category-title">Auto（TBC）</h2>
-            <div class="category-count">3 tools</div>
-          </div>
-          <div class="tools-list">
-            <a href="#" class="tool-link">Auto Loan Calculator</a>
-            <a href="#" class="tool-link">Cash Back or Low Interest Calculator</a>
-            <a href="#" class="tool-link">Auto Lease Calculator</a>
+            <a href="#" class="tool-link">Finance Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Compound Interest Calculator(Coming Soon)</a>
+            <a href="#" class="tool-link">Interest Rate Calculator(Coming Soon)</a>
           </div>
         </div>
 
         <!-- Other -->
         <div class="category-card">
           <div class="category-header">
-            <h2 class="category-title">Other（TBC）</h2>
+            <h2 class="category-title">Other(Coming Soon)</h2>
             <div class="category-count">17 tools</div>
           </div>
           <div class="tools-list">
@@ -133,6 +120,9 @@
             <a href="#" class="tool-link">College Cost Calculator</a>
             <a href="#" class="tool-link">VAT Calculator</a>
             <a href="#" class="tool-link">Depreciation Calculator</a>
+            <a href="#" class="tool-link">Auto Loan Calculator</a>
+            <a href="#" class="tool-link">Cash Back or Low Interest Calculator</a>
+            <a href="#" class="tool-link">Auto Lease Calculator</a>
           </div>
         </div>
       </div>

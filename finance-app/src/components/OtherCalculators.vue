@@ -227,6 +227,37 @@
           <a href="/a/commission-calculator" class="card-link">Open Calculator →</a>
         </div>
       </div>
+
+       <!-- Auto Loan Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-percent"></i></div>
+        <div class="card-content">
+          <h3>Auto Loan Calculator</h3>
+          <p>An Auto Loan Calculator helps you estimate monthly car payments, interest costs, and total loan expenses based on loan amount, rate, term, and down payment.</p>
+          <a href="/calculators/interest" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+        </div>
+      </div>
+
+      <!-- Cash Back or Low Interest Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="card-content">
+          <h3>Cash Back or Low Interest Calculator</h3>
+          <p>Compare cash back and low interest offers to see which auto financing option saves you more.</p>
+          <a href="/calculators/investment" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+        </div>
+      </div>
+
+      <!-- Auto Lease Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-calculator"></i></div>
+        <div class="card-content">
+          <h3>Auto Lease Calculator</h3>
+          <p>An Auto Lease Calculator helps you estimate monthly lease payments based on vehicle price, residual value, money factor, lease term, and down payment.</p>
+          <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+        </div>
+      </div>
+      
     </div>
 
     <!-- Back to Home / All Calculators Link -->

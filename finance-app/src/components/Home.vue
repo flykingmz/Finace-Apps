@@ -58,14 +58,6 @@
           <li><a href="/interest" >🧮 Interest Calculator</a></li>
         </ul>
       </div>
-      <!-- Auto -->
-      <div class="category-card">
-        <div class="category-title"><a href="/auto-calculators">Auto</a> </div>
-        <ul class="popular-list">
-          <li><a href="" >📊 Auto Loan Calculator</a></li>
-          <li><a href="" >🧮 Auto Lease Calculator</a></li>
-        </ul>
-      </div>
       <!-- Other -->
       <div class="category-card">
         <div class="category-title"><a href="/other-calculators">Other</a> </div>
@@ -73,6 +65,8 @@
           <li><a href="" >📊 Currency Calculator</a></li>
           <li><a href="" >🧮 Credit Card Calculator</a></li>
           <li><a href="" >📈 Debt Payoff Calculator</a></li>
+          <li><a href="" >📊 Auto Loan Calculator</a></li>
+          <li><a href="" >🧮 Auto Lease Calculator</a></li>
         </ul>
       </div>
     </div>
