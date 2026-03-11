@@ -260,6 +260,12 @@ const routes = [
         name: 'UltimateInvestmentCalculatorGuideMaximizeYourReturnsin2026',
         component: () => import('../blog/UltimateInvestmentCalculatorGuideMaximizeYourReturnsin2026.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-to-calculate-intereston-savings-blog',
+        name: 'HowtoCalculateInterestonSavings',
+        component: () => import('../blog/HowtoCalculateInterestonSavings.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

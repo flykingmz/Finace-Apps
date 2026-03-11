@@ -9,6 +9,15 @@
     <!-- Blog List Section    -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 17: How to Calculate Interest on Savings: Simple vs Compound Interest Explained -->
+        <div class="blog-card">
+          <h2 class="blog-title">How to Calculate Interest on Savings: Simple vs Compound Interest Explained</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 11, 2026</span>
+          </div>
+          <p class="blog-excerpt">Understanding how interest works is essential for anyone trying to grow their savings. Whether you are saving in a bank account, investing in bonds, or using long-term investment vehicles, the way interest is calculated will determine how quickly your money grows.</p>
+          <a href="/how-to-calculate-intereston-savings-blog" class="learn-more">Detail →</a>
+        </div>
 
     <!-- Blog 16: Ultimate Investment Calculator Guide: Maximize Your Returns in 2026 -->
         <div class="blog-card">

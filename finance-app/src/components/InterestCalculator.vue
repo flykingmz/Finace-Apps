@@ -470,6 +470,14 @@
         <p>Tax and inflation combined make it hard to grow the real value of money. For example, in the United States, the middle class has a marginal tax rate of around 25%, and the average inflation rate is 3%. To maintain the value of the money, a stable interest rate or investment return rate of 4% or above needs to be earned, and this is not easy to achieve.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-to-calculate-intereston-savings-blog" class="calculator-btn">
+    How to Calculate Interest on Savings: Simple vs Compound Interest Explained →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -1008,6 +1016,30 @@ export default {
 
 .input-with-symbol input:focus {
   outline: none;
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 
 /* 移除number输入框的上下箭头 */
