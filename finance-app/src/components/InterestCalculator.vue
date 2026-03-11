@@ -357,7 +357,7 @@
     <!-- Related Tools -->
     <div class="related-tools">
       <span class="related-label">Related:</span>
-      <a href="#">Investment Calculator</a> <span class="sep">|</span>
+      <a href="/investment">Investment Calculator</a> <span class="sep">|</span>
       <a href="#">Average Return Calculator</a> <span class="sep">|</span>
       <a href="#">ROI Calculator</a>
     </div>
