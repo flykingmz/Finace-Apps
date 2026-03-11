@@ -27,8 +27,6 @@ export default {
   name: 'Dashboard',
   data() {
     return {
-      // 设置主内容宽度 - 根据需要调整
-      mainContentWidth: '1000px', // 缩小宽度
       showAdBanner: true,
     };
   },
