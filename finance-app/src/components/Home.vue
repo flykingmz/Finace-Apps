@@ -55,7 +55,7 @@
         <div class="category-title"><a href="/investment-calculators">Investment</a> </div>
         <ul class="popular-list">
           <li><a href="/investment" >📊 Investment Calculator</a></li>
-          <li><a href="" >🧮 Interest Calculator</a></li>
+          <li><a href="/interest" >🧮 Interest Calculator</a></li>
         </ul>
       </div>
       <!-- Auto -->

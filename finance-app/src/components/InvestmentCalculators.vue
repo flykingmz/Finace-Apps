@@ -21,7 +21,7 @@
         <div class="card-content">
           <h3>Investment Calculator</h3>
           <p>Estimate how your investments could grow over time. Calculate future value, compound returns, and potential earnings based on your initial investment, contribution amount, and expected rate of return.</p>
-          <a href="/investment" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/investment" class="card-link" >Open Calculator →</a>
         </div>
       </div>
       
@@ -30,8 +30,8 @@
         <div class="card-icon"><i class="fas fa-percent"></i></div>
         <div class="card-content">
           <h3>Interest Calculator</h3>
-          <p>Calculate simple or compound interest for any principal amount, rate, and time period.</p>
-          <a href="/calculators/interest" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <p>Use this free Interest Calculator to quickly estimate simple or compound interest on loans, savings, or investments. Enter the principal amount, interest rate, and time period to see how much interest you will earn or pay.</p>
+          <a href="/interest" class="card-link">Open Calculator →</a>
         </div>
       </div>
 

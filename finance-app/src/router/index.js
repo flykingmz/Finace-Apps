@@ -142,6 +142,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'interest',
+        name: 'InterestCalculator',
+        component: () => import('../components/InterestCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'about-us',
         name: 'AboutUs',
         component: () => import('../footlink/AboutUs.vue'),
