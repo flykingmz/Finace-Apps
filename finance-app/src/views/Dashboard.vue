@@ -5,7 +5,7 @@
       <TopHeader :page-title="currentPageTitle" />
       <!-- 新增的广告区域 - 位于TopHeader下方，main-content内部 -->
         <div class="ad-banner" v-if="showAdBanner">
-          <img src="/logo-i.png" alt="Advertisement"/>
+              <p>Your ad could be here</p>
         </div>
 
       <div class="content-area">
@@ -174,15 +174,6 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-.ad-container {
-  background: linear-gradient(to right, #f8fafd, #ffffff);
-  min-height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 .ad-label {
   position: absolute;
   top: 5px;
@@ -202,18 +193,6 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100px;
-}
-
-.ad-placeholder {
-  text-align: center;
-  color: #64748b;
-  font-size: 14px;
-  padding: 20px;
-  background: #f8fafc;
-  border-radius: 8px;
-  border: 1px dashed #cbd5e1;
-  width: calc(100% - 40px);
-  margin: 20px;
 }
 
 .content-area {
@@ -240,17 +219,8 @@ export default {
     padding: 0 12px;
   }
   
-  .ad-container {
-    min-height: 80px;
-  }
-  
   .ad-content {
     min-height: 80px;
-  }
-  
-  .ad-placeholder {
-    padding: 12px;
-    margin: 12px;
   }
 }
 </style>
