@@ -4,7 +4,7 @@
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <!-- 新增的广告区域 - 位于TopHeader下方，main-content内部 -->
-        <div class="ad-banner" v-if="showAdBanner">
+        <div class="ad-banner">
               <p>Your ad could be here</p>
         </div>
 
@@ -25,11 +25,6 @@ import Foot from '../components/Foot.vue'
 
 export default {
   name: 'Dashboard',
-  data() {
-    return {
-      showAdBanner: true,
-    };
-  },
   components: {
    // Sidebar,
     TopHeader,
