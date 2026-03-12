@@ -265,10 +265,6 @@
         <div class="payout-value">${{ formatMoney(results.monthlyPayout) }}</div>
       </div>
 
-      <div class="stability-link">
-        <a href="#" class="stability-link">Concerned about stability? Explore guaranteed payouts →</a>
-      </div>
-
       <div class="income-title">Total Lifetime Income with Cash Refund*</div>
       <div class="income-date">Starting {{ formatDate(form.startDate) }}</div>
 
