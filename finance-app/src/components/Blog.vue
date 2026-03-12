@@ -159,7 +159,8 @@
           <a href="/social-security-blog" class="learn-more">Detail →</a>
         </div>
 
-        <!-- Blog 3: Best Age to Claim Social Security -->
+        <!-- 
+        Blog 3: Best Age to Claim Social Security 
         <div class="blog-card">
           <h2 class="blog-title">Best Age to Claim Social Security</h2>
           <div class="blog-meta">
@@ -168,6 +169,7 @@
           <p class="blog-excerpt">Deciding when to claim Social Security benefits is one of the most important financial decisions you'll make. This article analyzes the trade-offs between claiming early at 62, waiting until Full Retirement Age, or delaying until 70 to maximize lifetime benefits.</p>
           <a href="/" class="learn-more">Detail →</a>
         </div>
+        -->
 
         <!-- Blog 4: How Annuities Work -->
         <div class="blog-card">
