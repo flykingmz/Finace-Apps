@@ -124,6 +124,12 @@ const routes = [
         meta: { keepAlive: false }
       },
        {
+        path: 'roth-ira',
+        name: 'RothIRACalculator',
+        component: () => import('../components/RothIRACalculator.vue'),
+        meta: { keepAlive: false }
+      },
+       {
         path: 'mortgage',
         name: 'MortgageCalculator',
         component: () => import('../components/MortgageCalculator.vue'),

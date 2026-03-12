@@ -82,7 +82,7 @@
         <div class="card-content">
           <h3>Roth IRA Calculator</h3>
           <p>Project the tax-free growth of your Roth IRA contributions and see the impact of different contribution strategies.</p>
-          <a href="/calculators/roth-ira" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <a href="/roth-ira" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
