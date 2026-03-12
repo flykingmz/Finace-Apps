@@ -9,6 +9,16 @@
     <!-- Blog List Section    -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 18: Roth IRA Calculator: Estimate Your Tax-Free Retirement Growth (2026 Complete Guide) -->
+        <div class="blog-card">
+          <h2 class="blog-title">Roth IRA Calculator: Estimate Your Tax-Free Retirement Growth (2026 Complete Guide)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 12, 2026</span>
+          </div>
+          <p class="blog-excerpt">A Roth IRA calculator is one of the most powerful tools for retirement planning because it allows investors to estimate how much their contributions can grow tax-free over time. Unlike traditional retirement accounts, Roth IRAs are funded with after-tax dollars, but qualified withdrawals during retirement are completely tax-free.</p>
+          <a href="/roth-ira-calculator-estimate-your-tax-free-retirement-growth-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 17: How to Calculate Interest on Savings: Simple vs Compound Interest Explained -->
         <div class="blog-card">
           <h2 class="blog-title">How to Calculate Interest on Savings: Simple vs Compound Interest Explained</h2>

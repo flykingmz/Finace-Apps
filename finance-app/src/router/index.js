@@ -272,6 +272,12 @@ const routes = [
         name: 'HowtoCalculateInterestonSavings',
         component: () => import('../blog/HowtoCalculateInterestonSavings.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'roth-ira-calculator-estimate-your-tax-free-retirement-growth-blog',
+        name: 'RothIRACalculatorEstimateYourTaxFreeRetirementGrowth',
+        component: () => import('../blog/RothIRACalculatorEstimateYourTaxFreeRetirementGrowth.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

@@ -355,6 +355,14 @@
         <p>The Saver's Tax Credit, on IRS Form 8880, can be claimed for up to 50% on the first $2,000 in contributions to a Roth IRA. This tax credit is non-refundable and is available to low- and middle-income taxpayers.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/roth-ira-calculator-estimate-your-tax-free-retirement-growth-blog" class="calculator-btn">
+    Estimate Your Tax-Free Retirement Growth (2026 Complete Guide) →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -888,3 +896,283 @@ button.clear:hover {
 
 .comparison-table {
   overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.comparison-table th {
+  background: #e1eaf3;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #1a3349;
+}
+
+.comparison-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9eef3;
+  color: #2c405c;
+}
+
+.comparison-table .total-tax td {
+  background: #ecf3fa;
+  font-weight: 600;
+}
+
+.summary-message {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  border: 1px solid #d9e2ef;
+  border-left: 6px solid #2563eb;
+  font-size: 1.1rem;
+}
+
+.summary-message strong {
+  color: #1f3a5f;
+  font-size: 1.2rem;
+}
+
+/* Graph Section */
+.graph-section {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 28px;
+  border: 1px solid #d9e2ef;
+}
+
+.graph-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #1e3a5f;
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #2c405c;
+}
+
+.color-box {
+  width: 20px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.chart-axis {
+  display: flex;
+  justify-content: space-between;
+  color: #4b5f73;
+  font-size: 0.9rem;
+}
+
+/* Schedule Section */
+.schedule-section {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #d9e2ef;
+  margin-bottom: 32px;
+}
+
+.schedule-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #1e3a5f;
+}
+
+.schedule-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-table {
+  min-width: 800px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.schedule-table th {
+  background: #e1eaf3;
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: 600;
+  color: #1a3349;
+  white-space: nowrap;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.schedule-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e9eef3;
+  color: #2c405c;
+  white-space: nowrap;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Related Tools */
+.related-tools {
+  margin: 32px 0 28px;
+  padding: 18px 0;
+  border-top: 2px solid #dde3ea;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.related-label {
+  font-weight: 600;
+  color: #0f2a40;
+}
+
+.related-tools a {
+  color: #1f4a7a;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.related-tools a:hover {
+  text-decoration: underline;
+}
+
+.sep {
+  color: #9aa9b9;
+}
+
+@media (max-width: 480px) {
+  .related-tools {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sep {
+    display: none;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 28px;
+  background: #f3f7fc;
+  border-radius: 30px;
+  padding: 28px 24px;
+}
+
+.faq-section h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #0b2b44;
+}
+
+@media (max-width: 480px) {
+  .faq-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.faq-item {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #c9d9ec;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1e3a5f;
+}
+
+.faq-item p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #253c54;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .faq-item {
+    padding: 16px;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+</style>
