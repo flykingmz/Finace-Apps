@@ -6,83 +6,43 @@
     </div>
   </div>
 -->
-  <div class="tax-salary-page">
+  <div class="annuity-page">
 
     <!-- Header -->
-    <h1>📊 Tax and Salary Calculators</h1>
+    <h1>📈 annuity Calculators</h1>
     <p class="category-description">
-      A complete suite of tax and salary calculators to estimate income tax, paycheck breakdowns, take-home pay, global VAT/GST, and financial planning impact.
+      Explore powerful annuity calculators to estimate retirement income and investment growth. Use our annuity payout, deferred annuity calculator, fixed annuity calculator, indexed annuity calculator, and annuity withdrawal calculator to plan your financial future with confidence.
     </p>
 
     <!-- Calculators Grid -->
     <div class="calculators-grid">
-      <!-- Global VAT/GST/Sales Tax Calculator -->
+      <!-- annuity payout calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
         <div class="card-content">
-          <h3>Global VAT/GST/Sales Tax Calculator</h3>
-          <p>Calculate value-added tax, goods and services tax, or sales tax for any amount across multiple jurisdictions.</p>
-          <a href="/global-vat" class="card-link" >Open Calculator →</a>
+          <h3>Annuity Payout Calculator</h3>
+          <p>Calculate periodic payouts from an annuity based on principal, interest rate, and payout duration.</p>
+          <a href="/annuity-payout" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
-    <!-- Crypto Tax Calculator -->
+      <!-- Annuity Calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
         <div class="card-content">
-          <h3>Crypto Tax Calculator</h3>
-          <p>Estimate your cryptocurrency tax instantly with our Crypto Tax Calculator. Calculate capital gains for Bitcoin and other digital assets across the USA, UK, Canada, and Australia. Supports both single-asset and multi-asset crypto portfolios to help you understand potential tax liabilities.</p>
-          <a href="/crypto-tax-calculator" class="card-link" >Open Calculator →</a>
+          <h3>Annuity Calculator</h3>
+          <p>Estimate the future value of an annuity or calculate the income stream you can expect from an annuity investment.</p>
+           <a href="/annuity" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
-      <!-- Income Tax Calculator -->
+      <!-- deferred annuity calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-file-invoice"></i></div>
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
         <div class="card-content">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate your federal and state income tax based on salary, deductions, and filing status.</p>
-          <a href="/income-tax" class="card-link" >Open Calculator →</a>
-        </div>
-      </div>
-
-      <!-- Paycheck Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-wallet"></i></div>
-        <div class="card-content">
-          <h3>Paycheck Calculator</h3>
-          <p>Break down your gross pay into net income after taxes, Social Security, Medicare, and other deductions.</p>
-          <a href="/paycheck" class="card-link">Open Calculator →</a>
-        </div>
-      </div>
-
-      <!-- Take Home Paycheck Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <div class="card-content">
-          <h3>Take Home Paycheck Calculator</h3>
-          <p>See exactly how much money lands in your bank account after all withholdings and contributions.</p>
-          <a href="/take-home-paycheck-calculator" class="card-link" >Open Calculator →</a>
-        </div>
-      </div>
-
- <!-- Marriage Tax Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-heart"></i></div>
-        <div class="card-content">
-          <h3>Marriage Tax Calculator</h3>
-          <p>Compare tax scenarios for married couples filing jointly vs. separately and understand the marriage penalty or bonus.</p>
-          <a href="/marriage-tax-calculator" class="card-link">Open Calculator →</a>
-        </div>
-      </div>
-
-      <!-- Salary Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="card-content">
-          <h3>Salary Calculator</h3>
-          <p>Convert between hourly, daily, weekly, monthly, and annual salary figures with ease.</p>
-          <a href="/salary-calculator" class="card-link" >Open Calculator →</a>
+          <h3>Deferred annuity calculator</h3>
+          <p>Planning for retirement can be challenging, but a deferred annuity helps secure your future income.</p>
+          <a href="/deferred-annuity" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
@@ -91,14 +51,14 @@
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
       <a href="/" class="back-link">← Back to Home</a>
-      <a href="/all-calculators" class="back-link" >All Calculators →</a>
+      <a href="/all-calculators" class="back-link">All Calculators →</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TaxSalaryCalculators',
+  name: 'RetirementCalculators',
   methods: {
     navigate(event) {
       event.preventDefault();
@@ -117,7 +77,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.tax-salary-page {
+.annuity-page {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
@@ -136,7 +96,7 @@ h1 {
 .category-description {
   font-size: 1.2rem;
   color: #475569;
-  max-width: 800px;
+  max-width: 900px;
   margin-bottom: 3rem;
   border-left: 4px solid #2563eb;
   padding-left: 1.5rem;

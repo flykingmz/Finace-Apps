@@ -6,29 +6,19 @@
     </div>
   </div>
 -->
-  <div class="tax-salary-page">
+  <div class="crypto-page">
 
     <!-- Header -->
-    <h1>📊 Tax and Salary Calculators</h1>
+    <h1>📈 crypto Calculators</h1>
     <p class="category-description">
-      A complete suite of tax and salary calculators to estimate income tax, paycheck breakdowns, take-home pay, global VAT/GST, and financial planning impact.
+      Easily calculate your cryptocurrency taxes and earnings with our comprehensive crypto calculators. Track Bitcoin taxes, crypto staking rewards, mining income, DeFi investment returns, NFT tax obligations, and crypto tax-loss harvesting to quickly understand your tax liabilities and optimize your crypto portfolio.
     </p>
 
     <!-- Calculators Grid -->
     <div class="calculators-grid">
-      <!-- Global VAT/GST/Sales Tax Calculator -->
+      <!-- annuity payout calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-globe"></i></div>
-        <div class="card-content">
-          <h3>Global VAT/GST/Sales Tax Calculator</h3>
-          <p>Calculate value-added tax, goods and services tax, or sales tax for any amount across multiple jurisdictions.</p>
-          <a href="/global-vat" class="card-link" >Open Calculator →</a>
-        </div>
-      </div>
-
-    <!-- Crypto Tax Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
         <div class="card-content">
           <h3>Crypto Tax Calculator</h3>
           <p>Estimate your cryptocurrency tax instantly with our Crypto Tax Calculator. Calculate capital gains for Bitcoin and other digital assets across the USA, UK, Canada, and Australia. Supports both single-asset and multi-asset crypto portfolios to help you understand potential tax liabilities.</p>
@@ -36,53 +26,23 @@
         </div>
       </div>
 
-      <!-- Income Tax Calculator -->
+      <!-- Defi tax calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-file-invoice"></i></div>
+        <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
         <div class="card-content">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate your federal and state income tax based on salary, deductions, and filing status.</p>
-          <a href="/income-tax" class="card-link" >Open Calculator →</a>
+          <h3>Defi tax calculator</h3>
+          <p>Accurately calculate your decentralized finance (DeFi) taxes with our DEFI Tax Calculator. Track crypto gains, losses, staking, yield farming, and NFT transactions. Perfect for investors, traders, and crypto enthusiasts looking to stay tax-compliant.</p>
+           <a href="#" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
-      <!-- Paycheck Calculator -->
+      <!-- NFT tax calculator -->
       <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-wallet"></i></div>
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
         <div class="card-content">
-          <h3>Paycheck Calculator</h3>
-          <p>Break down your gross pay into net income after taxes, Social Security, Medicare, and other deductions.</p>
-          <a href="/paycheck" class="card-link">Open Calculator →</a>
-        </div>
-      </div>
-
-      <!-- Take Home Paycheck Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <div class="card-content">
-          <h3>Take Home Paycheck Calculator</h3>
-          <p>See exactly how much money lands in your bank account after all withholdings and contributions.</p>
-          <a href="/take-home-paycheck-calculator" class="card-link" >Open Calculator →</a>
-        </div>
-      </div>
-
- <!-- Marriage Tax Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-heart"></i></div>
-        <div class="card-content">
-          <h3>Marriage Tax Calculator</h3>
-          <p>Compare tax scenarios for married couples filing jointly vs. separately and understand the marriage penalty or bonus.</p>
-          <a href="/marriage-tax-calculator" class="card-link">Open Calculator →</a>
-        </div>
-      </div>
-
-      <!-- Salary Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="card-content">
-          <h3>Salary Calculator</h3>
-          <p>Convert between hourly, daily, weekly, monthly, and annual salary figures with ease.</p>
-          <a href="/salary-calculator" class="card-link" >Open Calculator →</a>
+          <h3>NFT tax calculator</h3>
+          <p>Our NFT Tax Calculator helps NFT collectors and investors accurately calculate taxes on NFT sales, trades, and transfers. Easily track gains, losses, and taxable events for digital collectibles, optimize your tax reporting, and stay compliant with crypto tax regulations. This free online NFT tax calculator simplifies NFT tax planning, making it easy to estimate capital gains, losses, and reporting requirements for every NFT transaction.</p>
+          <a href="#" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
@@ -91,14 +51,14 @@
     <!-- Back to Home / All Calculators Link -->
     <div class="back-links">
       <a href="/" class="back-link">← Back to Home</a>
-      <a href="/all-calculators" class="back-link" >All Calculators →</a>
+      <a href="/all-calculators" class="back-link">All Calculators →</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TaxSalaryCalculators',
+  name: 'RetirementCalculators',
   methods: {
     navigate(event) {
       event.preventDefault();
@@ -117,7 +77,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.tax-salary-page {
+.crypto-page {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
@@ -136,7 +96,7 @@ h1 {
 .category-description {
   font-size: 1.2rem;
   color: #475569;
-  max-width: 800px;
+  max-width: 900px;
   margin-bottom: 3rem;
   border-left: 4px solid #2563eb;
   padding-left: 1.5rem;

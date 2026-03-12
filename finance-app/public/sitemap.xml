@@ -101,6 +101,12 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+<!---annuity link -->
+  <url>
+    <loc>https://financial-calculator.net/deferred-annuity</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 <!---calculators link -->
    <url>
     <loc>https://financial-calculator.net/tax-salary-calculators</loc>
@@ -129,6 +135,16 @@
   </url>
   <url>
     <loc>https://financial-calculator.net/other-calculators</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/crypto-calculators</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/annuity-calculators</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>

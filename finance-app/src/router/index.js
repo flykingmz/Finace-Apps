@@ -44,6 +44,15 @@ const routes = [
         path: 'other-calculators',
         name: 'OtherCalculators',
         component: () => import('../components/OtherCalculators.vue')
+      },{
+        path: 'crypto-calculators',
+        name: 'CryptoCalculators',
+        component: () => import('../components/CryptoCalculators.vue')
+      },
+      {
+        path: 'annuity-calculators',
+        name: 'AnnuityCalculators',
+        component: () => import('../components/AnnuityCalculators.vue')
       },
       {
         path: 'global-vat',
@@ -127,6 +136,11 @@ const routes = [
         path: 'roth-ira',
         name: 'RothIRACalculator',
         component: () => import('../components/RothIRACalculator.vue'),
+        meta: { keepAlive: false }
+      },{
+        path: 'deferred-annuity',
+        name: 'DeferredAnnuityCalculator',
+        component: () => import('../components/DeferredAnnuityCalculator.vue'),
         meta: { keepAlive: false }
       },
        {

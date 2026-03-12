@@ -89,11 +89,11 @@
     <div class="featured-grid">
       <div class="featured-item">
         <i class="fas fa-globe"></i>
-        <a href="/global-vat" >Global VAT/GST/Sales Tax Calculator</a>
+        <a href="/annuity-calculators" >Annuity Calculators</a>
       </div>
       <div class="featured-item">
         <i class="fas fa-wallet"></i>
-        <a href="/take-home-paycheck-calculator" >Take Home Paycheck Calculator</a>
+        <a href="/crypto-calculators" >Crypto Calculators</a>
       </div>
     </div>
 
