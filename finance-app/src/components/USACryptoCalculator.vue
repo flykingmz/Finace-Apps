@@ -308,6 +308,12 @@
         <p>A capital gain occurs when you sell or trade crypto for more than your cost basis. For example, buying 1 ETH at $1,500 and later selling at $2,500 creates a $1,000 capital gain. A calculator tracks and classifies these as short-term or long-term.</p>
       </div>
     </div>
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/crypto-taxes-in-the-usa-blog" class="calculator-btn">
+    More Before-Tax vs. After-Tax Income blog →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -1066,6 +1072,32 @@ button.clear:hover {
 .sep {
   color: #9aa9b9;
 }
+
+  
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 
 @media (max-width: 480px) {
   .related-tools {
