@@ -449,7 +449,7 @@ export default {
   this.form.annualIncome = Number(this.form.annualIncome) || 0;
   
   // 调试信息
-  console.log('Calculating with:', this.form.originalInvestment, this.form.sellPrice, this.form.investmentFee, this.form.exitFee, this.form.annualIncome);
+  // console.log('Calculating with:', this.form.originalInvestment, this.form.sellPrice, this.form.investmentFee, this.form.exitFee, this.form.annualIncome);
       
       if (capitalGain <= 0) {
         this.results = {
