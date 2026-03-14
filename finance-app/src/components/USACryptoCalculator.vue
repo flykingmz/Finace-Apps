@@ -311,7 +311,7 @@
      <!-- Calculator CTA -->
     <section class="section calculator-cta">
     <a href="/crypto-taxes-in-the-usa-blog" class="calculator-btn">
-    More Before-Tax vs. After-Tax Income blog →
+    Crypto Taxes in the USA – The Ultimate Guide (2026) →
     </a>
     </section>
   </div>
