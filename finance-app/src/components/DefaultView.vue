@@ -99,6 +99,33 @@
           </div>
         </div>
 
+        <!-- crypto  -->
+        <div class="category-card">
+          <div class="category-header-active">
+            <h2 class="category-title">Crypto</h2>
+            <div class="category-count">4 tools</div>
+          </div>
+          <div class="tools-list">
+            <a href="/crypto-tax-calculator" class="tool-link">Crypto Tax Calculator</a>
+            <a href="/nft-calculator" class="tool-link">NFT tax calculator</a>
+            <a href="/usa-crypto-calculator" class="tool-link">USA crypto calculator</a>
+             <a href="#" class="tool-link">Defi tax calculator</a>
+          </div>
+        </div>
+
+        <!-- annuity  -->
+        <div class="category-card">
+          <div class="category-header-active">
+            <h2 class="category-title">annuity</h2>
+            <div class="category-count">3 tools</div>
+          </div>
+          <div class="tools-list">
+            <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
+            <a href="/annuity" class="tool-link">Annuity Calculator</a>
+            <a href="/deferred-annuity" class="tool-link">Deferred Annuity Calculator</a>
+          </div>
+        </div>
+        
         <!-- Other -->
         <div class="category-card">
           <div class="category-header">
