@@ -41,8 +41,8 @@
         <div class="card-icon"><i class="fas fa-briefcase"></i></div>
         <div class="card-content">
           <h3>NFT tax calculator</h3>
-          <p>Our NFT Tax Calculator helps NFT collectors and investors accurately calculate taxes on NFT sales, trades, and transfers. Easily track gains, losses, and taxable events for digital collectibles, optimize your tax reporting, and stay compliant with crypto tax regulations. This free online NFT tax calculator simplifies NFT tax planning, making it easy to estimate capital gains, losses, and reporting requirements for every NFT transaction.</p>
-          <a href="#" class="card-link">Open Calculator →</a>
+          <p>Use this NFT Tax Calculator to estimate capital gains and taxes from NFT trades in the USA, UK, Canada, and Australia. Calculate NFT profits, losses, minting costs, and crypto tax liabilities from buying, selling, or trading NFTs with accurate country-specific tax rules.</p>
+          <a href="/nft-calculator" class="card-link">Open Calculator →</a>
         </div>
       </div>
 
