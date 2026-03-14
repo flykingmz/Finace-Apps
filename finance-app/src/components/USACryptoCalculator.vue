@@ -369,17 +369,17 @@ export default {
         { abbr: 'WI', name: 'Wisconsin' },
         { abbr: 'WY', name: 'Wyoming' }
       ],
-      form: {
-        originalInvestment: 0,
-        buyPrice: 0,
-        sellPrice: 0,
-        investmentFee: 0,
-        exitFee: 0,
-        annualIncome: 0,
-        holdingPeriod: 'short',
-        state: 'CA',
-        filingStatus: 'head'
-      },
+  form: {
+  originalInvestment: 10000,
+  buyPrice: 15000,
+  sellPrice: 25000,
+  investmentFee: 50,
+  exitFee: 50,
+  annualIncome: 50000,
+  holdingPeriod: 'short',
+  state: 'CA',
+  filingStatus: 'head'
+},
       results: {
         calculated: false,
         capitalGain: 0,
@@ -436,9 +436,10 @@ export default {
     },
     calculate() {
       // 计算资本利得
-      const costBasis = this.form.buyPrice + (this.form.investmentFee || 0);
-      const netProceeds = this.form.sellPrice - (this.form.exitFee || 0);
-      const capitalGain = Math.max(0, netProceeds - costBasis);
+      // 使用 originalInvestment 作为成本基础
+      const costBasis = (this.form.originalInvestment || 0) + (this.form.investmentFee || 0);
+      const netProceeds = (this.form.sellPrice || 0) - (this.form.exitFee || 0);
+      const capitalGain = netProceeds - costBasis;
       
       if (capitalGain <= 0) {
         this.results = {
@@ -461,25 +462,23 @@ export default {
       const totalIncome = this.form.annualIncome + capitalGain;
       
       let federalTax = 0;
-      let remainingIncome = totalIncome;
       let marginalRate = 0;
-      let taxPaid = 0;
-      
-      // 计算联邦税（简化模型，不考虑标准扣除等）
+      let remainingIncome = totalIncome; // 使用新变量
+
+      // 计算联邦税（累进税率）
       for (let i = federalBrackets.length - 1; i >= 0; i--) {
         const bracket = federalBrackets[i];
-        if (totalIncome > bracket.threshold) {
-          const taxableAmount = totalIncome - bracket.threshold;
-          const taxAtThisBracket = taxableAmount * (bracket.rate / 100);
-          federalTax += taxAtThisBracket;
-          
-          if (marginalRate === 0) {
-            marginalRate = bracket.rate;
-          }
-          
-          // 更新剩余收入和阈值
-          totalIncome = bracket.threshold;
+        if (remainingIncome > bracket.threshold) {
+        const taxableAmount = remainingIncome - bracket.threshold;
+        const taxAtThisBracket = taxableAmount * (bracket.rate / 100);
+        federalTax += taxAtThisBracket;
+    
+      if (marginalRate === 0) {
+      marginalRate = bracket.rate;
         }
+    
+        remainingIncome = bracket.threshold; // 使用remainingIncome
+      }
       }
       
       // 计算州税
