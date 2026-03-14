@@ -304,6 +304,12 @@ const routes = [
         name: 'RothIRACalculatorEstimateYourTaxFreeRetirementGrowth',
         component: () => import('../blog/RothIRACalculatorEstimateYourTaxFreeRetirementGrowth.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'crypto-taxes-in-the-usa-blog',
+        name: 'CryptoTaxesInTheUSA',
+        component: () => import('../blog/CryptoTaxesInTheUSA.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
