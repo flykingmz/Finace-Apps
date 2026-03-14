@@ -11,9 +11,9 @@
       <div class="blog-items">
          <!-- Blog 19: Crypto Taxes in the U.S. – The Ultimate Guide (2026) -->
         <div class="blog-card">
-          <h2 class="blog-title">Crypto Taxes in the U.S. – The Ultimate Guide (2026)</h2>
+          <h2 class="blog-title">Crypto Taxes in the USA – The Ultimate Guide (2026)</h2>
           <div class="blog-meta">
-            <span class="publish-date">March 12, 2026</span>
+            <span class="publish-date">March 14, 2026</span>
           </div>
           <p class="blog-excerpt">Cryptocurrency taxation has become a critical topic for investors, traders, and businesses as digital assets continue to expand across financial markets. In the United States, cryptocurrencies such as Bitcoin and Ethereum are treated as property for tax purposes by the Internal Revenue Service (IRS). This classification means that most crypto transactions may trigger capital gains or income tax events, depending on how the assets are acquired or used.</p>
           <a href="/crypto-taxes-in-the-usa-blog" class="learn-more">Detail →</a>
