@@ -83,6 +83,12 @@ const routes = [
         name: 'CryptoTaxCalculator',
         component: () => import('../components/CryptoTaxCalculator.vue'),
         meta: { keepAlive: false }
+      }, 
+      {
+        path: 'nft-calculator',
+        name: 'NFTCalculator',
+        component: () => import('../components/NFTCalculator.vue'),
+        meta: { keepAlive: false }
       },
       {
         path: 'marriage-tax-calculator',
