@@ -546,8 +546,8 @@ export default {
       ],
       selectedCountry: 'us',
       form: {
-        salePrice: 24234423,
-        purchasePrice: 423423
+        salePrice: 0,
+        purchasePrice: 0
       },
       profitLoss: 0,
       taxLiability: 0
