@@ -45,6 +45,15 @@
           <a href="/nft-calculator" class="card-link">Open Calculator →</a>
         </div>
       </div>
+       <!-- usa-crypto-calculator-->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="card-content">
+          <h3>USA crypto calculator</h3>
+          <p>Use the USA Crypto Tax Calculator to estimate cryptocurrency capital gains and tax liabilities. Calculate taxes from crypto trading, staking, mining, and NFT transactions based on U.S. tax rules quickly and accurately.</p>
+          <a href="/usa-crypto-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
 
     </div>
 
