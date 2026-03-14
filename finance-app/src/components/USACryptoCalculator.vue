@@ -440,6 +440,16 @@ export default {
       const costBasis = (this.form.originalInvestment || 0) + (this.form.investmentFee || 0);
       const netProceeds = (this.form.sellPrice || 0) - (this.form.exitFee || 0);
       const capitalGain = netProceeds - costBasis;
+
+      // 确保所有输入值都是有效数字
+  this.form.originalInvestment = Number(this.form.originalInvestment) || 0;
+  this.form.sellPrice = Number(this.form.sellPrice) || 0;
+  this.form.investmentFee = Number(this.form.investmentFee) || 0;
+  this.form.exitFee = Number(this.form.exitFee) || 0;
+  this.form.annualIncome = Number(this.form.annualIncome) || 0;
+  
+  // 调试信息
+  console.log('Calculating with:', this.form.originalInvestment, this.form.sellPrice, this.form.investmentFee, this.form.exitFee, this.form.annualIncome);
       
       if (capitalGain <= 0) {
         this.results = {
