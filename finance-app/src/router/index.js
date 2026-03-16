@@ -180,6 +180,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'certificate-deposit',
+        name: 'CertificateDepositCalculator',
+        component: () => import('../components/CertificateDepositCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'about-us',
         name: 'AboutUs',
         component: () => import('../footlink/AboutUs.vue'),

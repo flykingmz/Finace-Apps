@@ -35,6 +35,16 @@
         </div>
       </div>
 
+      <!-- CD Calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-certificate"></i></div>
+        <div class="card-content">
+          <h3>CD Calculator</h3>
+          <p>Calculate Certificate of Deposit maturity amounts and interest earnings for any term and rate.</p>
+          <a href="/certificate-deposit" class="card-link" >Open Calculator →</a>
+        </div>
+      </div>
+
       <!-- Finance Calculator -->
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-calculator"></i></div>
@@ -85,15 +95,6 @@
         </div>
       </div>
 
-      <!-- CD Calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-certificate"></i></div>
-        <div class="card-content">
-          <h3>CD Calculator</h3>
-          <p>Calculate Certificate of Deposit maturity amounts and interest earnings for any term and rate.</p>
-          <a href="/calculators/cd" class="card-link" @click.prevent="navigate">Open Calculator →</a>
-        </div>
-      </div>
 
       <!-- Bond Calculator -->
       <div class="calculator-card">

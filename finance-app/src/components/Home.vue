@@ -56,6 +56,8 @@
         <ul class="popular-list">
           <li><a href="/investment" >📊 Investment Calculator</a></li>
           <li><a href="/interest" >🧮 Interest Calculator</a></li>
+          <li><a href="/certificate-deposit" >📉 Certificate of Deposit Calculator</a></li>
+          
         </ul>
       </div>
       <!-- Other -->

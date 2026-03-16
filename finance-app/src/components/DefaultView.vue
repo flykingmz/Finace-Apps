@@ -93,6 +93,7 @@
           <div class="tools-list">
             <a href="/interest" class="tool-link">Interest Calculator</a>
             <a href="/investment" class="tool-link">Investment Calculator</a>
+            <a href="/certificate-deposit" class="tool-link">Certificate of Deposit (CD) Calculator</a>
             <a href="#" class="tool-link">Finance Calculator(Coming Soon)</a>
             <a href="#" class="tool-link">Compound Interest Calculator(Coming Soon)</a>
             <a href="#" class="tool-link">Interest Rate Calculator(Coming Soon)</a>
