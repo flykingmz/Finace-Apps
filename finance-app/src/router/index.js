@@ -315,12 +315,24 @@ const routes = [
         path: 'crypto-taxes-in-the-usa-blog',
         name: 'CryptoTaxesInTheUSA',
         component: () => import('../blog/CryptoTaxesInTheUSA.vue'),
-        meta: { keepAlive: false }
+        meta: { keepAlive: false } 
       },
       {
         path: 'how-to-calculate-certificate-of-deposit-interest-blog',
         name: 'HowtoCalculateCertificateofDepositInterest',
         component: () => import('../blog/HowtoCalculateCertificateofDepositInterest.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'why-is-my-paycheck-so-much-lower-than-my-salary-blog',
+        name: 'WhyIsMyPaycheckSoMuchLowerThanMySalary',
+        component: () => import('../blog/WhyIsMyPaycheckSoMuchLowerThanMySalary.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-is-your-salary-per-hour-blog',
+        name: 'HowMuchIsYourSalaryPerHour',
+        component: () => import('../blog/HowMuchIsYourSalaryPerHour.vue'),
         meta: { keepAlive: false }
       }
     ]

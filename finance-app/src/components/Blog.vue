@@ -6,9 +6,29 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section    -->
+    <!-- Blog List Section  how-much-is-your-salary-per-hour-blog -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 22:  Salary Calculator: How Much Is Your Salary Per Hour, Day, Week, and Month? -->
+        <div class="blog-card">
+          <h2 class="blog-title"> Salary Calculator: How Much Is Your Salary Per Hour, Day, Week, and Month?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 17, 2026</span>
+          </div>
+          <p class="blog-excerpt">When people talk about income, they usually refer to annual salary. A job offer might say $80,000 per year, but that number alone doesn't tell the full story about how much you actually earn per hour, per day, per week, or per month.</p>
+          <a href="/how-much-is-your-salary-per-hour-blog" class="learn-more">Detail →</a>
+        </div>
+
+      <!-- Blog 21:  why-is-my-paycheck-so-much-lower-than-my-salary-blog -->
+        <div class="blog-card">
+          <h2 class="blog-title"> Why Is My Paycheck So Much Lower Than My Salary? (Paycheck Calculator Explained)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 17, 2026</span>
+          </div>
+          <p class="blog-excerpt">Many employees experience the same moment of confusion when they receive their first paycheck from a new job. The offer letter might promise a $70,000 annual salary, yet the actual paycheck deposited into the bank account appears significantly lower than expected.</p>
+          <a href="/why-is-my-paycheck-so-much-lower-than-my-salary-blog" class="learn-more">Detail →</a>
+        </div>
+
        <!-- Blog 20: How to Calculate Certificate of Deposit Interest (CD Calculator + Real Examples) -->
         <div class="blog-card">
           <h2 class="blog-title">How to Calculate Certificate of Deposit Interest (CD Calculator + Real Examples)</h2>

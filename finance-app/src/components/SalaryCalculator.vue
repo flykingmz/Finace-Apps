@@ -121,6 +121,13 @@
         <p class="faq-a">Further education/certifications, gaining experience, networking, positive performance reviews (ask for raise), negotiating, or changing jobs (often +10% or more).</p>
       </div>
     </div>
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-much-is-your-salary-per-hour-blog" class="calculator-btn">
+    Salary Calculator: How Much Is Your Salary Per Hour, Day, Week, and Month? →
+    </a>
+    </section>
+    
   </div>
 </template>
 
@@ -807,4 +814,28 @@ export default {
     font-size: 16px !important; /* 防止iOS缩放 */
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

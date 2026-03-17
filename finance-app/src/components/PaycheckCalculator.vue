@@ -710,44 +710,12 @@
     </div>
   </div>
     
-    <!-- Footer -->
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Tool Statement</h4>
-          <p>This paycheck calculator provides estimates based on current tax rates and regulations. It is designed for educational and planning purposes.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Data Statement</h4>
-          <p><strong>Data Sources:</strong> IRS Publication 15-T, State Revenue Departments, SSA.gov</p>
-          <p><strong>Tax Year:</strong> {{ taxData.tax_year }}</p>
-          <p>Rates are updated annually based on official publications.</p>
-        </div>
-       <!--
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#" @click.prevent="goToGlobalPrice">Global Price Calculator</a></li>
-            <li><a href="#" @click.prevent="goToIncomeTax">Income Tax Calculator</a></li>
-            <li><a href="#">IRS Withholding Calculator</a></li>
-            <li><a href="#">State Tax Calculators</a></li>
-          </ul>
-        </div>
-        -->
-        <div class="footer-section">
-          <h4>Contact & Feedback</h4>
-          <p>Need help or have suggestions for improvement?</p>
-           <p>Email:flykingmz@gmail.com</p>
-          <button class="feedback-btn" @click="sendFeedback">
-            <span class="btn-icon">📧</span>
-            Send Feedback
-          </button>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Finance Apps - Paycheck Calculator. This tool is for estimation purposes only and should not be used for official tax filings.</p>
-      </div>
-    </div>
+ <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/why-is-my-paycheck-so-much-lower-than-my-salary-blog" class="calculator-btn">
+    Why Is My Paycheck So Much Lower Than My Salary? (Paycheck Calculator Explained) →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -2603,5 +2571,28 @@ export default {
   .point-card {
     padding: 1.25rem;
   }
+}
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 </style>
