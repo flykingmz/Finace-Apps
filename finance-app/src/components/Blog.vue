@@ -9,6 +9,16 @@
     <!-- Blog List Section    -->
     <div class="blog-list-section">
       <div class="blog-items">
+       <!-- Blog 20: How to Calculate Certificate of Deposit Interest (CD Calculator + Real Examples) -->
+        <div class="blog-card">
+          <h2 class="blog-title">How to Calculate Certificate of Deposit Interest (CD Calculator + Real Examples)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 17, 2026</span>
+          </div>
+          <p class="blog-excerpt">Certificates of Deposit (CDs) are among the most popular low-risk savings tools offered by banks and credit unions. They allow individuals to earn a fixed interest rate over a specified term, often higher than traditional savings accounts. For investors looking for predictable returns without market volatility, CDs can play an important role in a diversified financial strategy.</p>
+          <a href="/how-to-calculate-certificate-of-deposit-interest-blog" class="learn-more">Detail →</a>
+        </div>
+
          <!-- Blog 19: Crypto Taxes in the U.S. – The Ultimate Guide (2026) -->
         <div class="blog-card">
           <h2 class="blog-title">Crypto Taxes in the USA – The Ultimate Guide (2026)</h2>

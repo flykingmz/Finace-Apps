@@ -316,6 +316,12 @@ const routes = [
         name: 'CryptoTaxesInTheUSA',
         component: () => import('../blog/CryptoTaxesInTheUSA.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-to-calculate-certificate-of-deposit-interest-blog',
+        name: 'HowtoCalculateCertificateofDepositInterest',
+        component: () => import('../blog/HowtoCalculateCertificateofDepositInterest.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
