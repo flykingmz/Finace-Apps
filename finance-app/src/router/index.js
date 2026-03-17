@@ -334,6 +334,12 @@ const routes = [
         name: 'HowMuchIsYourSalaryPerHour',
         component: () => import('../blog/HowMuchIsYourSalaryPerHour.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-will-you-have-at-retirement-blog',
+        name: 'HowMuchWillYouHaveatRetirement',
+        component: () => import('../blog/HowMuchWillYouHaveatRetirement.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

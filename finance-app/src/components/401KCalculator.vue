@@ -441,30 +441,13 @@ It is possible to contribute to both forms of 401(k) simultaneously, as long as 
         </div>
       </section>
     </main>
-    
-    <!-- Footer (Dark Background) -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Tool Statement</h4>
-          <p>This 401(k) calculator is for educational and planning purposes only. Results are estimates and not guarantees of future performance.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Data Statement</h4>
-          <p>All calculations are performed locally in your browser. No personal data is collected, stored, or transmitted.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Contact & Feedback</h4>
-          <p>For questions or feedback about this calculator, please contact us at flykingmz@gmail.com</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>© 2026 401(k) Calculator. All rights reserved.</p>
-      </div>
-    </footer>
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-much-will-you-have-at-retirement-blog" class="calculator-btn">
+     401(k) Calculator: How Much Will You Have at Retirement? →
+    </a>
+    </section>
+ 
   </div>
 </template>
 
@@ -1196,5 +1179,28 @@ td {
   .result-grid {
     grid-template-columns: 1fr;
   }
+}
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 </style>
