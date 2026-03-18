@@ -570,26 +570,13 @@
       </div>
     </div>
 
-    <!-- Footer层 -->
-    <div class="footer-section">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h4>Tool Statement</h4>
-          <p>This calculator is provided for educational purposes only. The results should not be considered as financial advice. Please consult with a qualified financial advisor before making any retirement decisions.</p>
-        </div>
-        <div class="footer-column">
-          <h4>Data Statement</h4>
-          <p>All calculations are performed locally in your browser. No personal data is collected, stored, or transmitted to any servers.</p>
-        </div>
-        <div class="footer-column">
-          <h4>Contact & Feedback</h4>
-          <p>If you have questions or feedback about this calculator, please contact us at: flykingmz@gmail.com</p>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; 2026. All rights reserved.</p>
-      </div>
-    </div>
+ <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-much-will-you-get-each-month-in-retirement-blog" class="calculator-btn">
+    How Much Will You Get Each Month in Retirement? →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -1429,4 +1416,28 @@ input:focus {
     font-size: 0.9rem;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

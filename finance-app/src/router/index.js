@@ -340,6 +340,12 @@ const routes = [
         name: 'HowMuchWillYouHaveatRetirement',
         component: () => import('../blog/HowMuchWillYouHaveatRetirement.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-will-you-get-each-month-in-retirement-blog',
+        name: 'HowMuchWillYouGetEachMonthinRetirement',
+        component: () => import('../blog/HowMuchWillYouGetEachMonthinRetirement.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
