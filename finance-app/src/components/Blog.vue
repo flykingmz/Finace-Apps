@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 25:  Annuity vs 4% Rule: Which Gives You More Monthly Income? -->
+        <div class="blog-card">
+          <h2 class="blog-title"> Annuity vs 4% Rule: Which Gives You More Monthly Income?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 18, 2026</span>
+          </div>
+          <p class="blog-excerpt">An annuity is a financial product typically offered by insurance companies that converts a lump sum into regular income payments.</p>
+          <a href="/annuity-rule-which-gives-you-more-monthly-income-blog" class="learn-more">Detail →</a>
+        </div>
+
        <!-- Blog 24:  Pension Calculator: How Much Will You Get Each Month in Retirement? -->
         <div class="blog-card">
           <h2 class="blog-title"> Pension Calculator: How Much Will You Get Each Month in Retirement?</h2>

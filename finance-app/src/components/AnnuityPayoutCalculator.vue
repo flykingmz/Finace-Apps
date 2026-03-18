@@ -266,6 +266,14 @@
         <p><strong>Life with Period Certain:</strong> This option combines features of the fixed length and life-only options. It guarantees an income for life but also allows the annuitant to select a specific time period during which the annuity pays a designated beneficiary, such as 10 years, even in the case of death before the guaranteed period ends. If the annuitant dies after the period certain, no payments are made to the beneficiary.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/annuity-rule-which-gives-you-more-monthly-income-blog" class="calculator-btn">
+    More Before-Tax vs. After-Tax Income blog →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -1090,5 +1098,28 @@ button.clear:hover {
   .balances-table td {
     padding: 8px;
   }
+}
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 </style>

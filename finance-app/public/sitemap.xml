@@ -302,4 +302,14 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://financial-calculator.net/how-much-will-you-get-each-month-in-retirement-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/annuity-rule-which-gives-you-more-monthly-income-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

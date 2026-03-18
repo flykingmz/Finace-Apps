@@ -346,6 +346,12 @@ const routes = [
         name: 'HowMuchWillYouGetEachMonthinRetirement',
         component: () => import('../blog/HowMuchWillYouGetEachMonthinRetirement.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'annuity-rule-which-gives-you-more-monthly-income-blog',
+        name: 'AnnuityRuleWhichGivesYouMoreMonthlyIncome',
+        component: () => import('../blog/AnnuityRuleWhichGivesYouMoreMonthlyIncome.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
