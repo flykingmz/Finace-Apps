@@ -162,6 +162,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'mortgage-payoff',
+        name: 'MortgagePayoffCalculator',
+        component: () => import('../components/MortgagePayoffCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'amortization',
         name: 'AmortizationCalculator',
         component: () => import('../components/AmortizationCalculator.vue'),

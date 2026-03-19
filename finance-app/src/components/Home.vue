@@ -47,6 +47,7 @@
         <ul class="popular-list">
           <li><a href="/mortgage" >🏠 Mortgage Calculator</a></li>
           <li><a href="/amortization" >📉 Amortization Calculator</a></li>
+          <li><a href="/mortgage-payoff" >📊 Mortgage Payoff Calculator</a></li>
         </ul>
       </div>
       <!-- Investment -->

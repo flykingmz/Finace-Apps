@@ -65,7 +65,7 @@
           <div class="tools-list">
             <a href="/mortgage" class="tool-link">Mortgage Calculator</a>
             <a href="/amortization" class="tool-link">Amortization Calculator</a>
-            <a href="#" class="tool-link">Mortgage Payoff Calculator(Coming Soon)</a>
+            <a href="/mortgage-payoff" class="tool-link">Mortgage Payoff Calculator</a>
             <a href="#" class="tool-link">House Affordability Calculator(Coming Soon)</a>
             <a href="#" class="tool-link">Rent Calculator(Coming Soon)</a>
             <a href="#" class="tool-link">Debt-to-Income Ratio Calculator(Coming Soon)</a>
