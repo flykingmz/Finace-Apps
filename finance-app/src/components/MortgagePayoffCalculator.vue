@@ -667,163 +667,163 @@ export default {
     },
 
     updateChart() {
-  // 确保DOM已更新
-  this.$nextTick(() => {
-    const canvas = this.$refs.comparisonChart;
-    if (!canvas) {
-      console.log('Canvas not found');
-      return;
-    }
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-      console.log('Context not found');
-      return;
-    }
-
-    const schedule = this.results.monthlySchedule;
-    if (!schedule || schedule.length === 0) {
-      console.log('No schedule data');
-      return;
-    }
-
-    // 销毁旧图表
-    if (this.chart) {
-      this.chart.destroy();
-      this.chart = null;
-    }
-
-    // 准备图表数据 - 按年采样
-    const dataPoints = [];
-    const totalYears = Math.ceil(schedule.length / 12);
-    
-    for (let year = 1; year <= totalYears; year++) {
-      const monthIndex = Math.min(year * 12 - 1, schedule.length - 1);
-      const monthData = schedule[monthIndex];
-      
-      // 计算到该年度的累计利息
-      let originalCumulativeInterest = 0;
-      let newCumulativeInterest = 0;
-      
-      for (let m = 0; m <= monthIndex; m++) {
-        if (m < schedule.length) {
-          originalCumulativeInterest += schedule[m].originalInterest || 0;
-          newCumulativeInterest += schedule[m].newInterest || 0;
-        }
-      }
-      
-      dataPoints.push({
-        year: year,
-        oldBalance: monthData.originalBalance,
-        oldInterest: originalCumulativeInterest,
-        newBalance: monthData.newBalance,
-        newInterest: newCumulativeInterest
-      });
-    }
-
-    // 创建新图表
-    this.chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: dataPoints.map(d => d.year + 'yr'),
-        datasets: [
-          {
-            label: 'Old Balance',
-            data: dataPoints.map(d => d.oldBalance / 1000),
-            borderColor: '#2563eb',
-            backgroundColor: 'transparent',
-            borderWidth: 2,
-            tension: 0.1,
-            pointBackgroundColor: '#2563eb',
-            pointBorderColor: '#2563eb'
-          },
-          {
-            label: 'Old Interest',
-            data: dataPoints.map(d => d.oldInterest / 1000),
-            borderColor: '#16a34a',
-            backgroundColor: 'transparent',
-            borderWidth: 2,
-            tension: 0.1,
-            pointBackgroundColor: '#16a34a',
-            pointBorderColor: '#16a34a'
-          },
-          {
-            label: 'New Balance',
-            data: dataPoints.map(d => d.newBalance / 1000),
-            borderColor: '#eab308',
-            backgroundColor: 'transparent',
-            borderWidth: 2,
-            tension: 0.1,
-            pointBackgroundColor: '#eab308',
-            pointBorderColor: '#eab308'
-          },
-          {
-            label: 'New Interest',
-            data: dataPoints.map(d => d.newInterest / 1000),
-            borderColor: '#9333ea',
-            backgroundColor: 'transparent',
-            borderWidth: 2,
-            tension: 0.1,
-            pointBackgroundColor: '#9333ea',
-            pointBorderColor: '#9333ea'
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: {
-          duration: 0
-        },
-        plugins: {
-          legend: {
-            display: true,
-            position: 'top',
-            labels: {
-              boxWidth: 12,
-              padding: 10,
-              font: { size: 10 }
+        // 确保DOM已更新
+        this.$nextTick(() => {
+            const canvas = this.$refs.comparisonChart;
+            if (!canvas) {
+            console.log('Canvas not found');
+            return;
             }
-          },
-          tooltip: {
-            callbacks: {
-              label: (context) => {
-                let label = context.dataset.label || '';
-                if (label) label += ': ';
-                if (context.parsed.y !== null) {
-                  label += '$' + (context.parsed.y * 1000).toFixed(0);
+
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+            console.log('Context not found');
+            return;
+            }
+
+            const schedule = this.results.monthlySchedule;
+            if (!schedule || schedule.length === 0) {
+            console.log('No schedule data');
+            return;
+            }
+
+            // 销毁旧图表
+            if (this.chart) {
+            this.chart.destroy();
+            this.chart = null;
+            }
+
+            // 准备图表数据 - 按年采样
+            const dataPoints = [];
+            const totalYears = Math.ceil(schedule.length / 12);
+            
+            for (let year = 1; year <= totalYears; year++) {
+            const monthIndex = Math.min(year * 12 - 1, schedule.length - 1);
+            const monthData = schedule[monthIndex];
+            
+            // 计算到该年度的累计利息
+            let originalCumulativeInterest = 0;
+            let newCumulativeInterest = 0;
+            
+            for (let m = 0; m <= monthIndex; m++) {
+                if (m < schedule.length) {
+                originalCumulativeInterest += schedule[m].originalInterest || 0;
+                newCumulativeInterest += schedule[m].newInterest || 0;
                 }
-                return label;
-              }
             }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Amount ($K)',
-              font: { size: 11 }
-            },
-            ticks: {
-              callback: (value) => '$' + value + 'K',
-              font: { size: 10 }
+            
+            dataPoints.push({
+                year: year,
+                oldBalance: monthData.originalBalance,
+                oldInterest: originalCumulativeInterest,
+                newBalance: monthData.newBalance,
+                newInterest: newCumulativeInterest
+            });
             }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Year',
-              font: { size: 11 }
+
+            // 创建新图表
+            this.chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dataPoints.map(d => d.year + 'yr'),
+                datasets: [
+                {
+                    label: 'Old Balance',
+                    data: dataPoints.map(d => d.oldBalance / 1000),
+                    borderColor: '#2563eb',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    tension: 0.1,
+                    pointBackgroundColor: '#2563eb',
+                    pointBorderColor: '#2563eb'
+                },
+                {
+                    label: 'Old Interest',
+                    data: dataPoints.map(d => d.oldInterest / 1000),
+                    borderColor: '#16a34a',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    tension: 0.1,
+                    pointBackgroundColor: '#16a34a',
+                    pointBorderColor: '#16a34a'
+                },
+                {
+                    label: 'New Balance',
+                    data: dataPoints.map(d => d.newBalance / 1000),
+                    borderColor: '#eab308',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    tension: 0.1,
+                    pointBackgroundColor: '#eab308',
+                    pointBorderColor: '#eab308'
+                },
+                {
+                    label: 'New Interest',
+                    data: dataPoints.map(d => d.newInterest / 1000),
+                    borderColor: '#9333ea',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    tension: 0.1,
+                    pointBackgroundColor: '#9333ea',
+                    pointBorderColor: '#9333ea'
+                }
+                ]
             },
-            ticks: { font: { size: 10 } }
-          }
-        }
-      }
-    });
-  });
-}
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                duration: 0
+                },
+                plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                    boxWidth: 12,
+                    padding: 10,
+                    font: { size: 10 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                    label: (context) => {
+                        let label = context.dataset.label || '';
+                        if (label) label += ': ';
+                        if (context.parsed.y !== null) {
+                        label += '$' + (context.parsed.y * 1000).toFixed(0);
+                        }
+                        return label;
+                    }
+                    }
+                }
+                },
+                scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                    display: true,
+                    text: 'Amount ($K)',
+                    font: { size: 11 }
+                    },
+                    ticks: {
+                    callback: (value) => '$' + value + 'K',
+                    font: { size: 10 }
+                    }
+                },
+                x: {
+                    title: {
+                    display: true,
+                    text: 'Year',
+                    font: { size: 11 }
+                    },
+                    ticks: { font: { size: 10 } }
+                }
+                }
+            }
+            });
+        });
+    },
 
     clearForm() {
       this.form = {
