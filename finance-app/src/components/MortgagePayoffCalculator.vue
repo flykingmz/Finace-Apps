@@ -510,6 +510,7 @@ export default {
       console.log('Google meta tags set')
     },
     calculate() {
+      console.log('calculate start')
       const originalAmount = this.form.originalLoanAmount || 0;
       const originalTerm = this.form.originalLoanTerm || 1;
       const annualRate = (this.form.interestRate || 0) / 100;
