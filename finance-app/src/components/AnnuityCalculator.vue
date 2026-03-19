@@ -231,7 +231,7 @@
       <!-- Calculator CTA -->
     <section class="section calculator-cta">
     <a href="/general-annuity-info-blog" class="calculator-btn">
-    More What Is an Annuity? blog →
+    What Is an Annuity? →
     </a>
     </section>
 
@@ -895,4 +895,29 @@ button.clear:hover {
     flex-direction: column;
   }
 }
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

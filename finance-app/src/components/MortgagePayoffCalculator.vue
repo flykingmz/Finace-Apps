@@ -3,7 +3,7 @@
     <!-- Header -->
     <h1 class="main-title">Mortgage Payoff Calculator</h1>
     <p class="description">
-      The Mortgage Payoff Calculator helps you estimate how quickly you can pay off your mortgage and how much interest you can save by making extra payments. Enter your loan balance, interest rate, monthly payment, and additional payment amount to calculate your new payoff date.This tool is ideal for homeowners looking to pay off their mortgage early, reduce total interest costs, and explore different repayment strategies. Compare scenarios with and without extra payments to see how small changes can significantly impact your long-term savings.
+      Use this Mortgage Payoff Calculator to see how extra payments can reduce your loan term and save interest. Calculate early mortgage payoff, compare scenarios, and estimate how quickly you can become debt-free.
     </p>
 
     <!-- Calculator Form - 附件1样式 -->
