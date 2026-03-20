@@ -104,12 +104,13 @@
         <div class="category-card">
           <div class="category-header-active">
             <h2 class="category-title">Crypto</h2>
-            <div class="category-count">4 tools</div>
+            <div class="category-count">5 tools</div>
           </div>
           <div class="tools-list">
             <a href="/crypto-tax-calculator" class="tool-link">Crypto Tax Calculator</a>
             <a href="/nft-calculator" class="tool-link">NFT tax calculator</a>
             <a href="/usa-crypto-calculator" class="tool-link">USA crypto calculator</a>
+            <a href="/uk-crypto-calculator" class="tool-link">UK crypto calculator</a>
              <a href="#" class="tool-link">Defi tax calculator</a>
           </div>
         </div>

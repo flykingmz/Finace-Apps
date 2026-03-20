@@ -26,16 +26,6 @@
         </div>
       </div>
 
-      <!-- Defi tax calculator -->
-      <div class="calculator-card">
-        <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
-        <div class="card-content">
-          <h3>Defi tax calculator</h3>
-          <p>Accurately calculate your decentralized finance (DeFi) taxes with our DEFI Tax Calculator. Track crypto gains, losses, staking, yield farming, and NFT transactions. Perfect for investors, traders, and crypto enthusiasts looking to stay tax-compliant.</p>
-           <a href="#" class="card-link" >Open Calculator →</a>
-        </div>
-      </div>
-
       <!-- NFT tax calculator -->
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-briefcase"></i></div>
@@ -52,6 +42,26 @@
           <h3>USA crypto calculator</h3>
           <p>Use the USA Crypto Tax Calculator to estimate cryptocurrency capital gains and tax liabilities. Calculate taxes from crypto trading, staking, mining, and NFT transactions based on U.S. tax rules quickly and accurately.</p>
           <a href="/usa-crypto-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
+
+      <!-- uk-crypto-calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="card-content">
+          <h3>UK crypto calculator</h3>
+          <p>Use this UK Crypto Tax Calculator to estimate cryptocurrency capital gains and tax liabilities based on HMRC rules. Calculate taxes from crypto trading, staking, mining, DeFi, and NFT transactions quickly and accurately.</p>
+          <a href="/uk-crypto-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
+
+       <!-- Defi tax calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
+        <div class="card-content">
+          <h3>Defi tax calculator</h3>
+          <p>Accurately calculate your decentralized finance (DeFi) taxes with our DEFI Tax Calculator. Track crypto gains, losses, staking, yield farming, and NFT transactions. Perfect for investors, traders, and crypto enthusiasts looking to stay tax-compliant.</p>
+           <a href="#" class="card-link" >Open Calculator →</a>
         </div>
       </div>
 
