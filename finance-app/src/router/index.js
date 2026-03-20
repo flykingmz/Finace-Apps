@@ -370,6 +370,12 @@ const routes = [
         name: 'UKCryptoTax7RulesThatCouldSaveYouThousands',
         component: () => import('../blog/UKCryptoTax7RulesThatCouldSaveYouThousands.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'do-you-pay-tax-on-nfts-5-things-every-investor-must-know-blog',
+        name: 'DoYouPayTaxonNFTs5ThingsEveryInvestorMustKnow',
+        component: () => import('../blog/DoYouPayTaxonNFTs5ThingsEveryInvestorMustKnow.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

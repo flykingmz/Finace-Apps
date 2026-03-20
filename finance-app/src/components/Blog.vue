@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+       <!-- Blog 27:  Do You Pay Tax on NFTs? 5 Things Every Investor Must Know -->
+        <div class="blog-card">
+          <h2 class="blog-title"> Do You Pay Tax on NFTs? 5 Things Every Investor Must Know</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 20, 2026</span>
+          </div>
+          <p class="blog-excerpt">Non-Fungible Tokens (NFTs) have transformed digital ownership—spanning art, gaming, music, and virtual assets. But while many investors focus on buying, selling, and flipping NFTs, one critical question often gets overlooked.</p>
+          <a href="/do-you-pay-tax-on-nfts-5-things-every-investor-must-know-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 26:  UK Crypto Tax 2026: 7 Rules That Could Save You Thousands -->
         <div class="blog-card">
           <h2 class="blog-title"> UK Crypto Tax 2026: 7 Rules That Could Save You Thousands</h2>

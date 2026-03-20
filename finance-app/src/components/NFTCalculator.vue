@@ -530,6 +530,13 @@
         </ol>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/do-you-pay-tax-on-nfts-5-things-every-investor-must-know-blog" class="calculator-btn">
+    Do You Pay Tax on NFTs? 5 Things Every Investor Must Know →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -1087,4 +1094,28 @@ button.clear:hover {
     font-size: 0.9rem;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>
