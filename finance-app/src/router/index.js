@@ -364,6 +364,12 @@ const routes = [
         name: 'AnnuityRuleWhichGivesYouMoreMonthlyIncome',
         component: () => import('../blog/AnnuityRuleWhichGivesYouMoreMonthlyIncome.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'uk-crypto-tax-7rules-that-could-save-you-thousands-blog',
+        name: 'UKCryptoTax7RulesThatCouldSaveYouThousands',
+        component: () => import('../blog/UKCryptoTax7RulesThatCouldSaveYouThousands.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

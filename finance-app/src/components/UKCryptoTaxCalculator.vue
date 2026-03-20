@@ -471,7 +471,7 @@
     </div>
 <!-- Calculator CTA -->
     <section class="section calculator-cta">
-    <a href="/annuity-rule-which-gives-you-more-monthly-income-blog" class="calculator-btn">
+    <a href="/uk-crypto-tax-7rules-that-could-save-you-thousands-blog" class="calculator-btn">
     UK Crypto Tax 2026: 7 Rules That Could Save You Thousands →
     </a>
     </section>
