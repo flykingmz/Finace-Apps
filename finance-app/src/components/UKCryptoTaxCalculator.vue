@@ -406,6 +406,13 @@
         </ul>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/annuity-rule-which-gives-you-more-monthly-income-blog" class="calculator-btn">
+    UK Crypto Tax 2026: 7 Rules That Could Save You Thousands →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -1097,3 +1104,61 @@ button.reset:hover {
 .faq-item ul,
 .faq-item ol {
   margin: 8px 0;
+  padding-left: 24px;
+}
+
+.faq-item li {
+  margin-bottom: 4px;
+  line-height: 1.6;
+  color: #2c405c;
+  font-size: 0.95rem;
+}
+
+.faq-item .formula {
+  font-family: 'Courier New', monospace;
+  background: #ecf3fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .faq-item {
+    padding: 16px;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p,
+  .faq-item li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+</style>
