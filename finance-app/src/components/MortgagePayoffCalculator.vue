@@ -404,6 +404,14 @@
         <p><strong>Example 3:</strong> Charles carries no debt other than the mortgage on his house. He has a steady job where he has maxed out his tax-advantaged accounts, built a healthy six-month emergency fund, and saved extra cash. Charles is a few years away from retirement. Therefore, he does not want to make relatively riskier investments, such as purchasing individual stocks. In this situation, Charles's financial advisor recommends paying off his mortgage earlier to save on mortgage interest. This way, he can begin his retirement with a fully paid-off home.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/mortgage-how-fast-can-you-pay-it-off-with-extra-payments-blog" class="calculator-btn">
+    $500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments? →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -1475,4 +1483,28 @@ button.clear:hover {
     font-size: 0.9rem;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

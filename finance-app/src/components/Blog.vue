@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 28:  $500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments? -->
+        <div class="blog-card">
+          <h2 class="blog-title"> $500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 20, 2026</span>
+          </div>
+          <p class="blog-excerpt">A $500,000 mortgage is a significant financial commitment—but what most homeowners don’t realize is this:👉 You don’t have to stick to the full 30 years.</p>
+          <a href="/mortgage-how-fast-can-you-pay-it-off-with-extra-payments-blog" class="learn-more">Detail →</a>
+        </div>
+
        <!-- Blog 27:  Do You Pay Tax on NFTs? 5 Things Every Investor Must Know -->
         <div class="blog-card">
           <h2 class="blog-title"> Do You Pay Tax on NFTs? 5 Things Every Investor Must Know</h2>

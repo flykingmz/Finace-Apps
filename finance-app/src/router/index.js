@@ -376,6 +376,12 @@ const routes = [
         name: 'DoYouPayTaxonNFTs5ThingsEveryInvestorMustKnow',
         component: () => import('../blog/DoYouPayTaxonNFTs5ThingsEveryInvestorMustKnow.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'mortgage-how-fast-can-you-pay-it-off-with-extra-payments-blog',
+        name: 'MortgageHowFastCanYouPayItOffwithExtraPayments',
+        component: () => import('../blog/MortgageHowFastCanYouPayItOffwithExtraPayments.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
