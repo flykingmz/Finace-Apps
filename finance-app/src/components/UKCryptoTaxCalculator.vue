@@ -3,10 +3,10 @@
     <!-- Header -->
     <h1 class="main-title">UK Crypto Tax Calculator</h1>
     <p class="description">
-      The UK Crypto Tax Calculator helps you estimate capital gains and tax liabilities from cryptocurrency transactions under HMRC guidelines. This tool supports common crypto activities such as trading, staking, mining, DeFi, and NFT transactions.Enter your purchase price, selling price, transaction fees, and income details to calculate your crypto gains or losses. Whether you are a crypto investor, trader, or NFT collector in the UK, this calculator provides a simple way to understand how your cryptocurrency profits may be taxed.
+     The UK Crypto Tax Calculator helps you estimate capital gains and tax liabilities from cryptocurrency transactions under HMRC guidelines. This tool supports common crypto activities such as trading, staking, mining, DeFi, and NFT transactions.Enter your purchase price, selling price, transaction fees, and income details to calculate your crypto gains or losses. Whether you are a crypto investor, trader, or NFT collector in the UK, this calculator provides a simple way to understand how your cryptocurrency profits may be taxed.
     </p>
 
-    <!-- Calculator Form - 附件1样式 -->
+    <!-- Calculator Form -->
     <div class="calculator-form">
       <h2>Tax Calculator</h2>
 
@@ -22,88 +22,151 @@
         </div>
       </div>
 
-      <!-- Transaction Type Tabs -->
-      <div class="transaction-tabs">
-        <button
-          class="tab-btn"
-          :class="{ active: transactionType === 'buy' }"
-          @click="transactionType = 'buy'"
-        >
-          Buy / Acquisition
-        </button>
-        <button
-          class="tab-btn"
-          :class="{ active: transactionType === 'sell' }"
-          @click="transactionType = 'sell'"
-        >
-          Sell / Disposal
-        </button>
+      <!-- Transaction Type Labels -->
+      <div class="transaction-labels">
+        <div class="label-buy">Buy / Acquisition</div>
+        <div class="label-sell">Sell / Disposal</div>
       </div>
 
-      <!-- Transaction Details -->
-      <div class="transaction-details">
-        <!-- Asset Selection -->
-        <div class="form-row">
-          <label>Asset</label>
-          <div class="input-wrapper">
-            <select v-model="selectedAsset" class="asset-select">
-              <option v-for="asset in cryptoAssets" :key="asset.symbol" :value="asset">
-                {{ asset.name }} ({{ asset.symbol }})
-              </option>
-            </select>
+      <!-- Transaction Details - Buy and Sell Side by Side -->
+      <div class="transaction-grid">
+        <!-- Buy Side -->
+        <div class="transaction-side buy-side">
+          <div class="transaction-header">Buy / Acquisition</div>
+          
+          <!-- Asset Selection -->
+          <div class="form-row">
+            <label>Asset</label>
+            <div class="input-wrapper">
+              <select v-model="buyAsset" class="asset-select">
+                <option v-for="asset in cryptoAssets" :key="asset.symbol" :value="asset">
+                  {{ asset.name }} ({{ asset.symbol }})
+                </option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <!-- Amount -->
-        <div class="form-row">
-          <label>Amount</label>
-          <div class="input-wrapper">
-            <div class="input-with-symbol">
+          <!-- Amount -->
+          <div class="form-row">
+            <label>Amount</label>
+            <div class="input-wrapper">
+              <div class="input-with-symbol">
+                <input
+                  type="number"
+                  v-model.number="buyAmount"
+                  min="0"
+                  step="0.001"
+                  placeholder="12"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Date -->
+          <div class="form-row">
+            <label>Date</label>
+            <div class="input-wrapper">
               <input
-                type="number"
-                v-model.number="transactionAmount"
-                min="0"
-                step="0.001"
-                placeholder="12"
+                type="date"
+                v-model="buyDate"
+                class="date-input"
               />
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="form-row">
+            <label>Price (£)</label>
+            <div class="input-wrapper">
+              <div class="input-with-symbol">
+                <span class="currency-symbol">£</span>
+                <input
+                  type="number"
+                  v-model.number="buyPrice"
+                  min="0"
+                  step="0.01"
+                  placeholder="12345"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Valuation (calculated) -->
+          <div class="form-row valuation-row">
+            <label>Valuation (£)</label>
+            <div class="valuation-display">
+              £{{ formatMoney(buyAmount * buyPrice) }}
             </div>
           </div>
         </div>
 
-        <!-- Date -->
-        <div class="form-row">
-          <label>Date</label>
-          <div class="input-wrapper">
-            <input
-              type="date"
-              v-model="transactionDate"
-              class="date-input"
-            />
+        <!-- Sell Side -->
+        <div class="transaction-side sell-side">
+          <div class="transaction-header">Sell / Disposal</div>
+          
+          <!-- Asset Selection -->
+          <div class="form-row">
+            <label>Asset</label>
+            <div class="input-wrapper">
+              <select v-model="sellAsset" class="asset-select">
+                <option v-for="asset in cryptoAssets" :key="asset.symbol" :value="asset">
+                  {{ asset.name }} ({{ asset.symbol }})
+                </option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <!-- Price -->
-        <div class="form-row">
-          <label>Price (£)</label>
-          <div class="input-wrapper">
-            <div class="input-with-symbol">
-              <span class="currency-symbol">£</span>
+          <!-- Amount -->
+          <div class="form-row">
+            <label>Amount</label>
+            <div class="input-wrapper">
+              <div class="input-with-symbol">
+                <input
+                  type="number"
+                  v-model.number="sellAmount"
+                  min="0"
+                  step="0.001"
+                  placeholder="12"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Date -->
+          <div class="form-row">
+            <label>Date</label>
+            <div class="input-wrapper">
               <input
-                type="number"
-                v-model.number="transactionPrice"
-                min="0"
-                step="0.01"
-                placeholder="12345"
+                type="date"
+                v-model="sellDate"
+                class="date-input"
               />
             </div>
           </div>
-        </div>
 
-        <!-- Valuation (calculated) -->
-        <div class="form-row valuation-row">
-          <label>Valuation (£)</label>
-          <div class="valuation-display">
-            £{{ formatMoney(transactionAmount * transactionPrice) }}
+          <!-- Price -->
+          <div class="form-row">
+            <label>Price (£)</label>
+            <div class="input-wrapper">
+              <div class="input-with-symbol">
+                <span class="currency-symbol">£</span>
+                <input
+                  type="number"
+                  v-model.number="sellPrice"
+                  min="0"
+                  step="0.01"
+                  placeholder="45678"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Valuation (calculated) -->
+          <div class="form-row valuation-row">
+            <label>Valuation (£)</label>
+            <div class="valuation-display">
+              £{{ formatMoney(sellAmount * sellPrice) }}
+            </div>
           </div>
         </div>
       </div>
@@ -132,7 +195,7 @@
       </div>
     </div>
 
-    <!-- Results Section - 附件2样式 -->
+    <!-- Results Section -->
     <div class="results-section" v-if="results.calculated">
       <h2>Calculation Details</h2>
 
@@ -178,7 +241,7 @@
             <span class="tax-value gain">£{{ formatMoney(results.taxableGain) }}</span>
           </div>
           <div class="tax-row">
-            <span class="tax-label">Higher Rate Tax ({{ results.taxRate }}%)</span>
+            <span class="tax-label">{{ results.taxRateLabel }} ({{ results.taxRate }}%)</span>
             <span class="tax-value">-£{{ formatMoney(results.taxPayable) }}</span>
           </div>
         </div>
@@ -406,8 +469,7 @@
         </ul>
       </div>
     </div>
-
-     <!-- Calculator CTA -->
+<!-- Calculator CTA -->
     <section class="section calculator-cta">
     <a href="/annuity-rule-which-gives-you-more-monthly-income-blog" class="calculator-btn">
     UK Crypto Tax 2026: 7 Rules That Could Save You Thousands →
@@ -467,13 +529,22 @@ export default {
         { symbol: 'VET', name: 'VeChain' }
       ],
       
-      selectedAsset: { symbol: 'BTC', name: 'Bitcoin' },
-      transactionType: 'buy', // 'buy' or 'sell'
-      transactionAmount: 12,
-      transactionDate: new Date().toISOString().split('T')[0],
-      transactionPrice: 12345,
+      // Buy side
+      buyAsset: { symbol: 'BTC', name: 'Bitcoin' },
+      buyAmount: 12,
+      buyDate: '2026-01-15',
+      buyPrice: 12345,
+      
+      // Sell side
+      sellAsset: { symbol: 'BTC', name: 'Bitcoin' },
+      sellAmount: 12,
+      sellDate: '2026-03-20',
+      sellPrice: 45678,
+      
+      // Other income
       otherIncome: 123444,
       
+      // Results
       results: {
         calculated: false,
         assetSymbol: 'BTC',
@@ -483,6 +554,7 @@ export default {
         totalGain: 0,
         taxableGain: 0,
         taxRate: 20,
+        taxRateLabel: 'Higher Rate Tax',
         taxPayable: 0,
         cgtPayable: 0,
         profitAfterTax: 0
@@ -490,7 +562,7 @@ export default {
     };
   },
   methods: {
-    setGoogleMetaTags() {
+setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
@@ -528,20 +600,26 @@ export default {
       canonical.href = window.location.href
       
       console.log('Google meta tags set')
-    },
+    },		
     updateTaxRates() {
       this.taxRates = { ...this.taxRatesByYear[this.selectedTaxYear] };
     },
     
     calculate() {
-      // Calculate valuation
-      const valuation = this.transactionAmount * this.transactionPrice;
+      // Calculate valuations
+      const buyValuation = this.buyAmount * this.buyPrice;
+      const sellValuation = this.sellAmount * this.sellPrice;
       
-      // For simplicity, we'll assume the cost basis is the purchase price
-      // In a real app, this would come from the Section 104 pool
-      const costBasis = this.transactionType === 'sell' ? valuation * 0.5 : valuation;
-      const disposalProceeds = this.transactionType === 'sell' ? valuation : 0;
-      const totalGain = this.transactionType === 'sell' ? valuation - costBasis : 0;
+      // Check if assets match
+      if (this.buyAsset.symbol !== this.sellAsset.symbol) {
+        alert('Please select the same asset for both buy and sell transactions');
+        return;
+      }
+      
+      // Calculate gain
+      const costBasis = buyValuation;
+      const disposalProceeds = sellValuation;
+      const totalGain = disposalProceeds - costBasis;
       
       // Determine if this is a basic rate or higher rate taxpayer
       // Basic rate threshold is £50,270 for all years (simplified)
@@ -549,7 +627,15 @@ export default {
       const totalIncome = this.otherIncome + totalGain;
       
       let taxableGain = Math.max(0, totalGain - this.taxRates.annualExemption);
-      let taxRate = totalIncome > basicRateThreshold ? this.taxRates.higherRate : this.taxRates.basicRate;
+      
+      // Determine tax rate based on total income
+      let taxRate = this.taxRates.basicRate;
+      let taxRateLabel = 'Basic Rate Tax';
+      
+      if (totalIncome > basicRateThreshold) {
+        taxRate = this.taxRates.higherRate;
+        taxRateLabel = 'Higher Rate Tax';
+      }
       
       // Calculate tax payable
       const taxPayable = taxableGain * (taxRate / 100);
@@ -558,13 +644,14 @@ export default {
       
       this.results = {
         calculated: true,
-        assetSymbol: this.selectedAsset.symbol,
-        assetAmount: this.transactionAmount,
+        assetSymbol: this.buyAsset.symbol,
+        assetAmount: this.buyAmount,
         costBasis: costBasis,
         disposalProceeds: disposalProceeds,
         totalGain: totalGain,
         taxableGain: taxableGain,
         taxRate: taxRate,
+        taxRateLabel: taxRateLabel,
         taxPayable: taxPayable,
         cgtPayable: cgtPayable,
         profitAfterTax: profitAfterTax
@@ -573,11 +660,19 @@ export default {
     
     resetForm() {
       this.selectedTaxYear = 2026;
-      this.selectedAsset = { symbol: 'BTC', name: 'Bitcoin' };
-      this.transactionType = 'buy';
-      this.transactionAmount = 12;
-      this.transactionDate = new Date().toISOString().split('T')[0];
-      this.transactionPrice = 12345;
+      
+      // Reset buy side
+      this.buyAsset = { symbol: 'BTC', name: 'Bitcoin' };
+      this.buyAmount = 12;
+      this.buyDate = '2026-01-15';
+      this.buyPrice = 12345;
+      
+      // Reset sell side
+      this.sellAsset = { symbol: 'BTC', name: 'Bitcoin' };
+      this.sellAmount = 12;
+      this.sellDate = '2026-03-20';
+      this.sellPrice = 45678;
+      
       this.otherIncome = 123444;
       this.results.calculated = false;
       this.updateTaxRates();
@@ -589,7 +684,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'UK Crypto Tax Calculator – Calculate Cryptocurrency Capital Gains & HMRC Taxes'
+document.title = 'UK Crypto Tax Calculator – Calculate Cryptocurrency Capital Gains & HMRC Taxes'
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
     this.updateTaxRates();
@@ -772,51 +867,84 @@ export default {
   -moz-appearance: textfield;
 }
 
-.transaction-tabs {
+.transaction-labels {
   display: flex;
-  gap: 12px;
-  margin: 24px 0 20px;
-  border-bottom: 2px solid #d4e2f0;
-  padding-bottom: 12px;
+  gap: 24px;
+  margin: 20px 0 10px;
 }
 
-.tab-btn {
-  background: none;
-  border: none;
-  padding: 8px 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #4b5f73;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.2s;
+.label-buy {
   flex: 1;
+  font-weight: 600;
+  color: #16a34a;
+  font-size: 1.1rem;
+  padding-left: 8px;
 }
 
-.tab-btn.active {
-  background: #1f3a5f;
-  color: white;
+.label-sell {
+  flex: 1;
+  font-weight: 600;
+  color: #dc2626;
+  font-size: 1.1rem;
+  padding-left: 8px;
 }
 
-.transaction-details {
+.transaction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .transaction-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.transaction-side {
   background: #e8f0fe;
   border-radius: 20px;
   padding: 20px;
-  margin-bottom: 24px;
   border: 1px solid #c9d9ec;
+}
+
+.buy-side {
+  border-left: 4px solid #16a34a;
+}
+
+.sell-side {
+  border-left: 4px solid #dc2626;
+}
+
+.transaction-header {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #d4e2f0;
+}
+
+.buy-side .transaction-header {
+  color: #16a34a;
+}
+
+.sell-side .transaction-header {
+  color: #dc2626;
 }
 
 .valuation-row {
   background: white;
-  border-radius: 16px;
-  padding: 12px 16px;
+  border-radius: 12px;
+  padding: 8px 12px;
   margin-top: 8px;
 }
 
 .valuation-display {
   font-weight: 600;
   color: #1f3a5f;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .form-actions {
@@ -1136,7 +1264,6 @@ button.reset:hover {
     font-size: 0.9rem;
   }
 }
-
 /* Calculator CTA */
 .calculator-cta {
   text-align: center;
@@ -1160,5 +1287,4 @@ button.reset:hover {
   background: #333;
   transform: translateY(-1px);
 }
-
 </style>
