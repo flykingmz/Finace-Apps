@@ -98,7 +98,6 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                 <tr>
                   <th>Item</th>
@@ -110,7 +109,6 @@
                  <tr><td>Gain</td><td>$10,000</td></tr>
                  <tr><td>Taxable Portion</td><td>$5,000</td></tr>
               </tbody>
-            能得到
           </div>
           
           <p>Why This Matters</p>
@@ -125,7 +123,6 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Item</th><th>Value</th></tr>
               </thead>
@@ -133,7 +130,6 @@
                  <tr><td>Profit from trading</td><td>$10,000</td></tr>
                  <tr><td>Taxable income</td><td>$10,000</td></tr>
               </tbody>
-            能得到
           </div>
 
           <h3>Additional Impact</h3>
@@ -146,7 +142,6 @@
           <h2>5️⃣ Capital Gains vs Income: Key Differences</h2>
           
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Feature</th><th>Capital Gains</th><th>Income</th></tr>
               </thead>
@@ -156,7 +151,6 @@
                  <tr><td>Complexity</td><td>Moderate</td><td>High</td></tr>
                  <tr><td>Reporting</td><td>Simpler</td><td>More detailed</td></tr>
               </tbody>
-            能得到
           </div>
           
           <p class="highlight">👉 This classification is the most important factor in your tax outcome.</p>
@@ -187,7 +181,6 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Action</th><th>Taxable?</th></tr>
               </thead>
@@ -196,7 +189,6 @@
                  <tr><td>Sell crypto</td><td>✅ Yes</td></tr>
                  <tr><td>Swap BTC → ETH</td><td>✅ Yes</td></tr>
               </tbody>
-            能得到
           </div>
           
           <p class="highlight">👉 Crypto-to-crypto trades are taxable—even without cashing out.</p>
@@ -210,7 +202,6 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Purchase</th><th>Price</th></tr>
               </thead>
@@ -218,7 +209,6 @@
                  <tr><td>1 BTC</td><td>$10,000</td></tr>
                  <tr><td>1 BTC</td><td>$20,000</td></tr>
               </tbody>
-            能得到
           </div>
           
           <p>ACB:</p>
@@ -246,7 +236,6 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Activity</th><th>Value</th></tr>
               </thead>
@@ -254,7 +243,6 @@
                  <tr><td>Staking reward</td><td>$2,000</td></tr>
                  <tr><td>Taxable income</td><td>$2,000</td></tr>
               </tbody>
-            能得到
           </div>
           
           <p>Later, selling that crypto triggers capital gains.</p>
@@ -265,7 +253,6 @@
           
           <h3>Investor Profile</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Activity</th><th>Value</th></tr>
               </thead>
@@ -274,7 +261,6 @@
                  <tr><td>Sell BTC</td><td>$18,000</td></tr>
                  <tr><td>Staking income</td><td>$2,000</td></tr>
               </tbody>
-            能得到
           </div>
 
           <h3>Tax Breakdown</h3>
@@ -294,14 +280,12 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
               <thead>
                  <tr><th>Gains</th><th>Losses</th><th>Net</th></tr>
               </thead>
               <tbody>
                  <tr><td>$10,000</td><td>$3,000</td><td>$7,000</td></tr>
               </tbody>
-            能得到
           </div>
 
           <h3>Capital Loss Rules</h3>
