@@ -98,20 +98,23 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
                 <tr>
                   <th>Item</th>
                   <th>Value</th>
-                 </thead>
+                </tr>
+              </thead>
               <tbody>
-                 <tr><td>Buy Bitcoin</td><td>$10,000</td></tr>
-                 <tr><td>Sell Bitcoin</td><td>$20,000</td></tr>
-                 <tr><td>Gain</td><td>$10,000</td></tr>
-                 <tr><td>Taxable Portion</td><td>$5,000</td></tr>
+                <tr><td>Buy Bitcoin</td><td>$10,000</td></tr>
+                <tr><td>Sell Bitcoin</td><td>$20,000</td></tr>
+                <tr><td>Gain</td><td>$10,000</td></tr>
+                <tr><td>Taxable Portion</td><td>$5,000</td></tr>
               </tbody>
+            </table>
           </div>
           
-          <p>Why This Matters</p>
+          <p><strong>Why This Matters</strong></p>
           <p>Capital gains effectively cut your taxable income in half.</p>
 
           <h2>4️⃣ Income Tax on Crypto</h2>
@@ -123,13 +126,15 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Item</th><th>Value</th></tr>
+                <tr><th>Item</th><th>Value</th></tr>
               </thead>
               <tbody>
-                 <tr><td>Profit from trading</td><td>$10,000</td></tr>
-                 <tr><td>Taxable income</td><td>$10,000</td></tr>
+                <tr><td>Profit from trading</td><td>$10,000</td></tr>
+                <tr><td>Taxable income</td><td>$10,000</td></tr>
               </tbody>
+            </table>
           </div>
 
           <h3>Additional Impact</h3>
@@ -142,15 +147,17 @@
           <h2>5️⃣ Capital Gains vs Income: Key Differences</h2>
           
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Feature</th><th>Capital Gains</th><th>Income</th></tr>
+                <tr><th>Feature</th><th>Capital Gains</th><th>Income</th></tr>
               </thead>
               <tbody>
-                 <tr><td>Taxable Portion</td><td>50%</td><td>100%</td></tr>
-                 <tr><td>Tax Rate</td><td>Lower</td><td>Higher</td></tr>
-                 <tr><td>Complexity</td><td>Moderate</td><td>High</td></tr>
-                 <tr><td>Reporting</td><td>Simpler</td><td>More detailed</td></tr>
+                <tr><td>Taxable Portion</td><td>50%</td><td>100%</td></tr>
+                <tr><td>Tax Rate</td><td>Lower</td><td>Higher</td></tr>
+                <tr><td>Complexity</td><td>Moderate</td><td>High</td></tr>
+                <tr><td>Reporting</td><td>Simpler</td><td>More detailed</td></tr>
               </tbody>
+            </table>
           </div>
           
           <p class="highlight">👉 This classification is the most important factor in your tax outcome.</p>
@@ -181,14 +188,16 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Action</th><th>Taxable?</th></tr>
+                <tr><th>Action</th><th>Taxable?</th></tr>
               </thead>
               <tbody>
-                 <tr><td>Buy crypto</td><td>❌ No</td></tr>
-                 <tr><td>Sell crypto</td><td>✅ Yes</td></tr>
-                 <tr><td>Swap BTC → ETH</td><td>✅ Yes</td></tr>
+                <tr><td>Buy crypto</td><td>❌ No</td></tr>
+                <tr><td>Sell crypto</td><td>✅ Yes</td></tr>
+                <tr><td>Swap BTC → ETH</td><td>✅ Yes</td></tr>
               </tbody>
+            </table>
           </div>
           
           <p class="highlight">👉 Crypto-to-crypto trades are taxable—even without cashing out.</p>
@@ -202,13 +211,15 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Purchase</th><th>Price</th></tr>
+                <tr><th>Purchase</th><th>Price</th></tr>
               </thead>
               <tbody>
-                 <tr><td>1 BTC</td><td>$10,000</td></tr>
-                 <tr><td>1 BTC</td><td>$20,000</td></tr>
+                <tr><td>1 BTC</td><td>$10,000</td></tr>
+                <tr><td>1 BTC</td><td>$20,000</td></tr>
               </tbody>
+            </table>
           </div>
           
           <p>ACB:</p>
@@ -236,13 +247,15 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Activity</th><th>Value</th></tr>
+                <tr><th>Activity</th><th>Value</th></tr>
               </thead>
               <tbody>
-                 <tr><td>Staking reward</td><td>$2,000</td></tr>
-                 <tr><td>Taxable income</td><td>$2,000</td></tr>
+                <tr><td>Staking reward</td><td>$2,000</td></tr>
+                <tr><td>Taxable income</td><td>$2,000</td></tr>
               </tbody>
+            </table>
           </div>
           
           <p>Later, selling that crypto triggers capital gains.</p>
@@ -253,25 +266,26 @@
           
           <h3>Investor Profile</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Activity</th><th>Value</th></tr>
+                <tr><th>Activity</th><th>Value</th></tr>
               </thead>
               <tbody>
-                 <tr><td>Buy BTC</td><td>$10,000</td></tr>
-                 <tr><td>Sell BTC</td><td>$18,000</td></tr>
-                 <tr><td>Staking income</td><td>$2,000</td></tr>
+                <tr><td>Buy BTC</td><td>$10,000</td></tr>
+                <tr><td>Sell BTC</td><td>$18,000</td></tr>
+                <tr><td>Staking income</td><td>$2,000</td></tr>
               </tbody>
+            </table>
           </div>
 
           <h3>Tax Breakdown</h3>
-          <p>Capital Gain</p>
-          <p>$18,000 – $10,000 = $8,000</p>
-          <p>Taxable = $4,000</p>
+          <p><strong>Capital Gain</strong></p>
+          <p>$18,000 – $10,000 = $8,000<br>Taxable = $4,000</p>
 
-          <p>Income</p>
+          <p><strong>Income</strong></p>
           <p>$2,000 fully taxable</p>
 
-          <p>Total Taxable Amount</p>
+          <p><strong>Total Taxable Amount</strong></p>
           <p class="highlight">👉 $6,000</p>
 
           <h2>1️⃣1️⃣ Losses and Tax Benefits</h2>
@@ -280,12 +294,14 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
+            <table>
               <thead>
-                 <tr><th>Gains</th><th>Losses</th><th>Net</th></tr>
+                <tr><th>Gains</th><th>Losses</th><th>Net</th></tr>
               </thead>
               <tbody>
-                 <tr><td>$10,000</td><td>$3,000</td><td>$7,000</td></tr>
+                <tr><td>$10,000</td><td>$3,000</td><td>$7,000</td></tr>
               </tbody>
+            </table>
           </div>
 
           <h3>Capital Loss Rules</h3>
@@ -416,9 +432,9 @@
             <li>make smarter financial decisions</li>
           </ul>
         </article>
-      </div> <!-- /blog-inner -->
-    </div> <!-- /blog-container -->
-  </div> <!-- /canada-crypto-tax-guide-blog -->
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
