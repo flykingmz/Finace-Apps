@@ -54,6 +54,15 @@
           <a href="/uk-crypto-calculator" class="card-link">Open Calculator →</a>
         </div>
       </div>
+      <!-- canada-crypto-calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="card-content">
+          <h3>Canada crypto calculator</h3>
+          <p>Use this Canada Crypto Tax Calculator to estimate your cryptocurrency taxes based on CRA rules. Calculate capital gains, income from staking, mining, DeFi, and NFT transactions. Get accurate crypto tax results for Canada investors and traders.</p>
+          <a href="/canada-crypto-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
 
        <!-- Defi tax calculator -->
       <div class="calculator-card">

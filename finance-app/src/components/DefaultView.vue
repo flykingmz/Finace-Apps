@@ -111,6 +111,7 @@
             <a href="/nft-calculator" class="tool-link">NFT tax calculator</a>
             <a href="/usa-crypto-calculator" class="tool-link">USA crypto calculator</a>
             <a href="/uk-crypto-calculator" class="tool-link">UK crypto calculator</a>
+            <a href="/canada-crypto-calculator" class="tool-link">Canada crypto calculator</a>
              <a href="#" class="tool-link">Defi tax calculator</a>
           </div>
         </div>
