@@ -22,12 +22,12 @@
         </div>
       </div>
 
-      <!-- Transaction Type Labels -->
+      <!-- Transaction Type Labels 
       <div class="transaction-labels">
         <div class="label-buy">Buy / Acquisition</div>
         <div class="label-sell">Sell / Disposal</div>
       </div>
-
+      -->
       <!-- Transaction Details - Buy and Sell Side by Side -->
       <div class="transaction-grid">
         <!-- Buy Side -->
