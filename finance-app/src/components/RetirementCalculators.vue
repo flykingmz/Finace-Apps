@@ -92,7 +92,7 @@
         <div class="card-content">
           <h3>IRA Calculator</h3>
           <p>Estimate the future value of traditional IRA accounts, including tax-deferred growth and contribution limits.</p>
-          <a href="/calculators/ira" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -102,7 +102,7 @@
         <div class="card-content">
           <h3>RMD Calculator</h3>
           <p>Calculate Required Minimum Distributions from your retirement accounts after age 73 to avoid IRS penalties.</p>
-          <a href="/calculators/rmd" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
     </div>

@@ -68,9 +68,9 @@
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
         <div class="card-content">
-          <h3>Defi tax calculator</h3>
+          <h3>Defi tax calculator (Coming Soon)</h3>
           <p>Accurately calculate your decentralized finance (DeFi) taxes with our DEFI Tax Calculator. Track crypto gains, losses, staking, yield farming, and NFT transactions. Perfect for investors, traders, and crypto enthusiasts looking to stay tax-compliant.</p>
-           <a href="#" class="card-link" >Open Calculator →</a>
+           <!-- <a href="#" class="card-link" >Open Calculator →</a> -->
         </div>
       </div>
 

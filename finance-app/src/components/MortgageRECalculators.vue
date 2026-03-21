@@ -51,7 +51,7 @@
         <div class="card-content">
           <h3>House Affordability Calculator</h3>
           <p>Determine how much house you can afford based on income, debt, down payment, and current interest rates.</p>
-          <a href="/calculators/house-affordability" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -61,7 +61,7 @@
         <div class="card-content">
           <h3>Rent Calculator</h3>
           <p>Compare renting costs across different properties and estimate annual rent expenses.</p>
-          <a href="/calculators/rent" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -71,7 +71,7 @@
         <div class="card-content">
           <h3>Debt-to-Income Ratio Calculator</h3>
           <p>Calculate your front-end and back-end DTI ratios to understand your borrowing capacity.</p>
-          <a href="/calculators/debt-to-income" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -81,7 +81,7 @@
         <div class="card-content">
           <h3>Real Estate Calculator</h3>
           <p>Analyze property values, ROI, and cash flow for residential or commercial real estate investments.</p>
-          <a href="/calculators/real-estate" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -91,7 +91,7 @@
         <div class="card-content">
           <h3>Refinance Calculator</h3>
           <p>Compare your current mortgage with refinance options to see potential savings and break-even points.</p>
-          <a href="/calculators/refinance" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -101,7 +101,7 @@
         <div class="card-content">
           <h3>Rental Property Calculator</h3>
           <p>Evaluate rental property cash flow, cap rate, cash-on-cash return, and overall investment performance.</p>
-          <a href="/calculators/rental-property" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -111,7 +111,7 @@
         <div class="card-content">
           <h3>APR Calculator</h3>
           <p>Calculate the Annual Percentage Rate including interest, fees, and other loan costs for apples-to-apples comparisons.</p>
-          <a href="/calculators/apr" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -121,7 +121,7 @@
         <div class="card-content">
           <h3>FHA Loan Calculator</h3>
           <p>Estimate payments for FHA loans including upfront and annual mortgage insurance premiums (MIP).</p>
-          <a href="/calculators/fha-loan" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -131,7 +131,7 @@
         <div class="card-content">
           <h3>VA Mortgage Calculator</h3>
           <p>Calculate VA loan payments, funding fees, and affordability for eligible veterans and service members.</p>
-          <a href="/calculators/va-mortgage" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -141,7 +141,7 @@
         <div class="card-content">
           <h3>Home Equity Loan Calculator</h3>
           <p>Determine how much you can borrow with a home equity loan and estimate monthly payments.</p>
-          <a href="/calculators/home-equity-loan" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -151,7 +151,7 @@
         <div class="card-content">
           <h3>HELOC Calculator</h3>
           <p>Estimate draw period payments and repayment phase costs for a Home Equity Line of Credit.</p>
-          <a href="/calculators/heloc" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+         <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -161,7 +161,7 @@
         <div class="card-content">
           <h3>Down Payment Calculator</h3>
           <p>Calculate the down payment needed for a home and see how it affects monthly payments and PMI.</p>
-          <a href="/calculators/down-payment" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -171,7 +171,7 @@
         <div class="card-content">
           <h3>Rent vs. Buy Calculator</h3>
           <p>Compare the financial outcomes of renting versus buying a home based on your time horizon and local market.</p>
-          <a href="/calculators/rent-vs-buy" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
     </div>

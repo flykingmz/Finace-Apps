@@ -65,11 +65,11 @@
       <div class="category-card">
         <div class="category-title"><a href="/other-calculators">Other</a> </div>
         <ul class="popular-list">
-          <li><a href="" >📊 Currency Calculator</a></li>
-          <li><a href="" >🧮 Credit Card Calculator</a></li>
-          <li><a href="" >📈 Debt Payoff Calculator</a></li>
-          <li><a href="" >📊 Auto Loan Calculator</a></li>
-          <li><a href="" >🧮 Auto Lease Calculator</a></li>
+          <li>📊 Currency Calculator(Coming Soon)</li>
+          <li>🧮 Credit Card Calculator(Coming Soon)</li>
+          <li>📈 Debt Payoff Calculator(Coming Soon)</li>
+          <li>📊 Auto Loan Calculator(Coming Soon)</li>
+          <li>🧮 Auto Lease Calculator(Coming Soon)</li>
         </ul>
       </div>
     </div>
@@ -209,6 +209,33 @@
             <div class="faq-answer">Historically, stock market returns average around 7–10% annually, but actual results vary.</div>
           </div>
         </div>
+
+        <!-- Mortgage FAQ -->
+        <div class="faq-cat">
+          <h4>Mortgage</h4>
+          <div class="faq-item">
+            <div class="faq-question">How can I pay off my mortgage early?</div>
+            <div class="faq-answer">You can pay off your mortgage early by making extra payments, switching to biweekly payments, or refinancing to a shorter term. A mortgage payoff calculator helps estimate how much interest you can save.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How much can I save with extra mortgage payments?</div>
+            <div class="faq-answer">Extra mortgage payments can significantly reduce your loan term and save thousands in interest. Use a mortgage calculator to compare scenarios and see your potential savings.</div>
+          </div>
+        </div>
+        
+        <!-- Crypto Tax FAQ -->
+        <div class="faq-cat">
+          <h4>Crypto</h4>
+          <div class="faq-item">
+            <div class="faq-question">Do I need to pay tax on cryptocurrency?</div>
+            <div class="faq-answer">Yes, cryptocurrency is taxable in most countries. Profits from trading are usually subject to capital gains tax, while staking or mining rewards may be taxed as income.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How do I calculate crypto tax?</div>
+            <div class="faq-answer">You can calculate crypto tax by subtracting the purchase price from the selling price to determine gains or losses. A crypto tax calculator helps estimate taxes across trading, staking, DeFi, and NFTs.</div>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="footer-note">© Free Financial Calculators — All tools are free, no signup needed.</div>

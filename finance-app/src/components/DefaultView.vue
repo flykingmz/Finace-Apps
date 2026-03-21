@@ -51,8 +51,8 @@
             <a href="/annuity" class="tool-link">Annuity Calculator</a>
             <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
             <a href="/roth-ira" class="tool-link">Roth IRA Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">IRA Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">RMD Calculator(Coming Soon)</a>
+            <li href="#" class="tool-link">IRA Calculator(Coming Soon)</li>
+            <li href="#" class="tool-link">RMD Calculator(Coming Soon)</li>
           </div>
         </div>
 
@@ -112,7 +112,7 @@
             <a href="/usa-crypto-calculator" class="tool-link">USA crypto calculator</a>
             <a href="/uk-crypto-calculator" class="tool-link">UK crypto calculator</a>
             <a href="/canada-crypto-calculator" class="tool-link">Canada crypto calculator</a>
-             <a href="#" class="tool-link">Defi tax calculator</a>
+             <li class="tool-link">Defi tax calculator</li>
           </div>
         </div>
 

@@ -49,9 +49,9 @@
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-calculator"></i></div>
         <div class="card-content">
-          <h3>Finance Calculator</h3>
+          <h3>Finance Calculator (Coming Soon)</h3>
           <p>Solve for any variable in financial equations — PV, FV, PMT, rate, or periods — quickly and accurately.</p>
-          <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -61,7 +61,7 @@
         <div class="card-content">
           <h3>Compound Interest Calculator</h3>
           <p>See how your money grows with compound interest — daily, monthly, yearly, or continuously.</p>
-          <a href="/calculators/compound-interest" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -71,7 +71,7 @@
         <div class="card-content">
           <h3>Interest Rate Calculator</h3>
           <p>Find the effective interest rate on loans or investments given principal, time, and total interest.</p>
-          <a href="/calculators/interest-rate" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+         <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -81,7 +81,7 @@
         <div class="card-content">
           <h3>Savings Calculator</h3>
           <p>Estimate the future value of your savings with regular deposits and compounding interest.</p>
-          <a href="/calculators/savings" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -91,7 +91,7 @@
         <div class="card-content">
           <h3>Simple Interest Calculator</h3>
           <p>Quickly compute simple interest for loans or investments using principal × rate × time.</p>
-          <a href="/calculators/simple-interest" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -102,7 +102,7 @@
         <div class="card-content">
           <h3>Bond Calculator</h3>
           <p>Determine bond prices, yields to maturity, coupon payments, and current yield for fixed-income securities.</p>
-          <a href="/calculators/bond" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -112,7 +112,7 @@
         <div class="card-content">
           <h3>Mutual Fund Calculator</h3>
           <p>Estimate mutual fund returns including expense ratios, dividends, and capital gains distributions.</p>
-          <a href="/calculators/mutual-fund" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -122,7 +122,7 @@
         <div class="card-content">
           <h3>Average Return Calculator</h3>
           <p>Compute arithmetic average, geometric average, and CAGR for a series of investment returns.</p>
-          <a href="/calculators/average-return" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -132,7 +132,7 @@
         <div class="card-content">
           <h3>IRR Calculator</h3>
           <p>Calculate Internal Rate of Return for a series of cash flows to evaluate investment profitability.</p>
-          <a href="/calculators/irr" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -142,7 +142,7 @@
         <div class="card-content">
           <h3>ROI Calculator</h3>
           <p>Measure Return on Investment as a percentage and compare efficiency across different investments.</p>
-          <a href="/calculators/roi" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -152,7 +152,7 @@
         <div class="card-content">
           <h3>Payback Period Calculator</h3>
           <p>Determine how long it will take to recover an initial investment from expected cash flows.</p>
-          <a href="/calculators/payback-period" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -162,7 +162,7 @@
         <div class="card-content">
           <h3>Present Value Calculator</h3>
           <p>Discount future cash flows to today's dollars using a specified discount rate.</p>
-          <a href="/calculators/present-value" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -172,7 +172,7 @@
         <div class="card-content">
           <h3>Future Value Calculator</h3>
           <p>Project the future value of an investment or savings account with compounding interest.</p>
-          <a href="/calculators/future-value" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
     </div>

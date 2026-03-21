@@ -14,7 +14,7 @@
         <div class="card-content">
           <h3>Loan Calculator</h3>
           <p>Calculate monthly payments, interest costs, and total repayment for any type of loan.</p>
-          <a href="/a/loan-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -24,7 +24,7 @@
         <div class="card-content">
           <h3>Payment Calculator</h3>
           <p>Estimate monthly payments for loans, mortgages, or financing options based on amount and term.</p>
-          <a href="/a/payment-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -34,7 +34,7 @@
         <div class="card-content">
           <h3>Currency Calculator</h3>
           <p>Convert between world currencies with real-time exchange rates for accurate international transactions.</p>
-          <a href="/a/currency-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -44,7 +44,7 @@
         <div class="card-content">
           <h3>Inflation Calculator</h3>
           <p>See how inflation affects purchasing power and calculate the future value of money over time.</p>
-          <a href="/a/inflation-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -54,7 +54,7 @@
         <div class="card-content">
           <h3>Sales Tax Calculator</h3>
           <p>Calculate sales tax amounts and total prices for purchases in any state or region.</p>
-          <a href="/a/sales-tax-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -64,7 +64,7 @@
         <div class="card-content">
           <h3>Credit Card Calculator</h3>
           <p>Estimate credit card payments, interest charges, and payoff timelines based on balance and APR.</p>
-          <a href="/a/credit-card-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -74,7 +74,7 @@
         <div class="card-content">
           <h3>Credit Cards Payoff Calculator</h3>
           <p>Compare payoff strategies and see how long it takes to become debt-free with different payment amounts.</p>
-          <a href="/a/credit-cards-payoff-calculator" class="card-link">Open Calculator →</a>
+         <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -84,7 +84,7 @@
         <div class="card-content">
           <h3>Debt Payoff Calculator</h3>
           <p>Create a personalized debt payoff plan and see the fastest way to eliminate your debts.</p>
-          <a href="/a/debt-payoff-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -94,7 +94,7 @@
         <div class="card-content">
           <h3>Debt Consolidation Calculator</h3>
           <p>Analyze whether consolidating multiple debts into one loan can save you money and time.</p>
-          <a href="/a/debt-consolidation-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -104,7 +104,7 @@
         <div class="card-content">
           <h3>Repayment Calculator</h3>
           <p>Calculate repayment schedules for loans and understand how extra payments affect your timeline.</p>
-          <a href="/a/repayment-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -114,7 +114,7 @@
         <div class="card-content">
           <h3>Student Loan Calculator</h3>
           <p>Estimate student loan payments, interest costs, and compare repayment plans for education debt.</p>
-          <a href="/a/student-loan-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -124,7 +124,7 @@
         <div class="card-content">
           <h3>College Cost Calculator</h3>
           <p>Plan for future education expenses and see how much you need to save for college costs.</p>
-          <a href="/a/college-cost-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -134,7 +134,7 @@
         <div class="card-content">
           <h3>VAT Calculator</h3>
           <p>Add or remove Value Added Tax from prices for accurate invoicing and financial planning.</p>
-          <a href="/a/vat-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -144,7 +144,7 @@
         <div class="card-content">
           <h3>Depreciation Calculator</h3>
           <p>Calculate asset depreciation using straight-line, declining balance, or sum-of-years digits methods.</p>
-          <a href="/a/depreciation-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -154,7 +154,7 @@
         <div class="card-content">
           <h3>Margin Calculator</h3>
           <p>Calculate profit margins, markup percentages, and selling prices for your products.</p>
-          <a href="/a/margin-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -164,7 +164,7 @@
         <div class="card-content">
           <h3>Discount Calculator</h3>
           <p>Calculate final prices after percentage or fixed-amount discounts for smart shopping decisions.</p>
-          <a href="/a/discount-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -174,7 +174,7 @@
         <div class="card-content">
           <h3>Business Loan Calculator</h3>
           <p>Estimate payments and costs for business financing to make informed entrepreneurial decisions.</p>
-          <a href="/a/business-loan-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -184,7 +184,7 @@
         <div class="card-content">
           <h3>Personal Loan Calculator</h3>
           <p>Calculate monthly payments and total interest for personal loans based on amount and terms.</p>
-          <a href="/a/personal-loan-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -194,7 +194,7 @@
         <div class="card-content">
           <h3>Boat Loan Calculator</h3>
           <p>Estimate financing costs and monthly payments for boat purchases and marine loans.</p>
-          <a href="/a/boat-loan-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -204,7 +204,7 @@
         <div class="card-content">
           <h3>Lease Calculator</h3>
           <p>Compare leasing vs. buying costs for vehicles or equipment with detailed payment breakdowns.</p>
-          <a href="/a/lease-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -214,7 +214,7 @@
         <div class="card-content">
           <h3>Budget Calculator</h3>
           <p>Create a personal or household budget to track income, expenses, and savings goals.</p>
-          <a href="/a/budget-calculator" class="card-link">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -224,7 +224,7 @@
         <div class="card-content">
           <h3>Commission Calculator</h3>
           <p>Calculate sales commissions based on tiered rates, flat fees, or percentage of sales.</p>
-          <a href="/a/commission-calculator" class="card-link">Open Calculator →</a>
+         <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -234,7 +234,7 @@
         <div class="card-content">
           <h3>Auto Loan Calculator</h3>
           <p>An Auto Loan Calculator helps you estimate monthly car payments, interest costs, and total loan expenses based on loan amount, rate, term, and down payment.</p>
-          <a href="/calculators/interest" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -244,7 +244,7 @@
         <div class="card-content">
           <h3>Cash Back or Low Interest Calculator</h3>
           <p>Compare cash back and low interest offers to see which auto financing option saves you more.</p>
-          <a href="/calculators/investment" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
@@ -254,7 +254,7 @@
         <div class="card-content">
           <h3>Auto Lease Calculator</h3>
           <p>An Auto Lease Calculator helps you estimate monthly lease payments based on vehicle price, residual value, money factor, lease term, and down payment.</p>
-          <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a>
+          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
       
