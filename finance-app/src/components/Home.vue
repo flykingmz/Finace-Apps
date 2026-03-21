@@ -10,7 +10,7 @@
 
     <!-- Header -->
     <h1>📊 All-in-One Free Financial Calculators: Tax, Salary, Retirement, Mortgage, Investment & More</h1>
-    <p class="subhead">Discover free online financial calculators to manage your money smarter. Our suite of tools covers Tax and Salary calculators, Retirement planning calculators, Mortgage and Real Estate calculators, Investment calculators, and Other financial tools. Easily calculate your income tax, take-home pay, 401(k) growth, mortgage payoff, real estate investment returns, and more. Perfect for personal finance enthusiasts, investors, and anyone looking to optimize their finances online—completely free, accurate, and easy to use.</p>
+    <p class="subhead">Discover free online financial calculators to manage your money smarter. Our suite of tools covers Tax and Salary calculators, Retirement planning calculators, Mortgage and Real Estate calculators, Investment calculators, Crypto tax calculators and Other financial tools. Easily calculate your income tax, take-home pay, 401(k) growth, mortgage payoff, real estate investment returns, and more. Perfect for personal finance enthusiasts, investors, and anyone looking to optimize their finances online—completely free, accurate, and easy to use.</p>
 
     <!-- Tool Categories + Popular Calculators (first screen) -->
     <h2>🔧 Tool Categories</h2>
