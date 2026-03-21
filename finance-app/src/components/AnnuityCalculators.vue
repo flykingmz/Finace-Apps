@@ -9,7 +9,7 @@
   <div class="annuity-page">
 
     <!-- Header -->
-    <h1>📈 annuity Calculators</h1>
+    <h1>📈 Annuity Calculators</h1>
     <p class="category-description">
       Explore powerful annuity calculators to estimate retirement income and investment growth. Use our annuity payout, deferred annuity calculator, fixed annuity calculator, indexed annuity calculator, and annuity withdrawal calculator to plan your financial future with confidence.
     </p>
