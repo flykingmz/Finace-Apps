@@ -388,6 +388,12 @@ const routes = [
         name: 'MortgageHowFastCanYouPayItOffwithExtraPayments',
         component: () => import('../blog/MortgageHowFastCanYouPayItOffwithExtraPayments.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-to-calculate-crypto-tax-in-canada-blog',
+        name: 'HowtoCalculateCryptoTaxinCanada',
+        component: () => import('../blog/HowtoCalculateCryptoTaxinCanada.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

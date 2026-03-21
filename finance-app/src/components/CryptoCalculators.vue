@@ -9,7 +9,7 @@
   <div class="crypto-page">
 
     <!-- Header -->
-    <h1>📈 crypto Calculators</h1>
+    <h1>📈 Crypto Calculators</h1>
     <p class="category-description">
       Easily calculate your cryptocurrency taxes and earnings with our comprehensive crypto calculators. Track Bitcoin taxes, crypto staking rewards, mining income, DeFi investment returns, NFT tax obligations, and crypto tax-loss harvesting to quickly understand your tax liabilities and optimize your crypto portfolio.
     </p>

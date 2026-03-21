@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 29:  How to Calculate Crypto Tax in Canada (Capital Gains vs Income Explained) -->
+        <div class="blog-card">
+          <h2 class="blog-title"> How to Calculate Crypto Tax in Canada (Capital Gains vs Income Explained)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 21, 2026</span>
+          </div>
+          <p class="blog-excerpt">Cryptocurrency adoption in Canada has surged in recent years—but so has confusion around taxation.One of the most common questions Canadian investors ask is:👉 “Do I pay capital gains tax or income tax on crypto?”</p>
+          <a href="/how-to-calculate-crypto-tax-in-canada-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 28:  $500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments? -->
         <div class="blog-card">
           <h2 class="blog-title"> $500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments?</h2>

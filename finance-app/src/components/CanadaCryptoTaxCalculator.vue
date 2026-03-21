@@ -265,6 +265,12 @@
         <div class="table-wrap"><table><thead><tr><th>TAXABLE INCOME</th><th>RATE</th></tr></thead><tbody><tr><td>Up to $55,867</td><td>6.4%</td></tr><tr><td>$55,867 – $111,733</td><td>9%</td></tr><tr><td>$111,733 – $173,205</td><td>10.9%</td></tr><tr><td>$173,205 – $500,000</td><td>12.8%</td></tr><tr><td>Over $500,000</td><td>15%</td></tr></tbody></table></div>
       </div>
     </div>
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-to-calculate-crypto-tax-in-canada-blog" class="calculator-btn">
+    How to Calculate Crypto Tax in Canada (Capital Gains vs Income Explained) →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -1076,4 +1082,28 @@ td {
     font-size: 0.9rem;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>
