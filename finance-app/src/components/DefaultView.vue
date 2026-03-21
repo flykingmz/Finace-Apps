@@ -50,9 +50,9 @@
             <a href="/social-security" class="tool-link">Social Security Calculator</a>
             <a href="/annuity" class="tool-link">Annuity Calculator</a>
             <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
-            <a href="/roth-ira" class="tool-link">Roth IRA Calculator(Coming Soon)</a>
-            <li href="#" class="tool-link">IRA Calculator(Coming Soon)</li>
-            <li href="#" class="tool-link">RMD Calculator(Coming Soon)</li>
+            <a href="/roth-ira" class="tool-link">Roth IRA Calculator</a>
+            <li class="tool-link">IRA Calculator(Coming Soon)</li>
+            <li class="tool-link">RMD Calculator(Coming Soon)</li>
           </div>
         </div>
 
@@ -66,19 +66,19 @@
             <a href="/mortgage" class="tool-link">Mortgage Calculator</a>
             <a href="/amortization" class="tool-link">Amortization Calculator</a>
             <a href="/mortgage-payoff" class="tool-link">Mortgage Payoff Calculator</a>
-            <a href="#" class="tool-link">House Affordability Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Rent Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Debt-to-Income Ratio Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Real Estate Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Refinance Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Rental Property Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">APR Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">FHA Loan Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">VA Mortgage Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Home Equity Loan Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">HELOC Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Down Payment Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Rent vs. Buy Calculator(Coming Soon)</a>
+            <li class="tool-link">House Affordability Calculator(Coming Soon)</li>
+            <li class="tool-link">Rent Calculator(Coming Soon)</li>
+            <li class="tool-link">Debt-to-Income Ratio Calculator(Coming Soon)</li>
+            <li class="tool-link">Real Estate Calculator(Coming Soon)</li>
+            <li class="tool-link">Refinance Calculator(Coming Soon)</li>
+            <li class="tool-link">Rental Property Calculator(Coming Soon)</li>
+            <li class="tool-link">APR Calculator(Coming Soon)</li>
+            <li class="tool-link">FHA Loan Calculator(Coming Soon)</li>
+            <li class="tool-link">VA Mortgage Calculator(Coming Soon)</li>
+            <li class="tool-link">Home Equity Loan Calculator(Coming Soon)</li>
+            <li class="tool-link">HELOC Calculator(Coming Soon)</li>
+            <li class="tool-link">Down Payment Calculator(Coming Soon)</li>
+            <li class="tool-link">Rent vs. Buy Calculator(Coming Soon)</li>
           </div>
         </div>
 
@@ -94,9 +94,9 @@
             <a href="/interest" class="tool-link">Interest Calculator</a>
             <a href="/investment" class="tool-link">Investment Calculator</a>
             <a href="/certificate-deposit" class="tool-link">Certificate of Deposit (CD) Calculator</a>
-            <a href="#" class="tool-link">Finance Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Compound Interest Calculator(Coming Soon)</a>
-            <a href="#" class="tool-link">Interest Rate Calculator(Coming Soon)</a>
+            <li class="tool-link">Finance Calculator(Coming Soon)</li>
+            <li class="tool-link">Compound Interest Calculator(Coming Soon)</li>
+            <li class="tool-link">Interest Rate Calculator(Coming Soon)</li>
           </div>
         </div>
 
@@ -136,23 +136,23 @@
             <div class="category-count">17 tools</div>
           </div>
           <div class="tools-list">
-            <a href="#" class="tool-link">Loan Calculator</a>
-            <a href="#" class="tool-link">Payment Calculator</a>
-            <a href="#" class="tool-link">Currency Calculator</a>
-            <a href="#" class="tool-link">Inflation Calculator</a>
-            <a href="#" class="tool-link">Sales Tax Calculator</a>
-            <a href="#" class="tool-link">Credit Card Calculator</a>
-            <a href="#" class="tool-link">Credit Cards Payoff Calculator</a>
-            <a href="#" class="tool-link">Debt Payoff Calculator</a>
-            <a href="#" class="tool-link">Debt Consolidation Calculator</a>
-            <a href="#" class="tool-link">Repayment Calculator</a>
-            <a href="#" class="tool-link">Student Loan Calculator</a>
-            <a href="#" class="tool-link">College Cost Calculator</a>
-            <a href="#" class="tool-link">VAT Calculator</a>
-            <a href="#" class="tool-link">Depreciation Calculator</a>
-            <a href="#" class="tool-link">Auto Loan Calculator</a>
-            <a href="#" class="tool-link">Cash Back or Low Interest Calculator</a>
-            <a href="#" class="tool-link">Auto Lease Calculator</a>
+            <li class="tool-link">Loan Calculator</li>
+            <li class="tool-link">Payment Calculator</li>
+            <li class="tool-link">Currency Calculator</li>
+            <li class="tool-link">Inflation Calculator</li>
+            <li class="tool-link">Sales Tax Calculator</li>
+            <li class="tool-link">Credit Card Calculator</li>
+            <li class="tool-link">Credit Cards Payoff Calculator</li>
+            <li class="tool-link">Debt Payoff Calculator</li>
+            <li class="tool-link">Debt Consolidation Calculator</li>
+            <li class="tool-link">Repayment Calculator</li>
+            <li class="tool-link">Student Loan Calculator</li>
+            <li class="tool-link">College Cost Calculator</li>
+            <li class="tool-link">VAT Calculator</li>
+            <li class="tool-link">Depreciation Calculator</li>
+            <li class="tool-link">Auto Loan Calculator</li>
+            <li class="tool-link">Cash Back or Low Interest Calculator</li>
+            <li class="tool-link">Auto Lease Calculator</li>
           </div>
         </div>
       </div>
