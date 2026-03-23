@@ -400,6 +400,12 @@ const routes = [
         name: 'HowtoCalculateCryptoTaxinCanada',
         component: () => import('../blog/HowtoCalculateCryptoTaxinCanada.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'do-you-pay-tax-on-crypto-in-australia-5ato-rules-explained-blog',
+        name: 'DoYouPayTaxonCryptoinAustralia5ATORulesExplained',
+        component: () => import('../blog/DoYouPayTaxonCryptoinAustralia5ATORulesExplained.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

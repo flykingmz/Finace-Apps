@@ -244,6 +244,12 @@
         <p>The best crypto tax calculator Australia provides accurate calculations, supports multiple transactions, and follows ATO guidelines. Our calculator meets these criteria, making it a reliable choice for Australian crypto users.</p>
       </div>
     </div>
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/do-you-pay-tax-on-crypto-in-australia-5ato-rules-explained-blog" class="calculator-btn">
+    Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained →
+    </a>
+    </section>
   </div>
 </template>
 
@@ -809,4 +815,28 @@ td {
     font-size: 0.9rem;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

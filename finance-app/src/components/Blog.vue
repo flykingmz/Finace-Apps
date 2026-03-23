@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 30:  Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained -->
+        <div class="blog-card">
+          <h2 class="blog-title">Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 23, 2026</span>
+          </div>
+          <p class="blog-excerpt">If you’ve bought, traded, or even just experimented with crypto in Australia, you’ve probably asked yourself at some point:👉 “Do I actually have to pay tax on this?”</p>
+          <a href="/do-you-pay-tax-on-crypto-in-australia-5ato-rules-explained-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 29:  How to Calculate Crypto Tax in Canada (Capital Gains vs Income Explained) -->
         <div class="blog-card">
           <h2 class="blog-title"> How to Calculate Crypto Tax in Canada (Capital Gains vs Income Explained)</h2>
