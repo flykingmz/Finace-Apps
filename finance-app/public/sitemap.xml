@@ -111,8 +111,13 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-<url>
+  <url>
     <loc>https://financial-calculator.net/canada-crypto-calculator</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/australia-crypto-calculator</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -343,6 +348,11 @@
   </url>
   <url>
     <loc>https://financial-calculator.net/how-to-calculate-crypto-tax-in-canada-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financial-calculator.net/do-you-pay-tax-on-crypto-in-australia-5ato-rules-explained-blog</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
