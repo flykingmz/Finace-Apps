@@ -109,6 +109,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'australia-crypto-calculator',
+        name: 'AustraliaCryptoTaxCalculator',
+        component: () => import('../components/AustraliaCryptoTaxCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'marriage-tax-calculator',
         name: 'MarriageTaxCalculator',
         component: () => import('../components/MarriageTaxCalculator.vue'),

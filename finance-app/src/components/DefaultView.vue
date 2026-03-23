@@ -112,6 +112,7 @@
             <a href="/usa-crypto-calculator" class="tool-link">USA crypto calculator</a>
             <a href="/uk-crypto-calculator" class="tool-link">UK crypto calculator</a>
             <a href="/canada-crypto-calculator" class="tool-link">Canada crypto calculator</a>
+            <a href="/australia-crypto-calculator" class="tool-link">Australia crypto calculator</a>
              <li class="tool-link">Defi tax calculator</li>
           </div>
         </div>

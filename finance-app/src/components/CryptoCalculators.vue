@@ -63,6 +63,15 @@
           <a href="/canada-crypto-calculator" class="card-link">Open Calculator →</a>
         </div>
       </div>
+      <!-- australia-crypto-calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="card-content">
+          <h3>Australia crypto calculator</h3>
+          <p>Use this Australia Crypto Tax Calculator to estimate your cryptocurrency taxes based on ATO rules. Calculate capital gains, staking income, mining, DeFi, and NFT taxes quickly and accurately for Australian investors and traders.</p>
+          <a href="/australia-crypto-calculator" class="card-link">Open Calculator →</a>
+        </div>
+      </div>
 
        <!-- Defi tax calculator -->
       <div class="calculator-card">
