@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <!-- 文章主体 (内容完全一致) -->
+        <!-- 文章主体 -->
         <article class="blog-article">
           <h1>Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained</h1>
           
@@ -81,15 +81,28 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            <table>
               <thead>
-                <tr><th>Action</th><th>Taxable?</th> </thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Taxable?</th>
+                </tr>
+              </thead>
               <tbody>
-                 <tr><td>Buy Bitcoin</td><td>❌ No</td></tr>
-                 <tr><td>Sell Bitcoin</td><td>✅ Yes</td></tr>
-                 <tr><td>Swap BTC → ETH</td><td>✅ Yes</td></tr>
+                <tr>
+                  <td>Buy Bitcoin</td>
+                  <td>❌ No</td>
+                </tr>
+                <tr>
+                  <td>Sell Bitcoin</td>
+                  <td>✅ Yes</td>
+                </tr>
+                <tr>
+                  <td>Swap BTC → ETH</td>
+                  <td>✅ Yes</td>
+                </tr>
               </tbody>
-            得到
+            </table>
           </div>
           <p class="highlight">👉 Even if no cash hits your bank account, tax may still apply.</p>
 
@@ -105,16 +118,28 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            <table>
               <thead>
-                 <tr><th>Item</th><th>Value</th></tr>
+                <tr>
+                  <th>Item</th>
+                  <th>Value</th>
+                </tr>
               </thead>
               <tbody>
-                 <tr><td>Buy ETH</td><td>$3,000</td></tr>
-                 <tr><td>Sell ETH</td><td>$8,000</td></tr>
-                 <tr><td><strong>Gain</strong></td><td><strong>$5,000</strong></td></tr>
+                <tr>
+                  <td>Buy ETH</td>
+                  <td>$3,000</td>
+                </tr>
+                <tr>
+                  <td>Sell ETH</td>
+                  <td>$8,000</td>
+                </tr>
+                <tr>
+                  <td><strong>Gain</strong></td>
+                  <td><strong>$5,000</strong></td>
+                </tr>
               </tbody>
-            得到
+            </table>
           </div>
 
           <h3>The 50% Discount Rule</h3>
@@ -123,10 +148,20 @@
 
           <h3>Example with Discount</h3>
           <div class="table-wrap">
-            能得到
-              <thead><tr><th>Gain</th><th>Taxable</th></tr></thead>
-              <tbody><tr><td>$5,000</td><td>$2,500</td></tr></tbody>
-            得到
+            <table>
+              <thead>
+                <tr>
+                  <th>Gain</th>
+                  <th>Taxable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$5,000</td>
+                  <td>$2,500</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <p class="highlight">👉 This is one of the biggest tax advantages available.</p>
 
@@ -147,13 +182,24 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
-              <thead><tr><th>Action</th><th>Result</th></tr></thead>
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
               <tbody>
-                 <tr><td>Buy BTC at $20,000</td><td>Cost base</td></tr>
-                 <tr><td>Swap at $30,000</td><td>$10,000 gain</td></tr>
+                <tr>
+                  <td>Buy BTC at $20,000</td>
+                  <td>Cost base</td>
+                </tr>
+                <tr>
+                  <td>Swap at $30,000</td>
+                  <td>$10,000 gain</td>
+                </tr>
               </tbody>
-            得到
+            </table>
           </div>
           <p class="highlight">👉 That $10,000 gain is taxable—even without AUD involved.</p>
 
@@ -184,14 +230,28 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
-              <thead><tr><th>Activity</th><th>Tax Type</th></tr></thead>
+            <table>
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>Tax Type</th>
+                </tr>
+              </thead>
               <tbody>
-                 <tr><td>Staking rewards</td><td>Income</td></tr>
-                 <tr><td>Mining profits</td><td>Income</td></tr>
-                 <tr><td>Day trading</td><td>Income</td></tr>
+                <tr>
+                  <td>Staking rewards</td>
+                  <td>Income</td>
+                </tr>
+                <tr>
+                  <td>Mining profits</td>
+                  <td>Income</td>
+                </tr>
+                <tr>
+                  <td>Day trading</td>
+                  <td>Income</td>
+                </tr>
               </tbody>
-            得到
+            </table>
           </div>
 
           <h3>Why This Matters</h3>
@@ -246,14 +306,28 @@
 
           <h3>Investor Example</h3>
           <div class="table-wrap">
-            能得到
-              <thead><tr><th>Activity</th><th>Value</th></tr></thead>
+            <table>
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
               <tbody>
-                 <tr><td>Buy BTC</td><td>$10,000</td></tr>
-                 <tr><td>Sell BTC</td><td>$18,000</td></tr>
-                 <tr><td>Staking income</td><td>$2,000</td></tr>
+                <tr>
+                  <td>Buy BTC</td>
+                  <td>$10,000</td>
+                </tr>
+                <tr>
+                  <td>Sell BTC</td>
+                  <td>$18,000</td>
+                </tr>
+                <tr>
+                  <td>Staking income</td>
+                  <td>$2,000</td>
+                </tr>
               </tbody>
-            得到
+            </table>
           </div>
 
           <h3>Tax Breakdown</h3>
