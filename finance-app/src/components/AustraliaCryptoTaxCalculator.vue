@@ -4,7 +4,7 @@
     <h1 class="main-title">Australia Crypto Tax Calculator</h1>
     <p class="description">
       The Australia Crypto Tax Calculator helps you estimate your cryptocurrency tax obligations under ATO guidelines. Whether you are trading, staking, mining, or earning income through DeFi and NFTs, this tool provides a simple and accurate way to calculate your crypto taxes.Enter your purchase and sale prices, transaction fees, and income details to determine capital gains or losses. Designed for Australian investors and traders, this calculator supports both single transactions and multiple crypto portfolios, helping you understand your tax liability and plan ahead.
-    </p>
+   </p>
 
     <!-- Calculator Form - 附件1样式 -->
     <div class="calculator-form">
@@ -148,13 +148,32 @@
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Taxable Income</th><th>Tax Rate</th> </thead>
+              <tr>
+                <th>Taxable Income</th>
+                <th>Tax Rate</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>Up to AUD 18,200</td><td>0%</td></tr>
-              <tr><td>AUD 18,201 – AUD 45,000</td><td>19%</td></tr>
-              <tr><td>AUD 45,001 – AUD 120,000</td><td>32.5%</td></tr>
-              <tr><td>AUD 120,001 – AUD 180,000</td><td>37%</td></tr>
-              <tr><td>Above AUD 180,000</td><td>45%</td></tr>
+              <tr>
+                <td>Up to AUD 18,200</td>
+                <td>0%</td>
+              </tr>
+              <tr>
+                <td>AUD 18,201 – AUD 45,000</td>
+                <td>19%</td>
+              </tr>
+              <tr>
+                <td>AUD 45,001 – AUD 120,000</td>
+                <td>32.5%</td>
+              </tr>
+              <tr>
+                <td>AUD 120,001 – AUD 180,000</td>
+                <td>37%</td>
+              </tr>
+              <tr>
+                <td>Above AUD 180,000</td>
+                <td>45%</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -288,197 +307,6 @@ export default {
       
       console.log('Google meta tags set')
     },
-    calculate() {
-      if (this.activeTab === 'fixedLength') {
-        this.calculateFixedLength();
-      } else {
-        this.calculateFixedPayment();
-      }
-    },
-
-    calculateFixedLength() {
-      const principal = this.form.fixedLength.principal;
-      const annualRate = this.form.fixedLength.interestRate / 100;
-      const years = this.form.fixedLength.years;
-      
-      if (!principal || principal <= 0 || !years || years <= 0) {
-        this.results = { calculated: false, balances: [] };
-        return;
-      }
-      
-      // Monthly rate
-      const monthlyRate = annualRate / 12;
-      const totalMonths = years * 12;
-      
-      // Calculate monthly payment using annuity formula
-      // PMT = PV * r * (1 + r)^n / ((1 + r)^n - 1)
-      let monthlyPayment = 0;
-      
-      if (monthlyRate === 0) {
-        monthlyPayment = principal / totalMonths;
-      } else {
-        const factor = Math.pow(1 + monthlyRate, totalMonths);
-        monthlyPayment = principal * monthlyRate * factor / (factor - 1);
-      }
-      
-      // Calculate amortization schedule
-      const balances = [];
-      let balance = principal;
-      let totalInterest = 0;
-      
-      for (let year = 1; year <= years; year++) {
-        let beginningBalance = balance;
-        let yearInterest = 0;
-        
-        for (let month = 1; month <= 12; month++) {
-          const interest = balance * monthlyRate;
-          yearInterest += interest;
-          totalInterest += interest;
-          
-          balance = balance + interest - monthlyPayment;
-          if (balance < 0.01) balance = 0;
-        }
-        
-        balances.push({
-          year,
-          beginningBalance,
-          interest: yearInterest,
-          endingBalance: balance
-        });
-        
-        if (balance <= 0) break;
-      }
-      
-      const totalPayout = monthlyPayment * totalMonths;
-      
-      this.results = {
-        calculated: true,
-        monthlyPayment,
-        payoutYears: years,
-        totalPayments: totalMonths,
-        totalPayout,
-        totalInterest,
-        balances
-      };
-    },
-
-    calculateFixedPayment() {
-      const principal = this.form.fixedPayment.principal;
-      const annualRate = this.form.fixedPayment.interestRate / 100;
-      const monthlyPayment = this.form.fixedPayment.payoutAmount;
-      
-      if (!principal || principal <= 0 || !monthlyPayment || monthlyPayment <= 0) {
-        this.results = { calculated: false, balances: [] };
-        return;
-      }
-      
-      // Monthly rate
-      const monthlyRate = annualRate / 12;
-      
-      // Calculate how many months the annuity will last
-      // n = -log(1 - PV * r / PMT) / log(1 + r)
-      let totalMonths = 0;
-      
-      if (monthlyRate === 0) {
-        totalMonths = Math.floor(principal / monthlyPayment);
-      } else {
-        // Check if payment is less than interest (annuity never depletes)
-        const firstMonthInterest = principal * monthlyRate;
-        if (monthlyPayment <= firstMonthInterest) {
-          // Payment is less than or equal to interest, annuity will never deplete
-          // Still show first year for demonstration
-          totalMonths = 12 * 100; // Show 100 years max
-        } else {
-          totalMonths = Math.floor(
-            -Math.log(1 - (principal * monthlyRate) / monthlyPayment) / 
-            Math.log(1 + monthlyRate)
-          );
-        }
-      }
-      
-      // Cap at a reasonable number
-      totalMonths = Math.min(totalMonths, 12 * 100);
-      
-      const years = Math.ceil(totalMonths / 12);
-      
-      // Calculate amortization schedule
-      const balances = [];
-      let balance = principal;
-      let totalInterest = 0;
-      let monthsRemaining = totalMonths;
-      
-      for (let year = 1; year <= years; year++) {
-        if (balance <= 0.01) break;
-        
-        let beginningBalance = balance;
-        let yearInterest = 0;
-        const monthsInYear = Math.min(12, monthsRemaining);
-        
-        for (let month = 1; month <= monthsInYear; month++) {
-          const interest = balance * monthlyRate;
-          yearInterest += interest;
-          totalInterest += interest;
-          
-          balance = balance + interest - monthlyPayment;
-          if (balance < 0.01) balance = 0;
-        }
-        
-        balances.push({
-          year,
-          beginningBalance,
-          interest: yearInterest,
-          endingBalance: balance
-        });
-        
-        monthsRemaining -= monthsInYear;
-        if (balance <= 0) break;
-      }
-      
-      const totalPayout = monthlyPayment * totalMonths;
-      
-      this.results = {
-        calculated: true,
-        monthlyPayment,
-        payoutYears: totalMonths / 12,
-        totalPayments: totalMonths,
-        totalPayout,
-        totalInterest,
-        balances
-      };
-    },
-
-    clearForm() {
-      this.form = {
-        fixedLength: {
-          principal: 500000,
-          interestRate: 6,
-          years: 10
-        },
-        fixedPayment: {
-          principal: 500000,
-          interestRate: 6,
-          payoutAmount: 5000
-        }
-      };
-      this.calculate();
-    },
-
-    formatMoney(value) {
-      if (value === undefined || value === null || !isFinite(value)) return '0.00';
-      return value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    },
-
-    formatNumber(value) {
-      if (value === undefined || value === null || !isFinite(value)) return '0';
-      return value.toFixed(1);
-    },
-
-    getBarHeight(value) {
-      const maxBalance = Math.max(...this.results.balances.map(b => b.beginningBalance));
-      if (maxBalance === 0) return 0;
-      return (value / maxBalance) * 80; // Scale to 80% max height
-    }
-  },
     calculate() {
       const purchase = this.form.purchasePrice || 0;
       const sale = this.form.salePrice || 0;
