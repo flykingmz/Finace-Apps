@@ -5,8 +5,11 @@
       <TopHeader :page-title="currentPageTitle" />
       <!-- 新增的广告区域 - 位于TopHeader下方，main-content内部 -->
         <div class="ad-banner">
-              <p>Your ad could be here</p>
+        <div class="ad-content">
+        <!-- 广告内容，如 Google AdSense 代码或自定义广告图片 -->
+         <img src="/logo-i.png" alt="广告" style="width:100%; height:100%; object-fit: cover;">
         </div>
+      </div>
 
       <div class="content-area">
        <router-view v-slot="{ Component, route }">
@@ -135,24 +138,51 @@ export default {
 </script>
 
 <style scoped>
-
-/* 广告区域样式 */
+/* 广告区域样式 - PC端和移动端适配 */
 .ad-banner {
   margin: 15px 0 25px 0;
-  width: 100%;
   background: white;
   border-radius: 12px;
   border: 1px solid #e9eef3;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  height:100px;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 768px) {
+/* PC端样式 - 300x250 */
+@media (min-width: 769px) {
+  .ad-banner {
+    width: 300px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .ad-content {
-    min-height: 80px;
-    display: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 移动端样式 - 320x50 */
+@media (max-width: 768px) {
+  .ad-banner {
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ad-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
