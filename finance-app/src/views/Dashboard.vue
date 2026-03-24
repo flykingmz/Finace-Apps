@@ -149,6 +149,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  display:none;
 }
 
 /* PC端样式 - 300x250 */
