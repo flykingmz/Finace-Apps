@@ -1,10 +1,10 @@
 <template>
   <div class="layout-container">
-    <SidebarAds />  
+    <!--  <SidebarAds />  -->
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <!-- 新增的广告区域 - 位于TopHeader下方，main-content内部 -->
-        <div class="ad-banner">
+      <div class="ad-banner">
         <div class="ad-content">
         <!-- 广告内容，如 Google AdSense 代码或自定义广告图片 -->
          <img src="/logo-i.png" alt="广告" style="width:100%; height:100%; object-fit: cover;">
@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import SidebarAds from '../components/SidebarAds.vue'
+// import SidebarAds from '../components/SidebarAds.vue'
 import TopHeader from '../components/TopHeader.vue'
 import Foot from '../components/Foot.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-    SidebarAds,
+    // SidebarAds,
     TopHeader,
     Foot
   },
