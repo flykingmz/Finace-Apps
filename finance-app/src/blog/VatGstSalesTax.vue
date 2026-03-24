@@ -363,7 +363,7 @@
   </article>
 </template>
 
-<script setup>
+<script>
 export default {
   name: 'InvestmentGuideBlog',
   methods: {
