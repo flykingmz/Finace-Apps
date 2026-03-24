@@ -446,6 +446,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'The Hidden Cost of Filing Taxes Jointly vs Separately'
   }
 };
 </script>

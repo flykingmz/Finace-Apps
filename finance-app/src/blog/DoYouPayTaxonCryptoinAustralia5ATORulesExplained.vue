@@ -448,6 +448,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained'
   }
 }
 </script>

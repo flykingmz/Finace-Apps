@@ -396,6 +396,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'When Should You Claim Social Security?'
   }
 };
 </script>

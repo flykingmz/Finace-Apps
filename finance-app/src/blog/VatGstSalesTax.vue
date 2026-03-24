@@ -364,24 +364,27 @@
 </template>
 
 <script setup>
-// This component is static content but can later
-// be connected to CMS or API.
-
-const shareOnLinkedIn = () => {
-  const url = encodeURIComponent(window.location.href);
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
-};
-
-const shareOnX = () => {
-  const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent('VAT vs GST vs Sales Tax: A Global Guide to Consumption Taxes');
-  window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
-};
-
-const shareOnFacebook = () => {
-  const url = encodeURIComponent(window.location.href);
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-};
+export default {
+  name: 'InvestmentGuideBlog',
+  methods: {
+    shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+    },
+    shareOnX() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent('VAT vs GST vs Sales Tax: A Global Guide to Consumption Taxes');
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    },
+    shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+  },
+  mounted() {
+    document.title = 'VAT vs GST vs Sales Tax: A Global Guide to Consumption Taxes'
+  }
+}
 </script>
 
 <style scoped>

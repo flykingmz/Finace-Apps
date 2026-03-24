@@ -426,6 +426,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'How to Calculate Interest on Savings: Simple vs Compound Interest Explained'
   }
 }
 </script>

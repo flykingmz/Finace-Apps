@@ -422,6 +422,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Estimate Your Tax-Free Retirement Growth (2026 Complete Guide)'
   }
 }
 </script>

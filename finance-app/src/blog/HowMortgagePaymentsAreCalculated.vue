@@ -554,6 +554,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'How Mortgage Payments Are Calculated (With Formula & Real Examples)'
   }
 }
 </script>

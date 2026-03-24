@@ -460,6 +460,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'How to Calculate Certificate of Deposit Interest (CD Calculator + Real Examples)'
   }
 }
 </script>

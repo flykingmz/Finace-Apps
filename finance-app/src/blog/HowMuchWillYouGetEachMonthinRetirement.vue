@@ -456,6 +456,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Pension Calculator: How Much Will You Get Each Month in Retirement?'
   }
 }
 </script>

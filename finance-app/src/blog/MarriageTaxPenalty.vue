@@ -363,6 +363,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'The Real Marriage Tax Penalty: Data by Income Bracket (2026 Update)'
   }
 }
 </script>

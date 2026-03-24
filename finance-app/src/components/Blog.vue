@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+       <!-- Blog 31:  Complete Guide to Annuities in the USA: How They Work & Benefits -->
+        <div class="blog-card">
+          <h2 class="blog-title">Complete Guide to Annuities in the USA: How They Work & Benefits</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 24, 2026</span>
+          </div>
+          <p class="blog-excerpt">In the U.S., an annuity is a contract for a fixed sum of money usually paid by an insurance company to an investor in a stream of cash flows over a period of time, typically as a means of saving for retirement. In many cases, this sum is paid annually over the duration of the investor's life. </p>
+          <a href="/general-annuity-info-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 30:  Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained -->
         <div class="blog-card">
           <h2 class="blog-title">Do You Pay Tax on Crypto in Australia? 5 ATO Rules Explained</h2>

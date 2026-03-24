@@ -533,6 +533,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'VAT vs GST vs Sales Tax: A Global Comparison Table (150+ Countries & Regions)'
   }
 };
 </script>

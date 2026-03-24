@@ -518,6 +518,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = '$500,000 Mortgage: How Fast Can You Pay It Off with Extra Payments?'
   }
 }
 </script>

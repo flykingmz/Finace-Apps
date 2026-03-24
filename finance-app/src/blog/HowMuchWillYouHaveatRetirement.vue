@@ -459,6 +459,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = '401(k) Calculator: How Much Will You Have at Retirement?'
   }
 }
 </script>

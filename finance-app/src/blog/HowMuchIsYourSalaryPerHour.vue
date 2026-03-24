@@ -519,6 +519,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Salary Calculator: How Much Is Your Salary Per Hour, Day, Week, and Month?'
   }
 }
 </script>

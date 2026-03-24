@@ -215,23 +215,27 @@
 </template>
 
 <script setup>
-// Static informational component
-
-const shareOnLinkedIn = () => {
-  const url = encodeURIComponent(window.location.href);
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
-};
-
-const shareOnX = () => {
-  const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent('Understanding U.S. Social Security: A Complete Guide');
-  window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
-};
-
-const shareOnFacebook = () => {
-  const url = encodeURIComponent(window.location.href);
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-};
+export default {
+  name: 'RothIRAGuideBlog',
+  methods: {
+    shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+    },
+    shareOnX() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent('Understanding U.S. Social Security: A Complete Guide');
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    },
+    shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+  },
+  mounted() {
+    document.title = 'Understanding U.S. Social Security: A Complete Guide'
+  }
+}
 </script>
 
 <style scoped>

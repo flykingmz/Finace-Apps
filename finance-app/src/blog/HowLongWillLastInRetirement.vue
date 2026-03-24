@@ -441,6 +441,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'How Long Will $500,000 Last in Retirement? Scenario Analysis'
   }
 };
 </script>

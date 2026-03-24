@@ -478,6 +478,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Why Is My Paycheck So Much Lower Than My Salary? (Paycheck Calculator Explained)'
   }
 }
 </script>

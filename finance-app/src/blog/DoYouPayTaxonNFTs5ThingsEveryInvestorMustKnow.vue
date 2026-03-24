@@ -444,6 +444,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Do You Pay Tax on NFTs? 5 Things Every Investor Must Know'
   }
 }
 </script>

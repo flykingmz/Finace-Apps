@@ -487,6 +487,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'What Is an Amortization Schedule? A Simple Explanation for Homebuyers'
   }
 }
 </script>
