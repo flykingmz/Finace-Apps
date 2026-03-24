@@ -499,6 +499,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'Annuity vs 4% Rule: Which Gives You More Monthly Income?'
   }
 }
 </script>

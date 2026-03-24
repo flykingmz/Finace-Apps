@@ -99,14 +99,51 @@
 <script>
 export default {
   name: 'TaxSalaryCalculators',
-  methods: {
-    navigate(event) {
-      event.preventDefault();
-      const path = event.currentTarget.getAttribute('href');
-      // In a real Vue Router app you'd use: this.$router.push(path)
-      console.log(`Navigate to: ${path}`);
-      alert(`[Demo] This would navigate to ${path} — integrate with router for full functionality.`);
+     methods: {
+    setGoogleMetaTags() {
+      // 确保description存在且内容正确
+      let desc = document.querySelector('meta[name="description"]')
+      if (!desc) {
+        desc = document.createElement('meta')
+        desc.name = 'description'
+        document.head.appendChild(desc)
+      }
+      desc.content = 'Use our Tax Salary Calculators to quickly estimate your take-home pay after federal, state, and local taxes. Compare salaries, plan your finances, and maximize your income with accurate tax calculations.'
+      
+      // 确保robots标签存在（告诉Google索引此页）
+      let robots = document.querySelector('meta[name="robots"]')
+      if (!robots) {
+        robots = document.createElement('meta')
+        robots.name = 'robots'
+        document.head.appendChild(robots)
+      }
+      robots.content = 'index, follow'
+      
+      // 添加Google专用的nositelinkssearchbox（可选）
+      let google = document.querySelector('meta[name="google"]')
+      if (!google) {
+        google = document.createElement('meta')
+        google.name = 'google'
+        document.head.appendChild(google)
+      }
+      google.content = 'nositelinkssearchbox'
+      
+      // 添加canonical链接（防止重复内容）
+      let canonical = document.querySelector('link[rel="canonical"]')
+      if (!canonical) {
+        canonical = document.createElement('link')
+        canonical.rel = 'canonical'
+        document.head.appendChild(canonical)
+      }
+      canonical.href = window.location.href
+      
+      console.log('Google meta tags set')
     }
+  },
+  mounted() {
+    document.title = 'Tax Salary Calculators – Accurately Calculate Your Take-Home Pay & Taxes'
+    // 2. 设置关键meta标签（Google最关注的）
+    this.setGoogleMetaTags()
   }
 }
 </script>

@@ -30,7 +30,7 @@
 
         <!-- 文章主体 (内容完全一致) -->
         <article class="blog-article">
-          <h2>Before-Tax vs. After-Tax Income</h2>
+          <h2>What You Really Take Home: Before vs. After Tax</h2>
           <p>In the U.S., the concept of personal income or salary usually references the before-tax amount, called gross pay. For instance, it is the form of income required on mortgage applications, is used to determine tax brackets, and is used when comparing salaries. This is because it is the raw income figure before other factors are applied, such as federal income tax, allowances, or health insurance deductions, all of which vary from person to person.</p>
           <p>However, in the context of personal finance, the more practical figure is after-tax income (sometimes referred to as disposable income or net income) because it is the figure that is actually disbursed. For instance, a person who lives paycheck-to-paycheck can calculate how much they will have available to pay next month's rent and expenses by using their take-home-paycheck amount.</p>
           <p>Figures entered into "Your Annual Income (Salary)" should be the before-tax amount, and the result shown in "Final Paycheck" is the after-tax amount (including deductions).</p>
@@ -675,6 +675,9 @@ export default {
       const url = encodeURIComponent(window.location.href);
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     }
+  },
+  mounted() {
+    document.title = 'What You Really Take Home: Before vs. After Tax？'
   }
 }
 </script>

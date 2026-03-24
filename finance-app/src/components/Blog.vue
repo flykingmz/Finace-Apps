@@ -303,7 +303,7 @@
 
         <!-- Blog 5: How Take Home Pay Is Calculated -->
         <div class="blog-card">
-          <h2 class="blog-title">Before-Tax vs. After-Tax Income</h2>
+          <h2 class="blog-title">What You Really Take Home: Before vs. After Tax？</h2>
           <div class="blog-meta">
             <span class="publish-date">February 3, 2026</span>
           </div>
