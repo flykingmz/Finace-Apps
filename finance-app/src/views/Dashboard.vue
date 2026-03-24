@@ -1,6 +1,6 @@
 <template>
   <div class="layout-container">
-    <!-- <Sidebar />  -->
+    <SidebarAds />  
     <div class="main-content">
       <TopHeader :page-title="currentPageTitle" />
       <!-- 新增的广告区域 - 位于TopHeader下方，main-content内部 -->
@@ -22,14 +22,14 @@
 </template>
 
 <script>
-// import Sidebar from '../components/Sidebar.vue'
+import SidebarAds from '../components/SidebarAds.vue'
 import TopHeader from '../components/TopHeader.vue'
 import Foot from '../components/Foot.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-   // Sidebar,
+    SidebarAds,
     TopHeader,
     Foot
   },
