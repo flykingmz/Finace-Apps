@@ -660,7 +660,17 @@ export default {
     form: {
       handler: 'calculate',
       deep: true
-    }
+    },
+    results: {
+      handler(newVal) {
+       if (newVal.calculated) {
+        this.$nextTick(() => {
+          this.updateChart();
+        });
+      }
+    },
+    deep: true
+  }
   }
 };
 </script>
