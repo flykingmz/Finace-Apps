@@ -9,7 +9,7 @@
       This calculator is mainly intended for use by U.S. residents.
     </p>
 
-    <!-- Calculator Form - 附件1样式 -->
+    <!-- Calculator Form -->
     <div class="calculator-form">
       <h2>IRA Calculator</h2>
 
@@ -196,21 +196,22 @@
       </div>
     </div>
 
-    <!-- Results Section - 附件2样式 -->
+    <!-- Results Section -->
     <div class="results-section" v-if="results.calculated">
       <h2>Result</h2>
 
       <div class="comparison-table">
-        能得到
+        <table>
           <thead>
             <tr>
               <th></th>
               <th>Traditional, SIMPLE, or SEP IRA</th>
               <th>Roth IRA</th>
               <th>Regular Taxable Savings</th>
-             </thead>
+            </tr>
+          </thead>
           <tbody>
-             <tr>
+            <tr>
               <td>Balance at age {{ form.retirementAge }}</td>
               <td>${{ formatMoney(results.traditionalBalance) }}</td>
               <td>${{ formatMoney(results.rothBalance) }}</td>
@@ -223,7 +224,7 @@
               <td><strong>${{ formatMoney(results.taxableBalance) }}</strong></td>
             </tr>
           </tbody>
-        能得到
+        </table>
       </div>
 
       <div class="summary-message">
@@ -236,7 +237,7 @@
       </div>
     </div>
 
-    <!-- Balance Accumulation Graph - 附件3样式 -->
+    <!-- Balance Accumulation Graph -->
     <div class="graph-section" v-if="results.calculated">
       <h3>Balance Accumulation Graph</h3>
       <div class="chart-container">
@@ -255,15 +256,15 @@
       </div>
     </div>
 
-    <!-- Annual Schedule - 附件4样式 -->
+    <!-- Annual Schedule -->
     <div class="schedule-section" v-if="results.calculated">
       <h3>Annual Schedule</h3>
       
       <div class="schedule-table-wrapper">
         <div class="schedule-table">
-          能得到
+          <table>
             <thead>
-               <tr>
+              <tr>
                 <th rowspan="2">Age</th>
                 <th colspan="2">Traditional/SIMPLE/SEP IRA (Before Tax)</th>
                 <th colspan="2">Traditional, SIMPLE, or SEP IRA (After Tax)</th>
@@ -294,7 +295,7 @@
                 <td>${{ formatMoney(row.taxableEnd) }}</td>
               </tr>
             </tbody>
-           </table>
+          </table>
         </div>
       </div>
     </div>
@@ -344,30 +345,6 @@
       <div class="faq-item">
         <h3>What are IRA rollovers?</h3>
         <p>Existing qualified retirement plans, such as 401(K)s, 403(B)s, SIMPLE IRAs, or SEP IRAs, can be "rolled over," or consolidated, into a traditional IRA. Many other plans, including 457 plans or inherited employer-sponsored plans (for designated beneficiaries), can also be rolled over. There are no taxes due when rolling over company plans directly into IRAs. However, remember to report all rollovers on tax returns, even when no taxes are due. Two IRS forms are involved here: the 1099R to report distributions received from employer's plans and 5498 to report rollover contributions to the IRA. In most cases, the variety of choices a person can make regarding their investments remain about the same after rollovers into new IRAs. Rollovers and contributions can be combined into the same IRA, but traditional IRA and Roth IRA funds must be kept in separate accounts. Rolling over an IRA is not the only option available. Some may choose to leave accumulated assets in their former employer's plan, even after leaving to work at a different company (plans that require certain minimum amounts will not allow this). Others may move their assets into their new employer's plan. It is also possible to cash out retirement plans, though this usually results in early withdrawal penalties and taxes. Early withdrawals from IRAs or 401(k)s are both subject to a 10% penalty along with standard income taxes.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How do IRAs compare to 401(k)s?</h3>
-        <p>Traditional IRAs and 401(k)s are two of the most popular tax-deferred, defined contribution retirement plans. Both turn pre-tax income into tax-deductible contributions that are placed into retirement plans that receive tax-sheltered growth, with the goal of incentivizing saving for retirement. In retirement, both plans distribute taxable funds, usually to retirees who are in lower income tax brackets. It is also possible to make a maximum contribution to both within the same tax year. In 2026, this is $24,500 towards a 401(k) and $7,500 ($8,600 if older than 50) towards a traditional IRA. This is only true for people within a certain income range, as those who have very high incomes are not allowed to contribute to a traditional IRA. While traditional IRAs and 401(k)s share a number of similarities, they have some key differences. While traditional IRAs can be opened at most financial firms individually, 401(k)s are employer-sponsored programs that are generally only available through a company that meets certain requirements and chooses to avoid a 401(k) plan. The main difference between the two is that 401(k)s have a higher contribution limit and usually offer a company match. That is, employers can choose to match a percentage of their employees' contributions to their 401(k) retirement plans. If the 401(k) has a contribution match, it is generally advisable to contribute a minimum amount equal to at least the amount the company is willing to match. After contributing this minimum amount, a person can decide to either continue contributing to their 401(k) up to the annual limit or choose to make contributions to other retirement funds. While 401(k)s are generally limited to very few investment options offered through employers, with relatively high administrative fees, traditional IRAs provide almost limitless investment options.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What are the differences between SEP/SIMPLE IRAs and traditional IRAs?</h3>
-        <p>Unlike traditional IRAs, which do not have any form of company matching such as those typical of a 401(k), SEP and SIMPLE IRAs do, though the matching system is not the same. These different matching systems are offered specifically through these IRAs because they are mainly intended for smaller companies that are too small in scale to offer 401(k) programs to their employees.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What investment options are available in an IRA?</h3>
-        <p>One beneficial aspect of IRAs is that because they are available through most financial firms, there are ample investment options to choose from. The following are some common options along with their strengths and weaknesses:</p>
-        <p><strong>Active Investing in Individual Stocks or Similar Assets:</strong> Active investing requires a more proactive, hands-on approach that involves investors actively picking and choosing stocks, making an effort to learn about the market and the stocks in which they invest, and making more frequent decisions on how to proceed with their investments. While this may generate higher returns, this is generally considered to be very risky and is not recommended for beginners.</p>
-        <p><strong>Mutual or Index Funds:</strong> A mutual fund is a pool of money sourced by individual investors, companies, and various organizations that is managed by a fund manager whose role is to invest the pool of money accordingly. Investment strategies differ based on the fund manager and type of mutual fund; it is up to each individual investor to find the mutual fund that fits their needs. Index funds can be defined as mutual funds that are based on an index rather than a fund manager's strategic portfolio. The most famous indexes are the Standard and Poor's 500 (S&P 500) and the Dow Jones Industrial Average (DJIA). Because they are comprised of large U.S. companies that the American economy depends heavily on (and to a certain extent, the global economy), they are generally used as metrics to diagnose economic health. It is possible to use IRA funds to invest in these indexes or many other indexes. Mutual and index funds offer a more hands-off approach to investing. Investments in a mutual fund are generally meant for the long-term, typically resulting in a reduction in fees incurred through actively making trades. Compared to active investing, investing in a mutual fund often requires less effort and can be less stressful. Because the funds are managed investments, some fees will be charged by the fund managers. The fees vary widely between funds, ranging from below 0.1% to more than 5%. Mutual and index funds are probably the most popular choices for IRA investments.</p>
-        <p><strong>Robo-Advisors:</strong> Robotic financial advisors, or "robo-advisors," are a type of financial advisor that use low-cost, automated systems as a means to manage investments. Usually, robo-advisors can help set up customized, diverse portfolios catered to each individual within minutes. These portfolios can typically be adjusted periodically, either manually or based on preferences specified by the investor.</p>
-        <p><strong>Others:</strong> It is possible to have IRA funds invested in precious metals, annuities, land, real estate investment trusts (REITs), or Certificates of Deposit (CDs). It is up to each person to decide which of the aforementioned options is right for them.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What is a Self-Directed IRA?</h3>
-        <p>A self-directed IRA (SD-IRA) can be set up in place of a traditional or Roth IRA (not SEP or SIMPLE) and will have the same characteristics regarding eligibility, contributions, and distributions. It is estimated that SD-IRAs make up only about 2% of all IRAs. While a traditional IRA or Roth IRA account holder might choose between stock or funds, the owner of an SD-IRA is required to find their own investable assets. The IRS is quite flexible with what these assets can be, and the types of investments involved are usually not permissible investments in traditional or Roth IRAs. SD-IRAs are popular with people who want to invest in less common assets such as: Privately-held companies, Hedge funds, Investment real estate, Limited partnerships, Crowdfunding, Tax liens, Bitcoin and other digital currencies, A friend's farm. Opening an SD-IRA account is trickier than the generic traditional or Roth IRA. While most financial firms offer traditional or Roth IRAs, SD-IRAs are more likely to be found at smaller, specialized financial firms. Keep in mind that SD-IRA accounts are heavily scrutinized by the IRS. With that said, SD-IRAs are only recommended for expert investors or for people who are willing and able to work with a professional. It is important to note that there are investments that are not allowed in any IRA, regardless of whether they are self-directed or otherwise. These include: Life insurance, S corporations, Antiques or collectibles, Art, Personal real estate used as a residence or for rental income, Certain derivative positions.</p>
       </div>
     </div>
   </div>
