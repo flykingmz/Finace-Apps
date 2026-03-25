@@ -167,7 +167,14 @@ const routes = [
         name: 'RothIRACalculator',
         component: () => import('../components/RothIRACalculator.vue'),
         meta: { keepAlive: false }
-      },{
+      },
+      {
+        path: 'ira-calculator',
+        name: 'IRACalculator',
+        component: () => import('../components/IRACalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'deferred-annuity',
         name: 'DeferredAnnuityCalculator',
         component: () => import('../components/DeferredAnnuityCalculator.vue'),

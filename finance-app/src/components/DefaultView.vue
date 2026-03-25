@@ -51,7 +51,7 @@
             <a href="/annuity" class="tool-link">Annuity Calculator</a>
             <a href="/annuity-payout" class="tool-link">Annuity Payout Calculator</a>
             <a href="/roth-ira" class="tool-link">Roth IRA Calculator</a>
-            <li class="tool-link">IRA Calculator(Coming Soon)</li>
+            <a href="/ira-calculator" class="tool-link">IRA Calculator</a>
             <li class="tool-link">RMD Calculator(Coming Soon)</li>
           </div>
         </div>
