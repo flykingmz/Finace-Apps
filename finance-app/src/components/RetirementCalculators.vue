@@ -92,7 +92,7 @@
         <div class="card-content">
           <h3>IRA Calculator</h3>
           <p>Estimate the future value of traditional IRA accounts, including tax-deferred growth and contribution limits.</p>
-          <!-- <a href="/ira-calculator" class="card-link" >Open Calculator →</a> -->
+          <a href="/ira-calculator" class="card-link" >Open Calculator →</a> 
         </div>
       </div>
 
