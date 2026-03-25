@@ -208,15 +208,14 @@
               <th>Traditional, SIMPLE, or SEP IRA</th>
               <th>Roth IRA</th>
               <th>Regular Taxable Savings</th>
-            </tr>
-          </thead>
+             </thead>
           <tbody>
-            <tr>
-              <td>Balance at age {{ form.retirementAge }}</td>
-              <td>${{ formatMoney(results.traditionalBalance) }}</td>
-              <td>${{ formatMoney(results.rothBalance) }}</td>
-              <td>${{ formatMoney(results.taxableBalance) }}</td>
-            </tr>
+             <tr>
+               <td>Balance at age {{ form.retirementAge }}</td>
+               <td>${{ formatMoney(results.traditionalBalance) }}</td>
+               <td>${{ formatMoney(results.rothBalance) }}</td>
+               <td>${{ formatMoney(results.taxableBalance) }}</td>
+             </tr>
             <tr class="highlight-row">
               <td><strong>Balance at age {{ form.retirementAge }} (after tax)</strong></td>
               <td><strong>${{ formatMoney(results.traditionalAfterTax) }}</strong></td>
@@ -238,7 +237,7 @@
     </div>
 
     <!-- Balance Accumulation Graph -->
-    <div class="graph-section" v-if="results.calculated">
+    <div class="graph-section" v-if="results.calculated && results.annualSchedule && results.annualSchedule.length > 0">
       <h3>Balance Accumulation Graph</h3>
       <div class="chart-container">
         <canvas ref="balanceChart" id="balanceChart"></canvas>
@@ -264,14 +263,14 @@
         <div class="schedule-table">
           <table>
             <thead>
-              <tr>
+               <tr>
                 <th rowspan="2">Age</th>
                 <th colspan="2">Traditional/SIMPLE/SEP IRA (Before Tax)</th>
                 <th colspan="2">Traditional, SIMPLE, or SEP IRA (After Tax)</th>
                 <th colspan="2">Roth IRA (After Tax)</th>
                 <th colspan="2">Regular Taxable Savings (After Tax)</th>
-              </tr>
-              <tr>
+               </tr>
+               <tr>
                 <th>Start</th>
                 <th>End</th>
                 <th>Start</th>
@@ -280,7 +279,7 @@
                 <th>End</th>
                 <th>Start</th>
                 <th>End</th>
-              </tr>
+               </tr>
             </thead>
             <tbody>
               <tr v-for="row in results.annualSchedule" :key="row.age">
@@ -383,7 +382,7 @@ export default {
     };
   },
   methods: {
-     setGoogleMetaTags() {
+  setGoogleMetaTags() {
       // 确保description存在且内容正确
       let desc = document.querySelector('meta[name="description"]')
       if (!desc) {
@@ -505,130 +504,164 @@ export default {
         annualSchedule: annualSchedule
       };
       
+      // 等待 DOM 更新后重新绘制图表
       this.$nextTick(() => {
         this.updateChart();
       });
     },
 
     updateChart() {
-      // 延迟执行，确保 DOM 完全渲染
-      setTimeout(() => {
-        if (this.chart) {
+      // 确保 Canvas 元素存在且数据有效
+      const canvas = this.$refs.balanceChart;
+      if (!canvas) {
+        return;
+      }
+
+      const schedule = this.results.annualSchedule;
+      if (!schedule || schedule.length === 0) {
+        return;
+      }
+
+      // 销毁旧图表
+      if (this.chart) {
+        try {
           this.chart.destroy();
-          this.chart = null;
+        } catch (e) {
+          console.warn('Chart destroy error:', e);
         }
+        this.chart = null;
+      }
 
-        const canvas = this.$refs.balanceChart;
-        if (!canvas) {
-          console.log('Canvas not found');
-          return;
-        }
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
 
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+      const ages = schedule.map(row => row.age);
+      const traditionalBeforeTax = schedule.map(row => row.traditionalEnd);
+      const traditionalAfterTax = schedule.map(row => row.traditionalAfterTaxEnd);
+      const roth = schedule.map(row => row.rothEnd);
+      const taxable = schedule.map(row => row.taxableEnd);
+      
+      // 验证数据有效性
+      const isValidData = (data) => data.every(v => typeof v === 'number' && !isNaN(v) && isFinite(v));
+      if (!isValidData(traditionalBeforeTax) || !isValidData(traditionalAfterTax) || 
+          !isValidData(roth) || !isValidData(taxable)) {
+        return;
+      }
+      
+      // 计算本金
+      const years = schedule.length;
+      const annualContrib = this.form.annualContribution || 0;
+      const startingBalance = this.form.currentBalance || 0;
+      const principal = [];
+      let cumulativePrincipal = startingBalance;
+      for (let i = 0; i < years; i++) {
+        cumulativePrincipal += annualContrib;
+        principal.push(cumulativePrincipal);
+      }
 
-        const schedule = this.results.annualSchedule;
-        if (!schedule || schedule.length === 0) return;
-
-        const ages = schedule.map(row => row.age);
-        const traditionalBeforeTax = schedule.map(row => row.traditionalEnd);
-        const traditionalAfterTax = schedule.map(row => row.traditionalAfterTaxEnd);
-        const roth = schedule.map(row => row.rothEnd);
-        const taxable = schedule.map(row => row.taxableEnd);
-        
-        // 计算本金
-        const years = schedule.length;
-        const annualContrib = this.form.annualContribution || 0;
-        const currentTax = this.form.currentTaxRate / 100;
-        const startingBalance = this.form.currentBalance || 0;
-        const principal = [];
-        let cumulativePrincipal = startingBalance;
-        for (let i = 0; i < years; i++) {
-          cumulativePrincipal += annualContrib;
-          principal.push(cumulativePrincipal);
-        }
-
-        this.chart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: ages,
-            datasets: [
-              {
-                label: 'Traditional/SIMPLE/SEP IRA (before tax)',
-                data: traditionalBeforeTax,
-                borderColor: '#2563eb',
-                backgroundColor: 'transparent',
-                borderWidth: 2,
-                tension: 0.1
-              },
-              {
-                label: 'Traditional/SIMPLE/SEP IRA (after tax)',
-                data: traditionalAfterTax,
-                borderColor: '#60a5fa',
-                backgroundColor: 'transparent',
-                borderWidth: 2,
-                tension: 0.1
-              },
-              {
-                label: 'Roth IRA (after tax)',
-                data: roth,
-                borderColor: '#16a34a',
-                backgroundColor: 'transparent',
-                borderWidth: 2,
-                tension: 0.1
-              },
-              {
-                label: 'Regular taxable savings (after tax)',
-                data: taxable,
-                borderColor: '#eab308',
-                backgroundColor: 'transparent',
-                borderWidth: 2,
-                tension: 0.1
-              },
-              {
-                label: 'Principal',
-                data: principal,
-                borderColor: '#9333ea',
-                backgroundColor: 'transparent',
-                borderWidth: 2,
-                tension: 0.1,
-                borderDash: [5, 5]
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                display: false
-              }
+      // 创建新图表
+      this.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ages,
+          datasets: [
+            {
+              label: 'Traditional/SIMPLE/SEP IRA (before tax)',
+              data: traditionalBeforeTax,
+              borderColor: '#2563eb',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              tension: 0.1,
+              fill: false
             },
-            scales: {
-              y: {
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: 'Amount ($)'
-                },
-                ticks: {
-                  callback: (value) => {
-                    if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
-                    if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'K';
-                    return '$' + value;
+            {
+              label: 'Traditional/SIMPLE/SEP IRA (after tax)',
+              data: traditionalAfterTax,
+              borderColor: '#60a5fa',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              tension: 0.1,
+              fill: false
+            },
+            {
+              label: 'Roth IRA (after tax)',
+              data: roth,
+              borderColor: '#16a34a',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              tension: 0.1,
+              fill: false
+            },
+            {
+              label: 'Regular taxable savings (after tax)',
+              data: taxable,
+              borderColor: '#eab308',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              tension: 0.1,
+              fill: false
+            },
+            {
+              label: 'Principal',
+              data: principal,
+              borderColor: '#9333ea',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              tension: 0.1,
+              borderDash: [5, 5],
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: {
+            duration: 0
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
                   }
-                }
-              },
-              x: {
-                title: {
-                  display: true,
-                  text: 'Age'
+                  if (context.parsed.y !== null) {
+                    label += '$' + context.parsed.y.toLocaleString();
+                  }
+                  return label;
                 }
               }
             }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Amount ($)'
+              },
+              ticks: {
+                callback: (value) => {
+                  if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
+                  if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'K';
+                  return '$' + value;
+                }
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Age'
+              }
+            }
           }
-        });
-      }, 50);
+        }
+      });
     },
 
     showTooltip(tooltipId) {
@@ -662,34 +695,18 @@ export default {
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
     this.calculate();
-    // 初始加载时绘制图表
-    this.$nextTick(() => {
-      setTimeout(() => {
-      this.updateChart();
-     }, 100);
-   });
   },
   watch: {
-  form: {
-    handler: 'calculate',
-    deep: true
-  },
-  results: {
-    handler(newVal) {
-      if (newVal.calculated) {
-        this.$nextTick(() => {
-          this.updateChart();
-        });
-      }
-    },
-    deep: true
+    form: {
+      handler: 'calculate',
+      deep: true
+    }
   }
-}
 };
 </script>
 
 <style scoped>
-/* 移动端优先的样式设计 */
+/* 样式代码与之前相同，保持不变 */
 .ira-calculator {
   max-width: 1200px;
   margin: 0 auto;
@@ -836,7 +853,6 @@ export default {
   outline: none;
 }
 
-/* 移除number输入框的上下箭头 */
 .input-with-symbol input[type="number"]::-webkit-inner-spin-button,
 .input-with-symbol input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -934,7 +950,6 @@ button.clear:hover {
   }
 }
 
-/* Results Section */
 .results-section {
   background: #f8fafd;
   border-radius: 28px;
@@ -999,7 +1014,6 @@ button.clear:hover {
   color: #1f3a5f;
 }
 
-/* Graph Section */
 .graph-section {
   background: white;
   border-radius: 20px;
@@ -1051,7 +1065,6 @@ button.clear:hover {
   color: #6b7f96;
 }
 
-/* Schedule Section */
 .schedule-section {
   background: white;
   border-radius: 20px;
@@ -1106,7 +1119,6 @@ button.clear:hover {
   border-bottom: none;
 }
 
-/* Related Tools */
 .related-tools {
   margin: 32px 0 28px;
   padding: 18px 0;
@@ -1150,7 +1162,6 @@ button.clear:hover {
   }
 }
 
-/* FAQ Section */
 .faq-section {
   margin-top: 28px;
   background: #f3f7fc;
