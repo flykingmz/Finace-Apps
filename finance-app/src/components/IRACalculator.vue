@@ -208,7 +208,8 @@
               <th>Traditional, SIMPLE, or SEP IRA</th>
               <th>Roth IRA</th>
               <th>Regular Taxable Savings</th>
-             </thead>
+            </tr>
+          </thead>
           <tbody>
              <tr>
                <td>Balance at age {{ form.retirementAge }}</td>
