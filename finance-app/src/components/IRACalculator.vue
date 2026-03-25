@@ -655,6 +655,12 @@ export default {
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
     this.calculate();
+    // 初始加载时绘制图表
+    this.$nextTick(() => {
+      setTimeout(() => {
+      this.updateChart();
+     }, 100);
+   });
   },
   watch: {
   form: {
