@@ -657,13 +657,13 @@ export default {
     this.calculate();
   },
   watch: {
-    form: {
-      handler: 'calculate',
-      deep: true
-    },
-    results: {
-      handler(newVal) {
-       if (newVal.calculated) {
+  form: {
+    handler: 'calculate',
+    deep: true
+  },
+  results: {
+    handler(newVal) {
+      if (newVal.calculated) {
         this.$nextTick(() => {
           this.updateChart();
         });
@@ -671,7 +671,7 @@ export default {
     },
     deep: true
   }
-  }
+}
 };
 </script>
 
