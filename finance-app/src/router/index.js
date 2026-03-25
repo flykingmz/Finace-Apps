@@ -413,6 +413,12 @@ const routes = [
         name: 'DoYouPayTaxonCryptoinAustralia5ATORulesExplained',
         component: () => import('../blog/DoYouPayTaxonCryptoinAustralia5ATORulesExplained.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-will-your-ira-be-worth-blog',
+        name: 'HowMuchWillYourIRABeWorth',
+        component: () => import('../blog/HowMuchWillYourIRABeWorth.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

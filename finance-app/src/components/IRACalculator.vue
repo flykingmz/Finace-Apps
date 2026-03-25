@@ -347,6 +347,14 @@
         <p>Existing qualified retirement plans, such as 401(K)s, 403(B)s, SIMPLE IRAs, or SEP IRAs, can be "rolled over," or consolidated, into a traditional IRA. Many other plans, including 457 plans or inherited employer-sponsored plans (for designated beneficiaries), can also be rolled over. There are no taxes due when rolling over company plans directly into IRAs. However, remember to report all rollovers on tax returns, even when no taxes are due. Two IRS forms are involved here: the 1099R to report distributions received from employer's plans and 5498 to report rollover contributions to the IRA. In most cases, the variety of choices a person can make regarding their investments remain about the same after rollovers into new IRAs. Rollovers and contributions can be combined into the same IRA, but traditional IRA and Roth IRA funds must be kept in separate accounts. Rolling over an IRA is not the only option available. Some may choose to leave accumulated assets in their former employer's plan, even after leaving to work at a different company (plans that require certain minimum amounts will not allow this). Others may move their assets into their new employer's plan. It is also possible to cash out retirement plans, though this usually results in early withdrawal penalties and taxes. Early withdrawals from IRAs or 401(k)s are both subject to a 10% penalty along with standard income taxes.</p>
       </div>
     </div>
+
+     <!-- Calculator CTA -->
+    <section class="section calculator-cta">
+    <a href="/how-much-will-your-ira-be-worth-blog" class="calculator-btn">
+    How Much Will Your IRA Be Worth? 2026 Calculator for Roth & Traditional IRA Growth →
+    </a>
+    </section>
+
   </div>
 </template>
 
@@ -1219,5 +1227,28 @@ button.clear:hover {
   .faq-item p {
     font-size: 0.9rem;
   }
+}
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
 }
 </style>
