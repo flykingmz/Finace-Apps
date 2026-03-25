@@ -80,16 +80,17 @@
 
           <h3>Key Comparison</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead>
-                <tr><th>Feature</th><th>Roth IRA</th><th>Traditional IRA</th> </thead>
+                <tr><th>Feature</th><th>Roth IRA</th><th>Traditional IRA</th></tr>
+              </thead>
               <tbody>
                  <tr><td>Tax Now</td><td>Yes</td><td>No</td></tr>
                  <tr><td>Tax Later</td><td>No</td><td>Yes</td></tr>
                  <tr><td>Growth</td><td>Tax-free</td><td>Tax-deferred</td></tr>
                  <tr><td>Flexibility</td><td>Higher</td><td>Lower</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 The "better" option depends on your future tax expectations.</p>
 
@@ -122,13 +123,13 @@
           
           <p>Based on recent rules from the <strong>Internal Revenue Service</strong>:</p>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Age</th><th>Contribution Limit</th></tr> </thead>
               <tbody>
                 <tr><td>Under 50</td><td>$7,000</td></tr>
                 <tr><td>50+</td><td>$8,000 (catch-up)</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 Maximizing contributions is one of the easiest ways to boost future value.</p>
 
@@ -145,7 +146,7 @@
 
           <h3>Results</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Scenario</th><th>Final Value</th></tr> </thead>
               <tbody>
                 <tr><td>10 years</td><td>~$97,000</td></tr>
@@ -153,7 +154,7 @@
                 <tr><td>30 years</td><td>~$707,000</td></tr>
                 <tr><td>40 years</td><td>~$1,400,000</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 That's the power of compounding.</p>
 
@@ -171,7 +172,7 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Year</th><th>Balance</th></tr> </thead>
               <tbody>
                 <tr><td>Year 10</td><td>$97K</td></tr>
@@ -179,7 +180,7 @@
                 <tr><td>Year 30</td><td>$707K</td></tr>
                 <tr><td>Year 40</td><td>$1.4M</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 Most growth happens in the last 10–15 years.</p>
 
@@ -211,25 +212,25 @@
           
           <h3>Investor Profile</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Category</th><th>Value</th></tr> </thead>
               <tbody>
                 <tr><td>Age</td><td>30</td></tr>
                 <tr><td>Contribution</td><td>$7,000/year</td></tr>
                 <tr><td>Return</td><td>7%</td></tr>
               </tbody>
-            得到
+            
           </div>
 
           <h3>Result at Age 65</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Metric</th><th>Value</th></tr> </thead>
               <tbody>
                 <tr><td>Total Invested</td><td>$245,000</td></tr>
                 <tr><td>Final Value</td><td>~$1,000,000+</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 More than 4x growth from compounding.</p>
 
@@ -239,14 +240,14 @@
 
           <h3>Comparison</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Start Age</th><th>Final Value</th></tr> </thead>
               <tbody>
                 <tr><td>25</td><td>$1.4M</td></tr>
                 <tr><td>35</td><td>$700K</td></tr>
                 <tr><td>45</td><td>$300K</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 A 10-year delay can cut your wealth in half.</p>
 
@@ -256,13 +257,13 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Strategy</th><th>Result</th></tr> </thead>
               <tbody>
                 <tr><td>$7,000/year</td><td>~$700K</td></tr>
                 <tr><td>$583/month</td><td>Similar outcome</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 Regular contributions build discipline.</p>
 
@@ -272,14 +273,14 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Return</th><th>Final Value</th></tr> </thead>
               <tbody>
                 <tr><td>5%</td><td>$500K</td></tr>
                 <tr><td>7%</td><td>$700K</td></tr>
                 <tr><td>9%</td><td>$1M+</td></tr>
               </tbody>
-            得到
+            
           </div>
           <p class="highlight">👉 Higher returns = exponential gains (but also higher risk)</p>
 
@@ -304,12 +305,12 @@
 
           <h3>Example</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Balance</th><th>Monthly Income</th></tr> </thead>
               <tbody>
                 <tr><td>$1,000,000</td><td>~$3,300/month</td></tr>
               </tbody>
-            得到
+            
           </div>
 
           <h2>1️⃣4️⃣ Common Mistakes</h2>
@@ -361,14 +362,14 @@
           
           <h3>Optimized Scenario</h3>
           <div class="table-wrap">
-            能得到
+            
               <thead> <tr><th>Factor</th><th>Value</th></tr> </thead>
               <tbody>
                 <tr><td>Contribution</td><td>$7,000/year</td></tr>
                 <tr><td>Return</td><td>7%</td></tr>
                 <tr><td>Time</td><td>35 years</td></tr>
               </tbody>
-            得到
+            
           </div>
 
           <h3>Result</h3>
