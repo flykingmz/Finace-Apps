@@ -511,117 +511,124 @@ export default {
     },
 
     updateChart() {
-      if (this.chart) {
-        this.chart.destroy();
-      }
+      // 延迟执行，确保 DOM 完全渲染
+      setTimeout(() => {
+        if (this.chart) {
+          this.chart.destroy();
+          this.chart = null;
+        }
 
-      const canvas = this.$refs.balanceChart;
-      if (!canvas) return;
+        const canvas = this.$refs.balanceChart;
+        if (!canvas) {
+          console.log('Canvas not found');
+          return;
+        }
 
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
-      const schedule = this.results.annualSchedule;
-      if (!schedule || schedule.length === 0) return;
+        const schedule = this.results.annualSchedule;
+        if (!schedule || schedule.length === 0) return;
 
-      const ages = schedule.map(row => row.age);
-      const traditionalBeforeTax = schedule.map(row => row.traditionalEnd);
-      const traditionalAfterTax = schedule.map(row => row.traditionalAfterTaxEnd);
-      const roth = schedule.map(row => row.rothEnd);
-      const taxable = schedule.map(row => row.taxableEnd);
-      
-      // Calculate principal (cumulative contributions)
-      const years = schedule.length;
-      const annualContrib = this.form.annualContribution || 0;
-      const currentTax = this.form.currentTaxRate / 100;
-      const startingBalance = this.form.currentBalance || 0;
-      const principal = [];
-      let cumulativePrincipal = startingBalance;
-      for (let i = 0; i < years; i++) {
-        cumulativePrincipal += annualContrib;
-        principal.push(cumulativePrincipal);
-      }
+        const ages = schedule.map(row => row.age);
+        const traditionalBeforeTax = schedule.map(row => row.traditionalEnd);
+        const traditionalAfterTax = schedule.map(row => row.traditionalAfterTaxEnd);
+        const roth = schedule.map(row => row.rothEnd);
+        const taxable = schedule.map(row => row.taxableEnd);
+        
+        // 计算本金
+        const years = schedule.length;
+        const annualContrib = this.form.annualContribution || 0;
+        const currentTax = this.form.currentTaxRate / 100;
+        const startingBalance = this.form.currentBalance || 0;
+        const principal = [];
+        let cumulativePrincipal = startingBalance;
+        for (let i = 0; i < years; i++) {
+          cumulativePrincipal += annualContrib;
+          principal.push(cumulativePrincipal);
+        }
 
-      this.chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ages,
-          datasets: [
-            {
-              label: 'Traditional/SIMPLE/SEP IRA (before tax)',
-              data: traditionalBeforeTax,
-              borderColor: '#2563eb',
-              backgroundColor: 'transparent',
-              borderWidth: 2,
-              tension: 0.1
-            },
-            {
-              label: 'Traditional/SIMPLE/SEP IRA (after tax)',
-              data: traditionalAfterTax,
-              borderColor: '#60a5fa',
-              backgroundColor: 'transparent',
-              borderWidth: 2,
-              tension: 0.1
-            },
-            {
-              label: 'Roth IRA (after tax)',
-              data: roth,
-              borderColor: '#16a34a',
-              backgroundColor: 'transparent',
-              borderWidth: 2,
-              tension: 0.1
-            },
-            {
-              label: 'Regular taxable savings (after tax)',
-              data: taxable,
-              borderColor: '#eab308',
-              backgroundColor: 'transparent',
-              borderWidth: 2,
-              tension: 0.1
-            },
-            {
-              label: 'Principal',
-              data: principal,
-              borderColor: '#9333ea',
-              backgroundColor: 'transparent',
-              borderWidth: 2,
-              tension: 0.1,
-              borderDash: [5, 5]
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Amount ($)'
+        this.chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ages,
+            datasets: [
+              {
+                label: 'Traditional/SIMPLE/SEP IRA (before tax)',
+                data: traditionalBeforeTax,
+                borderColor: '#2563eb',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                tension: 0.1
               },
-              ticks: {
-                callback: (value) => {
-                  if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
-                  if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'K';
-                  return '$' + value;
-                }
+              {
+                label: 'Traditional/SIMPLE/SEP IRA (after tax)',
+                data: traditionalAfterTax,
+                borderColor: '#60a5fa',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                tension: 0.1
+              },
+              {
+                label: 'Roth IRA (after tax)',
+                data: roth,
+                borderColor: '#16a34a',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                tension: 0.1
+              },
+              {
+                label: 'Regular taxable savings (after tax)',
+                data: taxable,
+                borderColor: '#eab308',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                tension: 0.1
+              },
+              {
+                label: 'Principal',
+                data: principal,
+                borderColor: '#9333ea',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                tension: 0.1,
+                borderDash: [5, 5]
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false
               }
             },
-            x: {
-              title: {
-                display: true,
-                text: 'Age'
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Amount ($)'
+                },
+                ticks: {
+                  callback: (value) => {
+                    if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
+                    if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'K';
+                    return '$' + value;
+                  }
+                }
+              },
+              x: {
+                title: {
+                  display: true,
+                  text: 'Age'
+                }
               }
             }
           }
-        }
-      });
+        });
+      }, 50);
     },
 
     showTooltip(tooltipId) {
