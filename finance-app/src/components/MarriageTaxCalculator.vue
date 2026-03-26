@@ -349,7 +349,9 @@
               <tr>
                 <th>Scenario</th>
                 <th>Total Tax</th>
-              </thead>
+              </tr>
+            </thead>
+             
             <tbody>
               <tr>
                 <td>Single (2 × $100k)</td>
@@ -387,7 +389,9 @@
               <tr>
                 <th>Input</th>
                 <th>Value</th>
+              </tr>
               </thead>
+              
             <tbody>
               <tr>
                 <td>Person A income</td>
@@ -523,10 +527,6 @@
         <p>Although married couples typically choose to file their tax returns jointly, some may choose to file them separately. However, because this can be financially beneficial in only very rare cases, married couples usually opt to file jointly. The calculator does not show results for this filing option.</p>
       </div>
 
-      <div class="faq-item">
-        <h3>What is the marriage penalty?</h3>
-        <p>In some situations, married couples end up paying more in taxes than single, otherwise equivalent, individuals. This is referred to as the marriage penalty in the United States. This penalty can be significant if both individuals in the marriage have very high incomes since filing jointly can result in being subject to a higher tax bracket than the equivalent, combined income of two single people. Furthermore, having a lower joint income does not necessarily shield a couple from marriage penalties. As a result of their combined incomes being subject to additional restrictions, it is possible for two married individuals with lower incomes to be disqualified from receiving tax credits they would otherwise receive. There are other conditions under which marriage results in a tax penalty. However, situations can and often do change, and while marriage may result in short-term tax penalties, it can potentially have long-term tax benefits. While there are exceptions and multiple factors are involved, generally speaking, married couples with a sole source of income benefit from filing jointly, while dual-income couples may suffer marriage penalties.</p>
-      </div>
     </div>
 
      <!-- Calculator CTA -->
