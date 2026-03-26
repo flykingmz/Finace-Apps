@@ -335,6 +335,174 @@
       <h2>Marriage Tax Information – FAQ</h2>
 
       <div class="faq-item">
+        <h3>What is the marriage tax penalty (or bonus)?</h3>
+        <p>The marriage tax penalty happens when a married couple pays more taxes filing jointly than they would if they were single. On the flip side, a marriage tax bonus means paying less tax after getting married.</p>
+        <p class="highlight">👉 Whether you get a penalty or bonus depends on:</p>
+        <ul>
+          <li>income levels</li>
+          <li>tax brackets</li>
+          <li>filing status</li>
+        </ul>
+        <div class="table-wrap">
+        
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Total Tax</th>
+              </thead>
+            <tbody>
+              <tr>
+                <td>Single (2 × $100k)</td>
+                <td>~$36,000</td>
+              </tr>
+              <tr>
+                <td>Married Filing Jointly ($200k)</td>
+                <td>~$40,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="highlight">👉 Marriage penalty = $4,000 extra tax</p>
+        <p><strong>💡 Key Insight:</strong></p>
+        <ul>
+          <li>Similar incomes → more likely penalty</li>
+          <li>Unequal incomes → often a bonus</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>How does a Marriage Tax Calculator work?</h3>
+        <p>A Marriage Tax Calculator compares:</p>
+        <p class="highlight">👉 "Single vs Married Filing Jointly"</p>
+        <p>It calculates:</p>
+        <ul>
+          <li>combined income</li>
+          <li>tax brackets</li>
+          <li>deductions</li>
+          <li>total tax difference</li>
+        </ul>
+        <div class="table-wrap">
+        
+            <thead>
+              <tr>
+                <th>Input</th>
+                <th>Value</th>
+              </thead>
+            <tbody>
+              <tr>
+                <td>Person A income</td>
+                <td>$80,000</td>
+              </tr>
+              <tr>
+                <td>Person B income</td>
+                <td>$40,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Result:</strong></p>
+        <ul>
+          <li>Filing separately → ~$18,000 tax</li>
+          <li>Filing jointly → ~$15,500 tax</li>
+        </ul>
+        <p class="highlight">👉 Marriage bonus = $2,500 saved</p>
+        <p><strong>💡 Why it matters:</strong><br>Without a calculator, most people guess wrong about their real tax outcome.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do married couples always pay more taxes?</h3>
+        <p class="highlight">👉 No—this is a common misconception.</p>
+        <p>You may:</p>
+        <ul>
+          <li>pay more (penalty)</li>
+          <li>pay less (bonus)</li>
+          <li>pay roughly the same</li>
+        </ul>
+        <div class="table-wrap">
+        
+            <thead>
+              <tr>
+                <th>Couple Type</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Both earn $120k</td>
+                <td>Likely penalty</td>
+              </tr>
+              <tr>
+                <td>One earns $150k, other $20k</td>
+                <td>Likely bonus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>💡 Key Rule:</strong></p>
+        <ul>
+          <li>Equal high incomes → penalty risk</li>
+          <li>Income imbalance → tax advantage</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>What factors affect marriage tax the most?</h3>
+        <p>The biggest drivers are:</p>
+        <p><strong>🔑 1. Income difference</strong><br>Larger gap → more tax savings</p>
+        <p><strong>🔑 2. Tax brackets</strong><br>Progressive tax system can push couples into higher brackets</p>
+        <p><strong>🔑 3. Deductions & credits</strong><br>Some benefits phase out faster for married couples</p>
+        <div class="table-wrap">
+        
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Two high earners ($150k + $150k)</td>
+                <td>Higher tax bracket → penalty</td>
+              </tr>
+              <tr>
+                <td>One earner ($200k + $0)</td>
+                <td>Lower effective rate → bonus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>💡 Insight:</strong><br>It's not marriage itself—it's how incomes combine under tax rules.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I reduce or avoid the marriage tax penalty?</h3>
+        <p>You can't always eliminate it—but you can optimize.</p>
+        <p><strong>✅ Strategies:</strong></p>
+        <ul>
+          <li>Max retirement contributions (401k, IRA)</li>
+          <li>Use tax-advantaged accounts (HSA, FSA)</li>
+          <li>Time income (bonuses, stock sales)</li>
+          <li>Consider filing separately (in some cases)</li>
+        </ul>
+        <div class="table-wrap">
+        
+            <thead>
+              <tr>
+                <th>Before Optimization</th>
+                <th>After Optimization</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tax = $42,000</td>
+                <td>Tax = $38,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="highlight">👉 Saved = $4,000</p>
+      </div>
+      <div class="faq-item">
         <h3>How does marriage affect taxes?</h3>
         <p>Tax laws generally become more complicated after marriage, but marriage can present some opportunities to save additional money (compared to being single), particularly for those in single-income marriages or marriages in which there is a large difference between the income of the spouses. Depending on the specific situation of the couple, dual-income married couples can experience the opposite effect, paying more in taxes than they would as single, otherwise equivalent, individuals, or as a couple with only a single income.</p>
       </div>
