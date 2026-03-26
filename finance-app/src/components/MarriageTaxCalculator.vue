@@ -344,14 +344,13 @@
           <li>filing status</li>
         </ul>
         <div class="table-wrap">
-        
+          <table>
             <thead>
               <tr>
                 <th>Scenario</th>
                 <th>Total Tax</th>
               </tr>
             </thead>
-             
             <tbody>
               <tr>
                 <td>Single (2 × $100k)</td>
@@ -384,14 +383,13 @@
           <li>total tax difference</li>
         </ul>
         <div class="table-wrap">
-        
+          <table>
             <thead>
               <tr>
                 <th>Input</th>
                 <th>Value</th>
               </tr>
-              </thead>
-              
+            </thead>
             <tbody>
               <tr>
                 <td>Person A income</td>
@@ -423,7 +421,7 @@
           <li>pay roughly the same</li>
         </ul>
         <div class="table-wrap">
-        
+          <table>
             <thead>
               <tr>
                 <th>Couple Type</th>
@@ -456,7 +454,7 @@
         <p><strong>🔑 2. Tax brackets</strong><br>Progressive tax system can push couples into higher brackets</p>
         <p><strong>🔑 3. Deductions & credits</strong><br>Some benefits phase out faster for married couples</p>
         <div class="table-wrap">
-        
+          <table>
             <thead>
               <tr>
                 <th>Factor</th>
@@ -489,7 +487,7 @@
           <li>Consider filing separately (in some cases)</li>
         </ul>
         <div class="table-wrap">
-        
+          <table>
             <thead>
               <tr>
                 <th>Before Optimization</th>
@@ -506,6 +504,7 @@
         </div>
         <p class="highlight">👉 Saved = $4,000</p>
       </div>
+
       <div class="faq-item">
         <h3>How does marriage affect taxes?</h3>
         <p>Tax laws generally become more complicated after marriage, but marriage can present some opportunities to save additional money (compared to being single), particularly for those in single-income marriages or marriages in which there is a large difference between the income of the spouses. Depending on the specific situation of the couple, dual-income married couples can experience the opposite effect, paying more in taxes than they would as single, otherwise equivalent, individuals, or as a couple with only a single income.</p>
@@ -1310,6 +1309,121 @@ button.clear:hover {
   .results-table th,
   .results-table td {
     padding: 8px 6px;
+  }
+}
+/* FAQ 项目样式 */
+.faq-item {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #c9d9ec;
+  transition: box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1e3a5f;
+}
+
+.faq-item p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #253c54;
+  font-size: 0.95rem;
+}
+
+.faq-item .highlight {
+  font-weight: 600;
+  color: #1f3a5f;
+  background: #ecf3fa;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.faq-item ul {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.faq-item li {
+  margin-bottom: 4px;
+  line-height: 1.6;
+  color: #2c405c;
+  font-size: 0.95rem;
+}
+
+.faq-item strong {
+  color: #1e3a5f;
+}
+
+/* 表格样式 */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  background: #f9fcff;
+  border-radius: 12px;
+  border: 1px solid #cbd9ec;
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 280px;
+}
+
+.table-wrap th {
+  background-color: #e2edfd;
+  color: #0a3455;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #cbd5e0;
+}
+
+.table-wrap td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #c8daf2;
+  color: #2c405c;
+}
+
+.table-wrap tr:last-child td {
+  border-bottom: none;
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 16px;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .faq-item p,
+  .faq-item li {
+    font-size: 0.9rem;
+  }
+  
+  .table-wrap {
+    margin: 0.75rem 0;
+  }
+  
+  .table-wrap th,
+  .table-wrap td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
   }
 }
 </style>
