@@ -244,7 +244,7 @@
         <div class="faq-cat">
           <h3>Crypto</h3>
           <div class="faq-item">
-            <h4 class="faq-question">Do I need to pay tax on cryptocurrency?</h4>
+            <h4 class="faq-question">Do I need to pay tax on crypto currency?</h4>
             <p class="faq-answer">Yes, crypto is taxable in most countries. Trading profits are subject to capital gains tax, while staking and mining rewards may be taxed as income.</p>
           </div>
           <div class="faq-item">
