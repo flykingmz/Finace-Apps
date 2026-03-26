@@ -438,183 +438,184 @@ That's not to say that there aren't certain benefits to having some savings in a
   
         <h4>Inheritance</h4>
         <p>An inheritance is a portion of assets given to the heirs of the deceased, which an heir can use as income for retirement. However, because the estates of owners that die haven't exchanged hands since ownership, they may still be subject to tax, whether state or federal (In the U.S., along with the mandatory federal estate tax, six states mandate the payment of a separate inheritance tax). Also, the value of estates may change due to factors such as legal rights or financial volatility. Tangible assets such as real estate or jewelry may require the payment of capital gains tax if the assets are sold for profit. For more information about inheritances or to do calculations involving estate tax, please visit the Estate Tax Calculator.</p>
-  
         <div class="faq-item">
-        <h3>How much money do I need to retire comfortably?</h3>
-        <p>A common rule is the 4% rule:</p>
-        <p class="highlight">👉 You can withdraw ~4% of your savings per year in retirement</p>
-        <div class="table-wrap">
-        
-            <thead>
-              <tr>
-                <th>Savings</th>
-                <th>Monthly Income</th>
+          <h3>How much money do I need to retire comfortably?</h3>
+          <p>A common rule is the 4% rule:</p>
+          <p class="highlight">👉 You can withdraw ~4% of your savings per year in retirement</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Savings</th>
+                  <th>Monthly Income</th>
+                </tr>
               </thead>
-            <tbody>
-              <tr>
-                <td>$500,000</td>
-                <td>~$1,600/month</td>
-              </tr>
-              <tr>
-                <td>$1,000,000</td>
-                <td>~$3,300/month</td>
-              </tr>
-              <tr>
-                <td>$1,500,000</td>
-                <td>~$5,000/month</td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td>$500,000</td>
+                  <td>~$1,600/month</td>
+                </tr>
+                <tr>
+                  <td>$1,000,000</td>
+                  <td>~$3,300/month</td>
+                </tr>
+                <tr>
+                  <td>$1,500,000</td>
+                  <td>~$5,000/month</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>💡 Insight:</strong></p>
+          <ul>
+            <li>$1M is often not enough in high-cost areas</li>
+            <li>Lifestyle matters more than the number</li>
+          </ul>
+          <p class="highlight">👉 The core is not 'how much money there is', but 'how much can be spent each month'</p>
         </div>
-        <p><strong>💡 Insight:</strong></p>
-        <ul>
-          <li>$1M is often not enough in high-cost areas</li>
-          <li>Lifestyle matters more than the number</li>
-        </ul>
-        <p class="highlight">👉 The core is not 'how much money there is', but 'how much can be spent each month'</p>
-      </div>
 
-      <div class="faq-item">
-        <h3>How does a retirement calculator estimate my future savings?</h3>
-        <p>A retirement calculator uses compound growth:</p>
-        <p class="highlight">👉 Future Value = Contributions + Investment Returns + Time</p>
-        <div class="table-wrap">
-        
-            <thead>
-              <tr>
-                <th>Input</th>
-                <th>Value</th>
+        <div class="faq-item">
+          <h3>How does a retirement calculator estimate my future savings?</h3>
+          <p>A retirement calculator uses compound growth:</p>
+          <p class="highlight">👉 Future Value = Contributions + Investment Returns + Time</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Value</th>
+                </tr>
               </thead>
-            <tbody>
-              <tr>
-                <td>Monthly Contribution</td>
-                <td>$500</td>
-              </tr>
-              <tr>
-                <td>Return</td>
-                <td>7%</td>
-              </tr>
-              <tr>
-                <td>Time</td>
-                <td>30 years</td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td>Monthly Contribution</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>Return</td>
+                  <td>7%</td>
+                </tr>
+                <tr>
+                  <td>Time</td>
+                  <td>30 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="highlight">👉 Final Value ≈ $600,000+</p>
+          <p><strong>💡 Key Insight:</strong></p>
+          <ul>
+            <li>Early years grow slowly</li>
+            <li>Late growth explosion (compound interest effect)</li>
+            <li>Time is more important than money</li>
+          </ul>
         </div>
-        <p class="highlight">👉 Final Value ≈ $600,000+</p>
-        <p><strong>💡 Key Insight:</strong></p>
-        <ul>
-          <li>Early years grow slowly</li>
-          <li>Late growth explosion (compound interest effect)</li>
-          <li>Time is more important than money</li>
-        </ul>
-      </div>
 
-      <div class="faq-item">
-        <h3>How much should I save each month for retirement?</h3>
-        <p>Most advice says:</p>
-        <p class="highlight">👉 Save 10–15% of your income</p>
-        <p>But a better method is:</p>
-        <p class="highlight">👉 Reverse calculation</p>
-        <div class="table-wrap">
-        
-            <thead>
-              <tr>
-                <th>Goal: $1,000,000</th>
-                <th>Monthly Saving</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Start Age 25</td>
-                <td>~$400–$600</td>
-              </tr>
-              <tr>
-                <td>Start Age 35</td>
-                <td>~$800–$1,000</td>
-              </tr>
-              <tr>
-                <td>Start Age 45</td>
-                <td>$1,500+</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="faq-item">
+          <h3>How much should I save each month for retirement?</h3>
+          <p>Most advice says:</p>
+          <p class="highlight">👉 Save 10–15% of your income</p>
+          <p>But a better method is:</p>
+          <p class="highlight">👉 Reverse calculation</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Goal: $1,000,000</th>
+                  <th>Monthly Saving</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Start Age 25</td>
+                  <td>~$400–$600</td>
+                </tr>
+                <tr>
+                  <td>Start Age 35</td>
+                  <td>~$800–$1,000</td>
+                </tr>
+                <tr>
+                  <td>Start Age 45</td>
+                  <td>$1,500+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>💡 Insight:</strong></p>
+          <p class="highlight">👉 Starting 10 years later, the cost almost doubles</p>
         </div>
-        <p><strong>💡 Insight:</strong></p>
-        <p class="highlight">👉 Starting 10 years later, the cost almost doubles</p>
-      </div>
 
-      <div class="faq-item">
-        <h3>What factors affect my retirement savings the most?</h3>
-        <p>The biggest drivers are:</p>
-        <p><strong>🔑 1. Time (most important)</strong><br>Start earlier = exponential growth</p>
-        <p><strong>🔑 2. Rate of return</strong><br>Even small changes matter</p>
-        <div class="table-wrap">
-        
-            <thead>
-              <tr>
-                <th>Return</th>
-                <th>Final Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>5%</td>
-                <td>~$450K</td>
-              </tr>
-              <tr>
-                <td>7%</td>
-                <td>~$600K</td>
-              </tr>
-              <tr>
-                <td>9%</td>
-                <td>~$900K</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="faq-item">
+          <h3>What factors affect my retirement savings the most?</h3>
+          <p>The biggest drivers are:</p>
+          <p><strong>🔑 1. Time (most important)</strong><br>Start earlier = exponential growth</p>
+          <p><strong>🔑 2. Rate of return</strong><br>Even small changes matter</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Return</th>
+                  <th>Final Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5%</td>
+                  <td>~$450K</td>
+                </tr>
+                <tr>
+                  <td>7%</td>
+                  <td>~$600K</td>
+                </tr>
+                <tr>
+                  <td>9%</td>
+                  <td>~$900K</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>🔑 3. Contribution amount</strong><br>Consistency beats large one-time deposits</p>
+          <p><strong>💡 Insight:</strong></p>
+          <p class="highlight">👉 Time × compound interest = wealth amplifier</p>
         </div>
-        <p><strong>🔑 3. Contribution amount</strong><br>Consistency beats large one-time deposits</p>
-        <p><strong>💡 Insight:</strong></p>
-        <p class="highlight">👉 Time × compound interest = wealth amplifier</p>
-      </div>
 
-      <div class="faq-item">
-        <h3>Will my retirement savings last my entire lifetime?</h3>
-        <p>This depends on:</p>
-        <ul>
-          <li>withdrawal rate</li>
-          <li>inflation</li>
-          <li>lifespan</li>
-        </ul>
-        <div class="table-wrap">
-        
-            <thead>
-              <tr>
-                <th>Scenario</th>
-                <th>Outcome</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>$1M @ 4% withdrawal</td>
-                <td>~30 years</td>
-              </tr>
-              <tr>
-                <td>$1M @ 6% withdrawal</td>
-                <td>~18–22 years</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="faq-item">
+          <h3>Will my retirement savings last my entire lifetime?</h3>
+          <p>This depends on:</p>
+          <ul>
+            <li>withdrawal rate</li>
+            <li>inflation</li>
+            <li>lifespan</li>
+          </ul>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$1M @ 4% withdrawal</td>
+                  <td>~30 years</td>
+                </tr>
+                <tr>
+                  <td>$1M @ 6% withdrawal</td>
+                  <td>~18–22 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Inflation Impact:</strong></p>
+          <p class="highlight">👉 3% inflation over 30 years = purchasing power ↓ ~50%</p>
+          <p><strong>💡 Insight:</strong></p>
+          <ul>
+            <li>Withdrawing too much → exhausting prematurely</li>
+            <li>Withdrawing too little → life is restricted</li>
+            <li>Balance is crucial</li>
+          </ul>
         </div>
-        <p><strong>Inflation Impact:</strong></p>
-        <p class="highlight">👉 3% inflation over 30 years = purchasing power ↓ ~50%</p>
-        <p><strong>💡 Insight:</strong></p>
-        <ul>
-          <li>Withdrawing too much → exhausting prematurely</li>
-          <li>Withdrawing too little → life is restricted</li>
-          <li>Balance is crucial</li>
-        </ul>
-      </div>
       </section>
 
        <!-- Calculator CTA -->
