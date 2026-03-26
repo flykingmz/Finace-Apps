@@ -482,7 +482,203 @@
     <!-- FAQ Section - 移动端优化间距和字体 -->
     <div class="faq-section">
       <h2>Mortgage Information – FAQ</h2>
+        <div class="faq-item">
+          <h3>How is my monthly mortgage payment calculated?</h3>
+          <p>Your monthly mortgage payment is based on four main components:</p>
+          <p class="highlight">👉 PITI = Principal + Interest + Taxes + Insurance</p>
+          <ul>
+            <li>Principal → the loan amount you repay</li>
+            <li>Interest → cost of borrowing</li>
+            <li>Taxes → property tax</li>
+            <li>Insurance → homeowners insurance</li>
+          </ul>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Loan Amount</td>
+                  <td>$400,000</td>
+                </tr>
+                <tr>
+                  <td>Interest Rate</td>
+                  <td>6.5%</td>
+                </tr>
+                <tr>
+                  <td>Term</td>
+                  <td>30 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="highlight">👉 Monthly (principal + interest) ≈ $2,528</p>
+          <p>Add:</p>
+          <ul>
+            <li>Property tax: ~$400/month</li>
+            <li>Insurance: ~$150/month</li>
+          </ul>
+          <p class="highlight">👉 Total ≈ $3,078/month</p>
+          <p><strong>💡 Insight:</strong><br>Many people only count 'loans' but ignore taxes and insurance, resulting in serious budget deviations.</p>
+        </div>
 
+        <div class="faq-item">
+          <h3>How much house can I afford based on my income?</h3>
+          <p>Most lenders use this rule:</p>
+          <p class="highlight">👉 Housing cost ≤ 28–30% of gross monthly income</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Income</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Annual Salary</td>
+                  <td>$120,000</td>
+                </tr>
+                <tr>
+                  <td>Monthly Gross</td>
+                  <td>$10,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="highlight">👉 Max housing budget ≈ $3,000/month</p>
+          <p>At ~6.5% interest:</p>
+          <p class="highlight">👉 You can afford roughly $400k–$500k home</p>
+          <p><strong>⚠️ What people forget:</strong></p>
+          <ul>
+            <li>existing debt (car, student loans)</li>
+            <li>taxes & insurance</li>
+            <li>down payment size</li>
+          </ul>
+          <p><strong>💡 Insight:</strong><br>Income ≠ affordable housing prices, with a possible gap of $100k in between+</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How much interest will I pay over the life of a mortgage?</h3>
+          <p>This is where most people get shocked.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loan</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Loan Amount</td>
+                  <td>$400,000</td>
+                </tr>
+                <tr>
+                  <td>Rate</td>
+                  <td>6.5%</td>
+                </tr>
+                <tr>
+                  <td>Term</td>
+                  <td>30 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="highlight">👉 Monthly payment ≈ $2,528</p>
+          <p class="highlight">👉 Total paid ≈ $910,000</p>
+          <p class="highlight">👉 Total interest ≈ $510,000</p>
+          <p><strong>💡 Insight:</strong></p>
+          <p class="highlight">👉 You may pay more interest than the house itself</p>
+          <p>That's also why many people choose:</p>
+          <ul>
+            <li>extra payments</li>
+            <li>refinance</li>
+            <li>shorter terms</li>
+          </ul>
+        </div>
+
+        <div class="faq-item">
+          <h3>What happens if I make extra mortgage payments?</h3>
+          <p>Extra payments go directly toward principal, which reduces future interest.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>No extra payment</td>
+                  <td>30 years</td>
+                </tr>
+                <tr>
+                  <td>+$300/month</td>
+                  <td>~23 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="highlight">👉 Interest saved ≈ $100,000+</p>
+          <p><strong>💡 Real Impact:</strong></p>
+          <ul>
+            <li>pay off loan faster</li>
+            <li>save massive interest</li>
+            <li>build equity quicker</li>
+          </ul>
+          <p><strong>⚠️ Tip:</strong><br>Always confirm with lender:</p>
+          <p class="highlight">👉 "Apply to principal only"</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Should I choose a 15-year or 30-year mortgage?</h3>
+          <p>This depends on your financial goals.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Monthly</th>
+                  <th>Total Interest</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>30-year ($400k @6.5%)</td>
+                  <td>$2,528</td>
+                  <td>~$510K</td>
+                </tr>
+                <tr>
+                  <td>15-year ($400k @6%)</td>
+                  <td>$3,375</td>
+                  <td>~$207K</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Key Trade-off:</strong></p>
+          <p class="highlight">👉 30-year:</p>
+          <ul>
+            <li>lower monthly payment</li>
+            <li>higher total interest</li>
+          </ul>
+          <p class="highlight">👉 15-year:</p>
+          <ul>
+            <li>higher monthly payment</li>
+            <li>huge interest savings</li>
+          </ul>
+          <p><strong>💡 Insight:</strong></p>
+          <ul>
+            <li>want flexibility → 30-year</li>
+            <li>want maximum savings → 15-year</li>
+          </ul>
+        </div>
       <div class="faq-item">
         <h3>What is a mortgage and how does it work?</h3>
         <p>A mortgage is a loan secured by property, usually real estate property. Lenders define it as the money borrowed to pay for real estate. In essence, the lender helps the buyer pay the seller of a house, and the buyer agrees to repay the money borrowed over a period of time, usually 15 or 30 years in the U.S. Each month, a payment is made from buyer to lender. A portion of the monthly payment is called the principal, which is the original amount borrowed. The other portion is the interest, which is the cost paid to the lender for using the money. There may be an escrow account involved to cover the cost of property taxes and insurance. The buyer cannot be considered the full owner of the mortgaged property until the last monthly payment is made. In the U.S., the most common mortgage loan is the conventional 30-year fixed-interest loan, which represents 70% to 90% of all mortgages. Mortgages are how most people are able to own homes in the U.S.</p>
@@ -1526,6 +1722,185 @@ button.clear:hover {
   .faq-item p,
   .faq-item li {
     font-size: 0.9rem;
+  }
+}
+/* FAQ 项目样式 - 基础样式 */
+.faq-item {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #c9d9ec;
+  transition: box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1e3a5f;
+}
+
+.faq-item p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #253c54;
+  font-size: 0.95rem;
+}
+
+.faq-item .highlight {
+  font-weight: 600;
+  color: #1f3a5f;
+  background: #ecf3fa;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.faq-item ul {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.faq-item li {
+  margin-bottom: 4px;
+  line-height: 1.6;
+  color: #2c405c;
+  font-size: 0.95rem;
+}
+
+.faq-item strong {
+  color: #1e3a5f;
+}
+
+/* 表格容器样式 */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  background: #f9fcff;
+  border-radius: 12px;
+  border: 1px solid #cbd9ec;
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 280px;
+}
+
+.table-wrap th {
+  background-color: #e2edfd;
+  color: #0a3455;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #cbd5e0;
+}
+
+.table-wrap td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #c8daf2;
+  color: #2c405c;
+}
+
+.table-wrap tr:last-child td {
+  border-bottom: none;
+}
+
+/* 表格内数字强调样式 - 新增 */
+.table-wrap td:last-child {
+  font-weight: 500;
+  color: #1f3a5f;
+}
+
+/* 表格内货币数值样式 - 新增 */
+.table-wrap td[data-value*="$"] {
+  font-family: 'Courier New', monospace;
+}
+
+/* 警告框样式 - 新增 */
+.faq-item .warning {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* 提示框样式 - 新增 */
+.faq-item .tip-box {
+  background: #e8f0fe;
+  border-left: 4px solid #1f3a5f;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* 响应式布局 - 移动端适配 */
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 16px;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .faq-item p,
+  .faq-item li {
+    font-size: 0.9rem;
+  }
+  
+  .table-wrap {
+    margin: 0.75rem 0;
+  }
+  
+  .table-wrap th,
+  .table-wrap td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .faq-item .highlight {
+    font-size: 0.85rem;
+    padding: 3px 6px;
+  }
+}
+
+/* 桌面端优化 - 大屏幕 */
+@media (min-width: 1200px) {
+  .faq-item {
+    padding: 24px 28px;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.3rem;
+  }
+  
+  .faq-item p,
+  .faq-item li {
+    font-size: 1rem;
+  }
+}
+
+/* 打印样式 - 可选 */
+@media print {
+  .faq-item {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+  
+  .faq-item .highlight {
+    background: none;
+    border: 1px solid #ccc;
   }
 }
 </style>
