@@ -104,6 +104,10 @@
           
           <p>Additionally, lenders often offer lower interest rates for 15-year loans, which further reduces total borrowing costs.</p>
           
+          <div>
+          <p>Use our <a href="/mortgage" >mortgage calculator</a> to compare 30-year vs 15-year monthly payments.</p>
+          </div>
+
           <p>Typical rate difference:</p>
           
           <div class="table-wrap">
@@ -187,6 +191,10 @@
           
           <p>This is the primary reason financially disciplined borrowers often choose the shorter loan term.</p>
 
+          <div >
+            <p>Use our <a href="/mortgage-payoff" >Mortgage Payoff Calculator</a> to calculator 15-year loan costs.</p>
+          </div>
+
           <h2>Scenario Comparison Table</h2>
           
           <p>Let's compare several realistic home loan scenarios.</p>
@@ -214,6 +222,10 @@
           </div>
           
           <p>As the loan size increases, the interest savings from a 15-year loan become even more significant.</p>
+
+          <div >
+            <p>Use our <a href="/house-affordability-calculator">House affordability calculator</a> to compare 30-year vs 15-year monthly payments.</p>
+          </div>
 
           <h2>Equity Growth Comparison</h2>
           
