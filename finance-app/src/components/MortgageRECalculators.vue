@@ -51,7 +51,7 @@
         <div class="card-content">
           <h3>House Affordability Calculator</h3>
           <p>Use our house affordability calculator to estimate how much home you can afford based on your income, debt, down payment, and mortgage rates. Quickly calculate your budget, monthly payments, and home price range with accurate and easy-to-use tools.</p>
-          <!-- <a href="/house-affordability-calculator" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
+          <a href="/house-affordability-calculator" class="card-link" @click.prevent="navigate">Open Calculator →</a> 
         </div>
       </div>
 
