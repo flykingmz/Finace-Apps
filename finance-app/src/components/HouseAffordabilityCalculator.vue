@@ -339,6 +339,11 @@
         <p>Working towards achieving one or more of these will increase a household's success rate in qualifying for the purchase of a home in accordance with lenders' standards of qualifications. If these prove to be difficult, home-buyers can maybe consider less expensive homes. Some people find better luck moving to different cities. If not, there are various housing assistance programs at the local level, though these are geared more towards low-income households. Renting is a viable alternative to owning a home, and it may be helpful to rent for the time being in order to set up a better buying situation in the future. For more information about or to do calculations involving rent, please visit the Rent Calculator.</p>
       </div>
     </div>
+    <section class="section calculator-cta">
+      <a href="/100k-salary-how-much-house-can-you-afford-blog" class="calculator-btn">
+      $100K Salary: How Much House Can You Afford? (Calculator + Examples) →
+      </a>
+    </section>
   </div>
 </template>
 
@@ -811,4 +816,28 @@ select {
     flex-direction: column;
   }
 }
+/* Calculator CTA */
+.calculator-cta {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.calculator-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.calculator-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 </style>

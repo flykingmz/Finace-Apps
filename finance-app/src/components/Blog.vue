@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 33:   $100K Salary: How Much House Can You Afford? (Calculator + Examples) -->
+        <div class="blog-card">
+          <h2 class="blog-title"> $100K Salary: How Much House Can You Afford? (Calculator + Examples)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 27, 2026</span>
+          </div>
+          <p class="blog-excerpt">Buying a home is one of the biggest financial decisions you'll ever make. If you're earning $100,000 per year, you might be wondering:How much house can I actually afford?</p>
+          <a href="/100k-salary-how-much-house-can-you-afford-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 32:   How Much Will Your IRA Be Worth? 2026 Calculator for Roth & Traditional IRA Growth -->
         <div class="blog-card">
           <h2 class="blog-title"> How Much Will Your IRA Be Worth? 2026 Calculator for Roth & Traditional IRA Growth</h2>

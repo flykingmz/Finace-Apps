@@ -425,6 +425,12 @@ const routes = [
         name: 'HowMuchWillYourIRABeWorth',
         component: () => import('../blog/HowMuchWillYourIRABeWorth.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: '100k-salary-how-much-house-can-you-afford-blog',
+        name: '100KSalaryHowMuchHouseCanYouAfford',
+        component: () => import('../blog/100KSalaryHowMuchHouseCanYouAfford.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
