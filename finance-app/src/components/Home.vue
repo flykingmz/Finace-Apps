@@ -191,15 +191,15 @@
           <h3>Tax & Salary</h3>
           <div class="faq-item">
             <h4 class="faq-question">How to calculate take-home pay?</h4>
-            <p class="faq-answer">Your take-home pay is your gross salary minus federal tax, state tax, Social Security, Medicare, and other deductions. Use our paycheck calculator to estimate your net income instantly.</p>
+            <p class="faq-answer">Your take-home pay is your gross salary minus federal tax, state tax, Social Security, Medicare, and other deductions. Use our <a href="/take-home-paycheck-calculator">take-home calculator</a> to estimate your net income instantly.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">Why is my net pay lower than my salary?</h4>
-            <p class="faq-answer">Your net pay is reduced by taxes, retirement contributions, and benefits deductions. A salary calculator helps break down each deduction clearly.</p>
+            <p class="faq-answer">Your net pay is reduced by taxes, retirement contributions, and benefits deductions. A <a href="/salary-calculator">salary calculator</a> helps break down each deduction clearly.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">Does a paycheck calculator include state tax?</h4>
-            <p class="faq-answer">Yes, most paycheck calculators estimate federal and state taxes based on your location and income details.</p>
+            <p class="faq-answer">Yes, most A <a href="/paycheck">paycheck calculators</a> estimate federal and state taxes based on your location and income details.</p>
           </div>
         </div>
         <!-- Retirement FAQ -->
@@ -207,11 +207,11 @@
           <h3>Retirement</h3>
           <div class="faq-item">
             <h4 class="faq-question">How much should I save for retirement?</h4>
-            <p class="faq-answer">Financial experts often recommend saving 10–15% of income annually, but the exact amount depends on your retirement goals.</p>
+            <p class="faq-answer">Financial experts often recommend saving 10–15% of income annually, but the exact amount depends on your retirement goals.Use our <a href="/retirement">retirement calculator</a> to estimate how much retirement you can save.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">Can I estimate 401(k) growth?</h4>
-            <p class="faq-answer">Yes. Our retirement calculator estimates long-term savings based on contribution rate and expected return.</p>
+            <p class="faq-answer">Yes. Our <a href="/401k">401(k) calculator</a> estimates long-term savings based on contribution rate and expected return.</p>
           </div>
         </div>
         <!-- Investment FAQ -->
@@ -219,11 +219,11 @@
           <h3>Investment</h3>
           <div class="faq-item">
             <h4 class="faq-question">How to calculate investment returns?</h4>
-            <p class="faq-answer">Investment returns are calculated based on initial investment, contributions, time horizon, and annual return rate. Use an investment calculator to estimate future value.</p>
+            <p class="faq-answer">Investment returns are calculated based on initial investment, contributions, time horizon, and annual return rate. Use our <a href="/investment">investment calculator</a> to estimate future value.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">What is a good annual return rate for investments?</h4>
-            <p class="faq-answer">Historically, stock market returns average 7–10% annually, but actual returns vary depending on market conditions.</p>
+            <p class="faq-answer">Historically, stock market returns average 7–10% annually, but actual returns vary depending on market conditions.Use our <a href="/annuity">annuity calculator</a> to estimate good annual return rate for you.</p>
           </div>
         </div>
 
@@ -232,11 +232,11 @@
           <h3>Mortgage</h3>
           <div class="faq-item">
             <h4 class="faq-question">How to pay off a mortgage early?</h4>
-            <p class="faq-answer">Investment returns are calculated based on initial investment, contributions, time horizon, and annual return rate. Use an investment calculator to estimate future value.</p>
+            <p class="faq-answer">Investment returns are calculated based on initial investment, contributions, time horizon, and annual return rate. Use our <a href="/mortgage">mortgage calculator</a> to estimate future value.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">How much can I save with extra mortgage payments?</h4>
-            <p class="faq-answer">Extra payments can significantly reduce your loan term and total interest. A mortgage calculator helps compare different payoff scenarios.</p>
+            <p class="faq-answer">Extra payments can significantly reduce your loan term and total interest. Our <a href="/mortgage-payoff">Mortgage Payoff Calculator</a> helps compare different payoff scenarios.</p>
           </div>
         </div>
         
@@ -245,11 +245,11 @@
           <h3>Crypto</h3>
           <div class="faq-item">
             <h4 class="faq-question">Do I need to pay tax on crypto currency?</h4>
-            <p class="faq-answer">Yes, crypto is taxable in most countries. Trading profits are subject to capital gains tax, while staking and mining rewards may be taxed as income.</p>
+            <p class="faq-answer">Yes, crypto is taxable in most countries. Trading profits are subject to capital gains tax, while staking and mining rewards may be taxed as income.Our <a href="/crypto-tax-calculator">Crypto Tax Calculator</a> supports to estimate USA、UK、Canada、Australia different scenarios</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-question">How to calculate crypto taxes?</h4>
-            <p class="faq-answer">Crypto tax is calculated by subtracting the purchase price from the selling price. Use a crypto tax calculator to estimate taxes across trading, staking, DeFi, and NFTs.</p>
+            <p class="faq-answer">Crypto tax is calculated by subtracting the purchase price from the selling price. Use a crypto tax calculator to estimate taxes across trading, staking, DeFi, and <a href="/nft-calculator">NFTs</a>.</p>
           </div>
         </div>
 
@@ -264,7 +264,7 @@ export default {
   name: 'FinancialToolsHome',
   mounted() {
     // 将长破折号 — 替换为普通的连字符 -
-    document.title = 'Free Financial Calculators - For Tax, Paycheck, VAT, Mortgage, Investment and Retirement Calculators';
+    document.title = 'Free Financial Calculators Online (2026) – Tax, Retirement, Mortgage & Investment Tools';
     // 2. 设置关键meta标签（Google最关注的）
     this.setGoogleMetaTags()
 
@@ -284,7 +284,7 @@ export default {
         desc.name = 'description'
         document.head.appendChild(desc)
       }
-      desc.content = 'Free financial calculators for tax, paycheck, VAT, mortgage, and retirement planning. Estimate take-home pay, calculate taxes, and plan your finances instantly.'
+      desc.content = 'Use our free financial calculators online to calculate taxes, salary, retirement savings, mortgage payments, and investment returns. Fast, accurate, and easy-to-use tools including paycheck, 401(k), IRA, mortgage payoff, and crypto tax calculators.'
       
       // 确保robots标签存在（告诉Google索引此页）
       let robots = document.querySelector('meta[name="robots"]')
