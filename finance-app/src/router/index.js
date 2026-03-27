@@ -193,6 +193,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'house-affordability-calculator',
+        name: 'HouseAffordabilityCalculator',
+        component: () => import('../components/HouseAffordabilityCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'amortization',
         name: 'AmortizationCalculator',
         component: () => import('../components/AmortizationCalculator.vue'),

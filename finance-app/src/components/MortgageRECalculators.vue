@@ -40,7 +40,7 @@
         <div class="card-icon"><i class="fas fa-check-circle"></i></div>
         <div class="card-content">
           <h3>Mortgage Payoff Calculator</h3>
-          <p>The Mortgage Payoff Calculator helps you estimate how quickly you can pay off your mortgage and how much interest you can save by making extra payments. Enter your loan balance, interest rate, monthly payment, and additional payment amount to calculate your new payoff date.This tool is ideal for homeowners looking to pay off their mortgage early, reduce total interest costs, and explore different repayment strategies. Compare scenarios with and without extra payments to see how small changes can significantly impact your long-term savings.</p>
+          <p>Calculate your mortgage payoff faster with our easy-to-use calculator. See how extra payments reduce your loan term and save thousands in interest. Plan your mortgage strategy and become debt-free sooner.</p>
           <a href="/mortgage-payoff" class="card-link" >Open Calculator →</a>
         </div>
       </div>
@@ -50,8 +50,8 @@
         <div class="card-icon"><i class="fas fa-coins"></i></div>
         <div class="card-content">
           <h3>House Affordability Calculator</h3>
-          <p>Determine how much house you can afford based on income, debt, down payment, and current interest rates.</p>
-          <!-- <a href="/calculators/finance" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
+          <p>Use our house affordability calculator to estimate how much home you can afford based on your income, debt, down payment, and mortgage rates. Quickly calculate your budget, monthly payments, and home price range with accurate and easy-to-use tools.</p>
+          <!-- <a href="/house-affordability-calculator" class="card-link" @click.prevent="navigate">Open Calculator →</a> -->
         </div>
       </div>
 
