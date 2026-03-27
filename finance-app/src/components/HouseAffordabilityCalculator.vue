@@ -478,6 +478,8 @@ export default {
       const monthlyGross = this.inputs.income / 12
       const frontLimit = this.getFrontEndLimit()
       const backLimit = this.getBackEndLimit()
+
+      let maxByBack = 0
       
       // Find max house price based on front-end ratio
       let maxByFront = 0
