@@ -55,6 +55,16 @@
         </div>
       </div>
 
+    <!-- fixed-house-affordability-calculator -->
+      <div class="calculator-card">
+        <div class="card-icon"><i class="fas fa-coins"></i></div>
+        <div class="card-content">
+          <h3>Fixed House Affordability Calculator</h3>
+          <p><p>Our House Affordability Calculator helps you estimate your ideal home based on your monthly housing budget. Calculate mortgage payments, property taxes, insurance, and other housing costs to determine your true home affordability. Perfect for first-time buyers, budget planning, and understanding mortgage affordability before buying a house.</p></p>
+          <a href="/fixed-house-affordability-calculator" class="card-link">Open Calculator →</a> 
+        </div>
+      </div>
+
       <!-- Rent Calculator -->
       <div class="calculator-card">
         <div class="card-icon"><i class="fas fa-key"></i></div>

@@ -199,6 +199,12 @@ const routes = [
         meta: { keepAlive: false }
       },
       {
+        path: 'fixed-house-affordability-calculator',
+        name: 'FixedHouseAffordabilityCalculator',
+        component: () => import('../components/FixedHouseAffordabilityCalculator.vue'),
+        meta: { keepAlive: false }
+      },
+      {
         path: 'amortization',
         name: 'AmortizationCalculator',
         component: () => import('../components/AmortizationCalculator.vue'),
@@ -430,6 +436,12 @@ const routes = [
         path: '100k-salary-how-much-house-can-you-afford-blog',
         name: '100KSalaryHowMuchHouseCanYouAfford',
         component: () => import('../blog/100KSalaryHowMuchHouseCanYouAfford.vue'),
+        meta: { keepAlive: false }
+      },
+      {
+        path: 'how-much-house-can-you-really-afford-with-a-fixed-mortgage-blog',
+        name: 'HowMuchHouseCanYouReallyAffordwithaFixedMortgage',
+        component: () => import('../blog/HowMuchHouseCanYouReallyAffordwithaFixedMortgage.vue'),
         meta: { keepAlive: false }
       }
     ]

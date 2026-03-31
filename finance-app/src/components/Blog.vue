@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 34:   Fixed House Affordability Calculator 2026 – How Much House Can You Really Afford with a Fixed Mortgage? (Complete Guide + Calculator Strategy)-->
+        <div class="blog-card">
+          <h2 class="blog-title"> Fixed House Affordability 2026 – How Much House Can You Really Afford with a Fixed Mortgage? (Complete Guide + Calculator Strategy)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 31, 2026</span>
+          </div>
+          <p class="blog-excerpt">Unlike basic mortgage calculators, a fixed affordability model assumes a stable interest rate scenario, helping you understand what home price you can safely afford without worrying about rate fluctuations. This is especially important in 2026, where buyers prioritize predictable monthly payments, inflation protection, and long-term financial planning.</p>
+          <a href="/how-much-house-can-you-really-afford-with-a-fixed-mortgage-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 33:   $100K Salary: How Much House Can You Afford? (Calculator + Examples) -->
         <div class="blog-card">
           <h2 class="blog-title"> $100K Salary: How Much House Can You Afford? (Calculator + Examples)</h2>
