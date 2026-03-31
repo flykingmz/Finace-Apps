@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 35:   Why is My Mortgage Payment Higher Than Expected Even with Good Credit?-->
+        <div class="blog-card">
+          <h2 class="blog-title"> Why is My Mortgage Payment Higher Than Expected Even with Good Credit?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">March 31, 2026</span>
+          </div>
+          <p class="blog-excerpt">A higher-than-expected mortgage payment can happen even with excellent credit. Learn how credit scores affect your interest rate, and discover the real reasons your monthly payment may increase, including escrow adjustments, property taxes, insurance changes, and loan structure. This guide explains why your mortgage costs may rise after closing and how to identify whether refinancing, removing PMI, or adjusting your loan is the right financial move. Understand break-even points, hidden fees, and practical strategies to lower your mortgage payment and avoid overpaying over the life of your loan.</p>
+          <a href="/why-is-my-mortgage-payment-higher-than-expected-even-with-good-credit-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 34:   Fixed House Affordability Calculator 2026 – How Much House Can You Really Afford with a Fixed Mortgage? (Complete Guide + Calculator Strategy)-->
         <div class="blog-card">
           <h2 class="blog-title"> Fixed House Affordability 2026 – How Much House Can You Really Afford with a Fixed Mortgage? (Complete Guide + Calculator Strategy)</h2>

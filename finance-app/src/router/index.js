@@ -443,6 +443,12 @@ const routes = [
         name: 'HowMuchHouseCanYouReallyAffordwithaFixedMortgage',
         component: () => import('../blog/HowMuchHouseCanYouReallyAffordwithaFixedMortgage.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'why-is-my-mortgage-payment-higher-than-expected-even-with-good-credit-blog',
+        name: 'WhyisMyMortgagePaymentHigherThanExpectedEvenwithGoodCredit',
+        component: () => import('../blog/WhyisMyMortgagePaymentHigherThanExpectedEvenwithGoodCredit.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
