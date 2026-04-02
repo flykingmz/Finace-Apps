@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 36:  Why Did My Mortgage Payment Go Up Without Refinancing?-->
+        <div class="blog-card">
+          <h2 class="blog-title"> Why Did My Mortgage Payment Go Up Without Refinancing?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">April 2, 2026</span>
+          </div>
+          <p class="blog-excerpt">If your mortgage payment suddenly increased—even though you didn’t refinance—you’re not alone. This is one of the most common (and frustrating) questions homeowners ask.Let’s start with the core conclusion, because this is where most confusion comes from:Refinancing and mortgage payment changes are related—but not required.</p>
+          <a href="/why-did-my-mortgage-payment-go-up-without-refinancing-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 35:   Why is My Mortgage Payment Higher Than Expected Even with Good Credit?-->
         <div class="blog-card">
           <h2 class="blog-title"> Why is My Mortgage Payment Higher Than Expected Even with Good Credit?</h2>

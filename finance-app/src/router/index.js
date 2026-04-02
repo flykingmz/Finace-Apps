@@ -449,6 +449,12 @@ const routes = [
         name: 'WhyisMyMortgagePaymentHigherThanExpectedEvenwithGoodCredit',
         component: () => import('../blog/WhyisMyMortgagePaymentHigherThanExpectedEvenwithGoodCredit.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'why-did-my-mortgage-payment-go-up-without-refinancing-blog',
+        name: 'WhyDidMyMortgagePaymentGoUpWithoutRefinancing',
+        component: () => import('../blog/WhyDidMyMortgagePaymentGoUpWithoutRefinancing.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
