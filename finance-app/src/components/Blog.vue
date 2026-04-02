@@ -9,6 +9,16 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 37:  I Earn $70K — How Much Do I Actually Take Home Per Month?-->
+        <div class="blog-card">
+          <h2 class="blog-title"> I Earn $70K — How Much Do I Actually Take Home Per Month?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">April 2, 2026</span>
+          </div>
+          <p class="blog-excerpt">Wondering how much you actually take home on a $70K salary? This in-depth guide breaks down U.S. federal and state taxes, key factors that impact your paycheck, and real examples across different states. Learn how location, deductions, and tax policies affect your monthly income, and accurately estimate your take-home pay using our Paycheck Calculator.</p>
+          <a href="/i-earn-70k-how-much-do-i-actually-take-home-per-month-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 36:  Why Did My Mortgage Payment Go Up Without Refinancing?-->
         <div class="blog-card">
           <h2 class="blog-title"> Why Did My Mortgage Payment Go Up Without Refinancing?</h2>

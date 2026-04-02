@@ -455,6 +455,12 @@ const routes = [
         name: 'WhyDidMyMortgagePaymentGoUpWithoutRefinancing',
         component: () => import('../blog/WhyDidMyMortgagePaymentGoUpWithoutRefinancing.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'i-earn-70k-how-much-do-i-actually-take-home-per-month-blog',
+        name: 'IEarn70KHowMuchDoIActuallyTakeHomePerMonth',
+        component: () => import('../blog/IEarn70KHowMuchDoIActuallyTakeHomePerMonth.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }
