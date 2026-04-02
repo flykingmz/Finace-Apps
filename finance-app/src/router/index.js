@@ -461,6 +461,12 @@ const routes = [
         name: 'IEarn70KHowMuchDoIActuallyTakeHomePerMonth',
         component: () => import('../blog/IEarn70KHowMuchDoIActuallyTakeHomePerMonth.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: '400k-mortgage-breakdown-where-does-my-money-actually-go-blog',
+        name: '400KMortgageBreakdownWhereDoesMyMoneyActuallyGo',
+        component: () => import('../blog/400KMortgageBreakdownWhereDoesMyMoneyActuallyGo.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

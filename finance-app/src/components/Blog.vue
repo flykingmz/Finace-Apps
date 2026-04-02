@@ -9,6 +9,15 @@
     <!-- Blog List Section   -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 38:  $400K Mortgage Breakdown: Where Does My Money Actually Go?-->
+        <div class="blog-card">
+          <h2 class="blog-title">$400K Mortgage Breakdown: Where Does My Money Actually Go?</h2>
+          <div class="blog-meta">
+            <span class="publish-date">April 2, 2026</span>
+          </div>
+          <p class="blog-excerpt">This article provides a comprehensive breakdown of the true structure behind a $400,000 mortgage payment, revealing that monthly housing costs are far more complex than a simple loan repayment. A standard mortgage consists of multiple components—principal, interest, property taxes, insurance, and potentially PMI—commonly grouped as PITI.</p>
+          <a href="/400k-mortgage-breakdown-where-does-my-money-actually-go-blog" class="learn-more">Detail →</a>
+        </div>
       <!-- Blog 37:  I Earn $70K — How Much Do I Actually Take Home Per Month?-->
         <div class="blog-card">
           <h2 class="blog-title"> I Earn $70K — How Much Do I Actually Take Home Per Month?</h2>
