@@ -467,6 +467,12 @@ const routes = [
         name: '400KMortgageBreakdownWhereDoesMyMoneyActuallyGo',
         component: () => import('../blog/400KMortgageBreakdownWhereDoesMyMoneyActuallyGo.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'is-3000-month-too-much-for-a-mortgage-blog',
+        name: 'Is3000monthtoomuchforamortgage',
+        component: () => import('../blog/Is3000monthtoomuchforamortgage.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

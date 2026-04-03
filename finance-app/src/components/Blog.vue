@@ -6,9 +6,19 @@
       <p class="header-description">Explore expert financial insights to help you make smarter decisions about taxes, retirement, income, and investments. Our guides explain complex financial topics in simple terms, helping you understand how different scenarios impact your money. From VAT and paycheck calculations to Social Security and retirement planning, learn practical strategies to optimize your financial future.</p>
     </div>
 
-    <!-- Blog List Section   -->
+    <!-- Blog List Section  -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 39:  Is $3,000/month too much for a mortgage? (Real examples)-->
+        <div class="blog-card">
+          <h2 class="blog-title">Is $3,000/month too much for a mortgage? (Real examples)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">April 3, 2026</span>
+          </div>
+          <p class="blog-excerpt">The Clear Answer First: It Depends — But Here’s the Reality A $3,000 monthly mortgage is not inherently too much — but it becomes risky or comfortable depending entirely on your income, debt, and financial priorities.</p>
+          <a href="/is-3000-month-too-much-for-a-mortgage-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 38:  $400K Mortgage Breakdown: Where Does My Money Actually Go?-->
         <div class="blog-card">
           <h2 class="blog-title">$400K Mortgage Breakdown: Where Does My Money Actually Go?</h2>

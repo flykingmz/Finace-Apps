@@ -406,4 +406,9 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://financial-calculator.net/is-3000-month-too-much-for-a-mortgage-blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
