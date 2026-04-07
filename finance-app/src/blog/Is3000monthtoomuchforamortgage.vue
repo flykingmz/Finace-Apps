@@ -239,6 +239,14 @@ export default {
   name: 'ThreeThousandMortgageBlog',
   mounted() {
     document.title = 'Is $3,000/month too much for a mortgage? (Real examples)'
+    // 确保description存在且内容正确
+    let desc = document.querySelector('meta[name="description"]')
+    if (!desc) {
+      desc = document.createElement('meta')
+      desc.name = 'description'
+      document.head.appendChild(desc)
+    }
+    desc.content = 'Is $3,000/month too much for a mortgage? See real examples for $80K, $120K, and $200K incomes, and find out what you can truly afford.'
   },
   methods: {
     shareOnLinkedIn() {
