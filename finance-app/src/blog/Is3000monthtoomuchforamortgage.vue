@@ -220,6 +220,15 @@
         <p>* Keep building wealth</p>
         <p>* Enjoy your life outside your house</p>
         <p>👉 If a $3,000 mortgage compromises any of those,then yes — it's too much.</p>
+
+        <h2>FAQ</h2>
+        <h3>Is $3,000 a month too much for a mortgage?</h3>
+        <p>It depends on your income. For most households, it becomes risky below $100K income and comfortable above $140K.</p>
+        <h3>What income do I need for a $3,000 mortgage?</h3>
+        <p>Typically $110K–$140K depending on debt, interest rates, and down payment.</p>
+        <h3>How much house can I afford with $3,000/month?</h3>
+        <p>Roughly $420K–$500K depending on interest rate and taxes.</p>
+      
       </div>
     </div>
   </div>
