@@ -473,6 +473,12 @@ const routes = [
         name: 'Is3000monthtoomuchforamortgage',
         component: () => import('../blog/Is3000monthtoomuchforamortgage.vue'),
         meta: { keepAlive: false }
+      },
+      {
+        path: 'is-2500-month-too-much-for-a-mortgage-blog',
+        name: 'Is2500MonthTooMuchforaMortgage',
+        component: () => import('../blog/Is2500MonthTooMuchforaMortgage.vue'),
+        meta: { keepAlive: false }
       }
     ]
   }

@@ -229,6 +229,8 @@
         <h3>How much house can I afford with $3,000/month?</h3>
         <p>Roughly $420K–$500K depending on interest rate and taxes.</p>
       
+        <h2>Related Article</h2>
+        <p>If you want to compare different budget levels and understand how a lower monthly payment impacts affordability, you may also find this helpful:<a href="/is-2500-month-too-much-for-a-mortgage-blog">Is $2,500/Month Too Much for a Mortgage? (A Safer Budget for Most Buyers?)</a></p>
       </div>
     </div>
   </div>

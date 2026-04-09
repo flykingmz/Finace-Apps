@@ -9,6 +9,16 @@
     <!-- Blog List Section  -->
     <div class="blog-list-section">
       <div class="blog-items">
+      <!-- Blog 40:  Is $2,500/Month Too Much for a Mortgage? (A Safer Budget for Most Buyers?)-->
+        <div class="blog-card">
+          <h2 class="blog-title">Is $2,500/Month Too Much for a Mortgage? (A Safer Budget for Most Buyers?)</h2>
+          <div class="blog-meta">
+            <span class="publish-date">April 9, 2026</span>
+          </div>
+          <p class="blog-excerpt">Short answer: For many buyers, $2,500/month is not too much — in fact, it’s often a safer and more sustainable mortgage target.</p>
+          <a href="/is-2500-month-too-much-for-a-mortgage-blog" class="learn-more">Detail →</a>
+        </div>
+
       <!-- Blog 39:  Is $3,000/month too much for a mortgage? (Real examples)-->
         <div class="blog-card">
           <h2 class="blog-title">Is $3,000/month too much for a mortgage? (Real examples)</h2>
